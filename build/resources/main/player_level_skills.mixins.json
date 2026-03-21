@@ -1,0 +1,36 @@
+{
+	"required": true,
+	"package": "com.player_level_skills.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"EntityAccessor",
+		"ExampleMixin",
+		"HandledScreenMixin",
+		"MobEntityMixin",
+		"misc.ScreenHandlerMixin",
+		"network.ClientPlayPacketListenerMixin",
+		"player.ClientPlayerListS2CPacketMixin",
+		"player.PlayerEntityAccessor",
+		"player.PlayerEntityMixin",
+		"player.PlayerManagerMixin",
+		"player.ServerPlayerEntityMixin"
+	],
+	"client": [
+		"misc.ClientPlayNetworkHandlerMixin",
+		"misc.CreativeInventoryScreenMixin",
+		"misc.WorldRendererMixin",
+		"network.ClientPlayNetworkHandlerMixin",
+		"player.AbstractClientPlayerEntityMixin",
+		"player.ClientPlayerListEntryMixin",
+		"player.InGameHudMixin",
+		"player.InventoryScreenMixin",
+		"player.MinecraftClientMixin",
+		"player.PlayerEntityRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

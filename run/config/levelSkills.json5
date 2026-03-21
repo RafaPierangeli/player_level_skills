@@ -1,0 +1,114 @@
+{
+	// Maximum level: 0 = disabled
+	"overallMaxLevel": 0,
+	// In combination with overallMaxLevel, only when all skills maxed
+	"allowHigherSkillLevel": false,
+	"startPoints": 5,
+	"pointsPerLevel": 3,
+	/* If true will reset stats on death 
+	   !!!deprecated, not in use!!!
+	*/
+	"hardMode": false,
+	// Retain % of levels and skill points, 0 = hard mode
+	"levelRetainPercentage": 100.0,
+	"disableMobFarms": true,
+	// Amount of allowed mob kills in a chunk
+	"mobKillCount": 6,
+	// Strange potion resets all stats instead of one
+	"opStrangePotion": false,
+	// restrict hand usage when item not unlocked
+	"lockedHandUsage": false,
+	// Only for Devs
+	"devMode": false,
+	// Bonus id: bowDamage
+	"bowDamageBonus": 0.5,
+	// Bonus id: bowDoubleDamageChance
+	"bowDoubleDamageChanceBonus": 0.10000000149011612,
+	// Bonus id: crossbowDamage
+	"crossbowDamageBonus": 0.5,
+	// Bonus id: crossbowDoubleDamageChance
+	"crossbowDoubleDamageChanceBonus": 0.10000000149011612,
+	// Bonus id: itemDamageChance
+	"itemDamageChanceBonus": 0.009999999776482582,
+	// Bonus id: potionEffectChance
+	"potionEffectChanceBonus": 0.20000000298023224,
+	// Bonus id: twinBreedChance
+	"twinBreedChanceBonus": 0.20000000298023224,
+	// Bonus id: fallDamageReduction
+	"fallDamageReductionBonus": 0.20000000298023224,
+	// Bonus id: deathGraceChance
+	"deathGraceChanceBonus": 0.20000000298023224,
+	// Bonus id: tntStrength
+	"tntStrengthBonus": 1.0,
+	// Bonus id: priceDiscount
+	"priceDiscountBonus": 0.009999999776482582,
+	// Bonus id: tradeXp
+	"tradeXpBonus": 0.019999999552965164,
+	// Bonus id: miningDropChance
+	"miningDropChanceBonus": 0.009999999776482582,
+	// Bonus id: plantDropChance
+	"plantDropChanceBonus": 0.009999999776482582,
+	// Bonus id: anvilXpCap
+	"anvilXpCap": 30,
+	// Bonus id: anvilXpDiscount
+	"anvilXpDiscountBonus": 0.009999999776482582,
+	// Bonus id: anvilXpChance
+	"anvilXpChanceBonus": 0.009999999776482582,
+	// Bonus id: healthRegen
+	"healthRegenBonus": 0.02500000037252903,
+	// Bonus id: healthAbsorption
+	"healthAbsorptionBonus": 4.0,
+	// Bonus id: exhaustionReduction
+	"exhaustionReductionBonus": 0.019999999552965164,
+	// Bonus id: knockbackAttackChance
+	"meleeKnockbackAttackChanceBonus": 0.009999999776482582,
+	// Bonus id: criticalAttackChance
+	"meleeCriticalAttackChanceBonus": 0.009999999776482582,
+	// Bonus id: meleeCriticalAttackDamage
+	"meleeCriticalAttackDamageBonus": 0.30000001192092896,
+	// Bonus id: meleeDoubleAttackDamageChance
+	"meleeDoubleAttackDamageChanceBonus": 0.20000000298023224,
+	// Bonus id: foodIncreasion
+	"foodIncreasionBonus": 0.019999999552965164,
+	// Bonus id: damageReflection
+	"damageReflectionBonus": 0.019999999552965164,
+	// Bonus id: damageReflectionChance
+	"damageReflectionChanceBonus": 0.004999999888241291,
+	// Bonus id: evadingDamageChance
+	"evadingDamageChanceBonus": 0.10000000149011612,
+	// XP equation: lvl^exponent * multiplicator + base
+	"xpCostMultiplicator": 0.10000000149011612,
+	"xpExponent": 2,
+	"xpBaseCost": 50,
+	// 0 = no experience cap
+	"xpMaxCost": 0,
+	"resetCurrentXp": true,
+	"dropXPbasedOnLvl": false,
+	// 0.01 = 1% more xp per lvl
+	"basedOnMultiplier": 0.009999999776482582,
+	"breedingXPMultiplier": 1.0,
+	"bottleXPMultiplier": 1.0,
+	"dragonXPMultiplier": 0.5,
+	"fishingXPMultiplier": 0.800000011920929,
+	"furnaceXPMultiplier": 0.10000000149011612,
+	"oreXPMultiplier": 1.0,
+	"tradingXPMultiplier": 0.30000001192092896,
+	"mobXPMultiplier": 1.0,
+	"spawnerMobXP": false,
+	// Highlight locked blocks in red.
+	"highlightLocked": false,
+	"inventorySkillLevel": true,
+	"inventorySkillLevelPosX": 0,
+	"inventorySkillLevelPosY": 0,
+	"showLevelList": true,
+	"showLevel": true,
+	// Switch levelz screen instead of closing with inventory key
+	"switchScreen": false,
+	"showLockedBlockInfo": false,
+	"lockedBlockInfoPosX": 0,
+	"lockedBlockInfoPosY": 0,
+	"restrictions": true,
+	"defaultRestrictions": true,
+	// Remember to name your datapack json differently than default
+	"defaultSkills": true
+}

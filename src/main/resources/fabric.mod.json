@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "player_level_skills",
+	"version": "${version}",
+	"name": "player_level_skills",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/player_level_skills/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.player_level_skills.Player_level_skills"
+		],
+		"client": [
+			"com.player_level_skills.client.PlayerLevelSkillsClient"
+		],
+		"fabric-datagen": [
+			"com.player_level_skills.Player_level_skillsDataGenerator"
+		],
+		"modmenu": [
+			"com.player_level_skills.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"player_level_skills.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"cloth-config2": ">=${cloth_config_version}"
+	}
+}
