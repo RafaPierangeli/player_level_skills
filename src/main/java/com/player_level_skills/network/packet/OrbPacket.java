@@ -45,13 +45,9 @@ public class OrbPacket implements Packet<ClientPlayPacketListener> {
     }
 
 
-    public PacketType<OrbPacket> getPacketId() {
-        return LevelServerPacket.ADD_LEVEL_EXPERIENCE_ORB;
-    }
-
     @Override
     public PacketType<? extends Packet<ClientPlayPacketListener>> getPacketType() {
-        return null;
+        return LevelServerPacket.ADD_LEVEL_EXPERIENCE_ORB;
     }
 
     public void apply(ClientPlayPacketListener clientPlayPacketListener) {

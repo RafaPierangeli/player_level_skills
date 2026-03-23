@@ -205,7 +205,7 @@ public class BonusHelper {
     }
 
     public static void miningDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos, LootWorldContext.Builder builder) {
-        if (state.isIn(ConventionalBlockTags.ORES) && EnchantmentHelper.getEquipmentLevel((RegistryEntry<Enchantment>) Enchantments.SILK_TOUCH, playerEntity) <= 0) {
+        if (state.isIn(ConventionalBlockTags.ORES)) {
             if (LevelManager.BONUSES.containsKey("miningDropChance")) {
                 LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
                 SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");

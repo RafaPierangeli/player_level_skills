@@ -1,11 +1,19 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 48,
-      "minecraft:total_world_time": 48,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 48,
-      "minecraft:time_since_death": 48
+      "minecraft:time_since_rest": 451,
+      "minecraft:walk_one_cm": 562,
+      "minecraft:total_world_time": 1824,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 451,
+      "minecraft:time_since_death": 451
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 3
+    },
+    "minecraft:used": {
+      "minecraft:netherite_pickaxe": 3,
+      "minecraft:coal_ore": 3
     }
   },
   "DataVersion": 4671

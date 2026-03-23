@@ -17,7 +17,10 @@
 		"player.PlayerEntityAccessor",
 		"player.PlayerEntityMixin",
 		"player.PlayerManagerMixin",
-		"player.ServerPlayerEntityMixin"
+		"player.ServerPlayerEntityMixin",
+		"block.AbstractFurnaceBlockEntityMixin",
+		"block.BlockMixin",
+		"network.PlayStateFactoriesMixin"
 	],
 	"client": [
 		"misc.ClientPlayNetworkHandlerMixin",

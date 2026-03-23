@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 233,
+      "minecraft:walk_one_cm": 927,
+      "minecraft:total_world_time": 255,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 233,
+      "minecraft:time_since_death": 233
+    },
+    "minecraft:picked_up": {
+      "minecraft:wildflowers": 3
+    },
+    "minecraft:mined": {
+      "minecraft:wildflowers": 1,
+      "minecraft:dandelion": 1,
+      "minecraft:coal_ore": 2
+    },
+    "minecraft:used": {
+      "minecraft:netherite_pickaxe": 4
+    }
+  },
+  "DataVersion": 4671
+}

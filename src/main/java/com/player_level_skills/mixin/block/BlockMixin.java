@@ -57,26 +57,13 @@ public abstract class BlockMixin {
             }
         }
     }
-
-    @Inject(
-            method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getDroppedStacks(Lnet/minecraft/loot/context/LootWorldContext$Builder;)Ljava/util/List;"),
-            locals = LocalCapture.CAPTURE_FAILSOFT
-    )
-    private static void getDroppedStacksMixin(
-            BlockState state,
-            ServerWorld world,
-            BlockPos pos,
-            @Nullable BlockEntity blockEntity,
-            @Nullable Entity entity,
-            ItemStack stack,
-            CallbackInfoReturnable<List<ItemStack>> info,
-            LootWorldContext.Builder builder
-    ) {
+    @Inject(method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getDroppedStacks(Lnet/minecraft/loot/context/LootWorldContext$Builder;)Ljava/util/List;"), locals = LocalCapture.CAPTURE_FAILSOFT)
+    private static void getDroppedStacksMixin(BlockState state, ServerWorld world, BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity entity, ItemStack stack, CallbackInfoReturnable<List<ItemStack>> info, LootWorldContext.Builder builder) {
         if (entity instanceof PlayerEntity playerEntity) {
             BonusHelper.miningDropChanceBonus(playerEntity, state, pos, builder);
         }
     }
+
 
     @Inject(method = "dropExperience", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ExperienceOrbEntity;spawn(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/Vec3d;I)V"))
     protected void dropExperienceMixin(ServerWorld world, BlockPos pos, int size, CallbackInfo info) {
