@@ -7,9 +7,13 @@
 		"ExampleMixin",
 		"HandledScreenMixin",
 		"MobEntityMixin",
+		"block.AbstractBlockMixin",
+		"entity.VehicleEntityAccessor",
 		"misc.ScreenHandlerMixin",
 		"network.ClientPlayPacketListenerMixin",
 		"player.ClientPlayerListS2CPacketMixin",
+		"player.CraftingScreenHandlerMixin",
+		"player.HungerManagerMixin",
 		"player.PlayerEntityAccessor",
 		"player.PlayerEntityMixin",
 		"player.PlayerManagerMixin",
@@ -25,7 +29,8 @@
 		"player.InGameHudMixin",
 		"player.InventoryScreenMixin",
 		"player.MinecraftClientMixin",
-		"player.PlayerEntityRendererMixin"
+		"player.PlayerEntityRendererMixin",
+		"player.PlayerListHudMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

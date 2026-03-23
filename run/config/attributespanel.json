@@ -1,0 +1,205 @@
+{
+  "xOffset": -61,
+  "yOffset": 10,
+  "panelOffsetX": -130,
+  "panelOffsetY": 0,
+  "guiStyle": "COMPACT",
+  "hoverIconAnimation": true,
+  "colorizeModifiedAttributes": true,
+  "percentAttributes": [
+    "kevslibrary:armor_penetration"
+  ],
+  "percentAttributesBase100": [
+    "spell_power:critical_damage",
+    "spell_power:critical_chance",
+    "spell_power:haste",
+    "ranged_weapon:haste",
+    "spell_engine:damage_taken",
+    "spell_engine:healing_taken"
+  ],
+  "percentKeywords": [
+    "chance",
+    "movement_speed"
+  ],
+  "percentBase100Keywords": [],
+  "forceTrackVisibleAttributes": true,
+  "compact": {
+    "headers": [
+      {
+        "header": "attributepanel.header.offensive",
+        "attributes": [
+          {
+            "id": "minecraft:attack_damage"
+          },
+          {
+            "id": "minecraft:attack_speed"
+          },
+          {
+            "id": "minecraft:sweeping_damage_ratio"
+          },
+          {
+            "id": "minecraft:attack_knockback"
+          },
+          {
+            "id": "minecraft:damage_multiplier"
+          },
+          {
+            "id": "tiered:critical_damage"
+          },
+          {
+            "id": "tiered:critical_chance"
+          },
+          {
+            "id": "tiered:range_attack_damage"
+          }
+        ],
+        "blacklist": []
+      },
+      {
+        "header": "attributepanel.header.defensive",
+        "attributes": [
+          {
+            "id": "minecraft:max_health"
+          },
+          {
+            "id": "minecraft:armor"
+          },
+          {
+            "id": "minecraft:armor_toughness"
+          },
+          {
+            "id": "minecraft:knockback_resistance"
+          },
+          {
+            "id": "minecraft:explosion_knockback_resistance"
+          },
+          {
+            "id": "minecraft:knockback_resistance"
+          }
+        ],
+        "blacklist": []
+      },
+      {
+        "header": "attributepanel.header.movement",
+        "attributes": [
+          {
+            "id": "minecraft:movement_speed"
+          },
+          {
+            "id": "minecraft:flying_speed"
+          },
+          {
+            "id": "minecraft:jump_strength"
+          },
+          {
+            "id": "minecraft:step_height"
+          },
+          {
+            "id": "minecraft:safe_fall_distance"
+          },
+          {
+            "id": "minecraft:fall_damage_multiplier"
+          },
+          {
+            "id": "minecraft:sneaking_speed"
+          },
+          {
+            "id": "minecraft:water_movement_efficiency"
+          },
+          {
+            "id": "minecraft:movement_efficiency"
+          }
+        ],
+        "blacklist": []
+      },
+      {
+        "header": "attributepanel.header.mining",
+        "attributes": [
+          {
+            "id": "minecraft:block_break_speed"
+          },
+          {
+            "id": "minecraft:mining_efficiency"
+          },
+          {
+            "id": "minecraft:submerged_mining_speed"
+          },
+          {
+            "id": "tiered:dig_speed"
+          }
+        ],
+        "blacklist": []
+      },
+      {
+        "header": "attributepanel.header.utility",
+        "attributes": [
+          {
+            "id": "minecraft:luck"
+          },
+          {
+            "id": "minecraft:block_interaction_range"
+          },
+          {
+            "id": "minecraft:entity_interaction_range"
+          },
+          {
+            "id": "minecraft:oxygen_bonus"
+          },
+          {
+            "id": "minecraft:burning_time"
+          },
+          {
+            "id": "tiered:durable"
+          }
+        ],
+        "blacklist": []
+      },
+      {
+        "header": "attributepanel.header.magic",
+        "attributes": [
+          {
+            "id": "spell_power:generic"
+          },
+          {
+            "id": "spell_power:fire"
+          },
+          {
+            "id": "spell_power:frost"
+          },
+          {
+            "id": "spell_power:arcane"
+          },
+          {
+            "id": "spell_power:lightning"
+          },
+          {
+            "id": "spell_power:soul"
+          },
+          {
+            "id": "spell_power:healing"
+          },
+          {
+            "id": "spell_power:critical_damage"
+          },
+          {
+            "id": "spell_power:critical_chance"
+          },
+          {
+            "id": "spell_power:haste"
+          }
+        ],
+        "blacklist": []
+      }
+    ],
+    "otherHeaderName": "attributepanel.header.misc",
+    "globalBlacklist": [],
+    "disableOtherHeader": false,
+    "disableBonusesHeader": false,
+    "bonusesHeaderName": "attributepanel.header.bonuses",
+    "disableMagicHeader": false,
+    "magicOnlyIfPresent": true,
+    "sidePadding": 15,
+    "textScale": 0.55,
+    "textTheme": "DARK"
+  }
+}

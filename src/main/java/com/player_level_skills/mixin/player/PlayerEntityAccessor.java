@@ -1,17 +1,18 @@
 package com.player_level_skills.mixin.player;
 
+import net.minecraft.entity.PlayerLikeEntity;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(PlayerEntity.class)
+@Mixin(PlayerLikeEntity.class)
 public interface PlayerEntityAccessor {
 
-//    @Accessor("PLAYER_MODEL_PARTS")
-//    static TrackedData<Byte> getPLAYER_MODEL_PARTS() {
-//        throw new AssertionError();
-//    }
+    @Accessor("PLAYER_MODE_CUSTOMIZATION_ID")
+    static TrackedData<Byte> getPLAYER_MODEL_PARTS() {
+        throw new AssertionError();
+    }
 
 }
 

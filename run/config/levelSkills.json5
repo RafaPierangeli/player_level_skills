@@ -96,7 +96,7 @@
 	"mobXPMultiplier": 1.0,
 	"spawnerMobXP": false,
 	// Highlight locked blocks in red.
-	"highlightLocked": false,
+	"highlightLocked": true,
 	"inventorySkillLevel": true,
 	"inventorySkillLevelPosX": 0,
 	"inventorySkillLevelPosY": 0,

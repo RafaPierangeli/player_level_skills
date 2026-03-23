@@ -1,0 +1,38 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:short_grass": 1,
+      "minecraft:tall_grass": 1,
+      "minecraft:oak_log": 3
+    },
+    "minecraft:crafted": {
+      "minecraft:stick": 4,
+      "minecraft:wooden_pickaxe": 1,
+      "minecraft:oak_planks": 12,
+      "minecraft:wooden_shovel": 1,
+      "minecraft:crafting_table": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 3,
+      "minecraft:sprint_one_cm": 2391,
+      "minecraft:time_since_rest": 2705,
+      "minecraft:fall_one_cm": 550,
+      "minecraft:walk_one_cm": 3174,
+      "minecraft:total_world_time": 3269,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 14039,
+      "minecraft:play_time": 2705,
+      "minecraft:damage_dealt": 11,
+      "minecraft:jump": 17,
+      "minecraft:time_since_death": 2705
+    },
+    "minecraft:picked_up": {
+      "minecraft:oak_log": 3,
+      "minecraft:wheat_seeds": 1
+    },
+    "minecraft:used": {
+      "minecraft:crafting_table": 1
+    }
+  },
+  "DataVersion": 4671
+}

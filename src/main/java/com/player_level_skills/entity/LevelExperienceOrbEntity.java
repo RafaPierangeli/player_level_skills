@@ -190,6 +190,30 @@ public class LevelExperienceOrbEntity extends Entity {
         return true;
     }
 
+//    @Override
+//    protected void readCustomData(ReadView view) {
+//        this.health = view.getInt("Health", 0);
+//        this.orbAge = view.getInt("Age", 0);
+//        this.amount = view.getInt("Value", 0);
+//        this.pickingCount = Math.max(view.getInt("Count", 1), 1);
+//
+//        Map<Integer, Integer> map = new HashMap<>();
+//        ReadView clumpedMapView = view.getReadView("clumpedMap").getReadView(null);
+//
+//        if (clumpedMapView != null) {
+//            for (String key : clumpedMapView.keys()) {
+//                try {
+//                    map.put(Integer.parseInt(key), clumpedMapView.getInt(key, 0));
+//                } catch (NumberFormatException ignored) {
+//                }
+//            }
+//        } else {
+//            map.put(this.amount, this.pickingCount);
+//        }
+//
+//        this.clumpedMap = map;
+//    }
+
     @Override
     protected void readCustomData(ReadView view) {
         this.health = view.getInt("Health", 0);
@@ -198,9 +222,8 @@ public class LevelExperienceOrbEntity extends Entity {
         this.pickingCount = Math.max(view.getInt("Count", 1), 1);
 
         Map<Integer, Integer> map = new HashMap<>();
-        ReadView clumpedMapView = view.getReadView("clumpedMap").getReadView(null);
-
-        if (clumpedMapView != null) {
+        if (view.contains("clumpedMap")) {
+            ReadView clumpedMapView = view.getReadView("clumpedMap").getReadView(null);
             for (String key : clumpedMapView.keys()) {
                 try {
                     map.put(Integer.parseInt(key), clumpedMapView.getInt(key, 0));
@@ -210,8 +233,8 @@ public class LevelExperienceOrbEntity extends Entity {
         } else {
             map.put(this.amount, this.pickingCount);
         }
+        setClumpedMap(map);
 
-        this.clumpedMap = map;
     }
 
     @Override
@@ -221,8 +244,9 @@ public class LevelExperienceOrbEntity extends Entity {
         view.putInt("Value", this.amount);
         view.putInt("Count", this.pickingCount);
 
-        WriteView mapView = view.get("clumpedMap");
-        getClumpedMap().forEach((value, count) -> mapView.putInt(String.valueOf(value), count));
+        WriteView map = view.get("clumpedMap");
+        getClumpedMap().forEach((value, count) -> map.putInt(value + "", count));
+        view.putString("clumpedMap", map.toString());
     }
 
     @Override
@@ -237,18 +261,6 @@ public class LevelExperienceOrbEntity extends Entity {
         }
 
     }
-
-
-
-    //@Override
-    //protected void readCustomData(ReadView view) {
-//
-    //}
-
-    //@Override
-    //protected void writeCustomData(WriteView view) {
-//
-    //}
 
     public int getExperienceAmount() {
         return this.amount;

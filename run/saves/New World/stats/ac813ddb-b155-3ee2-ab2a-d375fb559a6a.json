@@ -1,0 +1,37 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:sprint_one_cm": 1081,
+      "minecraft:time_since_rest": 1371,
+      "minecraft:walk_one_cm": 5960,
+      "minecraft:total_world_time": 1529,
+      "minecraft:leave_game": 1,
+      "minecraft:sneak_time": 5,
+      "minecraft:play_time": 1371,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 1371
+    },
+    "minecraft:picked_up": {
+      "minecraft:coal": 4,
+      "minecraft:wheat_seeds": 4,
+      "minecraft:wheat": 1
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 4,
+      "minecraft:wheat": 2
+    },
+    "minecraft:crafted": {
+      "minecraft:bread": 1
+    },
+    "minecraft:used": {
+      "minecraft:stone_hoe": 4,
+      "minecraft:bone_meal": 5,
+      "minecraft:netherite_pickaxe": 4,
+      "minecraft:coal_ore": 4,
+      "minecraft:bread": 1,
+      "minecraft:wheat_seeds": 2
+    }
+  },
+  "DataVersion": 4671
+}

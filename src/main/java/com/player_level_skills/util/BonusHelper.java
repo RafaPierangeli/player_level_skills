@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -26,6 +27,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
@@ -200,6 +202,42 @@ public class BonusHelper {
             }
         }
         return false;
+    }
+
+    public static void miningDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos, LootWorldContext.Builder builder) {
+        if (state.isIn(ConventionalBlockTags.ORES) && EnchantmentHelper.getEquipmentLevel((RegistryEntry<Enchantment>) Enchantments.SILK_TOUCH, playerEntity) <= 0) {
+            if (LevelManager.BONUSES.containsKey("miningDropChance")) {
+                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+                SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");
+                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.miningDropChanceBonus) {
+                    List<ItemStack> list = state.getDroppedStacks(builder);
+                    if (!list.isEmpty()) {
+                        Block.dropStack(playerEntity.getEntityWorld(), pos, state.getDroppedStacks(builder).getFirst().split(1));
+                    }
+                }
+            }
+        }
+    }
+
+
+    public static void plantDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos) {
+        if (EnchantmentHelper.getEquipmentLevel((RegistryEntry<Enchantment>) Enchantments.SILK_TOUCH, playerEntity) <= 0) {
+            if (LevelManager.BONUSES.containsKey("plantDropChance")) {
+                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+                SkillBonus skillBonus = LevelManager.BONUSES.get("plantDropChance");
+                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.plantDropChanceBonus) {
+                    List<ItemStack> list = Block.getDroppedStacks(state, (ServerWorld) playerEntity.getEntityWorld(), pos, null);
+                    for (ItemStack itemStack : list) {
+                        if (itemStack.isIn(ConventionalItemTags.CROPS)) {
+                            Block.dropStack(playerEntity.getEntityWorld(), pos, itemStack);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 

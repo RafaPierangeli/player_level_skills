@@ -11,26 +11,27 @@ public class PlayerSkill {
 
     public PlayerSkill(int id, int level) {
         this.id = id;
-        this.level = level;
+        this.level = Math.max(0, level);
     }
 
-    // Construtor para deserialização do NBT (corrigido para 1.21.11)
     public PlayerSkill(NbtCompound nbt) {
-        // Extrai o ID: se a chave "Id" existir, usa o valor; caso contrário, usa 0 como padrão
-        // Nota: getInt retorna Optional<Integer> na 1.21.11, então usamos orElse para converter para int
         this.id = nbt.getInt("Id").orElse(0);
+        this.level = nbt.getInt("Level").orElse(0);
 
-        // Extrai o nível: se a chave "Level" existir, usa o valor; caso contrário, usa 1 como padrão
-        this.level = nbt.getInt("Level").orElse(1);
-
-        // Opcional: Validação extra para garantir valores válidos (boa prática para mods)
-        if (this.level < 1) {
-            this.level = 1; // Evita níveis inválidos em saves corrompidos
+        if (this.level < 0) {
+            this.level = 0;
         }
     }
 
     public static PlayerSkill readDataFromView(ReadView skillView) {
-        return null;
+        if (skillView == null) {
+            return null;
+        }
+
+        int id = skillView.getInt("Id", 0);
+        int level = skillView.getInt("Level", 0);
+
+        return new PlayerSkill(id, Math.max(0, level));
     }
 
     public NbtCompound writeDataToNbt(WriteView skillView) {
@@ -49,17 +50,28 @@ public class PlayerSkill {
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.level = Math.max(0, level);
     }
 
     public void increaseLevel(int level) {
-        int maxLevel = LevelManager.SKILLS.get(this.id).getMaxLevel();
+        Skill skill = LevelManager.SKILLS.get(this.id);
+        if (skill == null) {
+            this.level = Math.max(0, this.level + level);
+            return;
+        }
+
+        int maxLevel = skill.getMaxLevel();
         if ((this.level + level) <= maxLevel) {
             this.level += level;
         } else {
             this.level = maxLevel;
         }
+
+        if (this.level < 0) {
+            this.level = 0;
+        }
     }
+
     public void decreaseLevel(int level) {
         if ((this.level - level) >= 0) {
             this.level -= level;
