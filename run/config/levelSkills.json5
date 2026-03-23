@@ -17,7 +17,7 @@
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
-	"lockedHandUsage": false,
+	"lockedHandUsage": true,
 	// Only for Devs
 	"devMode": false,
 	// Bonus id: bowDamage
@@ -104,7 +104,7 @@
 	"showLevel": true,
 	// Switch levelz screen instead of closing with inventory key
 	"switchScreen": false,
-	"showLockedBlockInfo": false,
+	"showLockedBlockInfo": true,
 	"lockedBlockInfoPosX": 0,
 	"lockedBlockInfoPosY": 0,
 	"restrictions": true,

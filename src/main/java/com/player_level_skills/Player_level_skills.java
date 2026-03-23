@@ -5,10 +5,10 @@ import com.player_level_skills.init.CriteriaInit;
 import com.player_level_skills.init.EntityInit;
 import com.player_level_skills.init.EventInit;
 import com.player_level_skills.init.LoaderInit;
+import com.player_level_skills.init.TagInit;
 import com.player_level_skills.network.LevelServerPacket;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.impl.tag.TagInit;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,7 @@ public class Player_level_skills implements ModInitializer {
 		EventInit.init();
 		LoaderInit.init();
 		LevelServerPacket.init();
-		//TagInit.init();
+		TagInit.init();
 		//ItemInit.init();
 
 		LOGGER.info("Hello Fabric world!");
