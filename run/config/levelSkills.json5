@@ -13,7 +13,7 @@
 	"levelRetainPercentage": 100.0,
 	"disableMobFarms": true,
 	// Amount of allowed mob kills in a chunk
-	"mobKillCount": 6,
+	"mobKillCount": 600,
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
@@ -82,7 +82,7 @@
 	"xpBaseCost": 50,
 	// 0 = no experience cap
 	"xpMaxCost": 0,
-	"resetCurrentXp": true,
+	"resetCurrentXp": false,
 	"dropXPbasedOnLvl": false,
 	// 0.01 = 1% more xp per lvl
 	"basedOnMultiplier": 0.009999999776482582,
@@ -94,7 +94,7 @@
 	"oreXPMultiplier": 1.0,
 	"tradingXPMultiplier": 0.30000001192092896,
 	"mobXPMultiplier": 1.0,
-	"spawnerMobXP": false,
+	"spawnerMobXP": true,
 	// Highlight locked blocks in red.
 	"highlightLocked": true,
 	"inventorySkillLevel": true,

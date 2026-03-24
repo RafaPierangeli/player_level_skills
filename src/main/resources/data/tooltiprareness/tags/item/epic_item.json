@@ -1,7 +1,7 @@
 {
     "replace": false,
     "values": [
-        "levelz:strange_potion",
-        "levelz:rare_candy"
+        "player_level_skills:strange_potion",
+        "player_level_skills:rare_candy"
     ]
 }

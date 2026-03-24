@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "player_level_skills:item/strange_potion"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:short_grass": 5,
+      "minecraft:wildflowers": 2
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2099,
+      "minecraft:walk_one_cm": 16817,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 7,
+      "minecraft:damage_taken": 96,
+      "minecraft:damage_dealt": 1081,
+      "minecraft:play_time": 2808,
+      "minecraft:jump": 17,
+      "minecraft:time_since_death": 2068,
+      "minecraft:sprint_one_cm": 1508,
+      "minecraft:total_world_time": 2829,
+      "minecraft:fly_one_cm": 8891,
+      "minecraft:sneak_time": 9,
+      "minecraft:deaths": 1
+    },
+    "minecraft:used": {
+      "minecraft:grass_block": 12,
+      "minecraft:netherite_sword": 33,
+      "minecraft:zombie_spawn_egg": 7
+    },
+    "minecraft:picked_up": {
+      "minecraft:stick": 2,
+      "minecraft:stone_hoe": 1,
+      "minecraft:white_wool": 1,
+      "minecraft:wildflowers": 4,
+      "minecraft:netherite_chestplate": 1,
+      "minecraft:iron_ingot": 65,
+      "minecraft:zombie_spawn_egg": 40,
+      "minecraft:beef": 1,
+      "minecraft:rotten_flesh": 19,
+      "minecraft:raw_iron": 7,
+      "minecraft:coal": 140,
+      "minecraft:netherite_pickaxe": 1,
+      "minecraft:golden_apple": 64,
+      "minecraft:bone_meal": 38,
+      "minecraft:netherite_sword": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 5,
+      "minecraft:sheep": 1
+    },
+    "minecraft:killed_by": {
+      "minecraft:zombie": 1
+    }
+  },
+  "DataVersion": 4671
+}

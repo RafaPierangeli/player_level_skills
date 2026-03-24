@@ -145,3 +145,4 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         LevelManager.SKILLS.putAll(sortedMap);
     }
 }
+

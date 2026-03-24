@@ -1,5 +1,6 @@
 package com.player_level_skills.init;
 
+import com.player_level_skills.screen.PlayerLevelSkillsScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -23,7 +24,7 @@ public class KeyInit {
         // Callback
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (screenKey.wasPressed()) {
-                //client.setScreen(new LevelScreen());
+                client.setScreen(new PlayerLevelSkillsScreen());
                 return;
             }
         });

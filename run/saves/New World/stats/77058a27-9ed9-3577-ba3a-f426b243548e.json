@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2
+    },
+    "minecraft:used": {
+      "minecraft:netherite_sword": 10,
+      "minecraft:zombie_spawn_egg": 3
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 541,
+      "minecraft:time_since_rest": 956,
+      "minecraft:walk_one_cm": 8210,
+      "minecraft:total_world_time": 1145,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 699,
+      "minecraft:mob_kills": 3,
+      "minecraft:play_time": 956,
+      "minecraft:damage_dealt": 514,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 956
+    }
+  },
+  "DataVersion": 4671
+}

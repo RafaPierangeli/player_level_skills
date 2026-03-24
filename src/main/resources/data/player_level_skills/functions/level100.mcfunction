@@ -1,0 +1,1 @@
+give @s player_level_skills:rare_candy

@@ -2,6 +2,8 @@ package com.player_level_skills.level;
 
 import com.player_level_skills.config.ConfigInit;
 import com.player_level_skills.level.restriction.PlayerRestriction;
+import com.player_level_skills.util.LevelHelper;
+import com.player_level_skills.util.PacketHelper;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
@@ -11,6 +13,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
 
@@ -82,8 +85,9 @@ public class LevelManager {
         view.putInt("TotalLevelExperience", this.totalLevelExperience);
         view.putInt("SkillPoints", this.skillPoints);
 
+        WriteView skillsView = view.get("Skills");
         for (Map.Entry<Integer, PlayerSkill> entry : playerSkills.entrySet()) {
-            WriteView skillView = view.get("Skill_" + entry.getKey());
+            WriteView skillView = skillsView.get("Skill_" + entry.getKey());
             entry.getValue().writeDataToNbt(skillView);
         }
     }
@@ -317,9 +321,9 @@ public class LevelManager {
         if (level > 0) {
             this.setSkillPoints(this.getSkillPoints() + level);
             this.setSkillLevel(skillId, 0);
-    //        PacketHelper.updatePlayerSkills((ServerPlayerEntity) this.playerEntity, null);
-    //        LevelHelper.updateSkill((ServerPlayerEntity) this.playerEntity, SKILLS.get(skillId));
-    //        PacketHelper.updateLevels((ServerPlayerEntity) this.playerEntity);
+            PacketHelper.updatePlayerSkills((ServerPlayerEntity) this.playerEntity, null);
+            LevelHelper.updateSkill((ServerPlayerEntity) this.playerEntity, SKILLS.get(skillId));
+            PacketHelper.updateLevels((ServerPlayerEntity) this.playerEntity);
             return true;
         } else {
             return false;

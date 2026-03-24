@@ -56,9 +56,9 @@ public class LevelExperienceOrbEntityRenderer extends EntityRenderer<LevelExperi
         float m = (float)(j / 4 * 16 + 16) / 64.0F;
 
         float r = (float)state.age / 2.0F;
-        int red = 80;
-        int green = Math.max(100, (int)((MathHelper.sin(r + (float)(Math.PI * 2.0 / 3.0)) + 1.0F) * 0.5F * 255.0F));
-        int blue = Math.max(180, (int)((MathHelper.sin(r + 0.0F) + 1.0F) * 0.5F * 255.0F));
+        int red = 30;
+        int green = Math.max(190, (int)((MathHelper.sin(r + (float)(Math.PI * 2.0 / 3.0)) + 1.0F) * 0.7F * 255.0F));
+        int blue = Math.max(240, (int)((MathHelper.sin(r + 0.0F) + 1.0F) * 0.85F * 255.0F));
         int alpha = 255;
 
         matrixStack.translate(0.0F, 0.1F, 0.0F);

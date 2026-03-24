@@ -1,11 +1,7 @@
 package com.player_level_skills;
 
 import com.player_level_skills.config.ConfigInit;
-import com.player_level_skills.init.CriteriaInit;
-import com.player_level_skills.init.EntityInit;
-import com.player_level_skills.init.EventInit;
-import com.player_level_skills.init.LoaderInit;
-import com.player_level_skills.init.TagInit;
+import com.player_level_skills.init.*;
 import com.player_level_skills.network.LevelServerPacket;
 import net.fabricmc.api.ModInitializer;
 
@@ -33,8 +29,9 @@ public class Player_level_skills implements ModInitializer {
 		LevelServerPacket.init();
 		TagInit.init();
 		//ItemInit.init();
+		ItemInit.registerModItems();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("ALUUU");
 	}
 
 	public static Identifier identifierOf (String name) {

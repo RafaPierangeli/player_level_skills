@@ -1,44 +1,46 @@
 {
-	"required": true,
-	"package": "com.player_level_skills.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"EntityAccessor",
-		"ExampleMixin",
-		"HandledScreenMixin",
-		"MobEntityMixin",
-		"block.AbstractBlockMixin",
-		"entity.VehicleEntityAccessor",
-		"misc.ScreenHandlerMixin",
-		"network.ClientPlayPacketListenerMixin",
-		"player.ClientPlayerListS2CPacketMixin",
-		"player.CraftingScreenHandlerMixin",
-		"player.HungerManagerMixin",
-		"player.PlayerEntityAccessor",
-		"player.PlayerEntityMixin",
-		"player.PlayerManagerMixin",
-		"player.ServerPlayerEntityMixin",
-		"block.AbstractFurnaceBlockEntityMixin",
-		"block.BlockMixin",
-		"network.PlayStateFactoriesMixin"
-	],
-	"client": [
-		"misc.ClientPlayNetworkHandlerMixin",
-		"misc.CreativeInventoryScreenMixin",
-		"misc.WorldRendererMixin",
-		"network.ClientPlayNetworkHandlerMixin",
-		"player.AbstractClientPlayerEntityMixin",
-		"player.ClientPlayerListEntryMixin",
-		"player.InGameHudMixin",
-		"player.InventoryScreenMixin",
-		"player.MinecraftClientMixin",
-		"player.PlayerEntityRendererMixin",
-		"player.PlayerListHudMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "com.player_level_skills.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityAccessor",
+    "ExampleMixin",
+    "HandledScreenMixin",
+    "MobEntityMixin",
+    "block.AbstractBlockMixin",
+    "block.AbstractFurnaceBlockEntityMixin",
+    "block.BlockMixin",
+    "entity.VehicleEntityAccessor",
+    "item.SwordItemMixin",
+    "item.ToolItemMixin",
+    "misc.ScreenHandlerMixin",
+    "network.ClientPlayPacketListenerMixin",
+    "network.PlayStateFactoriesMixin",
+    "player.ClientPlayerListS2CPacketMixin",
+    "player.CraftingScreenHandlerMixin",
+    "player.HungerManagerMixin",
+    "player.PlayerEntityAccessor",
+    "player.PlayerEntityMixin",
+    "player.PlayerManagerMixin",
+    "player.ServerPlayerEntityMixin"
+  ],
+  "client": [
+    "misc.ClientPlayNetworkHandlerMixin",
+    "misc.CreativeInventoryScreenMixin",
+    "misc.WorldRendererMixin",
+    "network.ClientPlayNetworkHandlerMixin",
+    "player.AbstractClientPlayerEntityMixin",
+    "player.ClientPlayerListEntryMixin",
+    "player.InGameHudMixin",
+    "player.InventoryScreenMixin",
+    "player.MinecraftClientMixin",
+    "player.PlayerEntityRendererMixin",
+    "player.PlayerListHudMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }

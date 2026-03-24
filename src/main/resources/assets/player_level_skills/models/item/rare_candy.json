@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "levelz:item/rare_candy"
+        "layer0": "player_level_skills:item/rare_candy"
     }
 }

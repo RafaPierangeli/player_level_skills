@@ -22,3 +22,24 @@
 /time set day
 /gamemode creative
 /gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/gamemode survival
+/time set night
+/time set day
+/gamemode creative
+/time set day
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival

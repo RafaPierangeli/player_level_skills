@@ -18,12 +18,12 @@ public abstract class MobEntityMixin implements MobEntityAccess {
     private boolean spawnerMob = false;
 
     @Inject(method = "readCustomData", at = @At("TAIL"))
-    private void player_level_skills$readCustomData(ReadView view, CallbackInfo ci) {
+    private void readCustomData(ReadView view, CallbackInfo info) {
         this.spawnerMob = view.getBoolean("SpawnerMob",false);
     }
 
     @Inject(method = "writeCustomData", at = @At("TAIL"))
-    private void player_level_skills$writeCustomData(WriteView view, CallbackInfo ci) {
+    private void writeCustomData(WriteView view, CallbackInfo info) {
         view.putBoolean("SpawnerMob", this.spawnerMob);
     }
 

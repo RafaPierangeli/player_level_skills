@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:netherite_sword": 3,
+      "minecraft:zombie_spawn_egg": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 886,
+      "minecraft:walk_one_cm": 2908,
+      "minecraft:total_world_time": 1375,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 886,
+      "minecraft:damage_dealt": 177,
+      "minecraft:time_since_death": 886
+    },
+    "minecraft:picked_up": {
+      "minecraft:carrot": 1,
+      "minecraft:rotten_flesh": 2
+    }
+  },
+  "DataVersion": 4671
+}

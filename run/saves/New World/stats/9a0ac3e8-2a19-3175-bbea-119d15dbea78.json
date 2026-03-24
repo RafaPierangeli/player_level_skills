@@ -1,0 +1,42 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:golden_apple": 1,
+      "minecraft:baked_potato": 1,
+      "minecraft:carrot": 1,
+      "minecraft:netherite_sword": 34,
+      "minecraft:zombie_spawn_egg": 8
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 7,
+      "minecraft:cow": 1
+    },
+    "minecraft:crafted": {
+      "minecraft:iron_ingot": 46
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3824,
+      "minecraft:walk_one_cm": 20410,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 9,
+      "minecraft:damage_taken": 104,
+      "minecraft:damage_dealt": 1297,
+      "minecraft:play_time": 3824,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 3824,
+      "minecraft:sprint_one_cm": 5221,
+      "minecraft:total_world_time": 6252,
+      "minecraft:fly_one_cm": 671,
+      "minecraft:interact_with_blast_furnace": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:carrot": 1,
+      "minecraft:baked_potato": 1,
+      "minecraft:leather": 2,
+      "minecraft:iron_ingot": 1,
+      "minecraft:beef": 1,
+      "minecraft:rotten_flesh": 8
+    }
+  },
+  "DataVersion": 4671
+}

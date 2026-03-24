@@ -5,6 +5,7 @@ import com.player_level_skills.Player_level_skills;
 import com.player_level_skills.access.ClientPlayerAccess;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.KeyInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.Skill;
 import com.player_level_skills.level.SkillAttribute;
@@ -16,6 +17,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.RenderPipelines;
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
@@ -312,7 +314,7 @@ public class PlayerLevelSkillsScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyInput input) {
-        if (MinecraftClient.getInstance().options.inventoryKey.matchesKey(input)) {
+        if (KeyInit.screenKey.matchesKey(input) || Objects.requireNonNull(client).options.inventoryKey.matchesKey(input)) {
             this.close();
             return true;
         }
@@ -327,40 +329,6 @@ public class PlayerLevelSkillsScreen extends Screen {
         return false;
     }
 
-    //@Override
-//    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-//        if (!this.attributes.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 5, 15, 13, mouseX, mouseY)) {
-//            this.showAttributes = !this.showAttributes;
-//            this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-//            return true;
-//        }
-//
-//        if (this.clientPlayerEntity != null) {
-//            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
-//                this.turnClientPlayer = true;
-//                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-//                return true;
-//            } else if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
-//                this.turnClientPlayer = true;
-//                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-//                return true;
-//            }
-//        }
-//
-//        for (int i = 0; i < 12; i++) {
-//            int skillId = i + this.skillRow * 2;
-//            if (skillId >= this.playerSkills.size()) {
-//                break;
-//            }
-//
-//            if (isPointWithinBounds(this.x + (i % 2 == 0 ? 11 : 99), this.y + 89 + i / 2 * 20, 16, 16, mouseX, mouseY)) {
-//                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
     //@Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         //DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, this.getFocused() != null);
@@ -401,7 +369,7 @@ public class PlayerLevelSkillsScreen extends Screen {
             }
             if (isPointWithinBounds(this.x + (i % 2 == 0 ? 11 : 99), this.y + 89 + i / 2 * 20, 16, 16, mouseX, mouseY)) {
                 this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                //this.client.setScreen(new SkillInfoScreen(this.levelManager, skillId));
+                this.client.setScreen(new SkillInfoScreen(this.levelManager, skillId));
                 return true;
             }
         }
@@ -520,35 +488,37 @@ public class PlayerLevelSkillsScreen extends Screen {
 //            context.setShaderColor(1.0F, 1.0F, 1.0F, this.alpha);
 //            RenderSystem.enabletesBlend();
 //            RenderSystem.enableDepthTest();
+            context.getMatrices().pushMatrix();
             int i = hoverOutline ? this.getTextureY() : 0;
             context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.getX(), this.getY(), this.textureX + i * this.width, this.textureY, this.width, this.height,256,256);
             //context.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+            context.getMatrices().popMatrix();
             if (this.isHovered()) {
-                //context.drawTooltip(minecraftClient.textRenderer, this.tooltip, mouseX, mouseY);
+                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.literal("this.tooltip"), mouseX, mouseY);
             }
         }
 
-//        @Override
-//        public boolean mouseClicked(double mouseX, double mouseY, int button) {
-//            this.clickedKey = button;
-//            if (!this.clickable) {
-//                return false;
-//            }
-//            return super.mouseClicked(mouseX, mouseY, button);
-//        }
-//
-//        @Override
-//        protected boolean isValidClickButton(int button) {
-//            return super.isValidClickButton(button) || button == 1 || button == 2;
-//        }
-//
-//        @Override
-//        public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-//            if (!this.clickable) {
-//                return false;
-//            }
-//            return super.keyPressed(keyCode, scanCode, modifiers);
-//        }
+        //@Override
+        public boolean mouseClicked(double mouseX, double mouseY, int button) {
+            this.clickedKey = button;
+            if (!this.clickable) {
+                return true;
+            }
+            return false;
+        }
+
+        //@Override
+        protected boolean isValidClickButton(Click button) {
+            return super.isValidClickButton(button.buttonInfo());
+        }
+
+        @Override
+        public boolean keyPressed(KeyInput input) {
+            if (!this.clickable) {
+                return false;
+            }
+            return super.keyPressed(input);
+        }
 
         public void addTooltip(Text text) {
             this.tooltip.add(text);

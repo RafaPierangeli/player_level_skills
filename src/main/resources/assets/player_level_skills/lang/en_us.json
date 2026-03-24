@@ -93,8 +93,8 @@
   "text.autoconfig.levelSkills.option.defaultRestrictions": "Default Restrictions",
   "text.autoconfig.levelSkills.option.defaultSkills": "Default Skills",
 
-  "item.levelz.strange_potion": "Strange Potion",
-  "item.levelz.rare_candy": "Rare Candy",
+  "item.player_level_skills.strange_potion": "Strange Potion",
+  "item.player_level_skills.rare_candy": "Rare Candy",
 
   "skill.levelz.info": "§lSkill Info",
   "skill.levelz.constitution": "Constitution",
@@ -109,6 +109,7 @@
   "skill.levelz.cooking": "Cooking",
   "skill.levelz.bartering": "Bartering",
   "skill.levelz.luck": "Luck",
+  "skill.levelz.strike": "strike",
 
   "skill.levelz.constitution.0": "Constitution increases max health",
   "skill.levelz.melee.0": "Melee increases attack dmg",
@@ -233,7 +234,16 @@
   "screen.player_level_skills.title": "Player Level Skills",
   "screen.player_level_skills.level": "Level: %s",
   "screen.player_level_skills.xp": "XP: %s / %s",
-  "screen.player_level_skills.player_title": "%s Skills"
+  "screen.player_level_skills.player_title": "%s Skills",
+
+
+  "restriction.levelz.usable.tooltip": "Usable",
+  "restriction.levelz.craftable.tooltip": "Craftable",
+  "restriction.levelz.mineable.tooltip": "Mineable",
+  "restriction.levelz.block_usage": "Block Usage",
+  "restriction.levelz.melee.tooltip": "Melee %s",
+  "restriction.levelz.constitution.tooltip": "Constitution %s"
+
 
 
 }

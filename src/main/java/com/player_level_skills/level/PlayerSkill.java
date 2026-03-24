@@ -34,11 +34,9 @@ public class PlayerSkill {
         return new PlayerSkill(id, Math.max(0, level));
     }
 
-    public NbtCompound writeDataToNbt(WriteView skillView) {
-        NbtCompound nbt = new NbtCompound();
-        nbt.putInt("Id", this.id);
-        nbt.putInt("Level", this.level);
-        return nbt;
+    public void writeDataToNbt(WriteView skillView) {
+        skillView.putInt("Id", this.id);
+        skillView.putInt("Level", this.level);
     }
 
     public int getId() {

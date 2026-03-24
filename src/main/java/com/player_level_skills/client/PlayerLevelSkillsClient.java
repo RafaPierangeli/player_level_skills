@@ -26,19 +26,19 @@ public class PlayerLevelSkillsClient implements ClientModInitializer {
 
 
 
-        OPEN_SCREEN_KEY = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.player_level_skills.open_screen",
-                InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_K,
-                KeyBinding.Category.MISC
-        ));
-
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (OPEN_SCREEN_KEY.wasPressed()) {
-                if (client.player != null) {
-                    client.setScreen(new PlayerLevelSkillsScreen());
-                }
-            }
-        });
+//        OPEN_SCREEN_KEY = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+//                "key.player_level_skills.open_screen",
+//                InputUtil.Type.KEYSYM,
+//                GLFW.GLFW_KEY_K,
+//                KeyBinding.Category.MISC
+//        ));
+//
+//        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+//            while (OPEN_SCREEN_KEY.wasPressed()) {
+//                if (client.player != null) {
+//                    client.setScreen(new PlayerLevelSkillsScreen());
+//                }
+//            }
+//        });
     }
 }
