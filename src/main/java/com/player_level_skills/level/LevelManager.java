@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -87,7 +88,7 @@ public class LevelManager {
 
         WriteView skillsView = view.get("Skills");
         for (Map.Entry<Integer, PlayerSkill> entry : playerSkills.entrySet()) {
-            WriteView skillView = skillsView.get("Skill_" + entry.getKey());
+            WriteView skillView = skillsView.get("Skill" + entry.getKey());
             entry.getValue().writeDataToNbt(skillView);
         }
     }

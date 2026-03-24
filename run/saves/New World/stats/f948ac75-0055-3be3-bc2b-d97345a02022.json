@@ -1,11 +1,26 @@
 {
   "stats": {
+    "minecraft:picked_up": {
+      "minecraft:lapis_lazuli": 14,
+      "minecraft:raw_iron": 4
+    },
+    "minecraft:mined": {
+      "minecraft:iron_ore": 4,
+      "minecraft:lapis_ore": 2
+    },
+    "minecraft:used": {
+      "minecraft:netherite_pickaxe": 6,
+      "minecraft:iron_ore": 3,
+      "minecraft:lapis_ore": 5
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 691,
-      "minecraft:total_world_time": 1107,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 691,
-      "minecraft:time_since_death": 691
+      "minecraft:time_since_rest": 2308,
+      "minecraft:walk_one_cm": 3295,
+      "minecraft:total_world_time": 2849,
+      "minecraft:leave_game": 3,
+      "minecraft:play_time": 2308,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 2308
     }
   },
   "DataVersion": 4671

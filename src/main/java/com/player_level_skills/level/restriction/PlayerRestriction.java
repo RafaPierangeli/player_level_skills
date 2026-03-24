@@ -1,15 +1,17 @@
 package com.player_level_skills.level.restriction;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerRestriction {
 
     private final int id;
-    private final Map<Integer, Integer> skillLevelRestrictions; // skillid, lvl
+    private final Map<Integer, Integer> skillLevelRestrictions;
 
     public PlayerRestriction(int id, Map<Integer, Integer> skillLevelRestrictions) {
         this.id = id;
-        this.skillLevelRestrictions = skillLevelRestrictions;
+        this.skillLevelRestrictions = Collections.unmodifiableMap(new HashMap<>(skillLevelRestrictions));
     }
 
     public int getId() {

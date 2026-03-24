@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:short_grass": 8,
+      "minecraft:tall_grass": 8,
+      "minecraft:wheat": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 152,
+      "minecraft:time_since_rest": 1113,
+      "minecraft:walk_one_cm": 8745,
+      "minecraft:total_world_time": 1181,
+      "minecraft:leave_game": 1,
+      "minecraft:sneak_time": 1,
+      "minecraft:play_time": 1113,
+      "minecraft:time_since_death": 1113
+    },
+    "minecraft:used": {
+      "minecraft:stone_hoe": 7,
+      "minecraft:bone_meal": 9,
+      "minecraft:wheat_seeds": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:wheat_seeds": 6,
+      "minecraft:wheat": 2
+    }
+  },
+  "DataVersion": 4671
+}

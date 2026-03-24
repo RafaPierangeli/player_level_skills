@@ -37,6 +37,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
 
     @Override
     public void reload(ResourceManager manager) {
+
         // clear skills
         LevelManager.SKILLS.clear();
         // clear bonuses

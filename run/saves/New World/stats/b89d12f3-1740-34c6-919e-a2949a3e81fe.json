@@ -1,0 +1,36 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:farmland": 6,
+      "minecraft:stone_hoe": 140,
+      "minecraft:water_bucket": 1,
+      "minecraft:bone_meal": 186,
+      "minecraft:anvil": 1,
+      "minecraft:wheat_seeds": 80
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 2892,
+      "minecraft:time_since_rest": 11571,
+      "minecraft:walk_one_cm": 60091,
+      "minecraft:total_world_time": 14689,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 2267,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_on_water_one_cm": 24,
+      "minecraft:play_time": 11571,
+      "minecraft:jump": 10,
+      "minecraft:time_since_death": 11571
+    },
+    "minecraft:picked_up": {
+      "minecraft:wheat_seeds": 141,
+      "minecraft:wildflowers": 1,
+      "minecraft:wheat": 71
+    },
+    "minecraft:mined": {
+      "minecraft:short_grass": 38,
+      "minecraft:tall_grass": 3,
+      "minecraft:wheat": 49
+    }
+  },
+  "DataVersion": 4671
+}

@@ -344,7 +344,7 @@
       {
         "id": 7,
         "type": "attack_damage",
-        "base": -1,
+        "base": 0,
         "operation": "ADD_VALUE",
         "value": 1
       }

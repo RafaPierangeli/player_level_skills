@@ -17,7 +17,7 @@
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
-	"lockedHandUsage": true,
+	"lockedHandUsage": false,
 	// Only for Devs
 	"devMode": false,
 	// Bonus id: bowDamage
@@ -47,7 +47,7 @@
 	// Bonus id: miningDropChance
 	"miningDropChanceBonus": 0.009999999776482582,
 	// Bonus id: plantDropChance
-	"plantDropChanceBonus": 0.009999999776482582,
+	"plantDropChanceBonus": 0.10000000149011612,
 	// Bonus id: anvilXpCap
 	"anvilXpCap": 30,
 	// Bonus id: anvilXpDiscount

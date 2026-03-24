@@ -28,6 +28,7 @@ import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
@@ -205,7 +206,7 @@ public class BonusHelper {
     }
 
     public static void miningDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos, LootWorldContext.Builder builder) {
-        if (state.isIn(ConventionalBlockTags.ORES)) {
+        if (state.isIn(ConventionalBlockTags.ORES) && EnchantmentHelper.getEquipmentLevel(playerEntity.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.SILK_TOUCH), playerEntity) <= 0) {
             if (LevelManager.BONUSES.containsKey("miningDropChance")) {
                 LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
                 SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");
@@ -220,9 +221,8 @@ public class BonusHelper {
         }
     }
 
-
     public static void plantDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos) {
-        if (EnchantmentHelper.getEquipmentLevel((RegistryEntry<Enchantment>) Enchantments.SILK_TOUCH, playerEntity) <= 0) {
+        if (EnchantmentHelper.getEquipmentLevel(playerEntity.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.SILK_TOUCH), playerEntity) <= 0) {
             if (LevelManager.BONUSES.containsKey("plantDropChance")) {
                 LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
                 SkillBonus skillBonus = LevelManager.BONUSES.get("plantDropChance");

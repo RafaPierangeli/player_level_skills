@@ -5,11 +5,12 @@
   "mixins": [
     "EntityAccessor",
     "ExampleMixin",
-    "HandledScreenMixin",
+
     "MobEntityMixin",
     "block.AbstractBlockMixin",
     "block.AbstractFurnaceBlockEntityMixin",
     "block.BlockMixin",
+    "block.PlantBlockMixin",
     "entity.VehicleEntityAccessor",
     "item.SwordItemMixin",
     "item.ToolItemMixin",

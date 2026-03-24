@@ -340,12 +340,12 @@ public class PlayerLevelSkillsScreen extends Screen {
         }
         if (!LevelManager.CRAFTING_RESTRICTIONS.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 29, 14, 13, mouseX, mouseY)) {
             this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-            //this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.CRAFTING_RESTRICTIONS, Text.translatable("restriction.levelz.crafting"), 0));
+            this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.CRAFTING_RESTRICTIONS, Text.translatable("restriction.levelz.crafting"), 0));
             return true;
         }
         if (!LevelManager.MINING_RESTRICTIONS.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 45, 14, 13, mouseX, mouseY)) {
             this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-            //this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.MINING_RESTRICTIONS, Text.translatable("restriction.levelz.mining"), 1));
+            this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.MINING_RESTRICTIONS, Text.translatable("restriction.levelz.mining"), 1));
             return true;
         }
         if (this.clientPlayerEntity != null) {
@@ -381,26 +381,16 @@ public class PlayerLevelSkillsScreen extends Screen {
         if (this.showAttributes && this.attributes.size() > 15 && isPointWithinBounds(this.x + 209, this.y + 7, 68, 201, mouseX, mouseY)) {
             int maxAttributeRow = this.attributes.size() - 15;
             int newAttributeRow = this.attributeRow - (int) verticalAmount;
-            if (newAttributeRow < 0) {
-                this.attributeRow = 0;
-            } else {
-                this.attributeRow = Math.min(newAttributeRow, maxAttributeRow);
-            }
+            this.attributeRow = Math.max(0, Math.min(newAttributeRow, maxAttributeRow));
             return true;
         }
 
-        if (this.playerSkills.size() > 12 && isPointWithinBounds(this.x + 7, this.y + 86, 186, 122, mouseX, mouseY)) {
-            int maxSkillRow = (this.playerSkills.size() - 12) / 2;
-            if (this.playerSkills.size() % 2 != 0) {
-                maxSkillRow += 1;
-            }
+        int totalSkills = LevelManager.SKILLS.size();
+        if (totalSkills > 12 && isPointWithinBounds(this.x + 7, this.y + 86, 186, 122, mouseX, mouseY)) {
+            int maxSkillRow = Math.max(0, (int) Math.ceil((totalSkills - 12) / 2.0));
 
             int newSkillRow = this.skillRow - (int) verticalAmount;
-            if (newSkillRow < 0) {
-                this.skillRow = 0;
-            } else {
-                this.skillRow = Math.min(newSkillRow, maxSkillRow);
-            }
+            this.skillRow = Math.max(0, Math.min(newSkillRow, maxSkillRow));
 
             updateLevelButtons();
             return true;

@@ -35,9 +35,9 @@ public class RenderInit {
        // TabRegistry.registerInventoryTab(new VanillaInventoryTab(Text.translatable("container.crafting"), BAG_TAB_ICON, 0, InventoryScreen.class));
         //TabRegistry.registerInventoryTab(new LevelzTab(Text.translatable("screen.levelz.skill_screen"), SKILL_TAB_ICON, 1, LevelScreen.class, SkillInfoScreen.class, SkillRestrictionScreen.class));
 
-//        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
-//            TooltipUtil.renderTooltip(MinecraftClient.getInstance(), drawContext);
-//        });
+        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
+            TooltipUtil.renderTooltip(MinecraftClient.getInstance(), drawContext);
+        });
 
         ItemTooltipCallback.EVENT.register((stack, context, type, lines) -> {
             TooltipUtil.renderItemTooltip(MinecraftClient.getInstance(), stack, lines);
