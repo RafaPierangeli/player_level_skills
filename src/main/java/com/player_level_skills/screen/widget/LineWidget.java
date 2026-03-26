@@ -91,7 +91,7 @@ public class LineWidget {
 
     public void render(DrawContext drawContext, int x, int y, int mouseX, int mouseY) {
         if (text != null) {
-            drawContext.drawText(this.client.textRenderer, this.text, x, y + 4, 0x3F3F3F, false);
+            drawContext.drawText(this.client.textRenderer, this.text, x, y + 4, 0xFF3F3F3F, false);
         } else {
             int separator = 0;
             boolean showTooltip = false;

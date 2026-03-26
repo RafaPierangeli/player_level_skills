@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:diamond_pickaxe": 1,
+      "minecraft:stone_pickaxe": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:coal": 2
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 3
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 776,
+      "minecraft:walk_one_cm": 912,
+      "minecraft:total_world_time": 1703,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 776,
+      "minecraft:time_since_death": 776
+    }
+  },
+  "DataVersion": 4671
+}

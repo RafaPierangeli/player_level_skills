@@ -65,7 +65,6 @@ public class PlayerLevelSkillsScreen extends Screen {
     private final Quaternionf quaternionf = new Quaternionf().rotateZ((float) Math.PI).rotateLocalY(2.7f);
     private boolean turnClientPlayer = false;
 
-    protected int currentPage = 0;
 
     private List<SkillAttribute> attributes = new ArrayList<>();
 
@@ -75,20 +74,10 @@ public class PlayerLevelSkillsScreen extends Screen {
     private final WidgetButtonPage[] levelButtons = new WidgetButtonPage[12];
     private int skillRow = 0;
 
-    private final List<Integer> playerSkills = new ArrayList<>();
+    //private final List<Integer> playerSkills = new ArrayList<>();
 
     public PlayerLevelSkillsScreen() {
         super(Text.translatable("screen.player_level_skills.title"));
-    }
-
-    //ADD Rafa
-    public boolean isExpanded() {
-        return turnClientPlayer;
-    }
-
-    public void toggle() {
-        turnClientPlayer = !turnClientPlayer;
-        currentPage = 0;
     }
 
     @Override
@@ -238,7 +227,6 @@ public class PlayerLevelSkillsScreen extends Screen {
 
 
         if (this.clientPlayerEntity != null) {
-            ClientPlayerEntity player = MinecraftClient.getInstance().player;
             int x = this.width / 2;
             int y = this.height / 2;
             int size = 30; // Base do tamanho
@@ -247,16 +235,16 @@ public class PlayerLevelSkillsScreen extends Screen {
             InventoryScreen.drawEntity(context, this.x + 8, this.y-46, this.x + 56,this.y + 76, 30, 1.0f, mouseX, mouseY, this.clientPlayerEntity);
 
 
-            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
-                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 9, this.y + 67, 0, 138, 15, 10,256,256);
-            } else {
-                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 9, this.y + 67, 0, 128, 15, 10,256,256);
-            }
-            if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
-                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 41, this.y + 67, 15, 138, 15, 10,256,256);
-            } else {
-                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 41, this.y + 67, 15, 128, 15, 10,256,256);
-            }
+//            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 9, this.y + 67, 0, 138, 15, 10,256,256);
+//            } else {
+//                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 9, this.y + 67, 0, 128, 15, 10,256,256);
+//            }
+//            if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 41, this.y + 67, 15, 138, 15, 10,256,256);
+//            } else {
+//                context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.x + 41, this.y + 67, 15, 128, 15, 10,256,256);
+//            }
 
         }
 
@@ -297,22 +285,22 @@ public class PlayerLevelSkillsScreen extends Screen {
         //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-        if (this.clientPlayerEntity != null && this.turnClientPlayer) {
-            double mouseX = this.client.mouse.getX() * (double) this.client.getWindow().getScaledWidth() / (double) this.client.getWindow().getWidth();
-            double mouseY = this.client.mouse.getY() * (double) this.client.getWindow().getScaledHeight() / (double) this.client.getWindow().getHeight();
-
-            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
-                this.quaternionf.rotateLocalY(0.087f);
-            } else if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
-                this.quaternionf.rotateLocalY(-0.087f);
-            } else {
-                this.turnClientPlayer = false;
-            }
-        }
-    }
+//    @Override
+//    public void tick() {
+//        super.tick();
+//        if (this.clientPlayerEntity != null && this.turnClientPlayer) {
+//            double mouseX = this.client.mouse.getX() * (double) this.client.getWindow().getScaledWidth() / (double) this.client.getWindow().getWidth();
+//            double mouseY = this.client.mouse.getY() * (double) this.client.getWindow().getScaledHeight() / (double) this.client.getWindow().getHeight();
+//
+//            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                this.quaternionf.rotateLocalY(0.087f);
+//            } else if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                this.quaternionf.rotateLocalY(-0.087f);
+//            } else {
+//                this.turnClientPlayer = false;
+//            }
+//        }
+//    }
 
     @Override
     public boolean keyPressed(KeyInput input) {
@@ -323,8 +311,8 @@ public class PlayerLevelSkillsScreen extends Screen {
         return super.keyPressed(input);
     }
 
-    //@Override
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+    @Override
+    public boolean mouseReleased(Click click) {
         if (this.turnClientPlayer) {
             this.turnClientPlayer = false;
         }
@@ -354,17 +342,17 @@ public class PlayerLevelSkillsScreen extends Screen {
             return true;
         }
 
-        if (this.clientPlayerEntity != null) {
-            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
-                this.turnClientPlayer = true;
-                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                return true;
-            } else if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
-                this.turnClientPlayer = true;
-                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                return true;
-            }
-        }
+//        if (this.clientPlayerEntity != null) {
+//            if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                this.turnClientPlayer = true;
+//                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+//                return true;
+//            } else if (isPointWithinBounds(this.x + 41, this.y + 67, 15, 10, mouseX, mouseY)) {
+//                this.turnClientPlayer = true;
+//                this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+//                return true;
+//            }
+//        }
 
         for (int i = 0; i < 12; i++) {
             int skillId = i + this.skillRow * 2;
@@ -490,7 +478,7 @@ public class PlayerLevelSkillsScreen extends Screen {
             context.getMatrices().popMatrix();
 
             if (this.isHovered()) {
-                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", net.minecraft.text.Text.translatable(this.tooltip.toString())), mouseX, mouseY);
+                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", this.tooltip.toString()), mouseX, mouseY);
             }
         }
 

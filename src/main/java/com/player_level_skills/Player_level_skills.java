@@ -30,6 +30,7 @@ public class Player_level_skills implements ModInitializer {
 		TagInit.init();
 		//ItemInit.init();
 		ItemInit.registerModItems();
+		RestrictionInit.init();
 
 		LOGGER.info("ALUUU");
 	}

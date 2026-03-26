@@ -14,31 +14,11 @@ import org.lwjgl.glfw.GLFW;
 
 public class PlayerLevelSkillsClient implements ClientModInitializer {
 
-    public static KeyBinding OPEN_SCREEN_KEY;
-
     @Override
     public void onInitializeClient() {
 
         KeyInit.init();
         LevelClientPacket.init();
         RenderInit.init();
-
-
-
-
-//        OPEN_SCREEN_KEY = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-//                "key.player_level_skills.open_screen",
-//                InputUtil.Type.KEYSYM,
-//                GLFW.GLFW_KEY_K,
-//                KeyBinding.Category.MISC
-//        ));
-//
-//        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-//            while (OPEN_SCREEN_KEY.wasPressed()) {
-//                if (client.player != null) {
-//                    client.setScreen(new PlayerLevelSkillsScreen());
-//                }
-//            }
-//        });
     }
 }

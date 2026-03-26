@@ -144,6 +144,9 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         Map<Integer, Skill> sortedMap = new TreeMap<>(LevelManager.SKILLS);
         LevelManager.SKILLS.clear();
         LevelManager.SKILLS.putAll(sortedMap);
+
+        LOGGER.info("Loading skills...");
+        LOGGER.info("02Skills loaded size = {}", LevelManager.SKILLS.size());
     }
 }
 

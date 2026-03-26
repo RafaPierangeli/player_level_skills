@@ -19,6 +19,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.input.KeyInput;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,8 @@ import java.util.TreeMap;
 
 @Environment(EnvType.CLIENT)
 public class SkillInfoScreen extends Screen {
+
+    private static final Logger LOGGER = LogManager.getLogger("LevelZ");
 
     public static final Identifier BACKGROUND_TEXTURE = Player_level_skills.identifierOf("textures/gui/skill_info_background.png");
 
@@ -52,12 +56,16 @@ public class SkillInfoScreen extends Screen {
     protected void init() {
         super.init();
 
+
         this.x = (this.width - this.backgroundWidth) / 2;
         this.y = (this.height - this.backgroundHeight) / 2;
 
         for (int i = 0; i < 50; i++) {
             String skillExtra = "skill.levelz." + this.skill.getKey() + "." + i;
             Text skillExtraText = Text.translatable(skillExtra);
+            LOGGER.info("Skill key = {}", this.skill.getKey());
+            LOGGER.info("Trying skill text key = {}", skillExtra);
+            LOGGER.info("Resolved skill text = {}", skillExtraText.getString());
 
             if (skillExtraText.getString().equals(skillExtra)) {
                 break;
@@ -75,6 +83,10 @@ public class SkillInfoScreen extends Screen {
                     for (int i = 0; i < 50; i++) {
                         String bonusInfo = "bonus.levelz." + bonus.getKey() + "." + i;
                         Text bonusInfoText = Text.translatable(bonusInfo, Text.translatable("text.levelz.gui.short_lower_level", bonus.getLevel()));
+
+                        LOGGER.info("Bonus key = {}", bonus.getKey());
+                        LOGGER.info("Trying bonus text key = {}", bonusInfo);
+                        LOGGER.info("Resolved bonus text = {}", bonusInfoText.getString());
 
                         if (bonusInfoText.getString().equals(bonusInfo)) {
                             break;
@@ -193,7 +205,6 @@ public class SkillInfoScreen extends Screen {
                 this.close();
             }
             return true;
-
         } else if (KeyInit.screenKey.matchesKey(input)) {
             this.client.setScreen(new PlayerLevelSkillsScreen());
             return true;

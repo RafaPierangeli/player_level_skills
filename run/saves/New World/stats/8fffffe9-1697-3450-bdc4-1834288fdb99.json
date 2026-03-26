@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:coal": 2
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 4,
+      "minecraft:lapis_ore": 1
+    },
+    "minecraft:used": {
+      "minecraft:diamond_pickaxe": 3,
+      "minecraft:coal_ore": 10,
+      "minecraft:stone_pickaxe": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 604,
+      "minecraft:time_since_rest": 5225,
+      "minecraft:walk_one_cm": 8954,
+      "minecraft:total_world_time": 7144,
+      "minecraft:leave_game": 3,
+      "minecraft:fly_one_cm": 238,
+      "minecraft:play_time": 5225,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 5225
+    }
+  },
+  "DataVersion": 4671
+}
