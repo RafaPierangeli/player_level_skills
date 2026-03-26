@@ -5,7 +5,6 @@
   "mixins": [
     "EntityAccessor",
     "ExampleMixin",
-
     "MobEntityMixin",
     "block.AbstractBlockMixin",
     "block.AbstractFurnaceBlockEntityMixin",
@@ -26,6 +25,7 @@
     "player.ServerPlayerEntityMixin"
   ],
   "client": [
+    "HandledScreenInfoMixin",
     "misc.ClientPlayNetworkHandlerMixin",
     "misc.CreativeInventoryScreenMixin",
     "misc.WorldRendererMixin",
@@ -33,7 +33,6 @@
     "player.AbstractClientPlayerEntityMixin",
     "player.ClientPlayerListEntryMixin",
     "player.InGameHudMixin",
-    "player.InventoryScreenMixin",
     "player.MinecraftClientMixin",
     "player.PlayerEntityRendererMixin",
     "player.PlayerListHudMixin"

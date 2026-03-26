@@ -13,6 +13,7 @@ import com.player_level_skills.screen.widget.LineWidget;
 //import net.libz.api.Tab;
 //import net.libz.util.DrawTabHelper;
 import net.minecraft.client.gl.RenderPipelines;
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.input.KeyInput;
@@ -176,9 +177,9 @@ public class SkillInfoScreen extends Screen {
         if (this.lines.size() > 10) {
             int scrollLevels = this.lines.size() - 10;
             int sliderY = this.lineIndex * 156 / scrollLevels;
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 20 + sliderY, 200, 0, 6, 31,6,31);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 20 + sliderY, 200, 0, 6, 31,256,256);
         } else {
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 20, 206, 0, 6, 31,6,31);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 20, 206, 0, 6, 31,256,256);
         }
         //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
@@ -200,10 +201,9 @@ public class SkillInfoScreen extends Screen {
         return super.keyPressed(input);
     }
 
-    //@Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        //DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, false);
-        return mouseClicked(mouseX, mouseY, button);
+    @Override
+    public boolean mouseClicked(Click click, boolean doubled) {
+        return super.mouseClicked(click, doubled);
     }
 
     @Override

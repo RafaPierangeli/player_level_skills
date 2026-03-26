@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:lapis_lazuli": 23
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 2711,
+      "minecraft:time_since_rest": 984,
+      "minecraft:walk_one_cm": 804,
+      "minecraft:total_world_time": 1008,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 319,
+      "minecraft:play_time": 984,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 984
+    },
+    "minecraft:mined": {
+      "minecraft:lapis_ore": 3
+    },
+    "minecraft:used": {
+      "minecraft:diamond_pickaxe": 3
+    }
+  },
+  "DataVersion": 4671
+}

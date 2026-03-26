@@ -20,6 +20,8 @@ import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.input.MouseInput;
+import net.minecraft.text.Text;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.input.KeyInput;
@@ -149,7 +151,7 @@ public class PlayerLevelSkillsScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackground(context, mouseX, mouseY, delta);
+        //this.renderBackground(context, mouseX, mouseY, delta);
         super.render(context, mouseX, mouseY, delta);
 
         if (this.client != null && this.client.player != null) {
@@ -172,7 +174,7 @@ public class PlayerLevelSkillsScreen extends Screen {
 
                     int k = 27;
                     for (int i = this.attributeRow; i < this.attributeRow + maxAttributes; i++) {
-                        String attributeKey = "teste";
+                        String attributeKey = this.attributes.get(i).getAttibute().getIdAsString();
                          if (attributeKey.contains(":")) {
                             attributeKey = attributeKey.split(":")[1];
                         }
@@ -236,8 +238,13 @@ public class PlayerLevelSkillsScreen extends Screen {
 
 
         if (this.clientPlayerEntity != null) {
+            ClientPlayerEntity player = MinecraftClient.getInstance().player;
+            int x = this.width / 2;
+            int y = this.height / 2;
+            int size = 30; // Base do tamanho
+            float scale = 1.0f; // Multiplicador de escala
 
-            //InventoryScreen.drawEntity( context, this.x + 33, this.y + 43, 30,30, 30, 30.0f, mouseX, mouseY, this.clientPlayerEntity);
+            InventoryScreen.drawEntity(context, this.x + 8, this.y-46, this.x + 56,this.y + 76, 30, 1.0f, mouseX, mouseY, this.clientPlayerEntity);
 
 
             if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
@@ -268,11 +275,9 @@ public class PlayerLevelSkillsScreen extends Screen {
             if (LevelManager.SKILLS.size() <= skillId) {
                 break;
             }
-            if (this.levelManager.getPlayerSkills().size() <= skillId) {
-                break;
-            }
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + (i % 2 == 0 ? 8 : 96), this.y + 87 + i / 2 * 20, 0, 215, 88, 20,256,256);
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,Player_level_skills.identifierOf("textures/gui/sprites/" + LevelManager.SKILLS.get(skillId).getKey() + ".png"), this.x + (i % 2 == 0 ? 11 : 99), this.y + 89 + i / 2 * 20, 0, 0, 16, 16, 16, 16);
+
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, BACKGROUND_TEXTURE, this.x + (i % 2 == 0 ? 8 : 96), this.y + 87 + i / 2 * 20, 0, 215, 88, 20, 256, 256);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, Player_level_skills.identifierOf("textures/gui/sprites/" + LevelManager.SKILLS.get(skillId).getKey() + ".png"), this.x + (i % 2 == 0 ? 11 : 99), this.y + 89 + i / 2 * 20, 0, 0, 16, 16, 16, 16);
 
             Text skillLevel = Text.translatable("text.levelz.gui.current_level", this.levelManager.getSkillLevel(skillId), LevelManager.SKILLS.get(skillId).getMaxLevel());
             context.drawText(this.textRenderer, skillLevel, this.x + (i % 2 == 0 ? 53 : 141) - this.textRenderer.getWidth(skillLevel) / 2, this.y + 94 + i / 2 * 20, 0xFF3F3F3F, false);
@@ -281,16 +286,13 @@ public class PlayerLevelSkillsScreen extends Screen {
                 context.drawTooltip(this.textRenderer, LevelManager.SKILLS.get(skillId).getText(), mouseX, mouseY);
             }
         }
-        if (this.levelManager.getPlayerSkills().size() > 12) {
-            int scrollLevels = (this.levelManager.getPlayerSkills().size() - 12) / 2;
-            if (this.levelManager.getPlayerSkills().size() % 2 != 0) {
-                scrollLevels += 1;
-            }
-
-             int sliderY = this.skillRow * 86 / scrollLevels;
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 87 + sliderY, 200, 0, 6, 34, 256, 256);
+        int totalSkills = LevelManager.SKILLS.size();
+        if (totalSkills > 12) {
+            int scrollLevels = Math.max(1, (int) Math.ceil((totalSkills - 12) / 2.0));
+            int sliderY = (int) ((this.skillRow * 86.0f) / scrollLevels);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, BACKGROUND_TEXTURE, this.x + 186, this.y + 87 + sliderY, 200, 0, 6, 34, 256, 256);
         } else {
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 87, 206, 0, 6, 34,256,256);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, BACKGROUND_TEXTURE, this.x + 186, this.y + 87, 206, 0, 6, 34, 256, 256);
         }
         //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
@@ -329,25 +331,29 @@ public class PlayerLevelSkillsScreen extends Screen {
         return false;
     }
 
-    //@Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        //DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, this.getFocused() != null);
+    @Override
+    public boolean mouseClicked(Click click, boolean doubled) {
+        double mouseX = click.x();
+        double mouseY = click.y();
 
         if (!this.attributes.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 5, 15, 13, mouseX, mouseY)) {
             this.showAttributes = !this.showAttributes;
             this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
             return true;
         }
+
         if (!LevelManager.CRAFTING_RESTRICTIONS.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 29, 14, 13, mouseX, mouseY)) {
             this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
             this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.CRAFTING_RESTRICTIONS, Text.translatable("restriction.levelz.crafting"), 0));
             return true;
         }
+
         if (!LevelManager.MINING_RESTRICTIONS.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 45, 14, 13, mouseX, mouseY)) {
             this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
             this.client.setScreen(new SkillRestrictionScreen(this.levelManager, LevelManager.MINING_RESTRICTIONS, Text.translatable("restriction.levelz.mining"), 1));
             return true;
         }
+
         if (this.clientPlayerEntity != null) {
             if (isPointWithinBounds(this.x + 9, this.y + 67, 15, 10, mouseX, mouseY)) {
                 this.turnClientPlayer = true;
@@ -359,21 +365,24 @@ public class PlayerLevelSkillsScreen extends Screen {
                 return true;
             }
         }
+
         for (int i = 0; i < 12; i++) {
             int skillId = i + this.skillRow * 2;
             if (LevelManager.SKILLS.size() <= skillId) {
                 break;
             }
-            if (this.levelManager.getPlayerSkills().size() <= skillId) {
-                break;
-            }
-            if (isPointWithinBounds(this.x + (i % 2 == 0 ? 11 : 99), this.y + 89 + i / 2 * 20, 16, 16, mouseX, mouseY)) {
+
+            int iconX = this.x + (i % 2 == 0 ? 11 : 99);
+            int iconY = this.y + 89 + i / 2 * 20;
+
+            if (isPointWithinBounds(iconX, iconY, 16, 16, mouseX, mouseY)) {
                 this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                 this.client.setScreen(new SkillInfoScreen(this.levelManager, skillId));
                 return true;
             }
         }
-        return false;
+
+        return super.mouseClicked(click, doubled);
     }
 
     @Override
@@ -412,25 +421,23 @@ public class PlayerLevelSkillsScreen extends Screen {
 
     public void updateLevelButtons() {
         for (int i = 0; i < this.levelButtons.length; i++) {
-            if (this.levelManager.getPlayerSkills().size() <= i) {
-                break;
-            }
             int skillId = i + this.skillRow * 2;
+
             if (LevelManager.SKILLS.size() <= skillId) {
                 this.levelButtons[i].visible = false;
-                return;
+                continue;
             } else {
                 this.levelButtons[i].visible = true;
             }
 
-
             if (ConfigInit.CONFIG.overallMaxLevel > 0 && this.levelManager.getOverallLevel() >= ConfigInit.CONFIG.overallMaxLevel) {
                 this.levelButtons[i].active = false;
-            } else if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getPlayerSkills().get(skillId).getLevel()) {
+            } else if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getSkillLevel(skillId)) {
                 this.levelButtons[i].active = false;
             } else {
                 this.levelButtons[i].active = this.levelManager.getSkillPoints() > 0;
             }
+
             if (ConfigInit.CONFIG.allowHigherSkillLevel && this.levelManager.getSkillPoints() > 0) {
                 boolean maxedAllSkills = true;
                 for (Skill skillCheck : LevelManager.SKILLS.values()) {
@@ -456,7 +463,7 @@ public class PlayerLevelSkillsScreen extends Screen {
         private final boolean clickable;
         private final int textureX;
         private final int textureY;
-        private List<Text> tooltip = new ArrayList<Text>();
+        private final List<Text> tooltip = new ArrayList<Text>();
         private int clickedKey = -1;
 
         public WidgetButtonPage(int x, int y, int sizeX, int sizeY, int textureX, int textureY, boolean hoverOutline, boolean clickable, @Nullable Text tooltip, ButtonWidget.PressAction onPress) {
@@ -467,6 +474,7 @@ public class PlayerLevelSkillsScreen extends Screen {
             this.textureY = textureY;
             this.width = sizeX;
             this.height = sizeY;
+
             if (tooltip != null) {
                 this.tooltip.add(tooltip);
             }
@@ -475,16 +483,14 @@ public class PlayerLevelSkillsScreen extends Screen {
         @Override
         protected void drawIcon(DrawContext context, int mouseX, int mouseY, float deltaTicks) {
             MinecraftClient minecraftClient = MinecraftClient.getInstance();
-//            context.setShaderColor(1.0F, 1.0F, 1.0F, this.alpha);
-//            RenderSystem.enabletesBlend();
-//            RenderSystem.enableDepthTest();
+
             context.getMatrices().pushMatrix();
             int i = hoverOutline ? this.getTextureY() : 0;
-            context.drawTexture(RenderPipelines.GUI_TEXTURED,ICON_TEXTURE, this.getX(), this.getY(), this.textureX + i * this.width, this.textureY, this.width, this.height,256,256);
-            //context.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, ICON_TEXTURE, this.getX(), this.getY(), this.textureX + i * this.width, this.textureY, this.width, this.height, 256, 256);
             context.getMatrices().popMatrix();
+
             if (this.isHovered()) {
-                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.literal("this.tooltip"), mouseX, mouseY);
+                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", net.minecraft.text.Text.translatable(this.tooltip.toString())), mouseX, mouseY);
             }
         }
 
@@ -492,14 +498,14 @@ public class PlayerLevelSkillsScreen extends Screen {
         public boolean mouseClicked(double mouseX, double mouseY, int button) {
             this.clickedKey = button;
             if (!this.clickable) {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
-        //@Override
-        protected boolean isValidClickButton(Click button) {
-            return super.isValidClickButton(button.buttonInfo());
+        @Override
+        protected boolean isValidClickButton(MouseInput input) {
+            return super.isValidClickButton(input);
         }
 
         @Override
@@ -509,7 +515,6 @@ public class PlayerLevelSkillsScreen extends Screen {
             }
             return super.keyPressed(input);
         }
-
         public void addTooltip(Text text) {
             this.tooltip.add(text);
         }

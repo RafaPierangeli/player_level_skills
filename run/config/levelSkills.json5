@@ -103,7 +103,7 @@
 	"showLevelList": true,
 	"showLevel": true,
 	// Switch levelz screen instead of closing with inventory key
-	"switchScreen": false,
+	"switchScreen": true,
 	"showLockedBlockInfo": true,
 	"lockedBlockInfoPosX": 0,
 	"lockedBlockInfoPosY": 0,

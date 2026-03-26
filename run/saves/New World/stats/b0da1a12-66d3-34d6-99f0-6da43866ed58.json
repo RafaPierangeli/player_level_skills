@@ -2,12 +2,12 @@
   "stats": {
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 1040,
-      "minecraft:time_since_rest": 363,
+      "minecraft:time_since_rest": 1169,
       "minecraft:walk_one_cm": 1061,
-      "minecraft:total_world_time": 393,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 363,
-      "minecraft:time_since_death": 363
+      "minecraft:total_world_time": 1243,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 1169,
+      "minecraft:time_since_death": 1169
     },
     "minecraft:used": {
       "minecraft:netherite_pickaxe": 4,

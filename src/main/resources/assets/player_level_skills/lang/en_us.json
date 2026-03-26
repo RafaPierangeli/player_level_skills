@@ -242,8 +242,9 @@
   "restriction.levelz.mineable.tooltip": "Mineable",
   "restriction.levelz.block_usage": "Block Usage",
   "restriction.levelz.melee.tooltip": "Melee %s",
-  "restriction.levelz.constitution.tooltip": "Constitution %s"
-
+  "restriction.levelz.constitution.tooltip": "Constitution %s",
+  "text.levelz.gui.up_level": "Up Level %s",
+  "text.levelz.gui.short_level_button": "Open skills screen"
 
 
 }
