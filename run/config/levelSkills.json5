@@ -3,7 +3,7 @@
 	"overallMaxLevel": 0,
 	// In combination with overallMaxLevel, only when all skills maxed
 	"allowHigherSkillLevel": false,
-	"startPoints": 50,
+	"startPoints": 5,
 	"pointsPerLevel": 3,
 	/* If true will reset stats on death 
 	   !!!deprecated, not in use!!!
@@ -13,7 +13,7 @@
 	"levelRetainPercentage": 100.0,
 	"disableMobFarms": true,
 	// Amount of allowed mob kills in a chunk
-	"mobKillCount": 600,
+	"mobKillCount": 6,
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
@@ -47,11 +47,11 @@
 	// Bonus id: miningDropChance
 	"miningDropChanceBonus": 0.009999999776482582,
 	// Bonus id: plantDropChance
-	"plantDropChanceBonus": 0.10000000149011612,
+	"plantDropChanceBonus": 0.009999999776482582,
 	// Bonus id: anvilXpCap
 	"anvilXpCap": 30,
 	// Bonus id: anvilXpDiscount
-	"anvilXpDiscountBonus": 0.009999999776482582,
+	"anvilXpDiscountBonus": 0.019999999552965164,
 	// Bonus id: anvilXpChance
 	"anvilXpChanceBonus": 0.009999999776482582,
 	// Bonus id: healthRegen
@@ -82,7 +82,7 @@
 	"xpBaseCost": 50,
 	// 0 = no experience cap
 	"xpMaxCost": 0,
-	"resetCurrentXp": false,
+	"resetCurrentXp": true,
 	"dropXPbasedOnLvl": false,
 	// 0.01 = 1% more xp per lvl
 	"basedOnMultiplier": 0.009999999776482582,
@@ -94,17 +94,17 @@
 	"oreXPMultiplier": 1.0,
 	"tradingXPMultiplier": 0.30000001192092896,
 	"mobXPMultiplier": 1.0,
-	"spawnerMobXP": true,
+	"spawnerMobXP": false,
 	// Highlight locked blocks in red.
-	"highlightLocked": true,
+	"highlightLocked": false,
 	"inventorySkillLevel": true,
 	"inventorySkillLevelPosX": 0,
 	"inventorySkillLevelPosY": 0,
 	"showLevelList": true,
 	"showLevel": true,
 	// Switch levelz screen instead of closing with inventory key
-	"switchScreen": true,
-	"showLockedBlockInfo": true,
+	"switchScreen": false,
+	"showLockedBlockInfo": false,
 	"lockedBlockInfoPosX": 0,
 	"lockedBlockInfoPosY": 0,
 	"restrictions": true,

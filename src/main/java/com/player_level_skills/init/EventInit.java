@@ -100,7 +100,8 @@ public class EventInit {
 
                 newLevelManager.setOverallLevel(retainedLevel);
                 PacketHelper.updateLevels(newPlayer);
-                newPlayer.getEntityWorld().getServer().getPlayerManager().sendToAll(new PlayerListS2CPacket(PlayerListS2CPacket.Action.UPDATE_GAME_MODE, newPlayer));
+                Objects.requireNonNull(newPlayer.getEntityWorld().getServer()).getPlayerManager().sendToAll(new PlayerListS2CPacket(PlayerListS2CPacket.Action.UPDATE_GAME_MODE, newPlayer));
+                // Antigo: newPlayer.getEntityWorld().getServer().getPlayerManager().sendToAll(new PlayerListS2CPacket(PlayerListS2CPacket.Action.UPDATE_GAME_MODE, newPlayer));
             } else {
                 PacketHelper.updatePlayerSkills(newPlayer, oldPlayer);
 

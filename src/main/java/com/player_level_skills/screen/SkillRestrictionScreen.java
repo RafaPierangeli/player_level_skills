@@ -8,9 +8,10 @@ import com.player_level_skills.init.KeyInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.restriction.PlayerRestriction;
 import com.player_level_skills.screen.widget.LineWidget;
-//import net.libz.api.Tab;
-//import net.libz.util.DrawTabHelper;
+import net.libz.api.Tab;
+import net.libz.util.DrawTabHelper;
 import net.minecraft.client.gl.RenderPipelines;
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.input.KeyInput;
@@ -27,7 +28,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Environment(EnvType.CLIENT)
-public class SkillRestrictionScreen extends Screen {
+public class SkillRestrictionScreen extends Screen implements Tab {
 
     public static final Identifier BACKGROUND_TEXTURE = Player_level_skills.identifierOf("textures/gui/skill_info_background.png");
 
@@ -101,7 +102,7 @@ public class SkillRestrictionScreen extends Screen {
         int sortV = this.sortAlphabetical ? 180 : 166;
         context.drawTexture(RenderPipelines.GUI_TEXTURED,PlayerLevelSkillsScreen.ICON_TEXTURE, this.x + 179, this.y + 4, sortU, sortV, 14, 14,256,256);
 
-        //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
+        DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
 
     @Override
@@ -121,9 +122,13 @@ public class SkillRestrictionScreen extends Screen {
         return super.keyPressed(input);
     }
 
-    //@Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        //DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, false);
+    @Override
+    public boolean mouseClicked(Click click, boolean doubled) {
+        double mouseX = click.x();
+        double mouseY = click.y();
+
+        DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, false);
+
         if (PlayerLevelSkillsScreen.isPointWithinBounds(this.x + 179, this.y + 4, 14, 14, mouseX, mouseY)) {
             this.sortAlphabetical = !this.sortAlphabetical;
             sortRestrictions();

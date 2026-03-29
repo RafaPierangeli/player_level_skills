@@ -42,8 +42,7 @@ public abstract class HandledScreenInfoMixin<T extends ScreenHandler> extends Sc
     @Shadow protected T handler;
 
     @Unique
-    private static final Identifier SKILL_ICON =
-            Identifier.of(Player_level_skills.MOD_ID, "textures/gui/skill_book.png");
+    private static final Identifier SKILL_ICON = Identifier.of(Player_level_skills.MOD_ID, "textures/gui/skill_book.png");
 
     protected HandledScreenInfoMixin(Text title) {
         super(title);

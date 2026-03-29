@@ -1,11 +1,16 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:stone_hoe": 5
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 287,
-      "minecraft:total_world_time": 306,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 287,
-      "minecraft:time_since_death": 287
+      "minecraft:time_since_rest": 5720,
+      "minecraft:walk_one_cm": 1204,
+      "minecraft:total_world_time": 25432,
+      "minecraft:leave_game": 3,
+      "minecraft:interact_with_anvil": 11,
+      "minecraft:play_time": 5720,
+      "minecraft:time_since_death": 5720
     }
   },
   "DataVersion": 4671

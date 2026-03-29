@@ -191,7 +191,7 @@ public class player_level_skillsConfig implements ConfigData {
     //@ConfigSync.ClientOnly
     @ConfigEntry.Category("gui_settings")
     @Comment("Switch levelz screen instead of closing with inventory key")
-    public boolean switchScreen = true;
+    public boolean switchScreen = false;
     //@ConfigSync.ClientOnly
     @ConfigEntry.Category("gui_settings")
     public boolean showLockedBlockInfo = false;

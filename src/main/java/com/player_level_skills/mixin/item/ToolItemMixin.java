@@ -17,34 +17,27 @@ public class ToolItemMixin {
 
     @Inject(method = "postHit", at = @At("HEAD"), cancellable = true)
     private void postHitMixin(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfo ci) {
-        if (!(attacker instanceof PlayerEntity playerEntity)) {
-            return;
-        }
-
-        if (playerEntity.isCreative()) {
-            return;
-        }
-
-        LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-        if (!levelManager.hasRequiredItemLevel(stack.getItem())) {
-
-            ci.cancel();
+        if (attacker instanceof PlayerEntity playerEntity) {
+            if (playerEntity.isCreative()) {
+                return;
+            }
+            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+            if (!levelManager.hasRequiredItemLevel(stack.getItem())) {
+                ci.cancel();
+            }
         }
     }
 
     @Inject(method = "postDamageEntity", at = @At("HEAD"), cancellable = true)
-    private void postDamageEntityMixin(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfo ci) {
-        if (!(attacker instanceof PlayerEntity playerEntity)) {
-            return;
-        }
-
-        if (playerEntity.isCreative()) {
-            return;
-        }
-
-        LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-        if (!levelManager.hasRequiredItemLevel(stack.getItem())) {
-            ci.cancel();
+    private void postMineMixin(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfo info) {
+        if (attacker instanceof PlayerEntity playerEntity) {
+            if (playerEntity.isCreative()) {
+                return;
+            }
+            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+            if (!levelManager.hasRequiredItemLevel(stack.getItem())) {
+                info.cancel();
+            }
         }
     }
 }

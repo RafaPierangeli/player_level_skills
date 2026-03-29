@@ -10,13 +10,15 @@ import com.player_level_skills.level.Skill;
 import com.player_level_skills.level.SkillBonus;
 import com.player_level_skills.level.restriction.PlayerRestriction;
 import com.player_level_skills.screen.widget.LineWidget;
-//import net.libz.api.Tab;
-//import net.libz.util.DrawTabHelper;
+import net.libz.api.Tab;
+import net.libz.util.DrawTabHelper;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.input.KeyInput;
+import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -28,7 +30,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @Environment(EnvType.CLIENT)
-public class SkillInfoScreen extends Screen {
+public class SkillInfoScreen extends Screen implements Tab {
 
     private static final Logger LOGGER = LogManager.getLogger("LevelZ");
 
@@ -193,28 +195,45 @@ public class SkillInfoScreen extends Screen {
         } else {
             context.drawTexture(RenderPipelines.GUI_TEXTURED,BACKGROUND_TEXTURE, this.x + 186, this.y + 20, 206, 0, 6, 31,256,256);
         }
-        //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
+        DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
 
     @Override
     public boolean keyPressed(KeyInput input) {
         if (this.client.options.inventoryKey.matchesKey(input)) {
-            if (ConfigInit.CONFIG.switchScreen) {
-                this.client.setScreen(new PlayerLevelSkillsScreen());
-            } else {
-                this.close();
-            }
+            this.close();
             return true;
-        } else if (KeyInit.screenKey.matchesKey(input)) {
+        }
+
+        if (KeyInit.screenKey.matchesKey(input)) {
             this.client.setScreen(new PlayerLevelSkillsScreen());
             return true;
         }
+
         return super.keyPressed(input);
     }
 
     @Override
+    public void close() {
+        this.client.setScreen(new PlayerLevelSkillsScreen());
+    }
+
+    @Override
     public boolean mouseClicked(Click click, boolean doubled) {
+
+        double mouseX = click.x();
+        double mouseY = click.y();
+
+        if (isPointWithinBounds(this.x, this.y,16,16, mouseX, mouseY)){
+            DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, false);
+            this.client.getSoundManager().play(PositionedSoundInstance.ui(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+        }
+
         return super.mouseClicked(click, doubled);
+    }
+
+    public static boolean isPointWithinBounds(int x, int y, int width, int height, double pointX, double pointY) {
+        return pointX >= (double) (x - 1) && pointX < (double) (x + width + 1) && pointY >= (double) (y - 1) && pointY < (double) (y + height + 1);
     }
 
     @Override

@@ -1,5 +1,10 @@
 package com.player_level_skills.init;
 
+import com.player_level_skills.screen.PlayerLevelSkillsScreen;
+import com.player_level_skills.screen.SkillInfoScreen;
+import com.player_level_skills.screen.SkillRestrictionScreen;
+import com.player_level_skills.screen.widget.LevelzTab;
+import com.player_level_skills.screen.widget.VanillaInventoryTab;
 import com.player_level_skills.util.TooltipUtil;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -8,13 +13,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import com.player_level_skills.Player_level_skills;
 import com.player_level_skills.entity.render.LevelExperienceOrbEntityRenderer;
-//import com.player_level_skills.screen.SkillInfoScreen;
-//import com.player_level_skills.screen.SkillRestrictionScreen;
-//import com.player_level_skills.screen.LevelScreen;
-//import com.player_level_skills.screen.widget.LevelzTab;
-//import com.player_level_skills.screen.widget.VanillaInventoryTab;
-//import com.player_level_skills.util.Tooltip;
-//import net.libz.registry.TabRegistry;
+import net.libz.registry.TabRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.text.Text;
@@ -32,8 +31,8 @@ public class RenderInit {
     public static void init() {
         EntityRendererRegistry.register(EntityInit.LEVEL_EXPERIENCE_ORB, LevelExperienceOrbEntityRenderer::new);
 
-       //TabRegistry.registerInventoryTab(new VanillaInventoryTab(Text.translatable("container.crafting"), BAG_TAB_ICON, 0, InventoryScreen.class));
-        //TabRegistry.registerInventoryTab(new LevelzTab(Text.translatable("screen.levelz.skill_screen"), SKILL_TAB_ICON, 1, LevelScreen.class, SkillInfoScreen.class, SkillRestrictionScreen.class));
+       TabRegistry.registerInventoryTab(new VanillaInventoryTab(Text.translatable("container.crafting"), BAG_TAB_ICON, 0, InventoryScreen.class));
+       TabRegistry.registerInventoryTab(new LevelzTab(Text.translatable("screen.levelz.skill_screen"), SKILL_TAB_ICON, 1, PlayerLevelSkillsScreen.class, SkillInfoScreen.class, SkillRestrictionScreen.class));
 
         HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
             TooltipUtil.renderTooltip(MinecraftClient.getInstance(), drawContext);

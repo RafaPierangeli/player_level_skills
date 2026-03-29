@@ -84,7 +84,7 @@ public class LevelServerPacket {
                 // Collection<EntityAttributeInstance> collection = context.player().getAttributes().getAttributesToSend();
                 // context.player().networkHandler.sendPacket(new EntityAttributesS2CPacket(context.player().getId(), collection));
                 // Is required lul
-                context.player().networkHandler.sendPacket(new EntityAttributesS2CPacket(context.player().getId(), List.of(Objects.requireNonNull(context.player().getAttributeInstance(EntityAttributes.ATTACK_DAMAGE)))));
+                context.player().networkHandler.sendPacket(new EntityAttributesS2CPacket(context.player().getId(), List.of(context.player().getAttributeInstance(EntityAttributes.ATTACK_DAMAGE))));
             });
         });
     }
@@ -93,3 +93,4 @@ public class LevelServerPacket {
         return new PacketType<>(NetworkSide.CLIENTBOUND, Identifier.ofVanilla(id));
     }
 }
+

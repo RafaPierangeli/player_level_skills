@@ -31,7 +31,7 @@ public abstract class ClientPlayNetworkHandlerMixin extends ClientCommonNetworkH
 
     @Override
     public void onLevelExperienceOrbSpawn(OrbPacket packet) {
-        NetworkThreadUtils.forceMainThread(packet, (ClientPlayNetworkHandler) (Object) this, this.client.getPacketApplyBatcher());
+        NetworkThreadUtils.forceMainThread(packet, (ClientPlayNetworkHandler) (Object) this, this.client.getPacketApplyBatcher()); //add getPacketApplyBatcher()
         double d = packet.getX();
         double e = packet.getY();
         double f = packet.getZ();

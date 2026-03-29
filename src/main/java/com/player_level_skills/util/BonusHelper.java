@@ -254,20 +254,46 @@ public class BonusHelper {
         return false;
     }
 
-    public static int anvilXpDiscountBonus(PlayerEntity playerEntity, int levelCost) {
-        if (levelCost > ConfigInit.CONFIG.anvilXpCap && anvilXpCapBonus(playerEntity)) {
-            return ConfigInit.CONFIG.anvilXpCap;
-        }
+
+//    public static int anvilXpDiscountBonus(PlayerEntity playerEntity, int levelCost) {
+////        if (levelCost > ConfigInit.CONFIG.anvilXpCap && anvilXpCapBonus(playerEntity)) {
+////            return ConfigInit.CONFIG.anvilXpCap;
+////        }
+//        if (LevelManager.BONUSES.containsKey("anvilXpDiscount")) {
+//            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+//            SkillBonus skillBonus = LevelManager.BONUSES.get("anvilXpDiscount");
+//            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+//            if (level >= skillBonus.getLevel()) {
+//                return Math.round(levelCost * (1.0f - level * ConfigInit.CONFIG.anvilXpDiscountBonus));
+//            }
+//            if
+//        }
+//        return levelCost;
+//    }
+
+    public static int anvilXpDiscountBonus(PlayerEntity playerEntity, int levelCost, boolean keepSecondSlot) {
+    //        if (levelCost > ConfigInit.CONFIG.anvilXpCap && anvilXpCapBonus(playerEntity)) {
+    //            return ConfigInit.CONFIG.anvilXpCap;
+    //        }
+        int custoFinal = levelCost;
         if (LevelManager.BONUSES.containsKey("anvilXpDiscount")) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             SkillBonus skillBonus = LevelManager.BONUSES.get("anvilXpDiscount");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
             if (level >= skillBonus.getLevel()) {
-                return (int) (levelCost * (1.0f - level * ConfigInit.CONFIG.anvilXpDiscountBonus));
+                custoFinal = Math.round(levelCost * (1.0f - level * ConfigInit.CONFIG.anvilXpDiscountBonus));
+            }
+
+        }
+
+        if (keepSecondSlot && custoFinal >= 40) {
+            if (anvilXpCapBonus(playerEntity)) {
+                return 39; // Trava em 39 para permitir renomear sem o erro "Muito Caro"
             }
         }
-        return levelCost;
+        return custoFinal ;
     }
+
 
     public static boolean anvilXpChanceBonus(PlayerEntity playerEntity) {
         if (LevelManager.BONUSES.containsKey("anvilXpChance")) {

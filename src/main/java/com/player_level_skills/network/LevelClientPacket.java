@@ -1,5 +1,6 @@
 package com.player_level_skills.network;
 
+import com.player_level_skills.screen.PlayerLevelSkillsScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -120,9 +121,9 @@ public class LevelClientPacket {
             context.client().execute(() -> {
                 LevelManager levelManager = ((LevelManagerAccess) context.player()).getLevelManager();
                 levelManager.setSkillLevel(id, level);
-                //if (context.client().currentScreen instanceof LevelScreen levelScreen) {
-                //    levelScreen.updateLevelButtons();
-                //}
+                if (context.client().currentScreen instanceof PlayerLevelSkillsScreen playerLevelSkillsScreen) {
+                    playerLevelSkillsScreen.updateLevelButtons();
+                }
             });
         });
 

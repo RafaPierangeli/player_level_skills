@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:lapis_ore": 1
+    },
+    "minecraft:used": {
+      "minecraft:golden_apple": 1,
+      "minecraft:diamond_pickaxe": 1,
+      "minecraft:netherite_axe": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 800,
+      "minecraft:time_since_rest": 1045,
+      "minecraft:walk_one_cm": 4824,
+      "minecraft:total_world_time": 1092,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:damage_taken": 57,
+      "minecraft:play_time": 1045,
+      "minecraft:damage_dealt": 70,
+      "minecraft:time_since_death": 1045
+    }
+  },
+  "DataVersion": 4671
+}

@@ -35,7 +35,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.PlayerInput;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
-import org.joml.Vector3f;
+import net.libz.api.Tab;
+import net.libz.util.DrawTabHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ import java.util.*;
 
 @Environment(EnvType.CLIENT)
 
-public class PlayerLevelSkillsScreen extends Screen {
+public class PlayerLevelSkillsScreen extends Screen implements Tab {
 
     public static final Identifier BACKGROUND_TEXTURE = Identifier.of(Player_level_skills.MOD_ID, "textures/gui/skill_background.png");
 
@@ -282,7 +283,7 @@ public class PlayerLevelSkillsScreen extends Screen {
         } else {
             context.drawTexture(RenderPipelines.GUI_TEXTURED, BACKGROUND_TEXTURE, this.x + 186, this.y + 87, 206, 0, 6, 34, 256, 256);
         }
-        //DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
+        DrawTabHelper.drawTab(client, context, this, this.x, this.y, mouseX, mouseY);
     }
 
 //    @Override
@@ -323,6 +324,8 @@ public class PlayerLevelSkillsScreen extends Screen {
     public boolean mouseClicked(Click click, boolean doubled) {
         double mouseX = click.x();
         double mouseY = click.y();
+
+        DrawTabHelper.onTabButtonClick(client, this, this.x, this.y, mouseX, mouseY, this.getFocused() != null);
 
         if (!this.attributes.isEmpty() && isPointWithinBounds(this.x + 178, this.y + 5, 15, 13, mouseX, mouseY)) {
             this.showAttributes = !this.showAttributes;

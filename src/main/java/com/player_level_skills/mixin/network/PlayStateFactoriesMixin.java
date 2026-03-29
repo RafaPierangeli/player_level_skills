@@ -13,7 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PlayStateFactoriesMixin {
 
     @Inject(method = "method_55958", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/state/NetworkStateBuilder;add(Lnet/minecraft/network/packet/PacketType;Lnet/minecraft/network/codec/PacketCodec;)Lnet/minecraft/network/state/NetworkStateBuilder;", ordinal = 1))
-    private static void method_55958Mixin(NetworkStateBuilder builder, CallbackInfo ci) {
+    private static void method_55958Mixin(NetworkStateBuilder builder, CallbackInfo info) {
         builder.add(LevelServerPacket.ADD_LEVEL_EXPERIENCE_ORB, OrbPacket.CODEC);
     }
 }
+//chance CallbackInfo info to ci

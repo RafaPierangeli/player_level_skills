@@ -2,6 +2,7 @@ package com.player_level_skills.level;
 
 import com.player_level_skills.config.ConfigInit;
 import com.player_level_skills.level.restriction.PlayerRestriction;
+import com.player_level_skills.registry.EnchantmentRegistry;
 import com.player_level_skills.util.LevelHelper;
 import com.player_level_skills.util.PacketHelper;
 import net.minecraft.block.Block;
@@ -296,24 +297,24 @@ public class LevelManager {
 
     // enchantment
     public boolean hasRequiredEnchantmentLevel(RegistryEntry<Enchantment> enchantment, int level) {
-     //   int enchantmentId = Enchantment.getName(EnchantmentRegistry.getId(enchantment, level);
-    //    if (ENCHANTMENT_RESTRICTIONS.containsKey(enchantmentId)) {
-    //        PlayerRestriction playerRestriction = ENCHANTMENT_RESTRICTIONS.get(enchantmentId);
-    //        for (Map.Entry<Integer, Integer> entry : playerRestriction.getSkillLevelRestrictions().entrySet()) {
-    //            if (this.getSkillLevel(entry.getKey()) < entry.getValue()) {
-    //                return false;
-    //            }
-    //        }
-    //    }
+        int enchantmentId = EnchantmentRegistry.getId(enchantment, level);
+        if (ENCHANTMENT_RESTRICTIONS.containsKey(enchantmentId)) {
+            PlayerRestriction playerRestriction = ENCHANTMENT_RESTRICTIONS.get(enchantmentId);
+            for (Map.Entry<Integer, Integer> entry : playerRestriction.getSkillLevelRestrictions().entrySet()) {
+                if (this.getSkillLevel(entry.getKey()) < entry.getValue()) {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
     public Map<Integer, Integer> getRequiredEnchantmentLevel(RegistryEntry<Enchantment> enchantment, int level) {
-    //    int enchantmentId = EnchantmentRegistry.getId(enchantment, level);
-    //    if (ENCHANTMENT_RESTRICTIONS.containsKey(enchantmentId)) {
-    //        PlayerRestriction playerRestriction = ENCHANTMENT_RESTRICTIONS.get(enchantmentId);
-    //        return playerRestriction.getSkillLevelRestrictions();
-    //    }
+        int enchantmentId = EnchantmentRegistry.getId(enchantment, level);
+        if (ENCHANTMENT_RESTRICTIONS.containsKey(enchantmentId)) {
+            PlayerRestriction playerRestriction = ENCHANTMENT_RESTRICTIONS.get(enchantmentId);
+            return playerRestriction.getSkillLevelRestrictions();
+        }
         return Map.of(0, 0);
     }
 
