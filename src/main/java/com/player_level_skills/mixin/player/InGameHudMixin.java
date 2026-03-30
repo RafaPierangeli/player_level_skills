@@ -28,12 +28,13 @@ public interface InGameHudMixin {
         if (((LevelManagerAccess) client.player).getLevelManager().hasAvailableLevel()) {
             color = 0xFF00E5FF;
         }
+        int shadow = 0XFF000000;
 
         Text text = Text.literal(Integer.toString(level));
 
         // posição vanilla aproximada: precisa ajustar se quiser pixel-perfect
         int x = context.getScaledWindowWidth() / 2 - textRenderer.getWidth(text) / 2;
-        int y = context.getScaledWindowHeight() - 36;
+        int y = context.getScaledWindowHeight() - 35;
 
         context.drawText(textRenderer, text, x, y, color, true);
         ci.cancel();

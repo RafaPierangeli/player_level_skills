@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:baked_potato": 7,
+      "minecraft:iron_ingot": 21
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_furnace": 2,
+      "minecraft:time_since_rest": 2142,
+      "minecraft:walk_one_cm": 582,
+      "minecraft:total_world_time": 7625,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 2142,
+      "minecraft:interact_with_blast_furnace": 6,
+      "minecraft:time_since_death": 2142
+    }
+  },
+  "DataVersion": 4671
+}

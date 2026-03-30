@@ -16,6 +16,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -87,24 +88,61 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
-    @Inject(method = "dropExperience", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ExperienceOrbEntity;spawn(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/Vec3d;I)V"))
-    protected void dropExperience(CallbackInfo info) {
-        if (ConfigInit.CONFIG.mobXPMultiplier > 0.0F) {
-            if ((Object) this instanceof MobEntity mobEntity && ((MobEntityAccess) mobEntity).isSpawnerMob()) {
-            } else {
-                LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos(),
-                        (int) (this.getExperienceToDrop() * ConfigInit.CONFIG.mobXPMultiplier
-                                * (ConfigInit.CONFIG.dropXPbasedOnLvl && this.attackingPlayer != null
-                                ? 1.0F + ConfigInit.CONFIG.basedOnMultiplier * ((LevelManagerAccess) this.attackingPlayer).getLevelManager().getOverallLevel()
-                                : 1.0F)));
+
+
+
+        @Unique
+        @Nullable
+        private ServerPlayerEntity serverPlayerEntity = null;
+
+        @Inject(method = "dropExperience", at = @At("HEAD"))
+        private void dropExperienceMixin(ServerWorld world, @Nullable Entity attacker, CallbackInfo info) {
+            if (ConfigInit.CONFIG.mobXPMultiplier <= 0.0F) {
+                return;
             }
+
+            if (attacker instanceof ServerPlayerEntity player) {
+                this.serverPlayerEntity = player;
+            } else {
+                this.serverPlayerEntity = null;
+            }
+
+            int baseXp = this.getExperienceToDrop();
+
+            float customXp = baseXp * ConfigInit.CONFIG.mobXPMultiplier;
+
+            if (ConfigInit.CONFIG.dropXPbasedOnLvl && this.serverPlayerEntity != null) {
+                customXp *= 1.0F + ConfigInit.CONFIG.basedOnMultiplier
+                        * ((LevelManagerAccess) this.serverPlayerEntity).getLevelManager().getOverallLevel();
+            }
+
+            int finalXp = Math.max(1, Math.round(customXp));
+
+            LevelExperienceOrbEntity.spawn(world, this.getEntityPos(), finalXp);
         }
+
+        @Shadow
+        protected abstract int getExperienceToDrop();
     }
 
-    @Unique
-    @Shadow
-    protected int getExperienceToDrop() {
-        return 0;
-    }
+//    @Inject(method = "dropExperience", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ExperienceOrbEntity;spawn(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/Vec3d;I)V"))
+//    protected void dropExperience(CallbackInfo info) {
+//        if (ConfigInit.CONFIG.mobXPMultiplier > 0.0F) {
+//            if ((Object) this instanceof MobEntity mobEntity && ((MobEntityAccess) mobEntity).isSpawnerMob()) {
+//            } else {
+//                LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos(),
+//                        (int) (this.getExperienceToDrop() * ConfigInit.CONFIG.mobXPMultiplier
+//                                * (ConfigInit.CONFIG.dropXPbasedOnLvl && this.attackingPlayer != null
+//                                ? 1.0F + ConfigInit.CONFIG.basedOnMultiplier * ((LevelManagerAccess) this.attackingPlayer).getLevelManager().getOverallLevel()
+//                                : 1.0F)));
+//            }
+//        }
+//    }
+//
+//    @Unique
+//    @Shadow
+//    protected int getExperienceToDrop() {
+//        return 0;
+//    }
 
-}
+

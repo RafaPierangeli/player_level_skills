@@ -1,33 +1,4 @@
 /gamemode survival
-/time set day
-/gamemode survival
-/time set day
-/weather clear
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/xp add Player952 500000
-/time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/time set day
-/xp add Player952 5000000
-/xp add Player786 5000000
-/gamemode creative
-/gamemode survival
 /xp add Player974 500000
 /gamemode creative
 /time set day
@@ -48,3 +19,32 @@
 /gamemode creative
 /gamemode survival
 /time set day
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/gamemode survival
+/weather clear
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/time set day
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/time set day
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival

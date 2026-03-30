@@ -145,53 +145,6 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
 
 
 //    @Override
-//    protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker) {
-//        System.out.println("dropExperience entrou: " + this.getType());
-//
-//        if (this.shouldDropExperience()) {
-//            System.out.println("shouldDropXp = true");
-//        } else {
-//            System.out.println("shouldDropXp = false");
-//        }
-//
-//        System.out.println("resetCurrentXp = " + ConfigInit.CONFIG.resetCurrentXp);
-//
-//        int xp = (int) (this.levelManager.getLevelProgress() * this.levelManager.getNextLevelExperience());
-//        System.out.println("xp calculado = " + xp);
-//
-//        if (xp > 0) {
-//            LevelExperienceOrbEntity.spawn(serverWorld, this.getEntityPos(), xp);
-//            System.out.println("orb custom spawnada");
-//        } else {
-//            System.out.println("xp zerado");
-//        }
-//
-//        super.dropExperience(serverWorld, attacker);
-//    }
-
-//    @Override
-//    protected void dropExperience(ServerWorld world, @Nullable Entity attacker) {
-//        if (this.shouldDropExperience()
-//                && world.getGameRules().getValue(GameRules.DO_MOB_LOOT)
-//                && ConfigInit.CONFIG.resetCurrentXp) {
-//
-//            int xp = (int) (this.levelManager.getLevelProgress() * this.levelManager.getNextLevelExperience());
-//
-//            if (xp > 0) {
-//                LevelExperienceOrbEntity.spawn(world, this.getEntityPos(), 50);
-//            }
-//        }
-//
-//        super.dropExperience(world, attacker);
-//    }
-
-
-
-
-
-
-
-//    @Override
 //    protected void dropExperience(@Nullable Entity attacker) {
 //        if (this.playerEntity.getEntityWorld() instanceof ServerWorld serverWorld && this.shouldDropExperience() && this.getEntityWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT) && ConfigInit.CONFIG.resetCurrentXp) {
 //            LevelExperienceOrbEntity.spawn(serverWorld, this.getEntityPos(), (int) (this.levelManager.getLevelProgress() * this.levelManager.getNextLevelExperience()));
@@ -209,22 +162,5 @@ protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker
         }
         super.dropExperience(serverWorld,attacker);
     }
-
-//    @Override
-//    protected void dropXp(@Nullable Entity attacker) {
-//        if (this.playerEntity.getEntityWorld() instanceof ServerWorld serverWorld
-//                && this.shouldDropExperience()
-//                && serverWorld.getGameRules().getValue(GameRules.DO_MOB_LOOT)
-//                && ConfigInit.CONFIG.resetCurrentXp) {
-//
-//            int xp = (int) (this.levelManager.getLevelProgress() * this.levelManager.getNextLevelExperience());
-//
-//            if (xp > 0) {
-//                LevelExperienceOrbEntity.spawn(serverWorld, this.getEntityPos(), xp);
-//            }
-//        }
-//
-//        super.dropXp(attacker);
-//    }
 
 }

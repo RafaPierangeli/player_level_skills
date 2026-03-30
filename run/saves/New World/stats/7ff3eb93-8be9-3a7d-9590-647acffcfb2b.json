@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:baked_potato": 1,
+      "minecraft:diamond_helmet": 1,
+      "minecraft:netherite_chestplate": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 132,
+      "minecraft:time_since_rest": 7833,
+      "minecraft:inspect_dispenser": 7,
+      "minecraft:walk_one_cm": 7543,
+      "minecraft:total_world_time": 7875,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 1004,
+      "minecraft:walk_on_water_one_cm": 154,
+      "minecraft:sneak_time": 69,
+      "minecraft:play_time": 7833,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 7833
+    },
+    "minecraft:used": {
+      "minecraft:stone": 24,
+      "minecraft:lever": 1,
+      "minecraft:diamond_helmet": 1,
+      "minecraft:dispenser": 1,
+      "minecraft:armor_stand": 1
+    }
+  },
+  "DataVersion": 4671
+}

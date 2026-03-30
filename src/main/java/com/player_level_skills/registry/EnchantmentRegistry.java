@@ -5,12 +5,16 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 public class EnchantmentRegistry {
+
+    private static final Logger LOGGER = LogManager.getLogger("PlayerLevelSkills");
 
     public static final Map<Integer, EnchantmentZ> ENCHANTMENTS = new HashMap<>();
     public static final Map<String, Integer> INDEX_ENCHANTMENTS = new HashMap<>();
@@ -53,39 +57,29 @@ public class EnchantmentRegistry {
     public static void updateEnchantments(RegistryWrapper.WrapperLookup wrapperLookup) {
         ENCHANTMENTS.clear();
         INDEX_ENCHANTMENTS.clear();
-        Optional<RegistryWrapper.Impl<Enchantment>> wrapper = (Optional<RegistryWrapper.Impl<Enchantment>>) wrapperLookup.getOptional(RegistryKeys.ENCHANTMENT);
+
+        Optional<RegistryWrapper.Impl<Enchantment>> wrapper =
+                (Optional<RegistryWrapper.Impl<Enchantment>>) wrapperLookup.getOptional(RegistryKeys.ENCHANTMENT);
+
         for (RegistryWrapper.Impl<Enchantment> enchantmentImpl : wrapper.stream().toList()) {
             for (RegistryEntry.Reference<Enchantment> enchantment : enchantmentImpl.streamEntries().toList()) {
-                for (int i = 1; i <= enchantment.value().getMaxLevel(); i++) {
-                    INDEX_ENCHANTMENTS.put(enchantment.getIdAsString() + i, ENCHANTMENTS.size());
-                    ENCHANTMENTS.put(ENCHANTMENTS.size(), new EnchantmentZ(enchantment, i));
+                String enchantmentId = enchantment.getIdAsString();
+                int maxLevel = enchantment.value().getMaxLevel();
+
+                LOGGER.info("Loaded enchantment: {} | maxLevel={}", enchantmentId, maxLevel);
+
+                for (int i = 1; i <= maxLevel; i++) {
+                    int index = ENCHANTMENTS.size();
+                    String key = enchantmentId + i;
+
+                    INDEX_ENCHANTMENTS.put(key, index);
+                    ENCHANTMENTS.put(index, new EnchantmentZ(enchantment, i));
+
+                    LOGGER.info(" - registered level {} as key={} index={}", i, key, index);
                 }
             }
         }
+
+        LOGGER.info("Finished loading enchantments. Total registered: {}", ENCHANTMENTS.size());
     }
-
-//    public static void updateEnchantments(RegistryWrapper.WrapperLookup wrapperLookup) {
-//        ENCHANTMENTS.clear();
-//        INDEX_ENCHANTMENTS.clear();
-//        wrapperLookup.getOptional(RegistryKeys.ENCHANTMENT).ifPresent(enchantmentWrapper -> {
-//            // streamEntries() é a forma recomendada na 1.21.11 para iterar registros dinâmicos
-//            enchantmentWrapper.streamEntries().forEach(enchantmentEntry -> {
-//                // Pegamos o ID único do encantamento (ex: minecraft:sharpness)
-//                String id = enchantmentEntry.registryKey().getValue().toString();
-//                // Acessamos os dados do encantamento através do .value()
-//                int maxLevel = enchantmentEntry.value().getMaxLevel();
-//
-//                for (int i = 1; i <= maxLevel; i++) {
-//                    int nextIndex = ENCHANTMENTS.size();
-//                    INDEX_ENCHANTMENTS.put(id + i, nextIndex);
-//                    // Importante: Passar o enchantmentEntry (Reference) para o seu objeto customizado
-//                    ENCHANTMENTS.put(nextIndex, new EnchantmentZ(enchantmentEntry, i));
-//                }
-//            });
-//        });
-//    }
-
-
 }
-
-

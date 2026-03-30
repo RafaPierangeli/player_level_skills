@@ -7,39 +7,77 @@ import com.player_level_skills.level.LevelManager;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentEffectContext;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnchantmentHelper.class)
-public class EnchantmentHelperMixin {
+public abstract class EnchantmentHelperMixin {
 
-    @WrapOperation(method = "forEachEnchantment(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;accept(Lnet/minecraft/registry/entry/RegistryEntry;ILnet/minecraft/enchantment/EnchantmentEffectContext;)V"))
-    private static void forEachEnchantmentMixin(EnchantmentHelper.ContextAwareConsumer instance, RegistryEntry<Enchantment> enchantmentRegistryEntry, int i, EnchantmentEffectContext enchantmentEffectContext, Operation<Void> original) {
-        if (enchantmentEffectContext.owner() != null && enchantmentEffectContext.owner() instanceof PlayerEntity playerEntity) {
+    @WrapOperation(
+            method = "forEachEnchantment(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;accept(Lnet/minecraft/registry/entry/RegistryEntry;ILnet/minecraft/enchantment/EnchantmentEffectContext;)V"
+            )
+    )
+    private static void player_level_skills$filterEnchantmentEffects(
+            EnchantmentHelper.ContextAwareConsumer instance,
+            RegistryEntry<Enchantment> enchantment,
+            int level,
+            EnchantmentEffectContext context,
+            Operation<Void> original
+    ) {
+        LivingEntity owner = context.owner();
+
+        if (owner instanceof PlayerEntity playerEntity) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-            if (levelManager.hasRequiredEnchantmentLevel(enchantmentRegistryEntry, i)) {
-                original.call(instance, enchantmentRegistryEntry, i, enchantmentEffectContext);
+
+            if (!levelManager.hasRequiredEnchantmentLevel(enchantment, level)) {
+                return;
             }
-        } else {
-            original.call(instance, enchantmentRegistryEntry, i, enchantmentEffectContext);
         }
+
+        original.call(instance, enchantment, level, context);
     }
 
-    @Inject(method = "onTargetDamaged(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/item/ItemStack;)V", at = @At("HEAD"), cancellable = true)
-    private static void onTargetDamagedMixin(ServerWorld world, Entity target, DamageSource damageSource, ItemStack weapon, CallbackInfo info) {
-        if (weapon != null && damageSource.getAttacker() instanceof PlayerEntity playerEntity) {
-            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-            if (!levelManager.hasRequiredItemLevel(weapon.getItem())) {
-                info.cancel();
-            }
+
+
+    @Inject(
+            method = "onTargetDamaged(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/item/ItemStack;)V",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private static void player_level_skills$blockRestrictedWeaponUse(
+            ServerWorld world,
+            Entity target,
+            DamageSource damageSource,
+            ItemStack weapon,
+            CallbackInfo ci
+    ) {
+        if (weapon == null || weapon.isEmpty()) {
+            return;
+        }
+
+        if (!(damageSource.getAttacker() instanceof PlayerEntity playerEntity)) {
+            return;
+        }
+
+        LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+
+        if (!levelManager.hasRequiredItemLevel(weapon.getItem())) {
+            ci.cancel();
         }
     }
 

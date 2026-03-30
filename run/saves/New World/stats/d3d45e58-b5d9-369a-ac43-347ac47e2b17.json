@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombie": 2
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1306,
+      "minecraft:walk_one_cm": 1087,
+      "minecraft:total_world_time": 1339,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 1306,
+      "minecraft:damage_dealt": 350,
+      "minecraft:time_since_death": 1306
+    },
+    "minecraft:used": {
+      "minecraft:zombie_spawn_egg": 2,
+      "minecraft:iron_sword": 4
+    }
+  },
+  "DataVersion": 4671
+}

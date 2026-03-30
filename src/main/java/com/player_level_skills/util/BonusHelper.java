@@ -255,22 +255,6 @@ public class BonusHelper {
     }
 
 
-//    public static int anvilXpDiscountBonus(PlayerEntity playerEntity, int levelCost) {
-////        if (levelCost > ConfigInit.CONFIG.anvilXpCap && anvilXpCapBonus(playerEntity)) {
-////            return ConfigInit.CONFIG.anvilXpCap;
-////        }
-//        if (LevelManager.BONUSES.containsKey("anvilXpDiscount")) {
-//            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-//            SkillBonus skillBonus = LevelManager.BONUSES.get("anvilXpDiscount");
-//            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-//            if (level >= skillBonus.getLevel()) {
-//                return Math.round(levelCost * (1.0f - level * ConfigInit.CONFIG.anvilXpDiscountBonus));
-//            }
-//            if
-//        }
-//        return levelCost;
-//    }
-
     public static int anvilXpDiscountBonus(PlayerEntity playerEntity, int levelCost, boolean keepSecondSlot) {
     //        if (levelCost > ConfigInit.CONFIG.anvilXpCap && anvilXpCapBonus(playerEntity)) {
     //            return ConfigInit.CONFIG.anvilXpCap;

@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:furnace": 1,
+      "minecraft:blast_furnace": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_furnace": 9,
+      "minecraft:time_since_rest": 3720,
+      "minecraft:walk_one_cm": 1979,
+      "minecraft:total_world_time": 4587,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_on_water_one_cm": 124,
+      "minecraft:play_time": 3720,
+      "minecraft:interact_with_blast_furnace": 9,
+      "minecraft:time_since_death": 3720
+    },
+    "minecraft:crafted": {
+      "minecraft:baked_potato": 11,
+      "minecraft:iron_ingot": 26,
+      "minecraft:air": 0
+    }
+  },
+  "DataVersion": 4671
+}
