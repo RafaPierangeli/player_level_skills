@@ -12,6 +12,7 @@
     "block.PlantBlockMixin",
     "compat.LevelManagerCompatMixin",
     "compat.TieredCompatMixin",
+    "entity.LivingEntityMixin",
     "entity.VehicleEntityAccessor",
     "item.ArmorItemMixin",
     "item.SwordItemMixin",

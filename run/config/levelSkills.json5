@@ -37,7 +37,7 @@
 	// Bonus id: fallDamageReduction
 	"fallDamageReductionBonus": 0.20000000298023224,
 	// Bonus id: deathGraceChance
-	"deathGraceChanceBonus": 0.20000000298023224,
+	"deathGraceChanceBonus": 1.0,
 	// Bonus id: tntStrength
 	"tntStrengthBonus": 1.0,
 	// Bonus id: priceDiscount
