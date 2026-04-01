@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:short_grass": 3,
+      "minecraft:tall_grass": 1
+    },
+    "minecraft:used": {
+      "minecraft:iron_ore": 2
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 5,
+      "minecraft:sprint_one_cm": 612,
+      "minecraft:time_since_rest": 6346,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 10456,
+      "minecraft:total_world_time": 7231,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 273,
+      "minecraft:sneak_time": 1,
+      "minecraft:play_time": 6346,
+      "minecraft:jump": 28,
+      "minecraft:time_since_death": 6346
+    }
+  },
+  "DataVersion": 4671
+}

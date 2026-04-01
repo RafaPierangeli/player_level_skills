@@ -239,12 +239,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:meadow": "2026-03-26 18:35:15 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/combat/iron_spear": {
     "criteria": {
       "has_iron_ingot": "2026-03-26 18:35:06 -0300"
@@ -266,6 +260,31 @@
   "minecraft:recipes/building_blocks/bone_block": {
     "criteria": {
       "has_bone_meal": "2026-03-26 18:35:06 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-03-30 19:58:14 -0300",
+      "minecraft:meadow": "2026-03-26 18:35:15 -0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:nether_wastes": "2026-03-30 19:58:21 -0300"
+    },
+    "done": false
+  },
+  "minecraft:story/enter_the_nether": {
+    "criteria": {
+      "entered_nether": "2026-03-30 19:58:21 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/root": {
+    "criteria": {
+      "entered_nether": "2026-03-30 19:58:21 -0300"
     },
     "done": true
   },

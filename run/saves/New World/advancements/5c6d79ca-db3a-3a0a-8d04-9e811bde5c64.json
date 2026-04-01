@@ -227,12 +227,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:meadow": "2026-03-24 20:28:57 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/combat/iron_spear": {
     "criteria": {
       "has_iron_ingot": "2026-03-24 20:28:56 -0300"
@@ -254,6 +248,228 @@
   "minecraft:recipes/building_blocks/bone_block": {
     "criteria": {
       "has_bone_meal": "2026-03-24 20:28:56 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-03-30 18:50:38 -0300",
+      "minecraft:meadow": "2026-03-24 20:28:57 -0300",
+      "minecraft:plains": "2026-03-30 18:53:01 -0300"
+    },
+    "done": false
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_boots": "2026-03-30 18:50:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_smelting": {
+    "criteria": {
+      "has_golden_leggings": "2026-03-30 18:50:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_blasting": {
+    "criteria": {
+      "has_golden_leggings": "2026-03-30 18:50:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_helmet": "2026-03-30 18:50:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2026-03-30 18:51:47 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-03-30 18:54:12 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "golden_apple": "2026-03-30 18:54:12 -0300",
+      "baked_potato": "2026-03-30 19:08:57 -0300"
+    },
+    "done": false
+  },
+  "minecraft:recipes/tools/flint_and_steel": {
+    "criteria": {
+      "has_obsidian": "2026-03-30 18:54:27 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/form_obsidian": {
+    "criteria": {
+      "obsidian": "2026-03-30 18:54:27 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/enchanting_table": {
+    "criteria": {
+      "has_obsidian": "2026-03-30 18:54:27 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/enter_the_nether": {
+    "criteria": {
+      "entered_nether": "2026-03-30 18:55:29 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/root": {
+    "criteria": {
+      "entered_nether": "2026-03-30 18:55:29 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:nether_wastes": "2026-03-30 18:55:31 -0300"
+    },
+    "done": false
+  },
+  "minecraft:recipes/misc/nether_brick": {
+    "criteria": {
+      "has_netherrack": "2026-03-30 18:56:49 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:piglin": "2026-03-30 19:00:26 -0300",
+      "minecraft:zombified_piglin": "2026-03-30 18:58:58 -0300",
+      "minecraft:piglin_brute": "2026-03-30 18:58:53 -0300",
+      "minecraft:drowned": "2026-03-30 19:08:36 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:piglin_brute": "2026-03-30 18:58:53 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_nuggets": {
+    "criteria": {
+      "has_gold_nugget": "2026-03-30 18:59:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/golden_carrot": {
+    "criteria": {
+      "has_gold_nugget": "2026-03-30 18:59:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/iron_tools": {
+    "criteria": {
+      "iron_pickaxe": "2026-03-30 19:01:05 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/find_bastion": {
+    "criteria": {
+      "bastion": "2026-03-30 19:06:21 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_chestplate_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_sword_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/netherite_upgrade_smithing_template": {
+    "criteria": {
+      "has_netherite_upgrade_smithing_template": "2026-03-30 19:10:57 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_nautilus_armor_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_leggings_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/netherite_hoe_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/sleep_in_bed": {
+    "criteria": {
+      "slept_in_bed": "2026-03-30 19:10:26 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_helmet_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/netherite_block": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_horse_armor_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_boots_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/netherite_shovel_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/netherite_spear_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/netherite_axe_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/netherite_pickaxe_smithing": {
+    "criteria": {
+      "has_netherite_ingot": "2026-03-30 19:11:00 -0300"
     },
     "done": true
   },

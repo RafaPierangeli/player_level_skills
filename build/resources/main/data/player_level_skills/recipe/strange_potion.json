@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " N ",
+    "EDE"
+  ],
+  "key": {
+    "D": "minecraft:dragon_breath",
+    "N": "minecraft:nether_star",
+    "B": "minecraft:fire_charge",
+    "E": "minecraft:blaze_powder"
+  },
+  "result": {
+    "id": "player_level_skills:strange_potion",
+    "count": 1
+  }
+}

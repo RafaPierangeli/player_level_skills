@@ -337,9 +337,8 @@
   "tag.levelz.restricted_furnace_experience_items": "Experiência de Itens de Fornalha Restritos",
 
 
-  "screen.player_level_skills.title": "Player Level Skills",
+
   "key.player_level_skills.open_screen": "Abrir tela de habilidades",
-  "category.player_level_skills": "Player Level Skills",
   "screen.player_level_skills.title": "Player Level Skills",
   "screen.player_level_skills.level": "Nível: %s",
   "screen.player_level_skills.xp": "XP: %s / %s",
@@ -352,7 +351,8 @@
   "restriction.levelz.mineable.tooltip": "Mineable",
   "restriction.levelz.block_usage": "Block Usage",
   "restriction.levelz.melee.tooltip": "Melee %s",
-  "restriction.levelz.constitution.tooltip": "Constitution %s"
+  "restriction.levelz.constitution.tooltip": "Constitution %s",
+  "itemgroup.player_level_skills": "Habilidades por Nivel"
 
 
 

@@ -1,0 +1,15 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:potion": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1388,
+      "minecraft:total_world_time": 1432,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1388,
+      "minecraft:time_since_death": 1388
+    }
+  },
+  "DataVersion": 4671
+}

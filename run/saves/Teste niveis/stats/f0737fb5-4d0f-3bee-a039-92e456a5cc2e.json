@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:time_since_rest": 4974,
+      "minecraft:walk_one_cm": 1495,
+      "minecraft:total_world_time": 5347,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 4974,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 4974
+    },
+    "minecraft:used": {
+      "minecraft:brewing_stand": 1,
+      "minecraft:stonecutter": 1,
+      "minecraft:iron_ore": 1,
+      "minecraft:sea_lantern": 1
+    }
+  },
+  "DataVersion": 4671
+}

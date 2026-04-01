@@ -1,0 +1,49 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:experience_bottle": 2,
+      "minecraft:netherite_sword": 40,
+      "minecraft:dragon_egg": 1,
+      "minecraft:netherite_axe": 91,
+      "minecraft:bow": 3
+    },
+    "minecraft:dropped": {
+      "minecraft:wildflowers": 3,
+      "minecraft:wheat_seeds": 1,
+      "minecraft:dandelion": 3
+    },
+    "minecraft:picked_up": {
+      "minecraft:white_wool": 1,
+      "minecraft:dandelion": 29,
+      "minecraft:wheat_seeds": 8,
+      "minecraft:wildflowers": 60,
+      "minecraft:mutton": 1,
+      "minecraft:leather": 2,
+      "minecraft:beef": 1,
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:killed": {
+      "minecraft:ender_dragon": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 2,
+      "minecraft:time_since_rest": 14668,
+      "minecraft:walk_one_cm": 14428,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 14668,
+      "minecraft:jump": 43,
+      "minecraft:time_since_death": 14668,
+      "minecraft:drop": 7,
+      "minecraft:sprint_one_cm": 7459,
+      "minecraft:total_world_time": 17873,
+      "minecraft:fly_one_cm": 126187,
+      "minecraft:crouch_one_cm": 383,
+      "minecraft:sneak_time": 294
+    },
+    "minecraft:crafted": {
+      "player_level_skills:strange_potion": 2
+    }
+  },
+  "DataVersion": 4671
+}

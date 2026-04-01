@@ -24,7 +24,7 @@ import java.util.*;
 public record VRestrictionLoader(RegistryWrapper.WrapperLookup wrapperLookup) implements SimpleSynchronousResourceReloadListener {
 
     public static final Identifier ID = Player_level_skills.identifierOf("restriction");
-    private static final Logger LOGGER = LogManager.getLogger("LevelZ");
+    private static final Logger LOGGER = LogManager.getLogger("LevelZrestriction");
 
     private static final List<Integer> blockList = new ArrayList<>();
     private static final List<Integer> craftingList = new ArrayList<>();

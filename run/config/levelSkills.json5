@@ -17,7 +17,7 @@
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
-	"lockedHandUsage": false,
+	"lockedHandUsage": true,
 	// Only for Devs
 	"devMode": false,
 	// Bonus id: bowDamage
@@ -96,15 +96,15 @@
 	"mobXPMultiplier": 1.0,
 	"spawnerMobXP": true,
 	// Highlight locked blocks in red.
-	"highlightLocked": false,
+	"highlightLocked": true,
 	"inventorySkillLevel": true,
 	"inventorySkillLevelPosX": 0,
 	"inventorySkillLevelPosY": 0,
 	"showLevelList": true,
 	"showLevel": true,
 	// Switch levelz screen instead of closing with inventory key
-	"switchScreen": false,
-	"showLockedBlockInfo": false,
+	"switchScreen": true,
+	"showLockedBlockInfo": true,
 	"lockedBlockInfoPosX": 0,
 	"lockedBlockInfoPosY": 0,
 	"restrictions": true,

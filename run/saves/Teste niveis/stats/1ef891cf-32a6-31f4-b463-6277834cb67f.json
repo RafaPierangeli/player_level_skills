@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:sprint_one_cm": 33,
+      "minecraft:time_since_rest": 1351,
+      "minecraft:walk_one_cm": 326,
+      "minecraft:total_world_time": 2484,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 2813,
+      "minecraft:play_time": 1351,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 1351
+    },
+    "minecraft:crafted": {
+      "player_level_skills:strange_potion": 19
+    }
+  },
+  "DataVersion": 4671
+}

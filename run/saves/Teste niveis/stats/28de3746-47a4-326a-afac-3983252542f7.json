@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:time_since_rest": 1896,
+      "minecraft:walk_one_cm": 1791,
+      "minecraft:total_world_time": 1990,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1896,
+      "minecraft:time_since_death": 1896
+    },
+    "minecraft:used": {
+      "minecraft:crafting_table": 2
+    }
+  },
+  "DataVersion": 4671
+}

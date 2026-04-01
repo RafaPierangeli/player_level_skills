@@ -146,7 +146,6 @@
   "item.levelz.locked.tooltip": "Locked",
 
   "restriction.levelz.constitution.tooltip": "Constitution %d",
-  "restriction.levelz.melee.tooltip": "Melee %d",
   "restriction.levelz.defense.tooltip": "Defense %d",
   "restriction.levelz.archery.tooltip": "Archery %d",
   "restriction.levelz.agility.tooltip": "Agility %d",
@@ -245,7 +244,8 @@
   "restriction.levelz.melee.tooltip": "Melee %s",
   "restriction.levelz.constitution.tooltip": "Constitution %s",
   "text.levelz.gui.up_level": "Up Level %s",
-  "text.levelz.gui.short_level_button": "Open skills screen"
+  "text.levelz.gui.short_level_button": "Open skills screen",
+  "itemgroup.player_level_skills": "Player Level Skills"
 
 
 }

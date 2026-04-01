@@ -4,24 +4,20 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.config.ConfigInit;
+
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.render.state.OutlineRenderState;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Environment(EnvType.CLIENT)
 @Mixin(WorldRenderer.class)
@@ -32,17 +28,37 @@ public abstract class WorldRendererMixin {
     @Final
     private MinecraftClient client;
 
-    @Nullable
-    @Shadow
-    private ClientWorld world;
+    @Redirect(
+            method = "renderTargetBlockOutline(Lnet/minecraft/client/render/VertexConsumerProvider$Immediate;Lnet/minecraft/client/util/math/MatrixStack;ZLnet/minecraft/client/render/state/WorldRenderState;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/render/WorldRenderer;drawBlockOutline(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;DDDLnet/minecraft/client/render/state/OutlineRenderState;IF)V"
+            )
+    )
+    private void redirectDrawBlockOutline(WorldRenderer instance,
+                                          MatrixStack matrices,
+                                          VertexConsumer vertexConsumer,
+                                          double x,
+                                          double y,
+                                          double z,
+                                          OutlineRenderState state,
+                                          int color,
+                                          float lineWidth) {
 
-    @Inject(method = "drawBlockOutline", at = @At(value = "HEAD"), cancellable = true)
-    private void drawBlockOutlineMixin(MatrixStack matrices, VertexConsumer vertexConsumer, double x, double y, double z, OutlineRenderState state, int color, float lineWidth, CallbackInfo ci) {
-//        if (ConfigInit.CONFIG.highlightLocked && !((LevelManagerAccess) client.player).getLevelManager().hasRequiredMiningLevel(blockState.getBlock())) {
-//            WorldRenderer.drawShapeOutline(matrices, vertexConsumer, blockState.getOutlineShape(this.world, blockPos, ShapeContext.of(entity)), (double) blockPos.getX() - cameraX,
-//                    (double) blockPos.getY() - cameraY, (double) blockPos.getZ() - cameraZ, 1.0F, 0.0F, 0.0F, 0.4F, false);
-//            info.cancel();
-//        }
+        if (this.client == null || this.client.player == null || this.client.world == null || !ConfigInit.CONFIG.highlightLocked) {
+            ((WorldRendererInvoker) instance).invokeDrawBlockOutline(matrices, vertexConsumer, x, y, z, state, color, lineWidth);
+            return;
+        }
+
+        BlockPos blockPos = ((OutlineRenderStateAccessor) (Object) state).getPos();
+        BlockState blockState = this.client.world.getBlockState(blockPos);
+
+        boolean locked = !((LevelManagerAccess) this.client.player)
+                .getLevelManager()
+                .hasRequiredMiningLevel(blockState.getBlock());
+
+        int finalColor = locked ? 0x80FF0000 : color;
+
+        ((WorldRendererInvoker) instance).invokeDrawBlockOutline(matrices, vertexConsumer, x, y, z, state, finalColor, lineWidth);
     }
 }
-

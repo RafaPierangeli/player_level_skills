@@ -1,8 +1,12 @@
 /time set day
 /gamemode creative
 /gamemode survival
-/time set day
-/xp add Player216 5000000
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
 /gamemode creative
 /gamemode survival
 /gamemode creative
@@ -10,19 +14,9 @@
 /gamemode creative
 /gamemode survival
 /time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
 /gamemode survival
 /gamemode creative
 /gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
-/gamemode survival
-/weather clear
 /gamemode creative
 /gamemode survival
 /gamemode creative
@@ -39,12 +33,18 @@
 /gamemode survival
 /gamemode creative
 /gamemode survival
+/time set day
 /gamemode creative
+/time set day
 /gamemode survival
-/gamemode creative
-/gamemode survival
+/time set day
 /gamemode creative
 /time set day
 /gamemode survival
 /gamemode creative
 /gamemode survival
+/gamemode creative
+/
+/reload
+/summon minecraft:ender_dragon -10.17 129.00 3.93
+/time set day

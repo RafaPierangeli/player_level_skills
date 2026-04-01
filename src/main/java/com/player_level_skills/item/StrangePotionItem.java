@@ -3,16 +3,24 @@ package com.player_level_skills.item;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.config.ConfigInit;
 import com.player_level_skills.level.LevelManager;
-import com.player_level_skills.util.LevelHelper;
 import com.player_level_skills.util.PacketHelper;
+
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.item.consume.UseAction;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
+import net.minecraft.item.Items;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Hand;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.item.consume.UseAction;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
@@ -51,6 +59,7 @@ public class StrangePotionItem extends Item {
             }
 
             user.emitGameEvent(GameEvent.DRINK);
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 200, 0));
         }
         return stack;
     }

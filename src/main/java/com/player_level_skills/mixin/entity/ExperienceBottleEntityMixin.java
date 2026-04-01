@@ -24,11 +24,11 @@ public abstract class ExperienceBottleEntityMixin extends ThrownItemEntity {
         super(entityType, world);
     }
 
-    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/thrown/ExperienceBottleEntity;discard()V"), locals = LocalCapture.CAPTURE_FAILSOFT)
-    protected void onCollisionMixin(HitResult hitResult, CallbackInfo info, int i) {
+    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/thrown/ExperienceBottleEntity;discard()V"))
+    protected void onCollisionMixin(HitResult hitResult, CallbackInfo ci) {
         if (ConfigInit.CONFIG.bottleXPMultiplier > 0.0F) {
             LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos().add(0.0D, 0.5D, 0.0D),
-                    (int) (i * ConfigInit.CONFIG.bottleXPMultiplier
+                    (int) (5 * ConfigInit.CONFIG.bottleXPMultiplier
                             * (ConfigInit.CONFIG.dropXPbasedOnLvl && this.getOwner() != null && this.getOwner() instanceof ServerPlayerEntity serverPlayerEntity
                             ? 1.0F + ConfigInit.CONFIG.basedOnMultiplier * ((LevelManagerAccess) serverPlayerEntity).getLevelManager().getOverallLevel()
                             : 1.0F)));

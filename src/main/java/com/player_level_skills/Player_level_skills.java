@@ -1,11 +1,11 @@
 package com.player_level_skills;
 
-import com.player_level_skills.config.ConfigInit;
+import net.fabricmc.api.ModInitializer;
 import com.player_level_skills.init.*;
 import com.player_level_skills.network.LevelServerPacket;
-import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.util.Identifier;
+import com.player_level_skills.config.ConfigInit;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +15,6 @@ public class Player_level_skills implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
 
 		//CommandInit.init();
 		//CompatInit.init();
@@ -33,8 +30,8 @@ public class Player_level_skills implements ModInitializer {
 		RestrictionInit.init();
 
 		LOGGER.info("ALUUU");
-	}
 
+	}
 	public static Identifier identifierOf (String name) {
 		return Identifier.of("player_level_skills", name);
 	}
