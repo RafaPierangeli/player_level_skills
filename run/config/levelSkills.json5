@@ -15,7 +15,7 @@
 	// Amount of allowed mob kills in a chunk
 	"mobKillCount": 6,
 	// Strange potion resets all stats instead of one
-	"opStrangePotion": false,
+	"opStrangePotion": true,
 	// restrict hand usage when item not unlocked
 	"lockedHandUsage": true,
 	// Only for Devs
@@ -39,7 +39,7 @@
 	// Bonus id: deathGraceChance
 	"deathGraceChanceBonus": 1.0,
 	// Bonus id: tntStrength
-	"tntStrengthBonus": 1.0,
+	"tntStrengthBonus": 100.0,
 	// Bonus id: priceDiscount
 	"priceDiscountBonus": 0.009999999776482582,
 	// Bonus id: tradeXp

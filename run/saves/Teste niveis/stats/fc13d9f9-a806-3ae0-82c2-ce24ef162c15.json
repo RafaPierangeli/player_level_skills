@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1155,
+      "minecraft:time_since_rest": 3327,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 1137,
+      "minecraft:total_world_time": 3337,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 41637,
+      "minecraft:play_time": 3327,
+      "minecraft:jump": 5,
+      "minecraft:fish_caught": 1,
+      "minecraft:time_since_death": 3327
+    },
+    "minecraft:used": {
+      "minecraft:fishing_rod": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:cod": 1,
+      "minecraft:nautilus_shell": 1
+    }
+  },
+  "DataVersion": 4671
+}

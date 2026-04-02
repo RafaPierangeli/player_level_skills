@@ -16,7 +16,10 @@
     "entity.EnderDragonEntityMixin",
     "entity.EntityAccessor",
     "entity.ExperienceBottleEntityMixin",
+    "entity.FishingBobberEntityMixin",
     "entity.LivingEntityMixin",
+    "entity.StorageMinecartEntityMixin",
+
     "entity.VehicleEntityAccessor",
     "item.ArmorItemMixin",
     "item.SwordItemMixin",
