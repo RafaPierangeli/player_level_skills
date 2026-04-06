@@ -1,0 +1,35 @@
+{
+  "stats": {
+    "minecraft:dropped": {
+      "minecraft:dirt": 1
+    },
+    "minecraft:used": {
+      "minecraft:golden_apple": 1,
+      "minecraft:flint_and_steel": 6,
+      "minecraft:tnt": 6
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 4204,
+      "minecraft:walk_one_cm": 15637,
+      "minecraft:leave_game": 1,
+      "minecraft:damage_taken": 15,
+      "minecraft:play_time": 4204,
+      "minecraft:damage_absorbed": 23,
+      "minecraft:jump": 36,
+      "minecraft:time_since_death": 4204,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 3109,
+      "minecraft:fall_one_cm": 1700,
+      "minecraft:total_world_time": 4241,
+      "minecraft:fly_one_cm": 10623,
+      "minecraft:sneak_time": 39
+    },
+    "minecraft:picked_up": {
+      "minecraft:dirt": 138,
+      "minecraft:coal": 9,
+      "minecraft:cobblestone": 62,
+      "minecraft:wheat_seeds": 1
+    }
+  },
+  "DataVersion": 4671
+}

@@ -1,0 +1,71 @@
+{
+  "stats": {
+    "minecraft:killed_by": {
+      "minecraft:player": 1
+    },
+    "minecraft:used": {
+      "minecraft:golden_apple": 1,
+      "minecraft:flint_and_steel": 8,
+      "minecraft:tnt": 9
+    },
+    "minecraft:broken": {
+      "minecraft:netherite_leggings": 1,
+      "minecraft:netherite_chestplate": 1,
+      "minecraft:netherite_helmet": 1,
+      "minecraft:netherite_boots": 1
+    },
+    "minecraft:mined": {
+      "minecraft:tnt": 1
+    },
+    "minecraft:killed": {
+      "minecraft:horse": 1,
+      "minecraft:chicken": 3,
+      "minecraft:pig": 4,
+      "minecraft:sheep": 12,
+      "minecraft:cow": 7,
+      "minecraft:player": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 4466,
+      "minecraft:walk_one_cm": 20056,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 179,
+      "minecraft:mob_kills": 27,
+      "minecraft:damage_taken": 9989,
+      "minecraft:play_time": 8358,
+      "minecraft:jump": 104,
+      "minecraft:time_since_death": 4383,
+      "minecraft:sprint_one_cm": 25655,
+      "minecraft:fall_one_cm": 3400,
+      "minecraft:total_world_time": 9583,
+      "minecraft:fly_one_cm": 96478,
+      "minecraft:walk_on_water_one_cm": 562,
+      "minecraft:deaths": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:blaze_powder": 20,
+      "player_level_skills:rare_candy": 1,
+      "minecraft:porkchop": 7,
+      "minecraft:dirt": 240,
+      "minecraft:cobblestone": 48,
+      "minecraft:nether_star": 86,
+      "minecraft:netherite_chestplate": 1,
+      "minecraft:flint_and_steel": 2,
+      "minecraft:leather": 3,
+      "minecraft:azure_bluet": 1,
+      "minecraft:netherite_boots": 1,
+      "minecraft:beef": 8,
+      "minecraft:oxeye_daisy": 3,
+      "minecraft:oak_log": 3,
+      "player_level_skills:strange_potion": 28,
+      "minecraft:dandelion": 9,
+      "minecraft:wheat_seeds": 6,
+      "minecraft:netherite_leggings": 1,
+      "minecraft:tnt": 106,
+      "minecraft:netherite_helmet": 1,
+      "minecraft:cornflower": 1,
+      "minecraft:golden_apple": 126
+    }
+  },
+  "DataVersion": 4671
+}

@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:flint_and_steel": 1,
+      "minecraft:tnt": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 3804,
+      "minecraft:time_since_rest": 932,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 1523,
+      "minecraft:total_world_time": 957,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 8192,
+      "minecraft:play_time": 932,
+      "minecraft:jump": 26,
+      "minecraft:time_since_death": 932
+    }
+  },
+  "DataVersion": 4671
+}

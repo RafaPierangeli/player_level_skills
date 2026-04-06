@@ -19,7 +19,7 @@
     "entity.FishingBobberEntityMixin",
     "entity.LivingEntityMixin",
     "entity.StorageMinecartEntityMixin",
-
+    "entity.TntEntityMixin",
     "entity.VehicleEntityAccessor",
     "item.ArmorItemMixin",
     "item.SwordItemMixin",
