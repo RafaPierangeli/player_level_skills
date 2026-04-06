@@ -2,7 +2,7 @@ package com.player_level_skills.mixin.player;
 
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.access.PlayerDropAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.util.BonusHelper;

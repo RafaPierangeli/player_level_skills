@@ -3,7 +3,7 @@ package com.player_level_skills.network;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import com.player_level_skills.access.LevelManagerAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.init.CriteriaInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.PlayerSkill;
@@ -20,7 +20,6 @@ import net.minecraft.network.packet.s2c.play.EntityAttributesS2CPacket;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.Objects;
 
 public class LevelServerPacket {
 

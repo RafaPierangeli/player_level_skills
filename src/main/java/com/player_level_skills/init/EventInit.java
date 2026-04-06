@@ -1,6 +1,5 @@
 package com.player_level_skills.init;
 
-import com.player_level_skills.config.ConfigInit;
 import net.fabricmc.fabric.api.entity.event.v1.ServerEntityWorldChangeEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -14,7 +13,6 @@ import com.player_level_skills.level.Skill;
 import com.player_level_skills.mixin.EntityAccessor;
 import com.player_level_skills.util.LevelHelper;
 import com.player_level_skills.util.PacketHelper;
-import net.minecraft.item.ItemStack;
 import net.minecraft.network.packet.s2c.play.PlayerListS2CPacket;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;

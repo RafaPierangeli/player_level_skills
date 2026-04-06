@@ -3,7 +3,7 @@ package com.player_level_skills.mixin.misc;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import com.player_level_skills.access.LevelManagerAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;

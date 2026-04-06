@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 2,
+      "minecraft:sprint_one_cm": 68,
+      "minecraft:talked_to_villager": 7,
+      "minecraft:time_since_rest": 1724,
+      "minecraft:walk_one_cm": 2251,
+      "minecraft:total_world_time": 2262,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 606,
+      "minecraft:play_time": 1724,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 1724
+    },
+    "minecraft:used": {
+      "minecraft:wandering_trader_spawn_egg": 1
+    },
+    "minecraft:crafted": {
+      "minecraft:potion": 1,
+      "minecraft:lime_dye": 3
+    }
+  },
+  "DataVersion": 4671
+}

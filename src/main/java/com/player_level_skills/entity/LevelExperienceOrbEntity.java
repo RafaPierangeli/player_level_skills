@@ -1,7 +1,6 @@
 package com.player_level_skills.entity;
 
 import com.player_level_skills.access.ServerPlayerSyncAccess;
-import com.player_level_skills.config.ConfigInit;
 import com.player_level_skills.init.EntityInit;
 import com.player_level_skills.network.packet.OrbPacket;
 import net.minecraft.entity.Entity;
@@ -10,7 +9,6 @@ import net.minecraft.entity.MovementType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.registry.tag.FluidTags;

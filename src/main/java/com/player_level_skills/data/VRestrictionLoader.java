@@ -4,7 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.player_level_skills.Player_level_skills;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.Skill;
 import com.player_level_skills.level.restriction.PlayerRestriction;

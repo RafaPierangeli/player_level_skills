@@ -41,9 +41,9 @@
 	// Bonus id: tntStrength
 	"tntStrengthBonus": 2.0,
 	// Bonus id: priceDiscount
-	"priceDiscountBonus": 0.009999999776482582,
+	"priceDiscountBonus": 0.019999999552965164,
 	// Bonus id: tradeXp
-	"tradeXpBonus": 0.019999999552965164,
+	"tradeXpBonus": 0.20000000298023224,
 	// Bonus id: miningDropChance
 	"miningDropChanceBonus": 0.009999999776482582,
 	// Bonus id: plantDropChance

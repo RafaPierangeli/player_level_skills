@@ -3,7 +3,7 @@ package com.player_level_skills.screen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import com.player_level_skills.Player_level_skills;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.init.KeyInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.restriction.PlayerRestriction;

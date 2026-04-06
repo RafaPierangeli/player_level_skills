@@ -1,10 +1,9 @@
 package com.player_level_skills.screen;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.player_level_skills.Player_level_skills;
 import com.player_level_skills.access.ClientPlayerAccess;
 import com.player_level_skills.access.LevelManagerAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.init.KeyInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.Skill;
@@ -30,7 +29,6 @@ import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.PlayerInput;
 import org.jetbrains.annotations.Nullable;

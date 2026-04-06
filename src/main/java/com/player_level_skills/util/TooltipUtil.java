@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.player_level_skills.access.LevelManagerAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.restriction.PlayerRestriction;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
@@ -25,7 +23,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Matrix4f;
 
 public class TooltipUtil {
 

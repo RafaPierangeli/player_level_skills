@@ -1,20 +1,9 @@
 package com.player_level_skills.mixin.player;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import com.player_level_skills.access.ClientPlayerAccess;
-import com.player_level_skills.access.ClientPlayerListAccess;
-import com.player_level_skills.config.ConfigInit;
-import net.minecraft.client.network.AbstractClientPlayerEntity;
-import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.scoreboard.Team;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 
 @Environment(EnvType.CLIENT)
 @Mixin(PlayerEntityRenderer.class)

@@ -1,6 +1,6 @@
 package com.player_level_skills.level;
 
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.level.restriction.PlayerRestriction;
 import com.player_level_skills.registry.EnchantmentRegistry;
 import com.player_level_skills.util.LevelHelper;
@@ -10,9 +10,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;

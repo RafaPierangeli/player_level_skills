@@ -4,7 +4,6 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
-import com.player_level_skills.config.ConfigInit;
 
 @Config(name = "levelSkills")
 @Config.Gui.Background("minecraft:textures/block/stone.png")
@@ -80,10 +79,10 @@ public class player_level_skillsConfig implements ConfigData {
     public float tntStrengthBonus = 1F;
 
     @Comment("Bonus id: priceDiscount")
-    public float priceDiscountBonus = 0.01F;
+    public float priceDiscountBonus = 0.02F;
 
     @Comment("Bonus id: tradeXp")
-    public float tradeXpBonus = 0.02F;
+    public float tradeXpBonus = 0.2F;
 
     @Comment("Bonus id: miningDropChance")
     public float miningDropChanceBonus = 0.01F;

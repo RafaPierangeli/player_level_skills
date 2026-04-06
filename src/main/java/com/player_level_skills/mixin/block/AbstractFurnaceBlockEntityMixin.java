@@ -1,19 +1,13 @@
 package com.player_level_skills.mixin.block;
 
 import com.player_level_skills.access.LevelManagerAccess;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.recipe.AbstractCookingRecipe;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;

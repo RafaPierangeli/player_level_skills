@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import com.player_level_skills.init.*;
 import com.player_level_skills.network.LevelServerPacket;
 import net.minecraft.util.Identifier;
-import com.player_level_skills.config.ConfigInit;
+import com.player_level_skills.init.ConfigInit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

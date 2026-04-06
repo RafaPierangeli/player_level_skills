@@ -1,5 +1,6 @@
-package com.player_level_skills.config;
+package com.player_level_skills.init;
 
+import com.player_level_skills.config.player_level_skillsConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 

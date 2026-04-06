@@ -1,8 +1,7 @@
-package com.player_level_skills.mixin;
+package com.player_level_skills.mixin.entity;
 
 import com.player_level_skills.access.MobEntityAccess;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
 import org.spongepowered.asm.mixin.Mixin;
