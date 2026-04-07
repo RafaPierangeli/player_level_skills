@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:blaze_powder": 2
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 2,
+      "minecraft:time_since_rest": 1334,
+      "minecraft:total_world_time": 1351,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1334,
+      "minecraft:time_since_death": 1334
+    }
+  },
+  "DataVersion": 4671
+}

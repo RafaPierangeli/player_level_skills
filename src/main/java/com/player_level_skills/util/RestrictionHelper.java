@@ -6,8 +6,7 @@ import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.level.LevelManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 
@@ -19,9 +18,55 @@ public class RestrictionHelper {
         if (!playerEntity.isCreative()) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             if (actionType.equals(SlotActionType.QUICK_MOVE)) {
+                if (screenHandler instanceof BrewingStandScreenHandler) {
+                    return !slot.getStack().isEmpty() && !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem());
+                }
+                if (screenHandler instanceof CraftingScreenHandler craftingScreenHandler) {
+                    Slot outputSlot = craftingScreenHandler.getOutputSlot();
+
+                    // Bloqueia só a retirada do resultado, mas não o preview.
+                    if (slot == outputSlot) {
+                        ItemStack stack = slot.getStack();
+                        if (!stack.isEmpty()) {
+                            return !levelManager.hasRequiredCraftingLevel(stack.getItem());
+                        }
+                    }
+                }
+                if (screenHandler instanceof SmithingScreenHandler smithingScreenHandler) {
+                    Slot outputSlot = smithingScreenHandler.getSlot(3);
+                    if (slot == outputSlot) {
+                        return !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem());
+                    }
+                }
+
                 return !slot.getStack().isEmpty() && !levelManager.hasRequiredItemLevel(slot.getStack().getItem());
-            } else if (!cursorStack.isEmpty()) {
+
+
+            }
+            if (screenHandler instanceof CraftingScreenHandler craftingScreenHandler) {
+                Slot outputSlot = craftingScreenHandler.getOutputSlot();
+
+                // Bloqueia só a retirada do resultado, mas não o preview.
+                if (slot == outputSlot) {
+                    ItemStack stack = slot.getStack();
+                    if (!stack.isEmpty()) {
+                        return !levelManager.hasRequiredCraftingLevel(stack.getItem());
+                    }
+                }
+            }
+
+            if (screenHandler instanceof SmithingScreenHandler smithingScreenHandler) {
+                Slot outputSlot = smithingScreenHandler.getSlot(3);
+
+                if (slot == outputSlot && !slot.getStack().isEmpty()) {
+                    return !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem());
+                }
+            }
+
+
+            else if (!cursorStack.isEmpty()) {
                 boolean isNonNormalSlot = !slot.getClass().equals(Slot.class);
+
                 if (!levelManager.hasRequiredItemLevel(cursorStack.getItem())) {
                     if (screenHandler instanceof PlayerScreenHandler) {
                         if (isNonNormalSlot) {

@@ -365,6 +365,8 @@
     "blocks": [
       "minecraft:enchanting_table"
     ],
+    "items": [],
+    "crafting": ["minecraft:blaze_powder", "minecraft:potion.mundane"],
     "enchantments": {
       "minecraft:bane_of_arthropods": 1,
       "minecraft:smite": 1
@@ -1285,7 +1287,9 @@
     "blocks": [
       "minecraft:smithing_table"
     ],
-    "crafting": [],
+    "crafting": [
+      "minecraft:diamond_sword"
+    ],
     "entities": [],
     "items": [],
     "mining": []

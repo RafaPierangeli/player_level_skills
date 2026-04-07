@@ -1,0 +1,13 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 2,
+      "minecraft:time_since_rest": 682,
+      "minecraft:total_world_time": 695,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 682,
+      "minecraft:time_since_death": 682
+    }
+  },
+  "DataVersion": 4671
+}

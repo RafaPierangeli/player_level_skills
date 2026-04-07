@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2632,
+      "minecraft:total_world_time": 2654,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 2632,
+      "minecraft:time_since_death": 2632
+    },
+    "minecraft:used": {
+      "minecraft:chainmail_helmet": 8,
+      "minecraft:iron_helmet": 2,
+      "minecraft:golden_helmet": 4,
+      "minecraft:turtle_helmet": 4,
+      "minecraft:copper_helmet": 1
+    }
+  },
+  "DataVersion": 4671
+}

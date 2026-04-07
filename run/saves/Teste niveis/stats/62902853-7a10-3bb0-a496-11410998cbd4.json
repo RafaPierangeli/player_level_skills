@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:sugar_cane": 3
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:interact_with_crafting_table": 4,
+      "minecraft:sprint_one_cm": 681,
+      "minecraft:time_since_rest": 1692,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 1317,
+      "minecraft:total_world_time": 1745,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 2858,
+      "minecraft:play_time": 1692,
+      "minecraft:jump": 18,
+      "minecraft:time_since_death": 1692
+    },
+    "minecraft:mined": {
+      "minecraft:sugar_cane": 1
+    }
+  },
+  "DataVersion": 4671
+}

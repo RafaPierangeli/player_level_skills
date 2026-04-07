@@ -1,21 +1,22 @@
 {
   "stats": {
-    "minecraft:picked_up": {
-      "minecraft:cobblestone": 20
-    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1713,
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:time_since_rest": 2097,
       "minecraft:walk_one_cm": 9725,
-      "minecraft:total_world_time": 1775,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 1713,
+      "minecraft:total_world_time": 2182,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 2097,
       "minecraft:jump": 7,
-      "minecraft:time_since_death": 1713
+      "minecraft:time_since_death": 2097
     },
     "minecraft:used": {
       "minecraft:stone": 20,
       "minecraft:flint_and_steel": 2,
       "minecraft:tnt": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 20
     }
   },
   "DataVersion": 4671

@@ -1,0 +1,33 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 2,
+      "minecraft:interact_with_crafting_table": 2,
+      "minecraft:sprint_one_cm": 33,
+      "minecraft:time_since_rest": 4142,
+      "minecraft:walk_one_cm": 829,
+      "minecraft:total_world_time": 4174,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 94,
+      "minecraft:play_time": 4142,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 4142,
+      "minecraft:drop": 2
+    },
+    "minecraft:dropped": {
+      "minecraft:blaze_rod": 1,
+      "minecraft:blaze_powder": 1
+    },
+    "minecraft:used": {
+      "minecraft:crafting_table": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:blaze_powder": 1,
+      "minecraft:blaze_rod": 1
+    },
+    "minecraft:crafted": {
+      "minecraft:blaze_powder": 4
+    }
+  },
+  "DataVersion": 4671
+}

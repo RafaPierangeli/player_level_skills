@@ -1,0 +1,27 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:stick": 51,
+      "minecraft:diamond": 38
+    },
+    "minecraft:crafted": {
+      "minecraft:diamond_sword": 12,
+      "minecraft:blaze_powder": 2
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:interact_with_crafting_table": 4,
+      "minecraft:sprint_one_cm": 55,
+      "minecraft:interact_with_smithing_table": 1,
+      "minecraft:time_since_rest": 2961,
+      "minecraft:walk_one_cm": 1373,
+      "minecraft:total_world_time": 2976,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 121,
+      "minecraft:play_time": 2961,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 2961
+    }
+  },
+  "DataVersion": 4671
+}

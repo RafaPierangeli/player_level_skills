@@ -29,7 +29,7 @@
 	// Bonus id: crossbowDoubleDamageChance
 	"crossbowDoubleDamageChanceBonus": 0.10000000149011612,
 	// Bonus id: itemDamageChance
-	"itemDamageChanceBonus": 0.009999999776482582,
+	"itemDamageChanceBonus": 0.05000000074505806,
 	// Bonus id: potionEffectChance
 	"potionEffectChanceBonus": 0.20000000298023224,
 	// Bonus id: twinBreedChance

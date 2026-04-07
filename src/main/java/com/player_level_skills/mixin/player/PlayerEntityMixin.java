@@ -144,14 +144,6 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
     }
 
 
-//    @Override
-//    protected void dropExperience(@Nullable Entity attacker) {
-//        if (this.playerEntity.getEntityWorld() instanceof ServerWorld serverWorld && this.shouldDropExperience() && this.getEntityWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT) && ConfigInit.CONFIG.resetCurrentXp) {
-//            LevelExperienceOrbEntity.spawn(serverWorld, this.getEntityPos(), (int) (this.levelManager.getLevelProgress() * this.levelManager.getNextLevelExperience()));
-//        }
-//        super.getExperienceToDrop(attacker);
-//    }
-
 
 @Override
 protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker) {

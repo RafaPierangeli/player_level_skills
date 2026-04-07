@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 2,
+      "minecraft:time_since_rest": 2396,
+      "minecraft:walk_one_cm": 2053,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 2396,
+      "minecraft:jump": 16,
+      "minecraft:time_since_death": 2396,
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:sprint_one_cm": 720,
+      "minecraft:open_chest": 1,
+      "minecraft:interact_with_smithing_table": 2,
+      "minecraft:fall_one_cm": 450,
+      "minecraft:total_world_time": 2413,
+      "minecraft:fly_one_cm": 2002
+    },
+    "minecraft:crafted": {
+      "minecraft:netherite_sword": 1,
+      "minecraft:diamond_sword": 1,
+      "minecraft:air": 0
+    }
+  },
+  "DataVersion": 4671
+}
