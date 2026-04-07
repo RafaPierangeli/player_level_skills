@@ -1,6 +1,7 @@
 package com.player_level_skills.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,14 +9,20 @@ import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.restriction.PlayerRestriction;
+import com.player_level_skills.registry.EnchantmentRegistry;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -25,6 +32,22 @@ import net.minecraft.util.hit.HitResult;
 import org.jetbrains.annotations.Nullable;
 
 public class TooltipUtil {
+
+    private static String toRoman(int level) {
+        return switch (level) {
+            case 1 -> "I";
+            case 2 -> "II";
+            case 3 -> "III";
+            case 4 -> "IV";
+            case 5 -> "V";
+            case 6 -> "VI";
+            case 7 -> "VII";
+            case 8 -> "VIII";
+            case 9 -> "IX";
+            case 10 -> "X";
+            default -> String.valueOf(level);
+        };
+    }
 
     public static void renderItemTooltip(MinecraftClient client, ItemStack stack, List<Text> lines) {
         if (client.player != null) {
@@ -81,6 +104,35 @@ public class TooltipUtil {
                     }
                 }
             }
+            ItemEnchantmentsComponent itemEnchantmentsComponent = EnchantmentHelper.getEnchantments(stack);
+
+            for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry2 : itemEnchantmentsComponent.getEnchantmentEntries()) {
+                RegistryEntry<Enchantment> enchantmentEntry = entry2.getKey();
+                int enchantmentLevel = entry2.getIntValue();
+
+                int enchantmentId = EnchantmentRegistry.getId(enchantmentEntry, enchantmentLevel);
+
+                if (isCreative || !levelManager.hasRequiredEnchantmentLevel(enchantmentEntry, enchantmentLevel)) {
+                    if (LevelManager.ENCHANTMENT_RESTRICTIONS.containsKey(enchantmentId)) {
+                        PlayerRestriction playerRestriction = LevelManager.ENCHANTMENT_RESTRICTIONS.get(enchantmentId);
+
+                        String enchantmentName = Text.translatable((enchantmentEntry.value().toString())).getString();
+                        String enchantmentRomanLevel = toRoman(enchantmentLevel);
+
+                        for (Map.Entry<Integer, Integer> entry : playerRestriction.getSkillLevelRestrictions().entrySet()) {
+                            if (isCreative || levelManager.getSkillLevel(entry.getKey()) < entry.getValue()) {
+
+                                lines.add(
+                                        Text.literal(enchantmentName + " " + enchantmentRomanLevel).formatted(Formatting.GRAY)
+                                                .append(Text.literal(": ").formatted(Formatting.GRAY)
+                                                        .append(Text.translatable("restriction.levelz." + LevelManager.SKILLS.get(entry.getKey()).getKey() + ".tooltip", entry.getValue()).formatted(Formatting.RED)))
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+
             if (stack.getItem() instanceof SpawnEggItem spawnEggItem) {
                 if (isCreative || !levelManager.hasRequiredEntityLevel(spawnEggItem.getEntityType(stack))) {
                     int entityId = Registries.ENTITY_TYPE.getRawId(spawnEggItem.getEntityType(stack));

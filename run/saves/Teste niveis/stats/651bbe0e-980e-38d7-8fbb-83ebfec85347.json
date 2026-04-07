@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:enchanted_book": 8,
+      "minecraft:air": 0
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 8,
+      "minecraft:talked_to_villager": 4,
+      "minecraft:time_since_rest": 1247,
+      "minecraft:walk_one_cm": 241,
+      "minecraft:total_world_time": 1290,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1247,
+      "minecraft:time_since_death": 1247
+    }
+  },
+  "DataVersion": 4671
+}

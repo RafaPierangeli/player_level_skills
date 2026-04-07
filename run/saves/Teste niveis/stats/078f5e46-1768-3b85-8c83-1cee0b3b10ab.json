@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:iron_sword": 2,
+      "minecraft:air": 0
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 2,
+      "minecraft:sprint_one_cm": 784,
+      "minecraft:talked_to_villager": 1,
+      "minecraft:time_since_rest": 709,
+      "minecraft:walk_one_cm": 689,
+      "minecraft:total_world_time": 964,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 321,
+      "minecraft:play_time": 709,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 709
+    }
+  },
+  "DataVersion": 4671
+}

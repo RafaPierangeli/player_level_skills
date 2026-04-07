@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:talked_to_villager": 4,
+      "minecraft:time_since_rest": 5409,
+      "minecraft:walk_one_cm": 4120,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 860,
+      "minecraft:play_time": 5409,
+      "minecraft:damage_absorbed": 8,
+      "minecraft:jump": 58,
+      "minecraft:time_since_death": 5409,
+      "minecraft:sprint_one_cm": 12220,
+      "minecraft:fall_one_cm": 1750,
+      "minecraft:total_world_time": 5423,
+      "minecraft:fly_one_cm": 17806,
+      "minecraft:walk_on_water_one_cm": 1698
+    },
+    "minecraft:crafted": {
+      "minecraft:diamond_pickaxe": 1
+    },
+    "minecraft:used": {
+      "minecraft:golden_apple": 1
+    },
+    "minecraft:mined": {
+      "minecraft:short_grass": 1
+    }
+  },
+  "DataVersion": 4671
+}

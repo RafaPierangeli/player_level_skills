@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:diamond_axe": 1,
+      "minecraft:air": 0,
+      "minecraft:iron_axe": 3
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 4,
+      "minecraft:talked_to_villager": 2,
+      "minecraft:time_since_rest": 1547,
+      "minecraft:walk_one_cm": 467,
+      "minecraft:total_world_time": 1572,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1547,
+      "minecraft:time_since_death": 1547
+    }
+  },
+  "DataVersion": 4671
+}

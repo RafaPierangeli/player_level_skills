@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:sprint_one_cm": 721,
+      "minecraft:talked_to_villager": 1,
+      "minecraft:time_since_rest": 5721,
+      "minecraft:walk_one_cm": 1714,
+      "minecraft:total_world_time": 5959,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 4319,
+      "minecraft:interact_with_anvil": 6,
+      "minecraft:play_time": 5721,
+      "minecraft:jump": 14,
+      "minecraft:time_since_death": 5721
+    }
+  },
+  "DataVersion": 4671
+}

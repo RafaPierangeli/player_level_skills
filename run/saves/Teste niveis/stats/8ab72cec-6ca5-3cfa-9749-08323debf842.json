@@ -1,14 +1,27 @@
 {
   "stats": {
+    "minecraft:crafted": {
+      "minecraft:enchanted_book": 1,
+      "minecraft:iron_pickaxe": 1
+    },
     "minecraft:used": {
+      "minecraft:golden_apple": 1,
       "minecraft:potion": 1
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1388,
-      "minecraft:total_world_time": 1432,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 1388,
-      "minecraft:time_since_death": 1388
+      "minecraft:traded_with_villager": 2,
+      "minecraft:talked_to_villager": 4,
+      "minecraft:time_since_rest": 6323,
+      "minecraft:walk_one_cm": 2081,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 6323,
+      "minecraft:jump": 37,
+      "minecraft:time_since_death": 6323,
+      "minecraft:sprint_one_cm": 3369,
+      "minecraft:fall_one_cm": 1125,
+      "minecraft:total_world_time": 6386,
+      "minecraft:fly_one_cm": 11764,
+      "minecraft:interact_with_anvil": 1
     }
   },
   "DataVersion": 4671

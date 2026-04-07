@@ -74,7 +74,7 @@ public class SkillRestrictionScreen extends Screen implements Tab {
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
 
-        context.drawText(this.textRenderer, this.title, this.x + 7, this.y + 7, 0x3F3F3F, false);
+        context.drawText(this.textRenderer, this.title, this.x + 7, this.y + 7, 0xFF3F3F3F, false);
 
         for (int i = 0; i < 10; i++) {
             if (this.lines.size() <= i) {
@@ -120,6 +120,11 @@ public class SkillRestrictionScreen extends Screen implements Tab {
             return true;
         }
         return super.keyPressed(input);
+    }
+
+    @Override
+    public void close() {
+        this.client.setScreen(new PlayerLevelSkillsScreen());
     }
 
     @Override

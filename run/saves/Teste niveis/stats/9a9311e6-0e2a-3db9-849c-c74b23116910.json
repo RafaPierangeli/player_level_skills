@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:diamond_sword": 2,
+      "minecraft:emerald": 5
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 7,
+      "minecraft:sprint_one_cm": 177,
+      "minecraft:talked_to_villager": 3,
+      "minecraft:time_since_rest": 1558,
+      "minecraft:walk_one_cm": 822,
+      "minecraft:total_world_time": 1581,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 1558,
+      "minecraft:time_since_death": 1558
+    }
+  },
+  "DataVersion": 4671
+}

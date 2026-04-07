@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:crafted": {
+      "minecraft:enchanted_book": 1,
+      "minecraft:iron_sword": 2,
+      "minecraft:air": 0
+    },
+    "minecraft:used": {
+      "minecraft:lectern": 1,
+      "minecraft:villager_spawn_egg": 1
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 3,
+      "minecraft:sprint_one_cm": 741,
+      "minecraft:talked_to_villager": 3,
+      "minecraft:time_since_rest": 3776,
+      "minecraft:fall_one_cm": 450,
+      "minecraft:walk_one_cm": 2394,
+      "minecraft:total_world_time": 3875,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 3307,
+      "minecraft:play_time": 3776,
+      "minecraft:jump": 18,
+      "minecraft:time_since_death": 3776
+    }
+  },
+  "DataVersion": 4671
+}

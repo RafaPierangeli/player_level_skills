@@ -239,6 +239,7 @@
 
   "restriction.levelz.usable.tooltip": "Usable",
   "restriction.levelz.craftable.tooltip": "Craftable",
+  "restriction.levelz.enchantment.tooltip": "Enchantment ",
   "restriction.levelz.mineable.tooltip": "Mineable",
   "restriction.levelz.block_usage": "Block Usage",
   "restriction.levelz.melee.tooltip": "Melee %s",
