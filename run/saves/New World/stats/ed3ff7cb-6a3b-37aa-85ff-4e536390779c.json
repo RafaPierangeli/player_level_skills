@@ -1,0 +1,33 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:porkchop": 1,
+      "minecraft:string": 3,
+      "minecraft:spider_eye": 2
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1,
+      "minecraft:pig": 1,
+      "minecraft:spider": 3
+    },
+    "minecraft:used": {
+      "minecraft:spider_spawn_egg": 4,
+      "minecraft:pig_spawn_egg": 5,
+      "minecraft:iron_sword": 32
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 474,
+      "minecraft:time_since_rest": 3613,
+      "minecraft:walk_one_cm": 11741,
+      "minecraft:total_world_time": 3635,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 5,
+      "minecraft:damage_taken": 4,
+      "minecraft:play_time": 3613,
+      "minecraft:damage_dealt": 1032,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 3613
+    }
+  },
+  "DataVersion": 4671
+}

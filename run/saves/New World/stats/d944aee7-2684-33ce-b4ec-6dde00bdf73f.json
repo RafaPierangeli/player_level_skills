@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:stone_shovel": 1
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 490,
+      "minecraft:walk_one_cm": 205,
+      "minecraft:total_world_time": 2845,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 825,
+      "minecraft:walk_on_water_one_cm": 161,
+      "minecraft:play_time": 490,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 490
+    }
+  },
+  "DataVersion": 4671
+}

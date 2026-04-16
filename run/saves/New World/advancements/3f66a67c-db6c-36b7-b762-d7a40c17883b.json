@@ -325,6 +325,7 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:river": "2026-04-10 17:13:35 -0300",
       "minecraft:meadow": "2026-03-29 13:11:23 -0300"
     },
     "done": false
@@ -361,6 +362,7 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:zombified_piglin": "2026-04-10 17:13:45 -0300",
       "minecraft:zombie": "2026-03-29 13:45:13 -0300"
     },
     "done": false
@@ -374,6 +376,24 @@
   "minecraft:adventure/kill_a_mob": {
     "criteria": {
       "minecraft:zombie": "2026-03-29 13:45:13 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_boots": "2026-04-10 17:13:34 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2026-04-10 17:13:41 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-04-10 17:13:34 -0300"
     },
     "done": true
   },

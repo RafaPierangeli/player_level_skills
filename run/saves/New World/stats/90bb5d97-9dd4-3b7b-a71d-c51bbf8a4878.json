@@ -1,11 +1,21 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 225,
-      "minecraft:total_world_time": 256,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 225,
-      "minecraft:time_since_death": 225
+      "minecraft:time_since_rest": 2225,
+      "minecraft:walk_one_cm": 389,
+      "minecraft:total_world_time": 2279,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 3,
+      "minecraft:play_time": 2225,
+      "minecraft:time_since_death": 2225
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 4,
+      "minecraft:bow": 23
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2,
+      "minecraft:piglin_brute": 1
     }
   },
   "DataVersion": 4671

@@ -1,11 +1,21 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1427,
-      "minecraft:total_world_time": 1796,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 1427,
-      "minecraft:time_since_death": 1427
+      "minecraft:time_since_rest": 1568,
+      "minecraft:walk_one_cm": 623,
+      "minecraft:total_world_time": 1958,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 1568,
+      "minecraft:time_since_death": 1568
+    },
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 1
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 1
     }
   },
   "DataVersion": 4671

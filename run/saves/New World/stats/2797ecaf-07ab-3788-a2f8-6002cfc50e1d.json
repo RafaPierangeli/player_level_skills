@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1
+    },
+    "minecraft:used": {
+      "minecraft:diamond_sword": 3
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 411,
+      "minecraft:walk_one_cm": 78,
+      "minecraft:total_world_time": 474,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 411,
+      "minecraft:damage_dealt": 325,
+      "minecraft:time_since_death": 411
+    }
+  },
+  "DataVersion": 4671
+}

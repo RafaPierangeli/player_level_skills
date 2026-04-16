@@ -1,11 +1,15 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:crossbow": 1,
+      "minecraft:bow": 1
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 293,
-      "minecraft:total_world_time": 317,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 293,
-      "minecraft:time_since_death": 293
+      "minecraft:time_since_rest": 543,
+      "minecraft:total_world_time": 586,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 543,
+      "minecraft:time_since_death": 543
     }
   },
   "DataVersion": 4671

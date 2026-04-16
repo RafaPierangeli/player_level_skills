@@ -1,0 +1,27 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 102,
+      "minecraft:time_since_rest": 395,
+      "minecraft:walk_one_cm": 507,
+      "minecraft:total_world_time": 537,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 395,
+      "minecraft:damage_dealt": 100,
+      "minecraft:time_since_death": 395
+    },
+    "minecraft:picked_up": {
+      "minecraft:cooked_porkchop": 2
+    },
+    "minecraft:killed": {
+      "minecraft:pig": 1
+    },
+    "minecraft:used": {
+      "minecraft:pig_spawn_egg": 1,
+      "minecraft:diamond_sword": 1,
+      "minecraft:bow": 1
+    }
+  },
+  "DataVersion": 4671
+}

@@ -1,11 +1,40 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:stone": 83,
+      "minecraft:piglin_brute_spawn_egg": 2,
+      "minecraft:diamond_pickaxe": 56,
+      "minecraft:netherite_sword": 5,
+      "minecraft:crossbow": 3,
+      "minecraft:cooked_porkchop": 1,
+      "minecraft:iron_sword": 2,
+      "minecraft:bow": 3
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1,
+      "minecraft:piglin_brute": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 55
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 490,
-      "minecraft:total_world_time": 551,
-      "minecraft:leave_game": 3,
-      "minecraft:play_time": 490,
-      "minecraft:time_since_death": 490
+      "minecraft:time_since_rest": 9635,
+      "minecraft:walk_one_cm": 21158,
+      "minecraft:leave_game": 4,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 20,
+      "minecraft:damage_dealt": 680,
+      "minecraft:play_time": 9635,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 9635,
+      "minecraft:sprint_one_cm": 644,
+      "minecraft:fall_one_cm": 800,
+      "minecraft:total_world_time": 9730,
+      "minecraft:fly_one_cm": 645,
+      "minecraft:interact_with_anvil": 2
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 56
     }
   },
   "DataVersion": 4671

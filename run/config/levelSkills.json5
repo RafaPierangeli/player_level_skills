@@ -11,15 +11,13 @@
 	"hardMode": false,
 	// Retain % of levels and skill points, 0 = hard mode
 	"levelRetainPercentage": 100.0,
-	"disableMobFarms": true,
+	"disableMobFarms": false,
 	// Amount of allowed mob kills in a chunk
-	"mobKillCount": 6,
+	"mobKillCount": 600,
 	// Strange potion resets all stats instead of one
 	"opStrangePotion": true,
 	// restrict hand usage when item not unlocked
-	"lockedHandUsage": true,
-	// Only for Devs
-	"devMode": false,
+	"lockedHandUsage": false,
 	// Bonus id: bowDamage
 	"bowDamageBonus": 0.5,
 	// Bonus id: bowDoubleDamageChance
@@ -67,7 +65,7 @@
 	// Bonus id: meleeCriticalAttackDamage
 	"meleeCriticalAttackDamageBonus": 0.30000001192092896,
 	// Bonus id: meleeDoubleAttackDamageChance
-	"meleeDoubleAttackDamageChanceBonus": 0.20000000298023224,
+	"meleeDoubleAttackDamageChanceBonus": 0.0,
 	// Bonus id: foodIncreasion
 	"foodIncreasionBonus": 0.019999999552965164,
 	// Bonus id: damageReflection

@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:crossbow": 1,
+      "minecraft:bow": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 887,
+      "minecraft:time_since_rest": 621,
+      "minecraft:fall_one_cm": 400,
+      "minecraft:walk_one_cm": 258,
+      "minecraft:total_world_time": 621,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 1043,
+      "minecraft:damage_taken": 10,
+      "minecraft:play_time": 621,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 621
+    }
+  },
+  "DataVersion": 4671
+}

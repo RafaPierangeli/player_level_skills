@@ -32,20 +32,17 @@ public class player_level_skillsConfig implements ConfigData {
     @Comment("Retain % of levels and skill points, 0 = hard mode")
     public float levelRetainPercentage = 100;
     @ConfigEntry.Category("level_settings")
-    public boolean disableMobFarms = true;
+    public boolean disableMobFarms = false;
     @ConfigEntry.Category("level_settings")
     @Comment("Amount of allowed mob kills in a chunk")
-    public int mobKillCount = 6;
+    public int mobKillCount = 50;
     @ConfigEntry.Category("level_settings")
     @Comment("Strange potion resets all stats instead of one")
-    public boolean opStrangePotion = false;
+    public boolean opStrangePotion = true;
     //@ConfigSync.ClientOnly
     @ConfigEntry.Category("level_settings")
     @Comment("restrict hand usage when item not unlocked")
     public boolean lockedHandUsage = false;
-    @ConfigEntry.Category("level_settings")
-    @Comment("Only for Devs")
-    public boolean devMode = false;
 
     // Skill bonuses
     @Comment("Bonus id: bowDamage")

@@ -24,19 +24,24 @@ public interface InGameHudMixin {
             return;
         }
 
-        int color = 0xFF55FF55;
-        if (((LevelManagerAccess) client.player).getLevelManager().hasAvailableLevel()) {
-            color = 0xFF00E5FF;
+        boolean hasAvailableLevel = ((LevelManagerAccess) client.player).getLevelManager().hasAvailableLevel();
+        if (!hasAvailableLevel) {
+            return;
         }
-        int shadow = 0XFF000000;
 
         Text text = Text.literal(Integer.toString(level));
-
-        // posição vanilla aproximada: precisa ajustar se quiser pixel-perfect
         int x = context.getScaledWindowWidth() / 2 - textRenderer.getWidth(text) / 2;
         int y = context.getScaledWindowHeight() - 35;
 
-        context.drawText(textRenderer, text, x, y, color, true);
+        // sombra preta manual
+        context.drawText(textRenderer, text, x + 1, y, 0xFF000000, false);
+        context.drawText(textRenderer, text, x - 1, y, 0xFF000000, false);
+        context.drawText(textRenderer, text, x, y + 1, 0xFF000000, false);
+        context.drawText(textRenderer, text, x, y - 1, 0xFF000000, false);
+
+        // texto principal em ciano
+        context.drawText(textRenderer, text, x, y, 0xFF00E5FF, false);
+
         ci.cancel();
     }
 }

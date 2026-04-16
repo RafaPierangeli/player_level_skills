@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 1
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:netherite_sword": 2,
+      "minecraft:pig_spawn_egg": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 161,
+      "minecraft:time_since_rest": 736,
+      "minecraft:walk_one_cm": 1039,
+      "minecraft:total_world_time": 758,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 428,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 736,
+      "minecraft:damage_dealt": 662,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 736
+    }
+  },
+  "DataVersion": 4671
+}

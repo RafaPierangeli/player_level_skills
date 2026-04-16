@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:cooked_porkchop": 7
+    },
+    "minecraft:used": {
+      "minecraft:cooked_porkchop": 1,
+      "minecraft:bow": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1525,
+      "minecraft:time_since_rest": 1030,
+      "minecraft:fall_one_cm": 750,
+      "minecraft:walk_one_cm": 1284,
+      "minecraft:total_world_time": 1057,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 1439,
+      "minecraft:damage_taken": 10,
+      "minecraft:play_time": 1030,
+      "minecraft:jump": 19,
+      "minecraft:time_since_death": 1030
+    }
+  },
+  "DataVersion": 4671
+}

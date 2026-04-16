@@ -1,0 +1,47 @@
+{
+	"enableDefaultModifiers": true,
+	// Items in for example mineshaft chests get modifiers
+	"lootContainerModifier": true,
+	"entityItemModifier": true,
+	"entityDropModifier": true,
+	// Crafted items get modifiers
+	"craftingModifier": true,
+	// Merchant items get modifiers
+	"merchantModifier": true,
+	// Merchant items Scaling for merchant level
+	"merchantLevelScaling": true,
+	// Decreases the biggest weights by this modifier
+	"reforgeModifier": 0.8999999761581421,
+	// Modify the biggest weights by this modifier per smithing level
+	"levelzReforgeModifier": 0.009999999776482582,
+	// Modify the biggest weights by this modifier per luck
+	"luckReforgeModifier": 0.019999999552965164,
+	"reforgeXpCost": 50,
+	"uniqueReforge": false,
+	// Color mode for attributes in tooltip
+	"attributeColorMode": "DEFAULT",
+	// Draws a solid colored line around the tooltip based on the tier's rarity color.
+	"enableTierColorBorder": true,
+	// Draws custom textures (corners and top icon) around the tooltip
+	"enableTierOrnaments": true,
+	"uniqueTooltipMode": "ALWAYS",
+	"maxLevelEquipment": 100,
+	"globalXpMultiplier": 1.0,
+	"xpBaseKillEntity": 2,
+	"xpBaseMineBlock": 1,
+	"xpMultiplierCoal": 2,
+	"xpMultiplierCopper": 2,
+	"xpMultiplierQuartz": 2,
+	"xpMultiplierIron": 3,
+	"xpMultiplierRedstone": 3,
+	"xpMultiplierGold": 4,
+	"xpMultiplierLapis": 4,
+	"xpMultiplierDiamond": 10,
+	"xpMultiplierEmerald": 15,
+	"xpMultiplierNetherite": 20,
+	"xpBaseTakeDamage": 1,
+	"xpBaseFishing": 5,
+	"xpBaseCastRod": 1,
+	"xpBaseSwim": 1,
+	"xpBaseSubmerge": 1
+}

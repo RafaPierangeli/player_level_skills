@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1,
+      "minecraft:pig": 7
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1229,
+      "minecraft:time_since_rest": 2521,
+      "minecraft:walk_one_cm": 3165,
+      "minecraft:total_world_time": 2556,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 320,
+      "minecraft:mob_kills": 8,
+      "minecraft:play_time": 2521,
+      "minecraft:damage_dealt": 870,
+      "minecraft:jump": 6,
+      "minecraft:time_since_death": 2521
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:pig_spawn_egg": 10,
+      "minecraft:diamond_sword": 4,
+      "minecraft:iron_sword": 7
+    },
+    "minecraft:picked_up": {
+      "minecraft:porkchop": 4
+    }
+  },
+  "DataVersion": 4671
+}

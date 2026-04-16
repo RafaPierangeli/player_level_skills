@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:wheat_seeds": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 177,
+      "minecraft:time_since_rest": 543,
+      "minecraft:walk_one_cm": 532,
+      "minecraft:total_world_time": 562,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 543,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 543
+    },
+    "minecraft:used": {
+      "minecraft:diamond_axe": 6
+    },
+    "minecraft:mined": {
+      "minecraft:short_grass": 6
+    }
+  },
+  "DataVersion": 4671
+}

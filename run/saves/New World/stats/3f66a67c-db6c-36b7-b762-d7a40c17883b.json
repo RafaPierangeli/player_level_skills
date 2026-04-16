@@ -1,23 +1,26 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 833,
-      "minecraft:fall_one_cm": 225,
-      "minecraft:walk_one_cm": 1660,
-      "minecraft:total_world_time": 48463,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 1,
-      "minecraft:play_time": 833,
-      "minecraft:damage_dealt": 180,
-      "minecraft:jump": 8,
-      "minecraft:time_since_death": 833
-    },
     "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
       "minecraft:zombie_spawn_egg": 1,
+      "minecraft:bow": 6,
       "minecraft:iron_sword": 2
     },
     "minecraft:killed": {
-      "minecraft:zombie": 1
+      "minecraft:zombie": 1,
+      "minecraft:zombified_piglin": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1206,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 1660,
+      "minecraft:total_world_time": 48836,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 1206,
+      "minecraft:damage_dealt": 180,
+      "minecraft:jump": 8,
+      "minecraft:time_since_death": 1206
     }
   },
   "DataVersion": 4671

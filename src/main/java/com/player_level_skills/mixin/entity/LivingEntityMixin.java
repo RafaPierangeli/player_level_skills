@@ -7,15 +7,23 @@ import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.util.BonusHelper;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -144,4 +152,47 @@ public abstract class LivingEntityMixin extends Entity {
 
         LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos(), finalXp);
     }
+
+
+
+    //compile but not work
+//    @Inject(method = "canBreatheInWater", at = @At("HEAD"), cancellable = true)
+//    private void player_level_skills$blockAquaAffinityAndRespiration(CallbackInfoReturnable<Boolean> cir) {
+//        if ((Object) this instanceof ServerPlayerEntity player) {
+//
+//
+//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+//
+//            ItemStack helmet = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.HEAD);
+//
+//            RegistryEntry<Enchantment> aquaAffinity = player.getRegistryManager()
+//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                    .getEntry(Enchantments.AQUA_AFFINITY.getValue())
+//                    .orElse(null);
+//
+//            RegistryEntry<Enchantment> respiration = player.getRegistryManager()
+//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                    .getEntry(Enchantments.RESPIRATION.getValue())
+//                    .orElse(null);
+//
+//            if (helmet != null && !helmet.isEmpty()) {
+//                if (aquaAffinity != null) {
+//                    int aquaLevel = EnchantmentHelper.getLevel(aquaAffinity, helmet);
+//                    if (aquaLevel > 0 && !levelManager.hasRequiredEnchantmentLevel(aquaAffinity, aquaLevel)) {
+//                        cir.setReturnValue(false);
+//                        return;
+//                    }
+//                }
+//
+//                if (respiration != null) {
+//                    int respLevel = EnchantmentHelper.getLevel(respiration, helmet);
+//                    if (respLevel > 0 && !levelManager.hasRequiredEnchantmentLevel(respiration, respLevel)) {
+//                        cir.setReturnValue(false);
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+
 }

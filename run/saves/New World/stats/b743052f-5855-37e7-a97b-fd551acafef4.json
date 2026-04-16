@@ -1,11 +1,19 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:pig_spawn_egg": 1,
+      "minecraft:bow": 1
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 134,
-      "minecraft:total_world_time": 166,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 134,
-      "minecraft:time_since_death": 134
+      "minecraft:time_since_rest": 616,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 713,
+      "minecraft:total_world_time": 673,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 616,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 616
     }
   },
   "DataVersion": 4671

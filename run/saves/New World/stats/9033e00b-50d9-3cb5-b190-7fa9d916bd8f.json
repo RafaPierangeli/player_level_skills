@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 392,
+      "minecraft:total_world_time": 415,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 392,
+      "minecraft:time_since_death": 392
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1
+    },
+    "minecraft:used": {
+      "minecraft:bow": 3
+    }
+  },
+  "DataVersion": 4671
+}

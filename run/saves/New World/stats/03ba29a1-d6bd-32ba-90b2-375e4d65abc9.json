@@ -1,12 +1,24 @@
 {
   "stats": {
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 985,
-      "minecraft:walk_one_cm": 970,
-      "minecraft:total_world_time": 1078,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 985,
-      "minecraft:time_since_death": 985
+      "minecraft:time_since_rest": 2299,
+      "minecraft:walk_one_cm": 1028,
+      "minecraft:total_world_time": 2438,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 2299,
+      "minecraft:damage_dealt": 1519,
+      "minecraft:time_since_death": 2299
+    },
+    "minecraft:used": {
+      "minecraft:stone_sword": 3,
+      "minecraft:piglin_brute_spawn_egg": 3,
+      "minecraft:netherite_sword": 6,
+      "minecraft:copper_sword": 3,
+      "minecraft:diamond_sword": 4
     }
   },
   "DataVersion": 4671

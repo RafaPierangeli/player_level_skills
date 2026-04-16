@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 7130,
+      "minecraft:walk_one_cm": 1190,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 8,
+      "minecraft:play_time": 7130,
+      "minecraft:damage_dealt": 3935,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 7130,
+      "minecraft:sprint_one_cm": 530,
+      "minecraft:total_world_time": 10527,
+      "minecraft:fly_one_cm": 3794,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_on_water_one_cm": 142
+    },
+    "minecraft:used": {
+      "minecraft:stone_sword": 1,
+      "minecraft:piglin_brute_spawn_egg": 8,
+      "minecraft:netherite_sword": 14,
+      "minecraft:copper_sword": 1,
+      "minecraft:diamond_sword": 5
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1,
+      "minecraft:piglin_brute": 7
+    }
+  },
+  "DataVersion": 4671
+}

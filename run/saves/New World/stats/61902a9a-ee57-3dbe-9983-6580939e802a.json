@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 949,
+      "minecraft:walk_one_cm": 4804,
+      "minecraft:total_world_time": 970,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 949,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 949
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 2,
+      "minecraft:grass_block": 2,
+      "minecraft:copper_pickaxe": 3
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 1,
+      "minecraft:grass_block": 2,
+      "minecraft:copper_ore": 1,
+      "minecraft:stone": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 2
+    }
+  },
+  "DataVersion": 4671
+}

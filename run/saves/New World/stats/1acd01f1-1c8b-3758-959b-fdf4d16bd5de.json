@@ -1,11 +1,43 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 395,
-      "minecraft:total_world_time": 445,
-      "minecraft:leave_game": 2,
-      "minecraft:play_time": 395,
-      "minecraft:time_since_death": 395
+      "minecraft:damage_resisted": 52,
+      "minecraft:time_since_rest": 1693,
+      "minecraft:walk_one_cm": 5013,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 2,
+      "minecraft:walk_under_water_one_cm": 3717,
+      "minecraft:damage_taken": 51,
+      "minecraft:damage_dealt": 700,
+      "minecraft:play_time": 1693,
+      "minecraft:damage_absorbed": 153,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 1693,
+      "minecraft:sprint_one_cm": 1543,
+      "minecraft:fall_one_cm": 300,
+      "minecraft:total_world_time": 1804,
+      "minecraft:fly_one_cm": 286,
+      "minecraft:walk_on_water_one_cm": 1039,
+      "minecraft:sneak_time": 13
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 1,
+      "minecraft:stone": 2
+    },
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 1,
+      "minecraft:drowned": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 4,
+      "minecraft:grass_block": 1
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 1,
+      "minecraft:grass_block": 1,
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:copper_pickaxe": 2,
+      "minecraft:netherite_sword": 7
     }
   },
   "DataVersion": 4671

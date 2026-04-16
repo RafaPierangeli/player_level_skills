@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:anvil": 1,
+      "minecraft:diamond_boots": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1011,
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 3318,
+      "minecraft:walk_one_cm": 3650,
+      "minecraft:total_world_time": 3330,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 226,
+      "minecraft:interact_with_anvil": 3,
+      "minecraft:walk_on_water_one_cm": 53,
+      "minecraft:play_time": 3318,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 3318
+    }
+  },
+  "DataVersion": 4671
+}

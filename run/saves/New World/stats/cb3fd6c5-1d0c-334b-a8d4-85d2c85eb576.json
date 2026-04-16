@@ -1,0 +1,36 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 5,
+      "minecraft:spider_spawn_egg": 6,
+      "minecraft:crossbow": 3,
+      "minecraft:bow": 14,
+      "minecraft:iron_sword": 23
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1677,
+      "minecraft:time_since_rest": 7314,
+      "minecraft:walk_one_cm": 6059,
+      "minecraft:total_world_time": 23713,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 614,
+      "minecraft:mob_kills": 11,
+      "minecraft:damage_taken": 5,
+      "minecraft:play_time": 7314,
+      "minecraft:damage_dealt": 2067,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 7314
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2,
+      "minecraft:piglin_brute": 3,
+      "minecraft:spider": 6
+    },
+    "minecraft:picked_up": {
+      "minecraft:string": 6,
+      "minecraft:gold_ingot": 1,
+      "minecraft:spider_eye": 4
+    }
+  },
+  "DataVersion": 4671
+}

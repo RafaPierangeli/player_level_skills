@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 825,
+      "minecraft:walk_one_cm": 771,
+      "minecraft:total_world_time": 951,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 825,
+      "minecraft:time_since_death": 825
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:crossbow": 1,
+      "minecraft:bow": 3
+    }
+  },
+  "DataVersion": 4671
+}

@@ -56,7 +56,7 @@ public class StrangePotionItem extends Item {
             }
 
             user.emitGameEvent(GameEvent.DRINK);
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 200, 0));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 200, 0));
         }
         return stack;
     }

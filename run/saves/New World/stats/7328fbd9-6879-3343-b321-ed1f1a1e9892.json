@@ -1,23 +1,29 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 1084,
-      "minecraft:time_since_rest": 549,
-      "minecraft:walk_one_cm": 3545,
-      "minecraft:total_world_time": 564,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 549,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 549
+    "minecraft:picked_up": {
+      "minecraft:coal": 1,
+      "minecraft:grass_block": 1
     },
     "minecraft:mined": {
-      "minecraft:coal_ore": 1
+      "minecraft:coal_ore": 1,
+      "minecraft:grass_block": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1084,
+      "minecraft:time_since_rest": 1409,
+      "minecraft:walk_one_cm": 4889,
+      "minecraft:total_world_time": 1442,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_under_water_one_cm": 312,
+      "minecraft:walk_on_water_one_cm": 208,
+      "minecraft:play_time": 1409,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 1409
     },
     "minecraft:used": {
+      "minecraft:stone_shovel": 1,
+      "minecraft:grass_block": 1,
       "minecraft:netherite_pickaxe": 1
-    },
-    "minecraft:picked_up": {
-      "minecraft:coal": 1
     }
   },
   "DataVersion": 4671

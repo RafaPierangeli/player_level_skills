@@ -10,7 +10,7 @@ import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.PlayerSkill;
 import com.player_level_skills.level.Skill;
-import com.player_level_skills.mixin.EntityAccessor;
+import com.player_level_skills.mixin.entity.EntityAccessor;
 import com.player_level_skills.util.LevelHelper;
 import com.player_level_skills.util.PacketHelper;
 import net.minecraft.network.packet.s2c.play.PlayerListS2CPacket;

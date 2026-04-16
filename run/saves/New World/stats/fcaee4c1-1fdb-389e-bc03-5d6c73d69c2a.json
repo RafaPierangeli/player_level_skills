@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 118,
+      "minecraft:walk_one_cm": 12,
+      "minecraft:total_world_time": 118,
+      "minecraft:play_time": 118,
+      "minecraft:time_since_death": 118
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:bow": 1
+    }
+  },
+  "DataVersion": 4671
+}

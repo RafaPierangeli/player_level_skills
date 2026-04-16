@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 2
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 202,
+      "minecraft:time_since_rest": 1087,
+      "minecraft:walk_one_cm": 771,
+      "minecraft:total_world_time": 1119,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 181,
+      "minecraft:walk_under_water_one_cm": 1404,
+      "minecraft:walk_on_water_one_cm": 224,
+      "minecraft:play_time": 1087,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 1087
+    }
+  },
+  "DataVersion": 4671
+}

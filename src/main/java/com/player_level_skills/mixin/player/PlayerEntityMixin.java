@@ -1,18 +1,27 @@
 package com.player_level_skills.mixin.player;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.access.PlayerDropAccess;
 import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
 import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.util.BonusHelper;
+import net.minecraft.block.BlockState;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.DamageTypeTags;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
@@ -101,6 +110,21 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
         return original;
     }
 
+    @Inject(method = "attack", at = @At("HEAD"))
+    private void player_level_skills$captureAttacker(Entity target, CallbackInfo ci) {
+        if ((Object)this instanceof ServerPlayerEntity player) {
+            // Armazena o player na thread atual
+            LevelManager.CURRENT_ATTACKER.set(player);
+        }
+    }
+
+    @Inject(method = "attack", at = @At("TAIL"))
+    private void player_level_skills$releaseAttacker(Entity target, CallbackInfo ci) {
+        // Limpa para evitar vazamento de memória ou bugs em outros processos
+        LevelManager.CURRENT_ATTACKER.remove();
+    }
+
+
     @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;dropShoulderEntities()V"), cancellable = true)
     private void damageMixin(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         BonusHelper.damageReflectionBonus(this.playerEntity, source, amount);
@@ -154,5 +178,69 @@ protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker
         }
         super.dropExperience(serverWorld,attacker);
     }
+
+//    @ModifyReturnValue(method = "getBlockBreakingSpeed", at = @At("RETURN"))
+//    private float player_level_skills$forceBaseSpeed(float originalSpeed, BlockState state) {
+//        PlayerEntity player = (PlayerEntity) (Object) this;
+//        ItemStack stack = player.getMainHandStack();
+//
+//                RegistryEntry<Enchantment> efficiencyEntry = player.getRegistryManager()
+//                .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                .getEntry(Enchantments.EFFICIENCY.getValue())
+//                .orElse(null);
+//
+//        // Pega o nível de eficiência real do item
+//        int level = EnchantmentHelper.getLevel(
+//                player.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(Enchantments.EFFICIENCY.getValue()).get(),
+//                stack
+//        );
+//
+//        if (level > 0) {
+//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+//            // Se o player não tem o nível, forçamos a velocidade de volta para a base do material
+//            // Isso ignora qualquer "sujeira" que tenha ficado no atributo do player
+//            if (!levelManager.hasRequiredEnchantmentLevel(efficiencyEntry, level)) {
+//                return stack.getMiningSpeedMultiplier(state);
+//            }
+//        }
+//        return originalSpeed;
+//    }
+
+
+//    @Inject(method = "getBlockBreakingSpeed", at = @At("HEAD"))
+//    private void player_level_skills$setMiningPlayer(BlockState block, CallbackInfoReturnable<Float> cir) {
+//        if ((Object)this instanceof ServerPlayerEntity player) {
+//            LevelManager.CURRENT_MINER.set(player);
+//        }
+//    }
+//
+//    @Inject(method = "getBlockBreakingSpeed", at = @At("TAIL"))
+//    private void player_level_skills$clearMiningPlayer(BlockState block, CallbackInfoReturnable<Float> cir) {
+//        // Limpeza imediata para evitar que o player "vaze" e libere outros encantamentos
+//        LevelManager.CURRENT_MINER.remove();
+//    }
+
+
+    //compile and work, but anule total speed in other args
+//    @ModifyReturnValue(method = "getBlockBreakingSpeed", at = @At("RETURN"))
+//    private float player_level_skills$checkMiningSpeed(float originalSpeed, BlockState state) {
+//        PlayerEntity player = (PlayerEntity) (Object) this;
+//        LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+//
+//        ItemStack stack = player.getMainHandStack();
+//        if (stack.isEmpty()) return originalSpeed;
+//
+//        RegistryEntry<Enchantment> efficiencyEntry = player.getRegistryManager()
+//                .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                .getEntry(Enchantments.EFFICIENCY.getValue())
+//                .orElse(null);
+//
+//
+//        int level = EnchantmentHelper.getLevel(efficiencyEntry, stack);
+//        if (level > 0 && !levelManager.hasRequiredEnchantmentLevel(efficiencyEntry, level)) {
+//            return 1.0F;
+//        }
+//        return originalSpeed;
+//    }
 
 }

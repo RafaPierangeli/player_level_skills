@@ -1,11 +1,33 @@
 {
   "stats": {
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 2
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 2
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 232,
-      "minecraft:total_world_time": 265,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 232,
-      "minecraft:time_since_death": 232
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 2632,
+      "minecraft:walk_one_cm": 3325,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_under_water_one_cm": 1995,
+      "minecraft:damage_taken": 10,
+      "minecraft:play_time": 2632,
+      "minecraft:jump": 6,
+      "minecraft:time_since_death": 2632,
+      "minecraft:sprint_one_cm": 14,
+      "minecraft:fall_one_cm": 400,
+      "minecraft:total_world_time": 3288,
+      "minecraft:fly_one_cm": 331,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_on_water_one_cm": 167,
+      "minecraft:sneak_time": 1
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 2,
+      "minecraft:grass_block": 2,
+      "minecraft:enchanted_golden_apple": 1
     }
   },
   "DataVersion": 4671

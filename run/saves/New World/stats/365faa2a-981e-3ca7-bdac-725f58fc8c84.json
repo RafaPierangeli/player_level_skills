@@ -1,11 +1,45 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:copper_shovel": 32,
+      "minecraft:copper_pickaxe": 20,
+      "minecraft:cooked_porkchop": 1,
+      "minecraft:bow": 2,
+      "minecraft:iron_shovel": 46
+    },
+    "minecraft:mined": {
+      "minecraft:dirt": 52,
+      "minecraft:clay": 8,
+      "minecraft:grass_block": 1,
+      "minecraft:stone": 5
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1,
+      "minecraft:drowned": 2
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 299,
-      "minecraft:total_world_time": 533,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 299,
-      "minecraft:time_since_death": 299
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 12602,
+      "minecraft:walk_one_cm": 2159,
+      "minecraft:leave_game": 4,
+      "minecraft:mob_kills": 3,
+      "minecraft:walk_under_water_one_cm": 31276,
+      "minecraft:damage_taken": 40,
+      "minecraft:damage_dealt": 449,
+      "minecraft:play_time": 12602,
+      "minecraft:jump": 16,
+      "minecraft:time_since_death": 12602,
+      "minecraft:sprint_one_cm": 816,
+      "minecraft:total_world_time": 14421,
+      "minecraft:fly_one_cm": 6885,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_on_water_one_cm": 10778,
+      "minecraft:sneak_time": 55
+    },
+    "minecraft:picked_up": {
+      "minecraft:dirt": 43,
+      "minecraft:clay_ball": 12,
+      "minecraft:rotten_flesh": 2
     }
   },
   "DataVersion": 4671

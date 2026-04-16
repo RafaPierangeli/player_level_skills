@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:zombie_spawn_egg": 2,
+      "minecraft:bow": 6
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 4
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1041,
+      "minecraft:walk_one_cm": 1991,
+      "minecraft:total_world_time": 1061,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 1041,
+      "minecraft:time_since_death": 1041
+    }
+  },
+  "DataVersion": 4671
+}

@@ -5,22 +5,24 @@
     },
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 869,
-      "minecraft:time_since_rest": 668,
+      "minecraft:time_since_rest": 1159,
       "minecraft:fall_one_cm": 675,
-      "minecraft:walk_one_cm": 1077,
-      "minecraft:total_world_time": 5210,
-      "minecraft:leave_game": 1,
+      "minecraft:walk_one_cm": 1174,
+      "minecraft:total_world_time": 5870,
+      "minecraft:leave_game": 2,
       "minecraft:fly_one_cm": 3476,
-      "minecraft:play_time": 668,
+      "minecraft:play_time": 1159,
       "minecraft:jump": 10,
-      "minecraft:time_since_death": 668
-    },
-    "minecraft:used": {
-      "minecraft:netherite_pickaxe": 1,
-      "minecraft:iron_ore": 1
+      "minecraft:time_since_death": 1159
     },
     "minecraft:mined": {
       "minecraft:iron_ore": 1
+    },
+    "minecraft:used": {
+      "minecraft:netherite_pickaxe": 1,
+      "minecraft:crossbow": 1,
+      "minecraft:iron_ore": 1,
+      "minecraft:bow": 2
     }
   },
   "DataVersion": 4671

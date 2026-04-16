@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 614,
+      "minecraft:walk_one_cm": 543,
+      "minecraft:total_world_time": 1156,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 26,
+      "minecraft:play_time": 614,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 614
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 2
+    },
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 2
+    }
+  },
+  "DataVersion": 4671
+}

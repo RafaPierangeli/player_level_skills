@@ -1,0 +1,27 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 1
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:copper_pickaxe": 4
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 956,
+      "minecraft:fall_one_cm": 525,
+      "minecraft:walk_one_cm": 2175,
+      "minecraft:total_world_time": 1032,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 956,
+      "minecraft:damage_dealt": 499,
+      "minecraft:jump": 11,
+      "minecraft:time_since_death": 956
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 4
+    }
+  },
+  "DataVersion": 4671
+}

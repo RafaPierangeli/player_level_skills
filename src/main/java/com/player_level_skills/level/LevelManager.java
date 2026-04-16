@@ -136,6 +136,13 @@ public class LevelManager {
         this.playerSkills.get(skillId).setLevel(level);
     }
 
+    // Na sua classe de utilitários ou LevelManager
+    public static final ThreadLocal<ServerPlayerEntity> CURRENT_ATTACKER = new ThreadLocal<>();
+
+    // Na sua classe de utilitários ou LevelManager
+    public static final ThreadLocal<ServerPlayerEntity> CURRENT_MINER = new ThreadLocal<>();
+
+
     public int getSkillLevel(int skillId) {
         // Maybe add a containsKey check here
         return this.playerSkills.get(skillId).getLevel();

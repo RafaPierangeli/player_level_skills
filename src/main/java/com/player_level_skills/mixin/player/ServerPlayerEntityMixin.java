@@ -65,5 +65,21 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Se
 
     }
 
+
+//        @Inject(method = "tick", at = @At("HEAD"))
+//        private void player_level_skills$setContext(CallbackInfo ci) {
+//            // O "truque" do cast duplo para enganar o compilador
+//            ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
+//            LevelManager.CURRENT_ATTACKER.set(player);
+//            System.out.println("[DEBUG tick] Player Cap " + player.getName().toString());
+//        }
+//
+//        @Inject(method = "tick", at = @At("TAIL"))
+//        private void player_level_skills$clearContext(CallbackInfo ci) {
+//            LevelManager.CURRENT_ATTACKER.remove();
+//        }
+
+
+
 }
 

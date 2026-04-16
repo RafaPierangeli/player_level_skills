@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1457,
+      "minecraft:walk_one_cm": 1906,
+      "minecraft:total_world_time": 1521,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 534,
+      "minecraft:walk_on_water_one_cm": 208,
+      "minecraft:sneak_time": 1,
+      "minecraft:play_time": 1457,
+      "minecraft:damage_dealt": 258,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 1457
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 1
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 1,
+      "minecraft:grass_block": 1,
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:netherite_spear": 3
+    }
+  },
+  "DataVersion": 4671
+}

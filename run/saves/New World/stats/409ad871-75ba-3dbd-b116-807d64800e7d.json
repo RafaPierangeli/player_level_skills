@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:bow": 7
+    },
+    "minecraft:killed": {
+      "minecraft:pig": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1516,
+      "minecraft:total_world_time": 1572,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 1516,
+      "minecraft:time_since_death": 1516
+    }
+  },
+  "DataVersion": 4671
+}

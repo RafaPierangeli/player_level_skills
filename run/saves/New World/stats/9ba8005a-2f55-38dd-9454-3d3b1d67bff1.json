@@ -1,11 +1,29 @@
 {
   "stats": {
+    "minecraft:mined": {
+      "minecraft:obsidian": 6,
+      "minecraft:stone": 4
+    },
+    "minecraft:used": {
+      "minecraft:diamond_pickaxe": 10,
+      "minecraft:bow": 2
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1179,
-      "minecraft:total_world_time": 1791,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 1179,
-      "minecraft:time_since_death": 1179
+      "minecraft:sprint_one_cm": 1738,
+      "minecraft:time_since_rest": 3622,
+      "minecraft:walk_one_cm": 4004,
+      "minecraft:total_world_time": 4262,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 3795,
+      "minecraft:walk_under_water_one_cm": 69,
+      "minecraft:walk_on_water_one_cm": 92,
+      "minecraft:play_time": 3622,
+      "minecraft:jump": 22,
+      "minecraft:time_since_death": 3622
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 4,
+      "minecraft:obsidian": 3
     }
   },
   "DataVersion": 4671
