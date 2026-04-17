@@ -35,39 +35,40 @@ public class ItemStackServerMixin {
 
 
 
-    //para unbreaking
-//    @Redirect(
-//            method = "calculateDamage",
-//            at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getItemDamage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;I)I")
-//    )
-//    private int player_level_skills$cancelUnbreakingBenefit(ServerWorld world, ItemStack stack, int amount, int originalAmount, ServerWorld worldParam, @Nullable ServerPlayerEntity player) {
-//        // 1. Se não houver jogador (ex: dano por máquina/dispenser) ou for criativo, segue o padrão
-//        if (player == null || player.isCreative()) {
-//            return EnchantmentHelper.getItemDamage(world, stack, amount);
-//        }
-//
-//        // 2. Busca o registro do Unbreaking
-//        RegistryEntry<Enchantment> unbreakingEntry = world.getRegistryManager()
-//                .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                .getEntry(Enchantments.UNBREAKING.getValue())
-//                .orElse(null);
-//
-//        if (unbreakingEntry != null) {
-//            int level = EnchantmentHelper.getLevel(unbreakingEntry, stack);
-//
-//            // 3. Se o item TIVER Unbreaking, verificamos o nível do jogador
-//            if (level > 0) {
-//                LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
-//
-//                // 4. Se o jogador NÃO tiver nível, retornamos o 'amount' original.
-//                // Isso faz com que o item sofra 100% do dano, ignorando a chance de defesa do Unbreaking.
-//                if (!levelManager.hasRequiredEnchantmentLevel(unbreakingEntry, level)) {
-//                    return amount;
-//                }
-//            }
-//        }
-//
-//        // Caso tenha nível ou não tenha o encantamento, usa o cálculo padrão (com bônus)
-//        return EnchantmentHelper.getItemDamage(world, stack, amount);
-//    }
+    //para unbreaking no geral funciona 100%
+    @Redirect(
+            method = "calculateDamage",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getItemDamage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;I)I")
+    )
+    private int player_level_skills$cancelUnbreakingBenefit(ServerWorld world, ItemStack stack, int amount, int originalAmount, ServerWorld worldParam, @Nullable ServerPlayerEntity player) {
+        // 1. Se não houver jogador (ex: dano por máquina/dispenser) ou for criativo, segue o padrão
+        if (player == null || player.isCreative()) {
+            return EnchantmentHelper.getItemDamage(world, stack, amount);
+        }
+
+        // 2. Busca o registro do Unbreaking
+        RegistryEntry<Enchantment> unbreakingEntry = world.getRegistryManager()
+                .getOrThrow(RegistryKeys.ENCHANTMENT)
+                .getEntry(Enchantments.UNBREAKING.getValue())
+                .orElse(null);
+
+        if (unbreakingEntry != null) {
+            int level = EnchantmentHelper.getLevel(unbreakingEntry, stack);
+            System.out.println("[DEBUG ItemStack] Bloqueando bônus de atributo de: " + unbreakingEntry.getIdAsString());
+
+            // 3. Se o item TIVER Unbreaking, verificamos o nível do jogador
+            if (level > 0) {
+                LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+
+                // 4. Se o jogador NÃO tiver nível, retornamos o 'amount' original.
+                // Isso faz com que o item sofra 100% do dano, ignorando a chance de defesa do Unbreaking.
+                if (!levelManager.hasRequiredEnchantmentLevel(unbreakingEntry, level)) {
+                    return amount;
+                }
+            }
+        }
+
+        // Caso tenha nível ou não tenha o encantamento, usa o cálculo padrão (com bônus)
+        return EnchantmentHelper.getItemDamage(world, stack, amount);
+    }
 }

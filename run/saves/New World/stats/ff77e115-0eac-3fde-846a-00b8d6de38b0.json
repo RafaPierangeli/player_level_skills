@@ -1,0 +1,44 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 2,
+      "minecraft:trigger_trapped_chest": 2,
+      "minecraft:time_since_rest": 8792,
+      "minecraft:walk_one_cm": 9518,
+      "minecraft:leave_game": 4,
+      "minecraft:mob_kills": 1,
+      "minecraft:walk_under_water_one_cm": 4753,
+      "minecraft:damage_taken": 28,
+      "minecraft:damage_dealt": 355,
+      "minecraft:play_time": 8792,
+      "minecraft:jump": 24,
+      "minecraft:time_since_death": 8792,
+      "minecraft:sprint_one_cm": 5100,
+      "minecraft:fall_one_cm": 1225,
+      "minecraft:total_world_time": 8896,
+      "minecraft:fly_one_cm": 1862,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_on_water_one_cm": 1182,
+      "minecraft:sneak_time": 20
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 1,
+      "minecraft:grass_block": 1,
+      "minecraft:copper_pickaxe": 9,
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:copper_sword": 6,
+      "minecraft:netherite_spear": 4
+    },
+    "minecraft:killed": {
+      "minecraft:drowned": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 1
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 1,
+      "minecraft:stone": 9
+    }
+  },
+  "DataVersion": 4671
+}

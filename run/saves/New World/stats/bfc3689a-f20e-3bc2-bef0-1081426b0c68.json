@@ -1,0 +1,36 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:cobblestone": 4,
+      "minecraft:stone": 13
+    },
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 4,
+      "minecraft:time_since_rest": 2391,
+      "minecraft:walk_one_cm": 4034,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:walk_under_water_one_cm": 6420,
+      "minecraft:play_time": 2391,
+      "minecraft:damage_dealt": 199,
+      "minecraft:damage_absorbed": 15,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 2391,
+      "minecraft:sprint_one_cm": 723,
+      "minecraft:fall_one_cm": 325,
+      "minecraft:total_world_time": 2452,
+      "minecraft:fly_one_cm": 920,
+      "minecraft:walk_on_water_one_cm": 1447
+    },
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 17,
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:copper_sword": 7,
+      "minecraft:cobblestone": 26
+    },
+    "minecraft:killed": {
+      "minecraft:drowned": 1
+    }
+  },
+  "DataVersion": 4671
+}

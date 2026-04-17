@@ -1,0 +1,38 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 3
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 4,
+      "minecraft:grass_block": 4,
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:netherite_spear": 20
+    },
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 4,
+      "minecraft:gold_nugget": 3,
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:custom": {
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 2665,
+      "minecraft:walk_one_cm": 5838,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 3,
+      "minecraft:walk_under_water_one_cm": 1060,
+      "minecraft:play_time": 2665,
+      "minecraft:damage_dealt": 678,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 2665,
+      "minecraft:sprint_one_cm": 352,
+      "minecraft:total_world_time": 2731,
+      "minecraft:walk_on_water_one_cm": 205,
+      "minecraft:sneak_time": 3
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 4
+    }
+  },
+  "DataVersion": 4671
+}

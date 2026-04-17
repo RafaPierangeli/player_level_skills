@@ -66,18 +66,17 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Se
     }
 
 
-//        @Inject(method = "tick", at = @At("HEAD"))
-//        private void player_level_skills$setContext(CallbackInfo ci) {
-//            // O "truque" do cast duplo para enganar o compilador
-//            ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
-//            LevelManager.CURRENT_ATTACKER.set(player);
-//            System.out.println("[DEBUG tick] Player Cap " + player.getName().toString());
-//        }
-//
-//        @Inject(method = "tick", at = @At("TAIL"))
-//        private void player_level_skills$clearContext(CallbackInfo ci) {
-//            LevelManager.CURRENT_ATTACKER.remove();
-//        }
+    @Inject(method = "playerTick", at = @At("HEAD"))
+    private void setContext(CallbackInfo ci) {
+        // Seta o player exclusivo para esta thread de processamento
+        LevelManager.CURRENT_MINER.set((ServerPlayerEntity)(Object)this);
+    }
+
+    @Inject(method = "playerTick", at = @At("TAIL"))
+    private void clearContext(CallbackInfo ci) {
+        // LIMPA TUDO. Isso impede que o player permissivo "vaze" para o próximo cálculo.
+        LevelManager.CURRENT_MINER.remove();
+    }
 
 
 

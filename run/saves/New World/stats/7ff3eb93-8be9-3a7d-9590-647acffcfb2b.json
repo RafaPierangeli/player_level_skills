@@ -1,23 +1,24 @@
 {
   "stats": {
     "minecraft:picked_up": {
-      "minecraft:baked_potato": 1,
       "minecraft:diamond_helmet": 1,
+      "minecraft:baked_potato": 1,
       "minecraft:netherite_chestplate": 1
     },
     "minecraft:custom": {
+      "minecraft:time_since_rest": 8331,
+      "minecraft:walk_one_cm": 7624,
+      "minecraft:leave_game": 3,
+      "minecraft:walk_under_water_one_cm": 787,
+      "minecraft:play_time": 8331,
+      "minecraft:jump": 6,
+      "minecraft:time_since_death": 8331,
       "minecraft:sprint_one_cm": 132,
-      "minecraft:time_since_rest": 7833,
       "minecraft:inspect_dispenser": 7,
-      "minecraft:walk_one_cm": 7543,
-      "minecraft:total_world_time": 7875,
-      "minecraft:leave_game": 2,
+      "minecraft:total_world_time": 8403,
       "minecraft:fly_one_cm": 1004,
-      "minecraft:walk_on_water_one_cm": 154,
-      "minecraft:sneak_time": 69,
-      "minecraft:play_time": 7833,
-      "minecraft:jump": 4,
-      "minecraft:time_since_death": 7833
+      "minecraft:walk_on_water_one_cm": 291,
+      "minecraft:sneak_time": 69
     },
     "minecraft:used": {
       "minecraft:stone": 24,

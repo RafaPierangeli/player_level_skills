@@ -1,23 +1,23 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 431,
-      "minecraft:time_since_rest": 3867,
-      "minecraft:walk_one_cm": 16379,
-      "minecraft:total_world_time": 3957,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 3867,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 3867
+    "minecraft:mined": {
+      "minecraft:coal_ore": 47,
+      "minecraft:iron_ore": 5
     },
     "minecraft:picked_up": {
       "minecraft:coal": 54,
       "minecraft:dandelion": 1,
       "minecraft:raw_iron": 5
     },
-    "minecraft:mined": {
-      "minecraft:coal_ore": 47,
-      "minecraft:iron_ore": 5
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 431,
+      "minecraft:time_since_rest": 3867,
+      "minecraft:walk_one_cm": 16379,
+      "minecraft:total_world_time": 3957,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 3867,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 3867
     },
     "minecraft:used": {
       "minecraft:netherite_pickaxe": 52,

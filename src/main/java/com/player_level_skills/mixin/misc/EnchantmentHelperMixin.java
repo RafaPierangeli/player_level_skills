@@ -1,5 +1,6 @@
 package com.player_level_skills.mixin.misc;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -16,6 +17,7 @@ import net.minecraft.enchantment.EnchantmentEffectContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.effect.AttributeEnchantmentEffect;
+import net.minecraft.enchantment.provider.EnchantmentProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -27,11 +29,15 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LocalDifficulty;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -77,6 +83,7 @@ public abstract class EnchantmentHelperMixin {
 
 
 
+
     // para sharpness, knockback, bane of A., Unbreaking -besta
 //    @WrapOperation(
 //            method = "forEachEnchantment(Lnet/minecraft/item/ItemStack;Lnet/minecraft/enchantment/EnchantmentHelper$Consumer;)V",
@@ -111,22 +118,18 @@ public abstract class EnchantmentHelperMixin {
             Operation<Void> original
     ) {
         // Tenta pegar primeiro o minerador, se não houver, tenta o atacante
-        ServerPlayerEntity player = LevelManager.CURRENT_MINER.get();
-        if (player == null) {
-            player = LevelManager.CURRENT_ATTACKER.get();
-        }
+        ServerPlayerEntity player = LevelManager.CURRENT_ATTACKER.get();
+
 
         if (player != null) {
             LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
             if (!levelManager.hasRequiredEnchantmentLevel(enchantment, level)) {
-                System.out.println("[DEBUG] Bloqueando: " + enchantment.getKey().toString());
                 return;
             }
         }
 
         original.call(instance, enchantment, level);
     }
-
 
 //Compile, but not work
 //    @Inject(method = "forEachEnchantment(Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;)V", at = @At("HEAD"), cancellable = true)
@@ -158,31 +161,132 @@ public abstract class EnchantmentHelperMixin {
 //        }
 //    }
 
+//    @Inject(method = "applyAttributeModifiers(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Ljava/util/function/BiConsumer;)V", at = @At("HEAD"), cancellable = true)
+//    private static void player_level_skills$applyLocationBasedEffects(
+//            ItemStack stack, EquipmentSlot slot, BiConsumer<RegistryEntry<EntityAttribute>, EntityAttributeModifier> attributeModifierConsumer, CallbackInfo ci
+//    ) {
+//            for (var entry : stack.getEnchantments().getEnchantmentEntries()) {
+//                RegistryEntry<Enchantment> enchant = entry.getKey();
+//                int level = entry.getIntValue();
+//                    System.out.println("[DEBUG applyLocationBasedEffects] Bloqueando dano extra de: " + enchant.getIdAsString());
+//                    ci.cancel();
+//                    return;
+//                }
+//        }
 
-    // para Power
-    @Inject(method = "getDamage", at = @At("HEAD"), cancellable = true)
-    private static void player_level_skills$filterEnchantmentDamage(ServerWorld world, ItemStack stack, Entity target, DamageSource damageSource, float baseDamage, CallbackInfoReturnable<Float> cir) {
-        // 1. Pegamos o atacante diretamente da fonte do dano (funciona para flechas e espadas)
-        if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
-            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
 
-            RegistryEntry<Enchantment> powerEntry = player.getEntityWorld().getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue())
-                    .orElse(null);
+    // funcionando para encantamentos de atributos
+    @Inject(method = "applyAttributeModifiers(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Ljava/util/function/BiConsumer;)V", at = @At("HEAD"), cancellable = true)
+    private static void player_level_skills$applyAttributeModifiers(
+            ItemStack stack, EquipmentSlot slot, BiConsumer<RegistryEntry<EntityAttribute>, EntityAttributeModifier> attributeModifierConsumer, CallbackInfo ci
+    ) {
+        // 1. Pega o player da Thread (Setado no Tick ou no ponto de atualização)
+        ServerPlayerEntity player = LevelManager.CURRENT_MINER.get();
+        if (player == null) return;
 
-            if (powerEntry != null) {
-                int level = EnchantmentHelper.getLevel(powerEntry, stack);
-                if (level > 0) {
-                    if (!levelManager.hasRequiredEnchantmentLevel(powerEntry, level)) {
-                        cir.setReturnValue(baseDamage);
-                    }
+        LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
 
-                }
+        // 2. Verifica os encantamentos do item
+        for (var entry : stack.getEnchantments().getEnchantmentEntries()) {
+            RegistryEntry<Enchantment> enchant = entry.getKey();
+            int level = entry.getIntValue();
+
+            // 3. Aplica a sua restrição de nível
+            if (!levelManager.hasRequiredEnchantmentLevel(enchant, level)) {
+                //System.out.println("[DEBUG] Bloqueando bônus de: " + enchant.getIdAsString());
+                ci.cancel();
+                return;
             }
-
         }
     }
+
+//    @Inject(method = "getFishingTimeReduction", at = @At("HEAD"), cancellable = true)
+//    private static void player_level_skills$fishingTimeReduction(
+//            ServerWorld world, ItemStack stack, Entity user, CallbackInfoReturnable<Float> cir
+//    ) {
+//        if (user instanceof ServerPlayerEntity player) {
+//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+//            RegistryEntry<Enchantment> lureEntry = player.getEntityWorld().getRegistryManager()
+//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                    .getEntry(Enchantments.LURE.getValue())
+//                    .orElse(null);
+//
+//            // Buscamos o nível de LURE (Isca) na vara de pesca
+//            int level = EnchantmentHelper.getLevel(
+//                    world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT)
+//                            .getEntry(Enchantments.LURE.getValue()).orElse(null),
+//                    stack
+//            );
+//
+//            if (level > 0) {
+//                // Se o player não tem nível, retornamos 0.0f (sem redução de tempo)
+//                if (!levelManager.hasRequiredEnchantmentLevel(lureEntry, level)) {
+//                    System.out.println("[DEBUG getFishingTimeReduction] Bloqueando bônus de: " + lureEntry);
+//                    cir.setReturnValue(0.0f);
+//                }
+//            }
+//        }
+//    }
+
+
+    @Inject(method = "getDamage", at = @At("RETURN"), cancellable = true)
+    private static void player_level_skills$filterSpearDamage(
+            ServerWorld world,
+            ItemStack stack,
+            Entity target,
+            DamageSource damageSource,
+            float baseDamage,
+            CallbackInfoReturnable<Float> cir
+    ) {
+        // 1. Pegamos o player que causou o dano
+        if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
+            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+            float extraDamage = cir.getReturnValue() - baseDamage;
+
+            if (extraDamage > 0) {
+                // 2. Verificamos os encantamentos do item (Lança ou Espada)
+                for (var entry : stack.getEnchantments().getEnchantmentEntries()) {
+                    RegistryEntry<Enchantment> enchant = entry.getKey();
+                    int level = entry.getIntValue();
+
+                    // 3. Se o player não tem nível para o encantamento no item
+                    if (!levelManager.hasRequiredEnchantmentLevel(enchant, level)) {
+                        // System.out.println("[DEBUG Lança] Bloqueando dano extra de: " + enchant.getIdAsString());
+
+                        // Retornamos apenas o dano base, ignorando o Sharpness/Afiação
+                        cir.setReturnValue(baseDamage);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // para Power
+//    @Inject(method = "getDamage", at = @At("HEAD"), cancellable = true)
+//    private static void player_level_skills$filterEnchantmentDamage(ServerWorld world, ItemStack stack, Entity target, DamageSource damageSource, float baseDamage, CallbackInfoReturnable<Float> cir) {
+//        // 1. Pegamos o atacante diretamente da fonte do dano (funciona para flechas e espadas)
+//        if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
+//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+//
+//            RegistryEntry<Enchantment> powerEntry = player.getEntityWorld().getRegistryManager()
+//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+//                    .getEntry(Enchantments.POWER.getValue())
+//                    .orElse(null);
+//
+//            if (powerEntry != null) {
+//                int level = EnchantmentHelper.getLevel(powerEntry, stack);
+//                if (level > 0) {
+//                    if (!levelManager.hasRequiredEnchantmentLevel(powerEntry, level)) {
+//                        cir.setReturnValue(baseDamage);
+//                    }
+//
+//                }
+//            }
+//
+//        }
+//    }
 
     @Inject(method = "modifyKnockback", at = @At("RETURN"), cancellable = true)
     private static void player_level_skills$cancelKnockback(ServerWorld world, ItemStack stack, Entity target, DamageSource damageSource, float baseKnockback, CallbackInfoReturnable<Float> cir) {
@@ -225,26 +329,6 @@ public abstract class EnchantmentHelperMixin {
         }
     }
 
-
-
-//    @Inject(method = "getLevel", at = @At("RETURN"), cancellable = true)
-//    private static void player_level_skills$filterAllEnchantments(RegistryEntry<Enchantment> enchantment, ItemStack stack, CallbackInfoReturnable<Integer> cir) {
-//        int originalLevel = cir.getReturnValue();
-//        System.out.println("[DEBUG getLevel] Method called");
-//
-//        if (originalLevel > 0) {
-//            // Tenta pegar o player do ThreadLocal (que você já seta no 'use' ou no 'attack')
-//            ServerPlayerEntity player = LevelManager.CURRENT_ATTACKER.get();
-//
-//            if (player != null) {
-//                LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
-//                if (!levelManager.hasRequiredEnchantmentLevel(enchantment, originalLevel)) {
-//                    // Se o player não tem nível, o encantamento "não existe" (nível 0)
-//                    cir.setReturnValue(0);
-//                }
-//            }
-//        }
-//    }
 
 
 //    @Inject(

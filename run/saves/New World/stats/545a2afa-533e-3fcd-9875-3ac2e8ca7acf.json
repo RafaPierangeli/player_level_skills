@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombie": 1
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 2
+    },
+    "minecraft:custom": {
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 684,
+      "minecraft:walk_one_cm": 2173,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:damage_taken": 10,
+      "minecraft:play_time": 684,
+      "minecraft:damage_dealt": 3,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 684,
+      "minecraft:sprint_one_cm": 1153,
+      "minecraft:fall_one_cm": 400,
+      "minecraft:total_world_time": 704,
+      "minecraft:fly_one_cm": 44
+    },
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 1
+    }
+  },
+  "DataVersion": 4671
+}

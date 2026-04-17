@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:copper_pickaxe": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 104,
+      "minecraft:total_world_time": 486,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 104,
+      "minecraft:time_since_death": 104
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 1
+    }
+  },
+  "DataVersion": 4671
+}

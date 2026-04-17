@@ -12,6 +12,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
@@ -152,47 +153,6 @@ public abstract class LivingEntityMixin extends Entity {
 
         LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos(), finalXp);
     }
-
-
-
-    //compile but not work
-//    @Inject(method = "canBreatheInWater", at = @At("HEAD"), cancellable = true)
-//    private void player_level_skills$blockAquaAffinityAndRespiration(CallbackInfoReturnable<Boolean> cir) {
-//        if ((Object) this instanceof ServerPlayerEntity player) {
-//
-//
-//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
-//
-//            ItemStack helmet = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.HEAD);
-//
-//            RegistryEntry<Enchantment> aquaAffinity = player.getRegistryManager()
-//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                    .getEntry(Enchantments.AQUA_AFFINITY.getValue())
-//                    .orElse(null);
-//
-//            RegistryEntry<Enchantment> respiration = player.getRegistryManager()
-//                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                    .getEntry(Enchantments.RESPIRATION.getValue())
-//                    .orElse(null);
-//
-//            if (helmet != null && !helmet.isEmpty()) {
-//                if (aquaAffinity != null) {
-//                    int aquaLevel = EnchantmentHelper.getLevel(aquaAffinity, helmet);
-//                    if (aquaLevel > 0 && !levelManager.hasRequiredEnchantmentLevel(aquaAffinity, aquaLevel)) {
-//                        cir.setReturnValue(false);
-//                        return;
-//                    }
-//                }
-//
-//                if (respiration != null) {
-//                    int respLevel = EnchantmentHelper.getLevel(respiration, helmet);
-//                    if (respLevel > 0 && !levelManager.hasRequiredEnchantmentLevel(respiration, respLevel)) {
-//                        cir.setReturnValue(false);
-//                    }
-//                }
-//            }
-//        }
-//    }
 
 
 }

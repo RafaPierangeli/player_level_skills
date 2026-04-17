@@ -1,32 +1,38 @@
 {
   "stats": {
-    "minecraft:picked_up": {
-      "minecraft:dirt": 2,
-      "minecraft:grass_block": 10
-    },
-    "minecraft:mined": {
-      "minecraft:dirt": 2,
-      "minecraft:grass_block": 10
+    "minecraft:used": {
+      "minecraft:stone_shovel": 11,
+      "minecraft:grass_block": 11,
+      "minecraft:copper_shovel": 2,
+      "minecraft:copper_pickaxe": 1,
+      "minecraft:zombie_spawn_egg": 1,
+      "minecraft:netherite_spear": 5,
+      "minecraft:bow": 2
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 3865,
-      "minecraft:walk_one_cm": 4232,
-      "minecraft:leave_game": 1,
+      "minecraft:time_since_rest": 6544,
+      "minecraft:walk_one_cm": 7269,
+      "minecraft:leave_game": 2,
       "minecraft:walk_under_water_one_cm": 3653,
-      "minecraft:play_time": 3865,
-      "minecraft:jump": 8,
-      "minecraft:time_since_death": 3865,
+      "minecraft:damage_dealt": 195,
+      "minecraft:play_time": 6544,
+      "minecraft:jump": 12,
+      "minecraft:time_since_death": 6544,
       "minecraft:sprint_one_cm": 1189,
-      "minecraft:total_world_time": 3884,
+      "minecraft:total_world_time": 6627,
       "minecraft:fly_one_cm": 351,
       "minecraft:interact_with_anvil": 2,
       "minecraft:walk_on_water_one_cm": 1839,
       "minecraft:sneak_time": 21
     },
-    "minecraft:used": {
-      "minecraft:stone_shovel": 10,
-      "minecraft:grass_block": 10,
-      "minecraft:copper_shovel": 2
+    "minecraft:picked_up": {
+      "minecraft:dirt": 2,
+      "minecraft:grass_block": 11
+    },
+    "minecraft:mined": {
+      "minecraft:dirt": 2,
+      "minecraft:grass_block": 11,
+      "minecraft:stone": 1
     }
   },
   "DataVersion": 4671

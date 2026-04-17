@@ -1,0 +1,38 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:grass_block": 5,
+      "minecraft:cobblestone": 1,
+      "minecraft:stone": 3
+    },
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 4,
+      "minecraft:time_since_rest": 2790,
+      "minecraft:walk_one_cm": 8660,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 1701,
+      "minecraft:damage_taken": 16,
+      "minecraft:damage_dealt": 346,
+      "minecraft:play_time": 2790,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 2790,
+      "minecraft:sprint_one_cm": 1611,
+      "minecraft:fall_one_cm": 800,
+      "minecraft:total_world_time": 3105,
+      "minecraft:fly_one_cm": 187,
+      "minecraft:walk_on_water_one_cm": 965
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 9,
+      "minecraft:grass_block": 5,
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:copper_pickaxe": 4,
+      "minecraft:netherite_sword": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:cobblestone": 4,
+      "minecraft:grass_block": 5
+    }
+  },
+  "DataVersion": 4671
+}

@@ -2,34 +2,50 @@
   "stats": {
     "minecraft:custom": {
       "minecraft:interact_with_crafting_table": 1,
-      "minecraft:sprint_one_cm": 1081,
-      "minecraft:time_since_rest": 1371,
-      "minecraft:walk_one_cm": 5960,
-      "minecraft:total_world_time": 1529,
-      "minecraft:leave_game": 1,
-      "minecraft:sneak_time": 5,
-      "minecraft:play_time": 1371,
-      "minecraft:jump": 2,
-      "minecraft:time_since_death": 1371
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 8085,
+      "minecraft:walk_one_cm": 18155,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 48,
+      "minecraft:damage_dealt": 1071,
+      "minecraft:play_time": 8085,
+      "minecraft:jump": 30,
+      "minecraft:time_since_death": 8085,
+      "minecraft:sprint_one_cm": 5255,
+      "minecraft:fall_one_cm": 2625,
+      "minecraft:total_world_time": 8311,
+      "minecraft:fly_one_cm": 2571,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:sneak_time": 5
     },
-    "minecraft:picked_up": {
-      "minecraft:coal": 4,
-      "minecraft:wheat_seeds": 4,
-      "minecraft:wheat": 1
-    },
-    "minecraft:mined": {
-      "minecraft:coal_ore": 4,
-      "minecraft:wheat": 2
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2
     },
     "minecraft:crafted": {
       "minecraft:bread": 1
     },
+    "minecraft:picked_up": {
+      "minecraft:coal": 30,
+      "minecraft:cobblestone": 1,
+      "minecraft:wheat_seeds": 4,
+      "minecraft:wheat": 1,
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:mined": {
+      "minecraft:wheat": 2,
+      "minecraft:coal_ore": 24,
+      "minecraft:stone": 1
+    },
     "minecraft:used": {
       "minecraft:stone_hoe": 4,
+      "minecraft:piglin_brute_spawn_egg": 4,
       "minecraft:bone_meal": 5,
+      "minecraft:copper_pickaxe": 21,
       "minecraft:netherite_pickaxe": 4,
-      "minecraft:coal_ore": 4,
+      "minecraft:copper_sword": 29,
       "minecraft:bread": 1,
+      "minecraft:coal_ore": 12,
       "minecraft:wheat_seeds": 2
     }
   },

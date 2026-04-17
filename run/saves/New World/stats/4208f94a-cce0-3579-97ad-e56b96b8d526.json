@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1993,
+      "minecraft:walk_one_cm": 1880,
+      "minecraft:total_world_time": 2068,
+      "minecraft:leave_game": 1,
+      "minecraft:interact_with_anvil": 2,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 1993,
+      "minecraft:damage_dealt": 402,
+      "minecraft:time_since_death": 1993
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2
+    },
+    "minecraft:used": {
+      "minecraft:zombie_spawn_egg": 2,
+      "minecraft:copper_sword": 6
+    },
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 2
+    }
+  },
+  "DataVersion": 4671
+}

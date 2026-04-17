@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 841,
+      "minecraft:time_since_rest": 2199,
+      "minecraft:walk_one_cm": 5537,
+      "minecraft:total_world_time": 2361,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 366,
+      "minecraft:interact_with_anvil": 1,
+      "minecraft:walk_under_water_one_cm": 2022,
+      "minecraft:walk_on_water_one_cm": 94,
+      "minecraft:play_time": 2199,
+      "minecraft:jump": 11,
+      "minecraft:time_since_death": 2199
+    },
+    "minecraft:picked_up": {
+      "minecraft:grass_block": 2
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 2,
+      "minecraft:stone": 5
+    },
+    "minecraft:used": {
+      "minecraft:stone_shovel": 2,
+      "minecraft:grass_block": 2,
+      "minecraft:copper_pickaxe": 5
+    }
+  },
+  "DataVersion": 4671
+}
