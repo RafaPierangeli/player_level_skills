@@ -34,21 +34,6 @@ public class CrossbowItemMixin {
         BonusHelper.crossbowBonus(shooter, projectile);
     }
 
-//    @Inject(method = "onStoppedUsing", at = @At("HEAD"))
-//    private void player_level_skills$captureShooter(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
-//        if (user instanceof ServerPlayerEntity player) {
-//            LevelManager.CURRENT_ATTACKER.set(player);
-//        }
-//    }
-//
-//    @Inject(method = "onStoppedUsing", at = @At("TAIL"))
-//    private void player_level_skills$releaseShooter(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
-//        LevelManager.CURRENT_ATTACKER.remove();
-//    }
-
-
-
-
     @Inject(method = "use", at = @At("HEAD"))
     private void player_level_skills$captureExtraProjectilesBeforeUse(
             World world,

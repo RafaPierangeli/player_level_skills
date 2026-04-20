@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:trident": 2,
+      "minecraft:enchanted_golden_apple": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 885,
+      "minecraft:walk_one_cm": 200,
+      "minecraft:total_world_time": 1844,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 5319,
+      "minecraft:damage_taken": 40,
+      "minecraft:walk_on_water_one_cm": 721,
+      "minecraft:sneak_time": 36,
+      "minecraft:play_time": 885,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 885
+    }
+  },
+  "DataVersion": 4671
+}

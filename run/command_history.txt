@@ -1,3 +1,14 @@
+/gamemode survival
+/time set day
+/gamemode creative
+/gamemode survival
+/time set day
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
 /gamemode creative
 /gamemode survival
 /time set day
@@ -12,39 +23,28 @@
 /gamemode survival
 /gamemode creative
 /gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
 /time set day
+/gamemode survival
+/weather rain
+/gamemode creative
+/gamemode survival
+/weather thunder
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/weather clear
+/weather thunder
+/gamemode survival
 /weather clear
 /gamemode creative
-/gamemode survival
 /time set day
-/weather clear
-/gamemode creative
 /gamemode survival
 /time set day
 /gamemode creative
 /gamemode survival
 /time set day
-/gamemode creative
-/time set day
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/weather clear
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode survival
 /gamemode creative
 /gamemode survival

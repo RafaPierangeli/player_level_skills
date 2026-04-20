@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:trident": 6,
+      "minecraft:copper_pickaxe": 63,
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:coal_ore": 51
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 63
+    },
+    "minecraft:dropped": {
+      "minecraft:coal": 80
+    },
+    "minecraft:picked_up": {
+      "minecraft:coal_ore": 3,
+      "minecraft:coal": 193
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2
+    },
+    "minecraft:custom": {
+      "minecraft:trigger_trapped_chest": 4,
+      "minecraft:time_since_rest": 14460,
+      "minecraft:walk_one_cm": 35999,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 11281,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 79,
+      "minecraft:damage_dealt": 320,
+      "minecraft:play_time": 14460,
+      "minecraft:jump": 21,
+      "minecraft:time_since_death": 14460,
+      "minecraft:drop": 2,
+      "minecraft:sprint_one_cm": 3888,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:swim_one_cm": 868,
+      "minecraft:total_world_time": 17616,
+      "minecraft:fly_one_cm": 1942,
+      "minecraft:interact_with_anvil": 3,
+      "minecraft:walk_on_water_one_cm": 318,
+      "minecraft:sneak_time": 104
+    }
+  },
+  "DataVersion": 4671
+}

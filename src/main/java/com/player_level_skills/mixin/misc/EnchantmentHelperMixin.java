@@ -330,6 +330,25 @@ public abstract class EnchantmentHelperMixin {
     }
 
 
+    @Inject(method = "getTridentSpinAttackStrength", at = @At("HEAD"), cancellable = true)
+    private static void player_level_skills$filterRiptideImpulse(ItemStack stack, LivingEntity user, CallbackInfoReturnable<Float> ci) {
+
+
+            LevelManager levelManager = ((LevelManagerAccess) user).getLevelManager();
+
+            RegistryEntry<Enchantment> riptideEntry = user.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.RIPTIDE.getValue()).orElse(null);
+
+            int level = EnchantmentHelper.getLevel(riptideEntry, stack);
+
+                if (!levelManager.hasRequiredEnchantmentLevel(riptideEntry, level)) {
+                    System.out.println("[DEBUG Riptide] Impulso anulado para: " + user.getName().getString()+ riptideEntry + level);
+                    ci.cancel();
+                }
+
+    }
+
 
 //    @Inject(
 //            method = "onTargetDamaged(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/item/ItemStack;)V",

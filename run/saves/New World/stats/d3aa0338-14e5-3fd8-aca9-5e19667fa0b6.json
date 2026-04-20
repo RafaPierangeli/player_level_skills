@@ -1,23 +1,26 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 146,
-      "minecraft:time_since_rest": 1357,
-      "minecraft:walk_one_cm": 2437,
-      "minecraft:total_world_time": 1975,
-      "minecraft:leave_game": 1,
-      "minecraft:fly_one_cm": 98,
-      "minecraft:play_time": 1357,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 1357
-    },
     "minecraft:mined": {
       "minecraft:iron_ore": 2
     },
     "minecraft:picked_up": {
       "minecraft:raw_iron": 2
     },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 146,
+      "minecraft:time_since_rest": 1655,
+      "minecraft:walk_one_cm": 3042,
+      "minecraft:total_world_time": 2296,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 98,
+      "minecraft:walk_under_water_one_cm": 2098,
+      "minecraft:walk_on_water_one_cm": 178,
+      "minecraft:play_time": 1655,
+      "minecraft:jump": 6,
+      "minecraft:time_since_death": 1655
+    },
     "minecraft:used": {
+      "minecraft:trident": 1,
       "minecraft:netherite_pickaxe": 2,
       "minecraft:iron_ore": 4
     }

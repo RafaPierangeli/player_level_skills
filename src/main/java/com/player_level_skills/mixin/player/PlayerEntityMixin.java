@@ -182,26 +182,26 @@ protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker
         super.dropExperience(serverWorld,attacker);
     }
 
-    //compile and work, but anule total speed in other args
-//    @ModifyReturnValue(method = "getBlockBreakingSpeed", at = @At("RETURN"))
-//    private float player_level_skills$checkMiningSpeed(float originalSpeed, BlockState state) {
+
+
+//    @Inject(method = "useRiptide", at = @At("HEAD"), cancellable = true)
+//    private void player_level_skills$cancelRiptideImpulse(int riptideLevel, float f, ItemStack stack, CallbackInfo ci) {
+//        // 'this' é o PlayerEntity
 //        PlayerEntity player = (PlayerEntity) (Object) this;
+//        System.out.println("[DEBUG useRiptide] Cancelando Impulso Riptide" + player.getName().toString());
 //        LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
 //
-//        ItemStack stack = player.getMainHandStack();
-//        if (stack.isEmpty()) return originalSpeed;
-//
-//        RegistryEntry<Enchantment> efficiencyEntry = player.getRegistryManager()
+//        // Buscamos a RegistryEntry do Riptide
+//        RegistryEntry<Enchantment> riptideEntry = player.getRegistryManager()
 //                .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                .getEntry(Enchantments.EFFICIENCY.getValue())
-//                .orElse(null);
+//                .getEntry(Enchantments.RIPTIDE.getValue()).orElse(null);
+//        int level = EnchantmentHelper.getLevel(riptideEntry,stack);
 //
-//
-//        int level = EnchantmentHelper.getLevel(efficiencyEntry, stack);
-//        if (level > 0 && !levelManager.hasRequiredEnchantmentLevel(efficiencyEntry, level)) {
-//            return 1.0F;
+//        // Se o player NÃO tem nível para o Riptide que está disparando agora
+//        if (!levelManager.hasRequiredEnchantmentLevel(riptideEntry, level)) {
+//            System.out.println("[DEBUG useRiptide] Cancelando Impulso Riptide" + riptideEntry + level);
+//            ci.cancel();
 //        }
-//        return originalSpeed;
 //    }
 
 }

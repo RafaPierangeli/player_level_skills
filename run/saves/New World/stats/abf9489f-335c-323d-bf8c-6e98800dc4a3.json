@@ -1,28 +1,36 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:damage_resisted": 2,
-      "minecraft:sprint_one_cm": 1139,
-      "minecraft:time_since_rest": 2352,
-      "minecraft:fall_one_cm": 700,
-      "minecraft:walk_one_cm": 1666,
-      "minecraft:total_world_time": 2408,
-      "minecraft:leave_game": 2,
-      "minecraft:fly_one_cm": 910,
-      "minecraft:damage_taken": 8,
-      "minecraft:play_time": 2352,
-      "minecraft:jump": 9,
-      "minecraft:time_since_death": 2352
+    "minecraft:mined": {
+      "minecraft:grass_block": 1
     },
     "minecraft:picked_up": {
-      "minecraft:grass_block": 1
+      "minecraft:salmon": 1,
+      "minecraft:cod": 6,
+      "minecraft:pufferfish": 2,
+      "minecraft:leather_boots": 1,
+      "minecraft:grass_block": 1,
+      "minecraft:nautilus_shell": 1,
+      "minecraft:lily_pad": 1
+    },
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 2,
+      "minecraft:time_since_rest": 7231,
+      "minecraft:walk_one_cm": 1666,
+      "minecraft:leave_game": 3,
+      "minecraft:damage_taken": 8,
+      "minecraft:play_time": 7231,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 7231,
+      "minecraft:sprint_one_cm": 1139,
+      "minecraft:fall_one_cm": 700,
+      "minecraft:total_world_time": 7337,
+      "minecraft:fly_one_cm": 910,
+      "minecraft:fish_caught": 9
     },
     "minecraft:used": {
       "minecraft:stone_shovel": 1,
-      "minecraft:dirt": 3
-    },
-    "minecraft:mined": {
-      "minecraft:grass_block": 1
+      "minecraft:dirt": 3,
+      "minecraft:fishing_rod": 13
     }
   },
   "DataVersion": 4671

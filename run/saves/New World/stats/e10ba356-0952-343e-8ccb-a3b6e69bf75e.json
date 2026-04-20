@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:trident": 5,
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:fishing_rod": 14
+    },
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 26,
+      "minecraft:time_since_rest": 8906,
+      "minecraft:walk_one_cm": 1549,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_under_water_one_cm": 8750,
+      "minecraft:damage_taken": 103,
+      "minecraft:play_time": 8906,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 8906,
+      "minecraft:total_world_time": 8978,
+      "minecraft:walk_on_water_one_cm": 917,
+      "minecraft:sneak_time": 28,
+      "minecraft:fish_caught": 13
+    },
+    "minecraft:picked_up": {
+      "minecraft:tropical_fish": 1,
+      "minecraft:salmon": 4,
+      "minecraft:cod": 6,
+      "minecraft:pufferfish": 2,
+      "minecraft:saddle": 1
+    }
+  },
+  "DataVersion": 4671
+}

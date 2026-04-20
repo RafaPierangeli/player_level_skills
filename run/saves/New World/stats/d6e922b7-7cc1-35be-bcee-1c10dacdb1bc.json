@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:salmon": 2,
+      "minecraft:string": 1,
+      "minecraft:cod": 5,
+      "minecraft:pufferfish": 1,
+      "minecraft:bow": 1
+    },
+    "minecraft:used": {
+      "minecraft:fishing_rod": 10
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3482,
+      "minecraft:walk_one_cm": 58,
+      "minecraft:total_world_time": 3566,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 3482,
+      "minecraft:fish_caught": 8,
+      "minecraft:time_since_death": 3482
+    }
+  },
+  "DataVersion": 4671
+}

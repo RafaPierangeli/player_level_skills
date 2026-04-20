@@ -1,18 +1,28 @@
 {
   "stats": {
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 14,
+      "minecraft:time_since_rest": 2495,
+      "minecraft:walk_one_cm": 669,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_under_water_one_cm": 1318,
+      "minecraft:damage_taken": 55,
+      "minecraft:play_time": 2495,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 2495,
+      "minecraft:interact_with_furnace": 2,
+      "minecraft:total_world_time": 8621,
+      "minecraft:walk_on_water_one_cm": 411,
+      "minecraft:sneak_time": 9,
+      "minecraft:interact_with_blast_furnace": 6
+    },
+    "minecraft:used": {
+      "minecraft:trident": 1,
+      "minecraft:enchanted_golden_apple": 1
+    },
     "minecraft:crafted": {
       "minecraft:baked_potato": 7,
       "minecraft:iron_ingot": 21
-    },
-    "minecraft:custom": {
-      "minecraft:interact_with_furnace": 2,
-      "minecraft:time_since_rest": 2142,
-      "minecraft:walk_one_cm": 582,
-      "minecraft:total_world_time": 7625,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 2142,
-      "minecraft:interact_with_blast_furnace": 6,
-      "minecraft:time_since_death": 2142
     }
   },
   "DataVersion": 4671

@@ -1,0 +1,55 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 17964,
+      "minecraft:walk_one_cm": 43336,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 13,
+      "minecraft:walk_under_water_one_cm": 37005,
+      "minecraft:damage_taken": 27,
+      "minecraft:damage_dealt": 1317,
+      "minecraft:play_time": 17964,
+      "minecraft:jump": 25,
+      "minecraft:time_since_death": 17964,
+      "minecraft:sprint_one_cm": 3127,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:swim_one_cm": 5835,
+      "minecraft:total_world_time": 21635,
+      "minecraft:fly_one_cm": 4165,
+      "minecraft:interact_with_anvil": 3,
+      "minecraft:walk_on_water_one_cm": 7903,
+      "minecraft:sneak_time": 278
+    },
+    "minecraft:mined": {
+      "minecraft:fire": 3
+    },
+    "minecraft:used": {
+      "minecraft:stone": 8,
+      "minecraft:oak_fence": 34,
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:trident": 51,
+      "minecraft:drowned_spawn_egg": 5,
+      "minecraft:waxed_lightning_rod": 1,
+      "minecraft:zombie_nautilus_spawn_egg": 3,
+      "minecraft:lightning_rod": 3,
+      "minecraft:netherite_spear": 9,
+      "minecraft:creeper_spawn_egg": 6
+    },
+    "minecraft:killed": {
+      "minecraft:salmon": 1,
+      "minecraft:creeper": 4,
+      "minecraft:zombie_nautilus": 3,
+      "minecraft:drowned": 5
+    },
+    "minecraft:picked_up": {
+      "minecraft:lightning_rod": 1,
+      "minecraft:salmon": 1,
+      "minecraft:cobblestone": 1,
+      "minecraft:oak_fence": 7,
+      "minecraft:copper_ingot": 1,
+      "minecraft:gunpowder": 3,
+      "minecraft:rotten_flesh": 5
+    }
+  },
+  "DataVersion": 4671
+}

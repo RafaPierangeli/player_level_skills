@@ -3,12 +3,18 @@
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 204,
       "minecraft:trigger_trapped_chest": 3,
-      "minecraft:time_since_rest": 2549,
-      "minecraft:walk_one_cm": 647,
-      "minecraft:total_world_time": 2655,
-      "minecraft:leave_game": 2,
-      "minecraft:play_time": 2549,
-      "minecraft:time_since_death": 2549
+      "minecraft:time_since_rest": 2874,
+      "minecraft:walk_one_cm": 1119,
+      "minecraft:total_world_time": 3050,
+      "minecraft:leave_game": 3,
+      "minecraft:walk_under_water_one_cm": 1929,
+      "minecraft:walk_on_water_one_cm": 249,
+      "minecraft:play_time": 2874,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 2874
+    },
+    "minecraft:used": {
+      "minecraft:trident": 2
     }
   },
   "DataVersion": 4671

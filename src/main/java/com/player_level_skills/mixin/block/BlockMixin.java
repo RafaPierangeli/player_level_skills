@@ -57,12 +57,35 @@ public abstract class BlockMixin {
             }
         }
     }
-    @Inject(method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getDroppedStacks(Lnet/minecraft/loot/context/LootWorldContext$Builder;)Ljava/util/List;"), locals = LocalCapture.CAPTURE_FAILSOFT)
+    @Inject(method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getDroppedStacks(Lnet/minecraft/loot/context/LootWorldContext$Builder;)Ljava/util/List;"),
+            locals = LocalCapture.CAPTURE_FAILSOFT)
     private static void getDroppedStacksMixin(BlockState state, ServerWorld world, BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity entity, ItemStack stack, CallbackInfoReturnable<List<ItemStack>> info, LootWorldContext.Builder builder) {
+
         if (entity instanceof PlayerEntity playerEntity) {
+            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+
+            // 1. Verificamos se a ferramenta tem encantamentos proibidos para este player
+            boolean temEncantamentoProibido = false;
+            for (var entry : stack.getEnchantments().getEnchantmentEntries()) {
+                if (!levelManager.hasRequiredEnchantmentLevel(entry.getKey(), entry.getIntValue())) {
+                    temEncantamentoProibido = true;
+                    break;
+                }
+            }
+
+            // 2. Se houver algo proibido, forçamos o Builder a ignorar a ferramenta atual
+            if (temEncantamentoProibido) {
+                // Isso substitui a ferramenta com Silk/Fortune por uma "limpa" apenas para o cálculo do drop
+                builder.add(net.minecraft.loot.context.LootContextParameters.TOOL, ItemStack.EMPTY);
+            }
+
+            // Mantém sua lógica original de bônus
             BonusHelper.miningDropChanceBonus(playerEntity, state, pos, builder);
         }
     }
+
+
 
 
     @Inject(method = "dropExperience", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ExperienceOrbEntity;spawn(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/Vec3d;I)V"))

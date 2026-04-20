@@ -9,6 +9,7 @@ import com.player_level_skills.level.LevelManager;
 import com.player_level_skills.level.SkillBonus;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -23,6 +24,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
@@ -198,16 +200,56 @@ public class BonusHelper {
         return false;
     }
 
+//    public static void miningDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos, LootWorldContext.Builder builder) {
+//        if (state.isIn(ConventionalBlockTags.ORES) && EnchantmentHelper.getEquipmentLevel(playerEntity.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.SILK_TOUCH), playerEntity) <= 0) {
+//            if (LevelManager.BONUSES.containsKey("miningDropChance")) {
+//                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+//                SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");
+//                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+//                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.miningDropChanceBonus) {
+//                    List<ItemStack> list = state.getDroppedStacks(builder);
+//                    if (!list.isEmpty()) {
+//                        Block.dropStack(playerEntity.getEntityWorld(), pos, state.getDroppedStacks(builder).getFirst().split(1));
+//                    }
+//                }
+//            }
+//        }
+//    }
+
     public static void miningDropChanceBonus(PlayerEntity playerEntity, BlockState state, BlockPos pos, LootWorldContext.Builder builder) {
-        if (state.isIn(ConventionalBlockTags.ORES) && EnchantmentHelper.getEquipmentLevel(playerEntity.getEntityWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.SILK_TOUCH), playerEntity) <= 0) {
-            if (LevelManager.BONUSES.containsKey("miningDropChance")) {
-                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-                SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");
-                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.miningDropChanceBonus) {
-                    List<ItemStack> list = state.getDroppedStacks(builder);
-                    if (!list.isEmpty()) {
-                        Block.dropStack(playerEntity.getEntityWorld(), pos, state.getDroppedStacks(builder).getFirst().split(1));
+        if (state.isIn(ConventionalBlockTags.ORES)) {
+            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+
+            RegistryEntry<Enchantment> silkEntry = playerEntity.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.SILK_TOUCH.getValue()).orElse(null);
+
+            int silkLevel = EnchantmentHelper.getLevel(silkEntry, playerEntity.getMainHandStack());
+
+            // Verificamos se o Silk Touch está ATIVO (tem o encanto E tem nível pra usar)
+            boolean silkAtivoEReal = silkLevel > 0 && levelManager.hasRequiredEnchantmentLevel(silkEntry, silkLevel);
+
+            // Se o Silk Touch NÃO estiver ativo (ou porque não tem, ou porque o nível é baixo), permitimos o bônus
+            if (!silkAtivoEReal) {
+                if (LevelManager.BONUSES.containsKey("miningDropChance")) {
+                    SkillBonus skillBonus = LevelManager.BONUSES.get("miningDropChance");
+                    int currentLevel = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+
+                    // 2. LÓGICA DE CHANCE ESCALÁVEL (Nível 10+)
+                    if (currentLevel >= skillBonus.getLevel()) { // skillBonus.getLevel() é 10
+
+                        // Cálculo solicitado: Nível atual * Valor da Configuração
+                        // Ex: 10 * 0.02 = 0.2 (20%) | 25 * 0.02 = 0.5 (50%)
+                        float chance = (float) currentLevel * ConfigInit.CONFIG.miningDropChanceBonus;
+
+                        // Garante que a chance não ultrapasse 100% (1.0)
+                        if (playerEntity.getRandom().nextFloat() <= Math.min(1.0f, chance)) {
+                            List<ItemStack> list = state.getDroppedStacks(builder);
+                            if (!list.isEmpty()) {
+                                // Dropa 1 unidade extra do que o bloco soltaria
+                                Block.dropStack(playerEntity.getEntityWorld(), pos, list.getFirst().copy().split(1));
+                            }
+                        }
                     }
                 }
             }

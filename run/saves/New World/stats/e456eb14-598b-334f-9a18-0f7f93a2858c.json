@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:trident": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 248,
+      "minecraft:walk_one_cm": 94,
+      "minecraft:total_world_time": 340,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 1488,
+      "minecraft:walk_on_water_one_cm": 70,
+      "minecraft:play_time": 248,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 248
+    }
+  },
+  "DataVersion": 4671
+}

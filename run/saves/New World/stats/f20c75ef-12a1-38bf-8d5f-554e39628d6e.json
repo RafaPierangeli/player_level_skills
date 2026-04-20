@@ -3,27 +3,30 @@
     "minecraft:picked_up": {
       "minecraft:rotten_flesh": 7
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 1225,
-      "minecraft:walk_one_cm": 13796,
-      "minecraft:leave_game": 1,
-      "minecraft:mob_kills": 3,
-      "minecraft:damage_taken": 33,
-      "minecraft:play_time": 1225,
-      "minecraft:damage_dealt": 642,
-      "minecraft:damage_absorbed": 40,
-      "minecraft:jump": 8,
-      "minecraft:time_since_death": 1225,
-      "minecraft:sprint_one_cm": 2049,
-      "minecraft:total_world_time": 1252,
-      "minecraft:fly_one_cm": 56
+    "minecraft:killed": {
+      "minecraft:zombie": 2
     },
     "minecraft:used": {
+      "minecraft:trident": 1,
       "minecraft:netherite_sword": 13,
       "minecraft:zombie_spawn_egg": 6
     },
-    "minecraft:killed": {
-      "minecraft:zombie": 2
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1315,
+      "minecraft:walk_one_cm": 13853,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 3,
+      "minecraft:walk_under_water_one_cm": 75,
+      "minecraft:damage_taken": 33,
+      "minecraft:play_time": 1315,
+      "minecraft:damage_dealt": 642,
+      "minecraft:damage_absorbed": 40,
+      "minecraft:jump": 8,
+      "minecraft:time_since_death": 1315,
+      "minecraft:sprint_one_cm": 2049,
+      "minecraft:total_world_time": 1342,
+      "minecraft:fly_one_cm": 56,
+      "minecraft:walk_on_water_one_cm": 15
     }
   },
   "DataVersion": 4671
