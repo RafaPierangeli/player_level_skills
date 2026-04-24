@@ -1,11 +1,16 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1849,
-      "minecraft:total_world_time": 1910,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 1849,
-      "minecraft:time_since_death": 1849
+      "minecraft:time_since_rest": 2195,
+      "minecraft:total_world_time": 2796,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 2195,
+      "minecraft:damage_dealt": 1456,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 2195
+    },
+    "minecraft:used": {
+      "minecraft:wooden_sword": 15
     }
   },
   "DataVersion": 4671

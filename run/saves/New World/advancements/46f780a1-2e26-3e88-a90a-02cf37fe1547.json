@@ -276,6 +276,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-04-10 16:38:44 -0300"
+    },
+    "done": true
+  },
   "minecraft:adventure/shoot_arrow": {
     "criteria": {
       "shot_arrow": "2026-04-10 16:38:51 -0300"
@@ -288,12 +294,6 @@
     },
     "done": false
   },
-  "minecraft:recipes/redstone/dispenser": {
-    "criteria": {
-      "has_bow": "2026-04-10 16:38:44 -0300"
-    },
-    "done": true
-  },
   "minecraft:adventure/root": {
     "criteria": {
       "killed_something": "2026-04-10 16:38:59 -0300"
@@ -303,6 +303,24 @@
   "minecraft:adventure/kill_a_mob": {
     "criteria": {
       "minecraft:piglin_brute": "2026-04-10 16:38:59 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget_from_smelting": {
+    "criteria": {
+      "has_copper_helmet": "2026-04-21 18:42:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget_from_blasting": {
+    "criteria": {
+      "has_copper_helmet": "2026-04-21 18:42:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-04-21 18:42:33 -0300"
     },
     "done": true
   },

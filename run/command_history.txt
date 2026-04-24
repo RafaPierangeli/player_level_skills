@@ -1,50 +1,50 @@
+/time set day
+/effect give Player247 minecraft:hunger 500 3
+/gamemode creative
 /gamemode survival
+/gamemode creative
+/gamemode survival
+/function hunger with entity Player319 2
+/effect give Player943 minecraft:hunger 500 10
+/effect give Player943 minecraft:hunger 500 4
+/weather clear
+/effect clear Player943 minecraft:hunger
+/effect give Player943 minecraft:hunger 500 4
+/time set day
+/effect give Player918 minecraft:hunger 500 4
 /time set day
 /gamemode creative
 /gamemode survival
-/time set day
 /gamemode creative
 /gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
+/effect give Player557 minecraft:hunger 200 4
 /gamemode creative
 /time set day
 /gamemode survival
+/effect give Player266 minecraft:hunger 100 4
 /gamemode creative
 /gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
+/effect give Player551 minecraft:hunger 100 4
 /time set day
-/gamemode survival
-/weather rain
-/gamemode creative
-/gamemode survival
-/weather thunder
-/gamemode creative
-/gamemode survival
 /gamemode creative
 /weather clear
-/weather thunder
 /gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
 /weather clear
-/gamemode creative
 /time set day
-/gamemode survival
+/reload
 /time set day
+/level @s add level 5
+/time set day
+/level @s add points 10
+/level @s set mining 0
+/level @s set mining 5
+/level @s get points
+/level @s add level 25
+/level Player249 remove points 10
 /gamemode creative
 /gamemode survival
-/time set day
-/gamemode creative
-/gamemode survival
+/level Player249 remove points 10

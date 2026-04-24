@@ -6,6 +6,7 @@ import com.player_level_skills.access.PlayerDropAccess;
 import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
 import com.player_level_skills.level.LevelManager;
+import com.player_level_skills.level.SkillBonus;
 import com.player_level_skills.util.BonusHelper;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -17,6 +18,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
@@ -155,6 +157,60 @@ public abstract class LivingEntityMixin extends Entity {
         int finalXp = Math.max(1, Math.round(customXp));
 
         LevelExperienceOrbEntity.spawn((ServerWorld) this.getEntityWorld(), this.getEntityPos(), finalXp);
+    }
+
+    @ModifyVariable(
+            method = "takeKnockback",
+            at = @At("HEAD"),
+            argsOnly = true,
+            ordinal = 0
+    )
+    private double player_level_skills$increaseKnockbackStrength(double strength) {
+        ServerPlayerEntity player = LevelManager.CURRENT_ATTACKER.get();
+
+        if (player != null) {
+            if (BonusHelper.meleeKnockbackAttackChanceBonus(player)) {
+                return strength + 0.5;
+            }
+        }
+        return strength;
+    }
+
+//    @ModifyVariable(
+//            method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z",
+//            at = @At("HEAD"),
+//            argsOnly = true
+//    )
+//    private StatusEffectInstance player_level_skills$upgradePotionEffect(StatusEffectInstance statusEffectInstance) {
+//        // 'this' é a entidade recebendo o efeito
+//        if ((Object)this instanceof ServerPlayerEntity playerEntity) {
+//            System.out.println("[DEBUG potion] Player info: " + playerEntity.getName().getString());
+//
+//            if (playerEntity != null && LevelManager.BONUSES.containsKey("potionEffectChance")) {
+//                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+//                SkillBonus skillBonus = LevelManager.BONUSES.get("potionEffectChance");
+//                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+//                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.potionEffectChanceBonus) {
+//                    return new StatusEffectInstance(statusEffectInstance.getEffectType(), statusEffectInstance.getDuration(),
+//                            statusEffectInstance.getAmplifier() + 4, statusEffectInstance.isAmbient(),
+//                            statusEffectInstance.shouldShowParticles(), statusEffectInstance.shouldShowIcon());
+//                }
+//            }
+//        }
+//        return statusEffectInstance;
+//    }
+
+    @ModifyVariable(
+            method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z",
+            at = @At("HEAD"),
+            argsOnly = true
+    )
+    private StatusEffectInstance player_level_skills$upgradePotionEffect(StatusEffectInstance statusEffectInstance) {
+        // 'this' é a entidade recebendo o efeito
+        if ((Object)this instanceof ServerPlayerEntity playerEntity) {
+            return BonusHelper.potionEffectChanceBonus(playerEntity, statusEffectInstance);
+        }
+        return statusEffectInstance;
     }
 
 

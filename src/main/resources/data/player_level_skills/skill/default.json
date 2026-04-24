@@ -3,7 +3,7 @@
     "replace": false,
     "id": 0,
     "key": "constitution",
-    "level": 20,
+    "level": 30,
     "attributes": [
       {
         "id": 0,
@@ -24,7 +24,7 @@
     "replace": false,
     "id": 1,
     "key": "melee",
-    "level": 20,
+    "level": 30,
     "attributes": [
       {
         "id": 1,
@@ -35,13 +35,13 @@
       {
         "type": "attack_knockback",
         "operation": "ADD_VALUE",
-        "value": 0.05
+        "value": 0.04
       },
       {
         "type": "sweeping_damage_ratio",
         "base": 0,
         "operation": "ADD_VALUE",
-        "value": 0.03
+        "value": 0.02
       }
     ],
     "bonus": [
@@ -59,23 +59,23 @@
     "replace": false,
     "id": 2,
     "key": "defense",
-    "level": 20,
+    "level": 30,
     "attributes": [
       {
         "id": 2,
         "type": "armor",
         "operation": "ADD_VALUE",
-        "value": 0.25
+        "value": 0.2
       },
       {
         "type": "knockback_resistance",
         "operation": "ADD_VALUE",
-        "value": 0.05
+        "value": 0.02
       }
     ],
     "bonus": [
       {
-        "level": 20,
+        "level": 25,
         "key": "deathGraceChance"
       }
     ]
@@ -84,7 +84,7 @@
     "replace": false,
     "id": 3,
     "key": "archery",
-    "level": 20,
+    "level": 30,
     "attributes": [
       {
         "type": "block_interaction_range",
@@ -120,7 +120,7 @@
     "replace": false,
     "id": 4,
     "key": "agility",
-    "level": 20,
+    "level": 25,
     "attributes": [
       {
         "id": 3,
@@ -134,7 +134,29 @@
         "base": 0.2,
         "operation": "ADD_VALUE",
         "value": 0.01
+      }
+    ],
+    "bonus": [
+      {
+        "level": 1,
+        "key": "exhaustionReduction"
       },
+      {
+        "level": 10,
+        "key": "evadingDamageChance"
+      },
+      {
+        "level": 1,
+        "key": "fallDamageReduction"
+      }
+    ]
+  },
+  "swimming": {
+    "replace": false,
+    "id": 5,
+    "key": "swimming",
+    "level": 25,
+    "attributes": [
       {
         "id": 4,
         "type": "oxygen_bonus",
@@ -153,35 +175,32 @@
       }
     ],
     "bonus": [
-      {
-        "level": 1,
-        "key": "exhaustionReduction"
-      },
-      {
-        "level": 10,
-        "key": "evadingDamageChance"
-      },
-      {
-        "level": 1,
-        "key": "fallDamageReduction"
-      }
     ]
   },
-  "magic": {
+  "alchemy": {
     "replace": false,
-    "id": 5,
-    "key": "magic",
-    "level": 20,
+    "id": 6,
+    "key": "alchemy",
+    "level": 30,
     "attributes": [],
     "bonus": [
       {
-        "level": 20,
+        "level": 10,
         "key": "potionEffectChance"
       },
       {
         "level": 10,
         "key": "healthAbsorption"
-      },
+      }
+    ]
+  },
+  "magic": {
+    "replace": false,
+    "id": 7,
+    "key": "magic",
+    "level": 30,
+    "attributes": [],
+    "bonus": [
       {
         "level": 1,
         "key": "damageReflection"
@@ -190,7 +209,7 @@
   },
   "mining": {
     "replace": false,
-    "id": 6,
+    "id": 8,
     "key": "mining",
     "level": 20,
     "attributes": [
@@ -217,7 +236,7 @@
   },
   "smithing": {
     "replace": false,
-    "id": 7,
+    "id": 9,
     "key": "smithing",
     "level": 20,
     "attributes": [
@@ -253,7 +272,7 @@
   },
   "farming": {
     "replace": false,
-    "id": 8,
+    "id": 10,
     "key": "farming",
     "level": 20,
     "attributes": [],
@@ -270,7 +289,7 @@
   },
   "cooking": {
     "replace": false,
-    "id": 9,
+    "id": 11,
     "key": "cooking",
     "level": 20,
     "attributes": [],
@@ -283,7 +302,7 @@
   },
   "bartering": {
     "replace": false,
-    "id": 10,
+    "id": 12,
     "key": "bartering",
     "level": 20,
     "attributes": [],
@@ -304,16 +323,16 @@
   },
   "luck": {
     "replace": false,
-    "id": 11,
+    "id": 13,
     "key": "luck",
     "level": 20,
     "attributes": [
       {
         "id": 6,
         "type": "luck",
-        "base": -1,
+        "base": 0,
         "operation": "ADD_VALUE",
-        "value": 0.15
+        "value": 0.2
       }
     ],
     "bonus": [
@@ -322,7 +341,7 @@
         "key": "anvilXpChance"
       },
       {
-        "level": 1,
+        "level": 10,
         "key": "meleeKockbackAttackChance"
       },
       {

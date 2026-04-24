@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 4,
+      "minecraft:wooden_sword": 16
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2164,
+      "minecraft:walk_one_cm": 2698,
+      "minecraft:total_world_time": 3267,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 4,
+      "minecraft:play_time": 2164,
+      "minecraft:damage_dealt": 2000,
+      "minecraft:jump": 17,
+      "minecraft:time_since_death": 2164
+    },
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 4
+    }
+  },
+  "DataVersion": 4671
+}

@@ -3,17 +3,17 @@
     "minecraft:mined": {
       "minecraft:coal_ore": 5
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 9338,
-      "minecraft:walk_one_cm": 3855,
-      "minecraft:total_world_time": 9450,
-      "minecraft:leave_game": 3,
-      "minecraft:play_time": 9338,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 9338
-    },
     "minecraft:picked_up": {
       "minecraft:coal": 5
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 9365,
+      "minecraft:walk_one_cm": 3855,
+      "minecraft:total_world_time": 14528,
+      "minecraft:leave_game": 4,
+      "minecraft:play_time": 9365,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 9365
     },
     "minecraft:used": {
       "minecraft:netherite_pickaxe": 5

@@ -1,11 +1,28 @@
 {
   "stats": {
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 3
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 56,
-      "minecraft:total_world_time": 629,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 56,
-      "minecraft:time_since_death": 56
+      "minecraft:sprint_one_cm": 2972,
+      "minecraft:time_since_rest": 1483,
+      "minecraft:walk_one_cm": 2594,
+      "minecraft:total_world_time": 2302,
+      "minecraft:leave_game": 3,
+      "minecraft:fly_one_cm": 6810,
+      "minecraft:mob_kills": 2,
+      "minecraft:play_time": 1483,
+      "minecraft:damage_dealt": 376,
+      "minecraft:jump": 23,
+      "minecraft:time_since_death": 1483
+    },
+    "minecraft:used": {
+      "minecraft:dried_kelp": 4,
+      "minecraft:zombie_spawn_egg": 3,
+      "minecraft:copper_sword": 7
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1
     }
   },
   "DataVersion": 4671

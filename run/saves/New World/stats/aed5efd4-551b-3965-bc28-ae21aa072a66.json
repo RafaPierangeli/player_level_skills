@@ -1,32 +1,43 @@
 {
   "stats": {
-    "minecraft:killed": {
-      "minecraft:zombified_piglin": 2
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 4,
+      "minecraft:warden_spawn_egg": 2,
+      "minecraft:wooden_sword": 9,
+      "minecraft:crossbow": 7,
+      "minecraft:netherite_pickaxe": 2,
+      "minecraft:coal_ore": 4,
+      "minecraft:bow": 28
     },
     "minecraft:mined": {
       "minecraft:coal_ore": 2
     },
     "minecraft:custom": {
+      "minecraft:trigger_trapped_chest": 1,
+      "minecraft:time_since_rest": 8711,
+      "minecraft:walk_one_cm": 8606,
+      "minecraft:leave_game": 4,
+      "minecraft:mob_kills": 6,
+      "minecraft:damage_dealt": 1000,
+      "minecraft:play_time": 8711,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 8711,
       "minecraft:sprint_one_cm": 719,
-      "minecraft:time_since_rest": 3568,
-      "minecraft:walk_one_cm": 3628,
-      "minecraft:total_world_time": 3855,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 2,
-      "minecraft:walk_on_water_one_cm": 20,
-      "minecraft:play_time": 3568,
-      "minecraft:jump": 3,
-      "minecraft:time_since_death": 3568
+      "minecraft:total_world_time": 12984,
+      "minecraft:interact_with_anvil": 2,
+      "minecraft:walk_on_water_one_cm": 20
     },
     "minecraft:picked_up": {
+      "minecraft:sculk_catalyst": 1,
       "minecraft:gold_nugget": 2
     },
-    "minecraft:used": {
-      "minecraft:piglin_brute_spawn_egg": 2,
-      "minecraft:crossbow": 7,
-      "minecraft:netherite_pickaxe": 2,
-      "minecraft:coal_ore": 4,
-      "minecraft:bow": 3
+    "minecraft:broken": {
+      "minecraft:wooden_sword": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 2,
+      "minecraft:warden": 2,
+      "minecraft:piglin_brute": 2
     }
   },
   "DataVersion": 4671

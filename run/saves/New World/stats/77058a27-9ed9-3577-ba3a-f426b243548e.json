@@ -1,27 +1,43 @@
 {
   "stats": {
     "minecraft:picked_up": {
-      "minecraft:rotten_flesh": 1
-    },
-    "minecraft:killed": {
-      "minecraft:zombie": 2
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:gold_nugget": 2,
+      "minecraft:rotten_flesh": 3
     },
     "minecraft:used": {
+      "minecraft:golden_apple": 1,
+      "minecraft:piglin_brute_spawn_egg": 9,
+      "minecraft:carrot": 2,
+      "minecraft:wooden_sword": 23,
       "minecraft:netherite_sword": 10,
-      "minecraft:zombie_spawn_egg": 3
+      "minecraft:zombie_spawn_egg": 4
+    },
+    "minecraft:broken": {
+      "minecraft:wooden_sword": 1
     },
     "minecraft:custom": {
+      "minecraft:time_since_rest": 9837,
+      "minecraft:walk_one_cm": 14879,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 12,
+      "minecraft:damage_dealt": 5089,
+      "minecraft:play_time": 9837,
+      "minecraft:jump": 23,
+      "minecraft:time_since_death": 9837,
+      "minecraft:drop": 1,
       "minecraft:sprint_one_cm": 541,
-      "minecraft:time_since_rest": 956,
-      "minecraft:walk_one_cm": 8210,
-      "minecraft:total_world_time": 1145,
-      "minecraft:leave_game": 1,
+      "minecraft:total_world_time": 21220,
       "minecraft:fly_one_cm": 699,
-      "minecraft:mob_kills": 3,
-      "minecraft:play_time": 956,
-      "minecraft:damage_dealt": 514,
-      "minecraft:jump": 2,
-      "minecraft:time_since_death": 956
+      "minecraft:interact_with_anvil": 2
+    },
+    "minecraft:dropped": {
+      "minecraft:piglin_brute_spawn_egg": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 1,
+      "minecraft:zombie": 2,
+      "minecraft:piglin_brute": 8
     }
   },
   "DataVersion": 4671

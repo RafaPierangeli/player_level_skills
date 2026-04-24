@@ -1,26 +1,30 @@
 {
   "stats": {
-    "minecraft:picked_up": {
-      "minecraft:white_wool": 1,
-      "minecraft:mutton": 2
+    "minecraft:used": {
+      "minecraft:netherite_sword": 2,
+      "minecraft:dried_kelp": 11
     },
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 202,
-      "minecraft:time_since_rest": 337,
-      "minecraft:walk_one_cm": 1770,
-      "minecraft:total_world_time": 397,
-      "minecraft:leave_game": 1,
+      "minecraft:time_since_rest": 2995,
+      "minecraft:walk_one_cm": 4427,
+      "minecraft:leave_game": 2,
       "minecraft:mob_kills": 1,
-      "minecraft:play_time": 337,
+      "minecraft:damage_taken": 60,
+      "minecraft:play_time": 2995,
       "minecraft:damage_dealt": 80,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 337
-    },
-    "minecraft:used": {
-      "minecraft:netherite_sword": 2
+      "minecraft:jump": 76,
+      "minecraft:time_since_death": 2995,
+      "minecraft:sprint_one_cm": 17475,
+      "minecraft:fall_one_cm": 1550,
+      "minecraft:total_world_time": 4689,
+      "minecraft:fly_one_cm": 13628
     },
     "minecraft:killed": {
       "minecraft:sheep": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:white_wool": 1,
+      "minecraft:mutton": 2
     }
   },
   "DataVersion": 4671

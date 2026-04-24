@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 290,
+      "minecraft:walk_one_cm": 379,
+      "minecraft:total_world_time": 383,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 290,
+      "minecraft:damage_dealt": 450,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 290
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:wooden_sword": 3
+    }
+  },
+  "DataVersion": 4671
+}

@@ -47,12 +47,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:piglin_brute": "2026-04-11 00:42:08 -0300"
-    },
-    "done": false
-  },
   "minecraft:nether/netherite_armor": {
     "criteria": {
       "netherite_armor": "2026-04-11 00:41:56 -0300"
@@ -65,15 +59,28 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_something": "2026-04-11 00:42:08 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/iron_nugget_from_blasting": {
     "criteria": {
       "has_iron_boots": "2026-04-11 00:41:56 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-11 00:41:56 -0300",
+      "minecraft:plains": "2026-04-24 11:52:38 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:piglin_brute": "2026-04-11 00:42:08 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-04-11 00:42:08 -0300"
     },
     "done": true
   },
@@ -83,11 +90,17 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "minecraft:river": "2026-04-11 00:41:56 -0300"
+      "consumed_item": "2026-04-24 11:53:12 -0300"
     },
-    "done": false
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-24 11:52:37 -0300"
+    },
+    "done": true
   },
   "DataVersion": 4671
 }

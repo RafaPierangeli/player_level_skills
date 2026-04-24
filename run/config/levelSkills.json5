@@ -19,17 +19,19 @@
 	// restrict hand usage when item not unlocked
 	"lockedHandUsage": false,
 	// Bonus id: bowDamage
-	"bowDamageBonus": 0.5,
+	"bowDamageBonus": 0.10000000149011612,
 	// Bonus id: bowDoubleDamageChance
-	"bowDoubleDamageChanceBonus": 0.10000000149011612,
+	"bowDoubleDamageChanceBonus": 0.02500000037252903,
 	// Bonus id: crossbowDamage
-	"crossbowDamageBonus": 0.5,
+	"crossbowDamageBonus": 0.10000000149011612,
 	// Bonus id: crossbowDoubleDamageChance
-	"crossbowDoubleDamageChanceBonus": 0.10000000149011612,
+	"crossbowDoubleDamageChanceBonus": 0.02500000037252903,
 	// Bonus id: itemDamageChance
 	"itemDamageChanceBonus": 0.05000000074505806,
 	// Bonus id: potionEffectChance
-	"potionEffectChanceBonus": 0.20000000298023224,
+	"potionEffectChanceBonus": 0.029999999329447746,
+	// Bonus id: potionEffectChance. Default Max lv. Amplifier = 3
+	"potionEffectAmplifier": 0.10000000149011612,
 	// Bonus id: twinBreedChance
 	"twinBreedChanceBonus": 0.20000000298023224,
 	// Bonus id: fallDamageReduction
@@ -46,32 +48,32 @@
 	"miningDropChanceBonus": 0.05000000074505806,
 	// Bonus id: plantDropChance
 	"plantDropChanceBonus": 0.009999999776482582,
-	// Bonus id: anvilXpCap
-	"anvilXpCap": 30,
 	// Bonus id: anvilXpDiscount
 	"anvilXpDiscountBonus": 0.019999999552965164,
 	// Bonus id: anvilXpChance
 	"anvilXpChanceBonus": 0.009999999776482582,
 	// Bonus id: healthRegen
-	"healthRegenBonus": 0.02500000037252903,
+	"healthRegenBonus": 0.05000000074505806,
 	// Bonus id: healthAbsorption
-	"healthAbsorptionBonus": 4.0,
+	"healthAbsorptionBonus": 0.20000000298023224,
 	// Bonus id: exhaustionReduction
 	"exhaustionReductionBonus": 0.019999999552965164,
 	// Bonus id: knockbackAttackChance
-	"meleeKnockbackAttackChanceBonus": 0.009999999776482582,
+	"meleeKnockbackAttackChanceBonus": 10.0,
 	// Bonus id: criticalAttackChance
-	"meleeCriticalAttackChanceBonus": 0.009999999776482582,
+	"meleeCriticalAttackChanceBonus": 0.019999999552965164,
 	// Bonus id: meleeCriticalAttackDamage
-	"meleeCriticalAttackDamageBonus": 0.30000001192092896,
+	"meleeCriticalAttackDamageBonus": 0.20000000298023224,
 	// Bonus id: meleeDoubleAttackDamageChance
 	"meleeDoubleAttackDamageChanceBonus": 0.0,
 	// Bonus id: foodIncreasion
-	"foodIncreasionBonus": 0.019999999552965164,
+	"foodIncreasionBonus": 0.10000000149011612,
+	// Bonus id: foodIncreasion
+	"foodSaturationChanceBonus": 0.02500000037252903,
 	// Bonus id: damageReflection
-	"damageReflectionBonus": 0.019999999552965164,
+	"damageReflectionBonus": 0.5,
 	// Bonus id: damageReflectionChance
-	"damageReflectionChanceBonus": 0.004999999888241291,
+	"damageReflectionChanceBonus": 0.5,
 	// Bonus id: evadingDamageChance
 	"evadingDamageChanceBonus": 0.10000000149011612,
 	// XP equation: lvl^exponent * multiplicator + base

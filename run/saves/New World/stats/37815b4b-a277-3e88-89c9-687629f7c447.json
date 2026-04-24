@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:warden_spawn_egg": 2,
+      "minecraft:crossbow": 2,
+      "minecraft:bow": 7
+    },
+    "minecraft:killed": {
+      "minecraft:warden": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1461,
+      "minecraft:walk_one_cm": 3978,
+      "minecraft:total_world_time": 1952,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 1461,
+      "minecraft:time_since_death": 1461
+    }
+  },
+  "DataVersion": 4671
+}

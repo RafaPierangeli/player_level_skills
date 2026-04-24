@@ -1,5 +1,6 @@
 package com.player_level_skills.util;
 
+import com.player_level_skills.mixin.item.PersistentProjectileEntityAccessor;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import com.player_level_skills.access.LevelManagerAccess;
@@ -34,42 +35,69 @@ import java.util.List;
 public class BonusHelper {
 
     public static void bowBonus(LivingEntity shooter, ProjectileEntity projectile) {
-        if (shooter instanceof PlayerEntity playerEntity && projectile instanceof PersistentProjectileEntity persistentProjectileEntity) {
+        if (shooter instanceof PlayerEntity playerEntity && projectile instanceof PersistentProjectileEntity arrow) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+
+            // 1. Pegamos o dano base inicial (Ex: 2.0)
+            double damageToApply = ((PersistentProjectileEntityAccessor) arrow).getDamage();
+            System.out.println("[DEBUG] Dano Base Inicial: " + damageToApply);
+
+            // 2. Aplicamos primeiro o bônus fixo de nível
             if (LevelManager.BONUSES.containsKey("bowDamage")) {
                 SkillBonus skillBonus = LevelManager.BONUSES.get("bowDamage");
                 int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
                 if (level >= skillBonus.getLevel()) {
-                    //persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamageSources() + ConfigInit.CONFIG.bowDamageBonus * level);
+                    double fixBonus = ConfigInit.CONFIG.bowDamageBonus * level;
+                    damageToApply += fixBonus; // SOMAMOS ao valor atual
+                    System.out.println("[DEBUG] Dano + Bônus Fixo: " + damageToApply);
                 }
             }
+
+            // 3. Agora, sobre o valor já aumentado, tentamos dobrar
             if (LevelManager.BONUSES.containsKey("bowDoubleDamageChance")) {
                 SkillBonus skillBonus = LevelManager.BONUSES.get("bowDoubleDamageChance");
                 int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.bowDoubleDamageChanceBonus) {
-                    //persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() * 2D);
+                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= (ConfigInit.CONFIG.bowDoubleDamageChanceBonus * level)) {
+                    damageToApply *= 2.0D; // DOBRAMOS o valor que já tem o bônus fixo
+                    System.out.println("[DEBUG] SORTE! Dano Final Dobrado: " + damageToApply);
                 }
             }
+
+            // 4. APLICAMOS UMA ÚNICA VEZ NO FINAL
+            arrow.setDamage(damageToApply);
         }
     }
+
+
 
     public static void crossbowBonus(LivingEntity shooter, ProjectileEntity projectile) {
         if (shooter instanceof PlayerEntity playerEntity && projectile instanceof PersistentProjectileEntity persistentProjectileEntity) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+            // 1. Pegamos o dano base inicial (Ex: 2.0)
+            double damageToApply = ((PersistentProjectileEntityAccessor) persistentProjectileEntity).getDamage();
+            System.out.println("[DEBUG] Dano Base Inicial: " + damageToApply);
+
+            // 2. Aplicamos primeiro o bônus fixo de nível
             if (LevelManager.BONUSES.containsKey("crossbowDamage")) {
                 SkillBonus skillBonus = LevelManager.BONUSES.get("crossbowDamage");
                 int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
                 if (level >= skillBonus.getLevel()) {
-                    //persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + ConfigInit.CONFIG.crossbowDamageBonus * level);
+                    double fixBonus = ConfigInit.CONFIG.crossbowDamageBonus * level;
+                    damageToApply += fixBonus; // SOMAMOS ao valor atual
+                    System.out.println("[DEBUG] Dano + Bônus Fixo: " + damageToApply);
                 }
             }
+
+            // 3. Agora, sobre o valor já aumentado, tentamos dobrar
             if (LevelManager.BONUSES.containsKey("crossbowDoubleDamageChance")) {
                 SkillBonus skillBonus = LevelManager.BONUSES.get("crossbowDoubleDamageChance");
                 int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.crossbowDoubleDamageChanceBonus) {
-                    //persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() * 2D);
+                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= (ConfigInit.CONFIG.crossbowDoubleDamageChanceBonus * level)) {
+                    damageToApply *= 2.0D; // DOBRAMOS o valor que já tem o bônus fixo
+                    System.out.println("[DEBUG] SORTE! Dano Final Dobrado: " + damageToApply);
                 }
             }
+            persistentProjectileEntity.setDamage(damageToApply);
         }
     }
 
@@ -90,9 +118,10 @@ public class BonusHelper {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             SkillBonus skillBonus = LevelManager.BONUSES.get("potionEffectChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.potionEffectChanceBonus) {
+            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= (level * ConfigInit.CONFIG.potionEffectChanceBonus)) {
+                float amplifier = level * ConfigInit.CONFIG.potionEffectAmplifier;
                 return new StatusEffectInstance(statusEffectInstance.getEffectType(), statusEffectInstance.getDuration(),
-                        statusEffectInstance.getAmplifier() + 1, statusEffectInstance.isAmbient(),
+                        (int) (statusEffectInstance.getAmplifier() + amplifier), statusEffectInstance.isAmbient(),
                         statusEffectInstance.shouldShowParticles(), statusEffectInstance.shouldShowIcon());
             }
         }
@@ -130,7 +159,7 @@ public class BonusHelper {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             SkillBonus skillBonus = LevelManager.BONUSES.get("deathGraceChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.deathGraceChanceBonus) {
+            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.deathGraceChanceBonus) {
                 playerEntity.setHealth(1.0F);
                 playerEntity.clearStatusEffects();
                 playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
@@ -275,6 +304,20 @@ public class BonusHelper {
         }
     }
 
+//    public static void foodIncreasionBonus(PlayerEntity playerEntity, ItemStack itemStack) {
+//        if (LevelManager.BONUSES.containsKey("foodIncreasion") && itemStack.get(DataComponentTypes.FOOD) != null) {
+//            LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+//            SkillBonus skillBonus = LevelManager.BONUSES.get("foodIncreasion");
+//            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+//            if (level >= skillBonus.getLevel()) {
+//                FoodComponent foodComponent = itemStack.get(DataComponentTypes.FOOD);
+//                float multiplier = level * ConfigInit.CONFIG.foodIncreasionBonus;
+//                playerEntity.getHungerManager().eat(new FoodComponent((int) (foodComponent.nutrition() * multiplier), (int) (foodComponent.saturation() * multiplier), true));
+//            }
+//        }
+//    }
+
+
 
 
     public static boolean anvilXpCapBonus(PlayerEntity playerEntity) {
@@ -343,7 +386,10 @@ public class BonusHelper {
             SkillBonus skillBonus = LevelManager.BONUSES.get("healthAbsorption");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
             if (level >= skillBonus.getLevel()) {
-                playerEntity.setAbsorptionAmount(ConfigInit.CONFIG.healthAbsorptionBonus);
+                playerEntity.addStatusEffect(new StatusEffectInstance(
+                        StatusEffects.ABSORPTION,
+                        400, 10, false, false, true));
+                playerEntity.setAbsorptionAmount(level * ConfigInit.CONFIG.healthAbsorptionBonus);
             }
         }
     }
@@ -361,9 +407,9 @@ public class BonusHelper {
     }
 
     public static boolean meleeKnockbackAttackChanceBonus(PlayerEntity playerEntity) {
-        if (LevelManager.BONUSES.containsKey("knockbackAttackChance")) {
+        if (LevelManager.BONUSES.containsKey("meleeKockbackAttackChance")) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-            SkillBonus skillBonus = LevelManager.BONUSES.get("knockbackAttackChance");
+            SkillBonus skillBonus = LevelManager.BONUSES.get("meleeKockbackAttackChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
             if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.meleeKnockbackAttackChanceBonus) {
                 return true;
@@ -373,9 +419,9 @@ public class BonusHelper {
     }
 
     public static boolean meleeCriticalAttackChanceBonus(PlayerEntity playerEntity) {
-        if (LevelManager.BONUSES.containsKey("criticalAttackChance")) {
+        if (LevelManager.BONUSES.containsKey("meleeCriticalAttackChance")) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-            SkillBonus skillBonus = LevelManager.BONUSES.get("criticalAttackChance");
+            SkillBonus skillBonus = LevelManager.BONUSES.get("meleeCriticalAttackChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
             if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.meleeCriticalAttackChanceBonus) {
                 return true;
@@ -419,8 +465,7 @@ public class BonusHelper {
             SkillBonus skillBonus = LevelManager.BONUSES.get("damageReflectionChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
 
-            if (level >= skillBonus.getLevel()
-                    && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.damageReflectionChanceBonus) {
+            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= level * ConfigInit.CONFIG.damageReflectionChanceBonus) {
 
                 skillBonus = LevelManager.BONUSES.get("damageReflection");
                 level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();

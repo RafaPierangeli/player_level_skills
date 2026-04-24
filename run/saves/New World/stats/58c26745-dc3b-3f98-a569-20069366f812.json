@@ -1,25 +1,31 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 2713,
-      "minecraft:walk_one_cm": 300,
-      "minecraft:total_world_time": 2784,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 1,
-      "minecraft:walk_under_water_one_cm": 3653,
-      "minecraft:walk_on_water_one_cm": 1199,
-      "minecraft:play_time": 2713,
-      "minecraft:damage_dealt": 34,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 2713
-    },
-    "minecraft:killed": {
-      "minecraft:piglin_brute": 1
-    },
     "minecraft:used": {
       "minecraft:piglin_brute_spawn_egg": 2,
       "minecraft:copper_pickaxe": 3,
+      "minecraft:zombie_spawn_egg": 2,
+      "minecraft:copper_sword": 6,
       "minecraft:bow": 5
+    },
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 2
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1,
+      "minecraft:piglin_brute": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3192,
+      "minecraft:walk_one_cm": 2517,
+      "minecraft:total_world_time": 3290,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 2,
+      "minecraft:walk_under_water_one_cm": 3653,
+      "minecraft:walk_on_water_one_cm": 1199,
+      "minecraft:play_time": 3192,
+      "minecraft:damage_dealt": 323,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 3192
     }
   },
   "DataVersion": 4671

@@ -3,9 +3,32 @@
     "minecraft:killed_by": {
       "minecraft:drowned": 1
     },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2993,
+      "minecraft:walk_one_cm": 1984,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 1,
+      "minecraft:walk_under_water_one_cm": 7981,
+      "minecraft:damage_taken": 114,
+      "minecraft:damage_dealt": 200,
+      "minecraft:play_time": 3344,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 2966,
+      "minecraft:sprint_one_cm": 1915,
+      "minecraft:swim_one_cm": 4965,
+      "minecraft:total_world_time": 4129,
+      "minecraft:fly_one_cm": 418,
+      "minecraft:walk_on_water_one_cm": 2737,
+      "minecraft:sneak_time": 56,
+      "minecraft:deaths": 1
+    },
     "minecraft:used": {
       "minecraft:copper_pickaxe": 1,
-      "minecraft:netherite_sword": 4
+      "minecraft:netherite_sword": 4,
+      "minecraft:dried_kelp": 2
+    },
+    "minecraft:mined": {
+      "minecraft:stone": 1
     },
     "minecraft:picked_up": {
       "minecraft:ink_sac": 1,
@@ -32,28 +55,6 @@
     },
     "minecraft:killed": {
       "minecraft:drowned": 1
-    },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 2711,
-      "minecraft:walk_one_cm": 1984,
-      "minecraft:leave_game": 1,
-      "minecraft:mob_kills": 1,
-      "minecraft:walk_under_water_one_cm": 7981,
-      "minecraft:damage_taken": 114,
-      "minecraft:damage_dealt": 200,
-      "minecraft:play_time": 3062,
-      "minecraft:jump": 5,
-      "minecraft:time_since_death": 2684,
-      "minecraft:sprint_one_cm": 1915,
-      "minecraft:swim_one_cm": 4965,
-      "minecraft:total_world_time": 3213,
-      "minecraft:fly_one_cm": 418,
-      "minecraft:walk_on_water_one_cm": 2737,
-      "minecraft:sneak_time": 56,
-      "minecraft:deaths": 1
-    },
-    "minecraft:mined": {
-      "minecraft:stone": 1
     }
   },
   "DataVersion": 4671

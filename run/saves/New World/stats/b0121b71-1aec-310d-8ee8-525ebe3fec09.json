@@ -1,38 +1,39 @@
 {
   "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 8062,
+      "minecraft:walk_one_cm": 8769,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 8062,
+      "minecraft:damage_dealt": 140,
+      "minecraft:jump": 22,
+      "minecraft:time_since_death": 8062,
+      "minecraft:sprint_one_cm": 1503,
+      "minecraft:total_world_time": 9551,
+      "minecraft:fly_one_cm": 14055,
+      "minecraft:sneak_time": 36,
+      "minecraft:interact_with_blast_furnace": 2
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 4
+    },
+    "minecraft:picked_up": {
+      "minecraft:coal": 4
+    },
+    "minecraft:killed": {
+      "minecraft:vex": 1
+    },
     "minecraft:used": {
+      "minecraft:dried_kelp": 1,
       "minecraft:netherite_pickaxe": 9,
       "minecraft:vex_spawn_egg": 1,
       "minecraft:coal_ore": 5,
       "minecraft:bow": 8,
       "minecraft:blast_furnace": 1
     },
-    "minecraft:mined": {
-      "minecraft:coal_ore": 4
-    },
-    "minecraft:killed": {
-      "minecraft:vex": 1
-    },
     "minecraft:crafted": {
       "minecraft:iron_ingot": 6
-    },
-    "minecraft:picked_up": {
-      "minecraft:coal": 4
-    },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 6171,
-      "minecraft:walk_one_cm": 8163,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 1,
-      "minecraft:play_time": 6171,
-      "minecraft:damage_dealt": 140,
-      "minecraft:jump": 7,
-      "minecraft:time_since_death": 6171,
-      "minecraft:sprint_one_cm": 1144,
-      "minecraft:total_world_time": 7632,
-      "minecraft:fly_one_cm": 10877,
-      "minecraft:sneak_time": 36,
-      "minecraft:interact_with_blast_furnace": 2
     }
   },
   "DataVersion": 4671

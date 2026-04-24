@@ -479,7 +479,7 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             context.getMatrices().popMatrix();
 
             if (this.isHovered()) {
-                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", this.tooltip.toString()), mouseX, mouseY);
+                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", this.tooltip), mouseX, mouseY);
             }
         }
 

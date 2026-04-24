@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:brewing_stand": 1,
+      "minecraft:villager_spawn_egg": 1,
+      "minecraft:netherite_sword": 8,
+      "minecraft:wandering_trader_spawn_egg": 1,
+      "minecraft:crossbow": 1,
+      "minecraft:bow": 1
+    },
+    "minecraft:crafted": {
+      "minecraft:lapis_lazuli": 12,
+      "minecraft:glowstone": 9,
+      "player_level_skills:rare_candy": 5,
+      "minecraft:ender_pearl": 6,
+      "minecraft:redstone": 20
+    },
+    "minecraft:custom": {
+      "minecraft:traded_with_villager": 42,
+      "minecraft:talked_to_villager": 10,
+      "minecraft:time_since_rest": 10665,
+      "minecraft:walk_one_cm": 6189,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 1,
+      "minecraft:damage_dealt": 1600,
+      "minecraft:play_time": 10665,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 10665,
+      "minecraft:interact_with_furnace": 1,
+      "minecraft:sprint_one_cm": 2275,
+      "minecraft:total_world_time": 16799,
+      "minecraft:fly_one_cm": 1811
+    },
+    "minecraft:killed": {
+      "minecraft:warden": 1
+    }
+  },
+  "DataVersion": 4671
+}

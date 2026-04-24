@@ -8,17 +8,17 @@
       "minecraft:zombie_spawn_egg": 1
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1294,
+      "minecraft:time_since_rest": 1598,
       "minecraft:walk_one_cm": 2985,
-      "minecraft:total_world_time": 2574,
-      "minecraft:leave_game": 2,
+      "minecraft:total_world_time": 2878,
+      "minecraft:leave_game": 3,
       "minecraft:mob_kills": 1,
       "minecraft:walk_under_water_one_cm": 580,
       "minecraft:walk_on_water_one_cm": 428,
-      "minecraft:play_time": 1294,
+      "minecraft:play_time": 1598,
       "minecraft:damage_dealt": 202,
       "minecraft:jump": 1,
-      "minecraft:time_since_death": 1294
+      "minecraft:time_since_death": 1598
     },
     "minecraft:picked_up": {
       "minecraft:dirt": 1,

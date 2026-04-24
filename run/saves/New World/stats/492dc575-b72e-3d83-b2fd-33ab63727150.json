@@ -1,15 +1,23 @@
 {
   "stats": {
     "minecraft:used": {
+      "minecraft:cooked_beef": 2,
       "minecraft:crossbow": 1,
+      "minecraft:potato": 11,
       "minecraft:bow": 1
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 170,
-      "minecraft:total_world_time": 946,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 170,
-      "minecraft:time_since_death": 170
+      "minecraft:sprint_one_cm": 4612,
+      "minecraft:time_since_rest": 5393,
+      "minecraft:fall_one_cm": 4725,
+      "minecraft:walk_one_cm": 10274,
+      "minecraft:total_world_time": 9981,
+      "minecraft:leave_game": 3,
+      "minecraft:fly_one_cm": 8875,
+      "minecraft:damage_taken": 160,
+      "minecraft:play_time": 5393,
+      "minecraft:jump": 72,
+      "minecraft:time_since_death": 5393
     }
   },
   "DataVersion": 4671

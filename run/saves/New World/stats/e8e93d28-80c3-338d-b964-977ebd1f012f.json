@@ -1,11 +1,19 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:warden_spawn_egg": 1,
+      "minecraft:wooden_sword": 17,
+      "minecraft:netherite_sword": 3
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 623,
-      "minecraft:total_world_time": 647,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 623,
-      "minecraft:time_since_death": 623
+      "minecraft:time_since_rest": 1341,
+      "minecraft:walk_one_cm": 449,
+      "minecraft:total_world_time": 1722,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 1341,
+      "minecraft:damage_dealt": 2596,
+      "minecraft:jump": 8,
+      "minecraft:time_since_death": 1341
     }
   },
   "DataVersion": 4671

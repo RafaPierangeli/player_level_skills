@@ -1,35 +1,21 @@
 {
   "stats": {
+    "minecraft:killed": {
+      "minecraft:salmon": 1,
+      "minecraft:zombified_piglin": 2,
+      "minecraft:zombie": 2,
+      "minecraft:piglin_brute": 2
+    },
     "minecraft:used": {
       "minecraft:piglin_brute_spawn_egg": 4,
       "minecraft:trident": 5,
       "minecraft:copper_pickaxe": 5,
       "minecraft:netherite_sword": 10,
+      "minecraft:zombie_spawn_egg": 9,
       "minecraft:crossbow": 3,
-      "minecraft:copper_sword": 1,
+      "minecraft:copper_sword": 16,
       "minecraft:netherite_spear": 6,
       "minecraft:bow": 2
-    },
-    "minecraft:custom": {
-      "minecraft:damage_resisted": 4,
-      "minecraft:time_since_rest": 3227,
-      "minecraft:walk_one_cm": 14822,
-      "minecraft:leave_game": 2,
-      "minecraft:walk_under_water_one_cm": 4147,
-      "minecraft:mob_kills": 5,
-      "minecraft:damage_taken": 115,
-      "minecraft:play_time": 9160,
-      "minecraft:damage_dealt": 1825,
-      "minecraft:jump": 8,
-      "minecraft:time_since_death": 3201,
-      "minecraft:sprint_one_cm": 3816,
-      "minecraft:fall_one_cm": 525,
-      "minecraft:total_world_time": 9264,
-      "minecraft:fly_one_cm": 554,
-      "minecraft:walk_on_water_one_cm": 74,
-      "minecraft:crouch_one_cm": 956,
-      "minecraft:sneak_time": 95,
-      "minecraft:deaths": 1
     },
     "minecraft:mined": {
       "minecraft:stone": 5
@@ -37,10 +23,26 @@
     "minecraft:killed_by": {
       "minecraft:piglin_brute": 1
     },
-    "minecraft:killed": {
-      "minecraft:salmon": 1,
-      "minecraft:zombified_piglin": 2,
-      "minecraft:piglin_brute": 2
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 4,
+      "minecraft:time_since_rest": 5370,
+      "minecraft:walk_one_cm": 18599,
+      "minecraft:leave_game": 3,
+      "minecraft:walk_under_water_one_cm": 4147,
+      "minecraft:mob_kills": 7,
+      "minecraft:damage_taken": 115,
+      "minecraft:play_time": 11303,
+      "minecraft:damage_dealt": 2569,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 5344,
+      "minecraft:sprint_one_cm": 4343,
+      "minecraft:fall_one_cm": 525,
+      "minecraft:total_world_time": 11448,
+      "minecraft:fly_one_cm": 554,
+      "minecraft:walk_on_water_one_cm": 74,
+      "minecraft:crouch_one_cm": 956,
+      "minecraft:sneak_time": 95,
+      "minecraft:deaths": 1
     },
     "minecraft:picked_up": {
       "minecraft:copper_pickaxe": 3,

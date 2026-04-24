@@ -3,21 +3,34 @@
     "minecraft:mined": {
       "minecraft:stone": 2
     },
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 3
+    },
     "minecraft:used": {
-      "minecraft:copper_pickaxe": 2
+      "minecraft:piglin_brute_spawn_egg": 3,
+      "minecraft:copper_pickaxe": 2,
+      "minecraft:wooden_sword": 4,
+      "minecraft:potato": 12
     },
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 231,
-      "minecraft:time_since_rest": 633,
-      "minecraft:walk_one_cm": 374,
-      "minecraft:total_world_time": 653,
-      "minecraft:leave_game": 1,
-      "minecraft:fly_one_cm": 341,
+      "minecraft:time_since_rest": 1404,
+      "minecraft:walk_one_cm": 2508,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 3,
       "minecraft:walk_under_water_one_cm": 3776,
-      "minecraft:walk_on_water_one_cm": 120,
-      "minecraft:play_time": 633,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 633
+      "minecraft:damage_taken": 63,
+      "minecraft:play_time": 1404,
+      "minecraft:damage_dealt": 1500,
+      "minecraft:damage_absorbed": 60,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 1404,
+      "minecraft:sprint_one_cm": 231,
+      "minecraft:total_world_time": 1808,
+      "minecraft:fly_one_cm": 372,
+      "minecraft:walk_on_water_one_cm": 120
+    },
+    "minecraft:picked_up": {
+      "minecraft:golden_axe": 2
     }
   },
   "DataVersion": 4671

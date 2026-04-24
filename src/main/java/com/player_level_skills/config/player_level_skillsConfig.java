@@ -35,7 +35,7 @@ public class player_level_skillsConfig implements ConfigData {
     public boolean disableMobFarms = false;
     @ConfigEntry.Category("level_settings")
     @Comment("Amount of allowed mob kills in a chunk")
-    public int mobKillCount = 50;
+    public int mobKillCount = 100;
     @ConfigEntry.Category("level_settings")
     @Comment("Strange potion resets all stats instead of one")
     public boolean opStrangePotion = true;
@@ -46,22 +46,25 @@ public class player_level_skillsConfig implements ConfigData {
 
     // Skill bonuses
     @Comment("Bonus id: bowDamage")
-    public float bowDamageBonus = 0.5F;
+    public float bowDamageBonus = 0.1F;
 
     @Comment("Bonus id: bowDoubleDamageChance")
-    public float bowDoubleDamageChanceBonus = 0.1F;
+    public float bowDoubleDamageChanceBonus = 0.025F;
 
     @Comment("Bonus id: crossbowDamage")
-    public float crossbowDamageBonus = 0.5F;
+    public float crossbowDamageBonus = 0.1F;
 
     @Comment("Bonus id: crossbowDoubleDamageChance")
-    public float crossbowDoubleDamageChanceBonus = 0.1F;
+    public float crossbowDoubleDamageChanceBonus = 0.025F;
 
     @Comment("Bonus id: itemDamageChance")
-    public float itemDamageChanceBonus = 0.01F;
+    public float itemDamageChanceBonus = 0.025F;
 
     @Comment("Bonus id: potionEffectChance")
-    public float potionEffectChanceBonus = 0.2F;
+    public float potionEffectChanceBonus = 0.03F;
+
+    @Comment("Bonus id: potionEffectChance. Default Max lv. Amplifier = 3")
+    public float potionEffectAmplifier = 0.1F;
 
     @Comment("Bonus id: twinBreedChance")
     public float twinBreedChanceBonus = 0.2F;
@@ -82,13 +85,11 @@ public class player_level_skillsConfig implements ConfigData {
     public float tradeXpBonus = 0.2F;
 
     @Comment("Bonus id: miningDropChance")
-    public float miningDropChanceBonus = 0.01F;
+    public float miningDropChanceBonus = 0.03F;
 
     @Comment("Bonus id: plantDropChance")
     public float plantDropChanceBonus = 0.01F;
 
-    @Comment("Bonus id: anvilXpCap")
-    public int anvilXpCap = 30;
     @Comment("Bonus id: anvilXpDiscount")
     public float anvilXpDiscountBonus = 0.01F;
 
@@ -96,33 +97,37 @@ public class player_level_skillsConfig implements ConfigData {
     public float anvilXpChanceBonus = 0.01F;
 
     @Comment("Bonus id: healthRegen")
-    public float healthRegenBonus = 0.025F;
+    public float healthRegenBonus = 0.05F;
 
     @Comment("Bonus id: healthAbsorption")
-    public float healthAbsorptionBonus = 4F;
+    public float healthAbsorptionBonus = 0.2F;
 
     @Comment("Bonus id: exhaustionReduction")
     public float exhaustionReductionBonus = 0.02F;
 
     @Comment("Bonus id: knockbackAttackChance")
-    public float meleeKnockbackAttackChanceBonus = 0.01F;
+    public float meleeKnockbackAttackChanceBonus = 0.025F;
 
     @Comment("Bonus id: criticalAttackChance")
-    public float meleeCriticalAttackChanceBonus = 0.01F;
+    public float meleeCriticalAttackChanceBonus = 0.025F;
 
     @Comment("Bonus id: meleeCriticalAttackDamage")
-    public float meleeCriticalAttackDamageBonus = 0.3F;
+    public float meleeCriticalAttackDamageBonus = 0.2F;
 
     @Comment("Bonus id: meleeDoubleAttackDamageChance")
     public float meleeDoubleAttackDamageChanceBonus = 0.2F;
 
     @Comment("Bonus id: foodIncreasion")
-    public float foodIncreasionBonus = 0.02F;
+    public float foodIncreasionBonus = 0.1F;
+
+    @Comment("Bonus id: foodIncreasion")
+    public float foodSaturationChanceBonus = 0.025F;
 
     @Comment("Bonus id: damageReflection")
     public float damageReflectionBonus = 0.02F;
+
     @Comment("Bonus id: damageReflectionChance")
-    public float damageReflectionChanceBonus = 0.005F;
+    public float damageReflectionChanceBonus = 0.025F;
 
     @Comment("Bonus id: evadingDamageChance")
     public float evadingDamageChanceBonus = 0.1F;

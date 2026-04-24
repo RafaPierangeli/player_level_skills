@@ -1,13 +1,18 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 227,
-      "minecraft:total_world_time": 316,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 227,
-      "minecraft:time_since_death": 227
+      "minecraft:sprint_one_cm": 9327,
+      "minecraft:time_since_rest": 909,
+      "minecraft:walk_one_cm": 311,
+      "minecraft:total_world_time": 1032,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 1034,
+      "minecraft:play_time": 909,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 909
     },
     "minecraft:used": {
+      "minecraft:dried_kelp": 2,
       "minecraft:crossbow": 1,
       "minecraft:bow": 1
     }

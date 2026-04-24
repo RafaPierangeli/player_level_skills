@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:golden_axe": 1,
+      "minecraft:sculk_catalyst": 1
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 1,
+      "minecraft:warden_spawn_egg": 1,
+      "minecraft:wooden_sword": 16,
+      "minecraft:netherite_spear": 4
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1612,
+      "minecraft:walk_one_cm": 5336,
+      "minecraft:total_world_time": 1991,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 1612,
+      "minecraft:damage_dealt": 2310,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 1612
+    }
+  },
+  "DataVersion": 4671
+}

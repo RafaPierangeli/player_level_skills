@@ -1,5 +1,7 @@
 package com.player_level_skills;
 
+import com.player_level_skills.item.LootInjector;
+import com.player_level_skills.item.TradeInjector;
 import net.fabricmc.api.ModInitializer;
 import com.player_level_skills.init.*;
 import com.player_level_skills.network.LevelServerPacket;
@@ -16,7 +18,7 @@ public class Player_level_skills implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		//CommandInit.init();
+		CommandInit.init();
 		//CompatInit.init();
 		ConfigInit.init();
 		CriteriaInit.init();
@@ -25,11 +27,11 @@ public class Player_level_skills implements ModInitializer {
 		LoaderInit.init();
 		LevelServerPacket.init();
 		TagInit.init();
-		//ItemInit.init();
 		ItemInit.registerModItems();
 		RestrictionInit.init();
+		TradeInjector.register();
+		LootInjector.register();
 
-		LOGGER.info("ALUUU");
 
 	}
 	public static Identifier identifierOf (String name) {

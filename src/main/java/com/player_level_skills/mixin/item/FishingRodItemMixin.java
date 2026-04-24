@@ -27,7 +27,4 @@ public abstract class FishingRodItemMixin {
         LevelManager.CURRENT_ATTACKER.remove();
     }
 
-
-
-
 }

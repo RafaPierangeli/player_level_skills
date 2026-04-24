@@ -35,6 +35,31 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-04-13 11:35:18 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_boots": "2026-04-13 11:35:18 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-04-13 11:35:18 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-13 11:35:21 -0300",
+      "minecraft:plains": "2026-04-13 11:35:19 -0300"
+    },
+    "done": false
+  },
   "minecraft:recipes/transportation/cherry_boat": {
     "criteria": {
       "in_water": "2026-04-13 11:35:22 -0300"
@@ -71,21 +96,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/dispenser": {
-    "criteria": {
-      "has_bow": "2026-04-13 11:35:18 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/transportation/acacia_boat": {
     "criteria": {
       "in_water": "2026-04-13 11:35:22 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/iron_nugget_from_blasting": {
-    "criteria": {
-      "has_iron_boots": "2026-04-13 11:35:18 -0300"
     },
     "done": true
   },
@@ -94,13 +107,6 @@
       "in_water": "2026-04-13 11:35:22 -0300"
     },
     "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:river": "2026-04-13 11:35:21 -0300",
-      "minecraft:plains": "2026-04-13 11:35:19 -0300"
-    },
-    "done": false
   },
   "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
@@ -114,9 +120,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/mojang_banner_pattern": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "has_enchanted_golden_apple": "2026-04-13 11:35:18 -0300"
+      "consumed_item": "2026-04-23 22:55:43 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-23 22:53:31 -0300"
     },
     "done": true
   },

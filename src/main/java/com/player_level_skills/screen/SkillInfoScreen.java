@@ -19,6 +19,7 @@ import net.minecraft.client.input.KeyInput;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -85,10 +86,6 @@ public class SkillInfoScreen extends Screen implements Tab {
                         String bonusInfo = "bonus.levelz." + bonus.getKey() + "." + i;
                         Text bonusInfoText = Text.translatable(bonusInfo, Text.translatable("text.levelz.gui.short_lower_level", bonus.getLevel()));
 
-                        LOGGER.info("Bonus key = {}", bonus.getKey());
-                        LOGGER.info("Trying bonus text key = {}", bonusInfo);
-                        LOGGER.info("Resolved bonus text = {}", bonusInfoText.getString());
-
                         if (bonusInfoText.getString().equals(bonusInfo)) {
                             break;
                         }
@@ -104,10 +101,10 @@ public class SkillInfoScreen extends Screen implements Tab {
             this.lines.add(skillInfoLines, new LineWidget(this.client, Text.translatable("bonus.levelz.info"), null, 0));
         }
 
-        addRestrictionLines(LevelManager.ITEM_RESTRICTIONS, Text.translatable("restriction.levelz.item_usage"), 0);
-        addRestrictionLines(LevelManager.BLOCK_RESTRICTIONS, Text.translatable("restriction.levelz.block_usage"), 1);
-        addRestrictionLines(LevelManager.ENTITY_RESTRICTIONS, Text.translatable("restriction.levelz.entity_usage"), 2);
-        addRestrictionLines(LevelManager.ENCHANTMENT_RESTRICTIONS, Text.translatable("restriction.levelz.enchantments"), 3);
+        addRestrictionLines(LevelManager.ITEM_RESTRICTIONS, Text.translatable("restriction.levelz.item_usage").formatted(Formatting.BOLD), 0);
+        addRestrictionLines(LevelManager.BLOCK_RESTRICTIONS, Text.translatable("restriction.levelz.block_usage").formatted(Formatting.BOLD), 1);
+        addRestrictionLines(LevelManager.ENTITY_RESTRICTIONS, Text.translatable("restriction.levelz.entity_usage").formatted(Formatting.BOLD), 2);
+        addRestrictionLines(LevelManager.ENCHANTMENT_RESTRICTIONS, Text.translatable("restriction.levelz.enchantments").formatted(Formatting.BOLD), 3);
     }
 
     private void addRestrictionLines(Map<Integer, PlayerRestriction> levelRestrictions, Text restrictionText, int code) {

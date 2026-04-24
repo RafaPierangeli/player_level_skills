@@ -1,15 +1,21 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 305,
-      "minecraft:walk_one_cm": 72,
-      "minecraft:total_world_time": 378,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 305,
-      "minecraft:time_since_death": 305
-    },
     "minecraft:used": {
-      "minecraft:bow": 2
+      "minecraft:warden_spawn_egg": 1,
+      "minecraft:zombie_spawn_egg": 2,
+      "minecraft:bow": 18
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3484,
+      "minecraft:walk_one_cm": 2751,
+      "minecraft:total_world_time": 9667,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 3484,
+      "minecraft:time_since_death": 3484
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1
     }
   },
   "DataVersion": 4671

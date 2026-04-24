@@ -24,5 +24,5 @@ public class ModFoodComponent {
             .useAction(UseAction.DRINK)
             .sound(SoundEvents.ENTITY_GENERIC_DRINK)
             .consumeParticles(false)
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 200,0), 1.0f)).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 200,0), 1.0f)).build();
 }

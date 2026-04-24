@@ -1,23 +1,13 @@
 package com.player_level_skills.mixin.misc;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
-import com.llamalad7.mixinextras.sugar.Share;
-import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.level.LevelManager;
-import net.minecraft.block.BlockState;
-import net.minecraft.component.ComponentType;
-import net.minecraft.component.type.AttributeModifierSlot;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentEffectContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.enchantment.effect.AttributeEnchantmentEffect;
-import net.minecraft.enchantment.provider.EnchantmentProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -25,30 +15,18 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.LocalDifficulty;
-import org.apache.commons.lang3.mutable.MutableFloat;
-import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 @Mixin(EnchantmentHelper.class)
 public abstract class EnchantmentHelperMixin {
@@ -130,49 +108,6 @@ public abstract class EnchantmentHelperMixin {
 
         original.call(instance, enchantment, level);
     }
-
-//Compile, but not work
-//    @Inject(method = "forEachEnchantment(Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;)V", at = @At("HEAD"), cancellable = true)
-//    private static void player_level_skills$manualForEach(LivingEntity entity, net.minecraft.enchantment.EnchantmentHelper.ContextAwareConsumer consumer, CallbackInfo ci) {
-//        if (entity instanceof ServerPlayerEntity player) {
-//            LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
-//
-//            // O Minecraft original percorre TODOS os slots de equipamento (mãos e armaduras)
-//            for (EquipmentSlot slot : EquipmentSlot.values()) {
-//                ItemStack stack = entity.getEquippedStack(slot);
-//                if (stack.isEmpty()) continue;
-//
-//                RegistryEntry<Enchantment> respirationEntry = player.getEntityWorld().getRegistryManager()
-//                        .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                        .getEntry(Enchantments.RESPIRATION.getValue())
-//                        .orElse(null);
-//
-//                if (respirationEntry != null) {
-//                    int level = EnchantmentHelper.getLevel(respirationEntry, stack);
-//
-//                        if (!levelManager.hasRequiredEnchantmentLevel(respirationEntry, level)) {
-//                            System.out.println("[DEBUG forEachEnchantment] Enchantment " + respirationEntry.getKey().toString());
-//                            ci.cancel();
-//                        }
-//
-//
-//                }
-//            }
-//        }
-//    }
-
-//    @Inject(method = "applyAttributeModifiers(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Ljava/util/function/BiConsumer;)V", at = @At("HEAD"), cancellable = true)
-//    private static void player_level_skills$applyLocationBasedEffects(
-//            ItemStack stack, EquipmentSlot slot, BiConsumer<RegistryEntry<EntityAttribute>, EntityAttributeModifier> attributeModifierConsumer, CallbackInfo ci
-//    ) {
-//            for (var entry : stack.getEnchantments().getEnchantmentEntries()) {
-//                RegistryEntry<Enchantment> enchant = entry.getKey();
-//                int level = entry.getIntValue();
-//                    System.out.println("[DEBUG applyLocationBasedEffects] Bloqueando dano extra de: " + enchant.getIdAsString());
-//                    ci.cancel();
-//                    return;
-//                }
-//        }
 
 
     // funcionando para encantamentos de atributos
@@ -343,44 +278,8 @@ public abstract class EnchantmentHelperMixin {
             int level = EnchantmentHelper.getLevel(riptideEntry, stack);
 
                 if (!levelManager.hasRequiredEnchantmentLevel(riptideEntry, level)) {
-                    System.out.println("[DEBUG Riptide] Impulso anulado para: " + user.getName().getString()+ riptideEntry + level);
                     ci.cancel();
                 }
 
     }
-
-
-//    @Inject(
-//            method = "onTargetDamaged(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/item/ItemStack;)V",
-//            at = @At("HEAD"),
-//            cancellable = true
-//    )
-//    private static void player_level_skills$blockRestrictedEnchantments(
-//            ServerWorld world,
-//            Entity target,
-//            DamageSource damageSource,
-//            ItemStack weapon,
-//            CallbackInfo ci
-//    ) {
-//        if (weapon == null || weapon.isEmpty()) {
-//            return;
-//        }
-//
-//        if (!(damageSource.getAttacker() instanceof PlayerEntity playerEntity)) {
-//            return;
-//        }
-//
-//        LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-//
-//        var enchantments = EnchantmentHelper.getEnchantments(weapon);
-//
-//        for (var entry : enchantments.getEnchantmentEntries()) {
-//            if (!levelManager.hasRequiredEnchantmentLevel(entry.getKey(), entry.getIntValue())) {
-//                System.out.println("[DEBUG] Enchantment bloqueado: "+entry.getKey().toString());
-//                ci.cancel();
-//                return;
-//            }
-//        }
-//    }
-
 }

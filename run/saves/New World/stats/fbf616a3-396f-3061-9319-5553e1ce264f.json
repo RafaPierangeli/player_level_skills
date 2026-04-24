@@ -1,0 +1,33 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 245,
+      "minecraft:time_since_rest": 5749,
+      "minecraft:walk_one_cm": 15413,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 570,
+      "minecraft:play_time": 5749,
+      "minecraft:damage_dealt": 121,
+      "minecraft:damage_absorbed": 364,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 5749,
+      "minecraft:sprint_one_cm": 510,
+      "minecraft:total_world_time": 6827,
+      "minecraft:fly_one_cm": 5276,
+      "minecraft:walk_on_water_one_cm": 380
+    },
+    "minecraft:used": {
+      "minecraft:enchanted_golden_apple": 4,
+      "minecraft:zombie_spawn_egg": 7,
+      "minecraft:potato": 12
+    },
+    "minecraft:picked_up": {
+      "minecraft:rotten_flesh": 5
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2
+    }
+  },
+  "DataVersion": 4671
+}

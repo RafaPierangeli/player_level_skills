@@ -1,22 +1,24 @@
 {
   "stats": {
-    "minecraft:used": {
-      "minecraft:netherite_pickaxe": 3,
-      "minecraft:coal_ore": 10
+    "minecraft:mined": {
+      "minecraft:coal_ore": 3
     },
     "minecraft:picked_up": {
       "minecraft:coal": 4
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 3036,
-      "minecraft:walk_one_cm": 4194,
-      "minecraft:total_world_time": 6638,
-      "minecraft:leave_game": 3,
-      "minecraft:play_time": 3036,
-      "minecraft:time_since_death": 3036
+    "minecraft:used": {
+      "minecraft:potion": 1,
+      "minecraft:netherite_pickaxe": 3,
+      "minecraft:coal_ore": 10
     },
-    "minecraft:mined": {
-      "minecraft:coal_ore": 3
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3501,
+      "minecraft:walk_one_cm": 5679,
+      "minecraft:total_world_time": 16107,
+      "minecraft:leave_game": 4,
+      "minecraft:play_time": 3501,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 3501
     }
   },
   "DataVersion": 4671

@@ -1,31 +1,31 @@
 {
   "stats": {
-    "minecraft:mined": {
-      "minecraft:coal_ore": 21,
-      "minecraft:grass_block": 2
-    },
-    "minecraft:picked_up": {
-      "minecraft:coal": 28,
-      "minecraft:grass_block": 2
-    },
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 612,
       "minecraft:trigger_trapped_chest": 1,
-      "minecraft:time_since_rest": 3574,
+      "minecraft:time_since_rest": 5245,
       "minecraft:fall_one_cm": 300,
       "minecraft:walk_one_cm": 9722,
-      "minecraft:total_world_time": 3772,
-      "minecraft:leave_game": 1,
+      "minecraft:total_world_time": 7990,
+      "minecraft:leave_game": 2,
       "minecraft:fly_one_cm": 508,
-      "minecraft:play_time": 3574,
+      "minecraft:play_time": 5245,
       "minecraft:jump": 14,
-      "minecraft:time_since_death": 3574
+      "minecraft:time_since_death": 5245
     },
     "minecraft:used": {
       "minecraft:stone_shovel": 2,
       "minecraft:grass_block": 4,
       "minecraft:copper_pickaxe": 21,
       "minecraft:coal_ore": 40
+    },
+    "minecraft:picked_up": {
+      "minecraft:coal": 28,
+      "minecraft:grass_block": 2
+    },
+    "minecraft:mined": {
+      "minecraft:coal_ore": 21,
+      "minecraft:grass_block": 2
     }
   },
   "DataVersion": 4671

@@ -1,14 +1,22 @@
 {
   "stats": {
+    "minecraft:killed": {
+      "minecraft:warden": 1
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1704,
+      "minecraft:time_since_rest": 1909,
       "minecraft:walk_one_cm": 1141,
-      "minecraft:total_world_time": 1734,
-      "minecraft:leave_game": 2,
+      "minecraft:total_world_time": 2154,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 1,
       "minecraft:walk_on_water_one_cm": 118,
-      "minecraft:play_time": 1704,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 1704
+      "minecraft:play_time": 1909,
+      "minecraft:damage_dealt": 950,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 1909
+    },
+    "minecraft:used": {
+      "minecraft:wooden_sword": 9
     }
   },
   "DataVersion": 4671

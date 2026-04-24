@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:zombie_spawn_egg": 7,
+      "minecraft:copper_sword": 9
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 3
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 136,
+      "minecraft:time_since_rest": 2008,
+      "minecraft:walk_one_cm": 3021,
+      "minecraft:total_world_time": 3159,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 24829,
+      "minecraft:mob_kills": 4,
+      "minecraft:sneak_time": 52,
+      "minecraft:play_time": 2008,
+      "minecraft:damage_dealt": 852,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 2008
+    }
+  },
+  "DataVersion": 4671
+}

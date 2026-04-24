@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:dried_kelp": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 598,
+      "minecraft:time_since_rest": 1261,
+      "minecraft:walk_one_cm": 139,
+      "minecraft:total_world_time": 1309,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 629,
+      "minecraft:walk_under_water_one_cm": 263,
+      "minecraft:walk_on_water_one_cm": 84,
+      "minecraft:play_time": 1261,
+      "minecraft:jump": 2,
+      "minecraft:time_since_death": 1261
+    }
+  },
+  "DataVersion": 4671
+}

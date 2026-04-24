@@ -17,12 +17,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/copper_chain": {
-    "criteria": {
-      "has_copper_ingot": "2026-04-13 19:49:26 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/copper_nugget_from_blasting": {
     "criteria": {
       "has_copper_helmet": "2026-04-13 19:48:13 -0300"
@@ -41,15 +35,100 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/black_dye": {
+    "criteria": {
+      "has_ink_sac": "2026-04-13 19:48:13 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-04-13 19:48:13 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_boots": "2026-04-13 19:48:13 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-04-13 19:48:13 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-13 19:48:29 -0300",
+      "minecraft:plains": "2026-04-13 19:48:14 -0300"
+    },
+    "done": false
+  },
   "minecraft:recipes/transportation/cherry_boat": {
     "criteria": {
       "in_water": "2026-04-13 19:48:28 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/lightning_rod": {
+  "minecraft:recipes/transportation/bamboo_raft": {
     "criteria": {
-      "has_copper_ingot": "2026-04-13 19:49:26 -0300"
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/pale_oak_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2026-04-13 19:48:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2026-04-13 19:48:36 -0300"
     },
     "done": true
   },
@@ -58,6 +137,24 @@
       "minecraft:drowned": "2026-04-13 19:49:25 -0300"
     },
     "done": false
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:drowned": "2026-04-13 19:49:25 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/copper_chain": {
+    "criteria": {
+      "has_copper_ingot": "2026-04-13 19:49:26 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/lightning_rod": {
+    "criteria": {
+      "has_copper_ingot": "2026-04-13 19:49:26 -0300"
+    },
+    "done": true
   },
   "minecraft:recipes/combat/copper_chestplate": {
     "criteria": {
@@ -77,45 +174,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/transportation/bamboo_raft": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/spruce_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/redstone/copper_trapdoor": {
     "criteria": {
       "has_copper_ingot": "2026-04-13 19:49:26 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/birch_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/oak_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/copper_block": {
     "criteria": {
       "has_copper_ingot": "2026-04-13 19:49:26 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/mangrove_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
     },
     "done": true
   },
@@ -143,12 +210,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/black_dye": {
-    "criteria": {
-      "has_ink_sac": "2026-04-13 19:48:13 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/copper_shovel": {
     "criteria": {
       "has_copper_ingot": "2026-04-13 19:49:26 -0300"
@@ -173,21 +234,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/dispenser": {
-    "criteria": {
-      "has_bow": "2026-04-13 19:48:13 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/copper_bars": {
     "criteria": {
       "has_copper_ingot": "2026-04-13 19:49:26 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/acacia_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
     },
     "done": true
   },
@@ -197,60 +246,29 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_by_something": "2026-04-13 19:48:36 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/copper_spear": {
     "criteria": {
       "has_copper_ingot": "2026-04-13 19:49:26 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "has_iron_boots": "2026-04-13 19:48:13 -0300"
+      "consumed_item": "2026-04-22 22:07:51 -0300"
     },
     "done": true
   },
-  "minecraft:adventure/kill_a_mob": {
+  "minecraft:recipes/building_blocks/dried_kelp_block": {
     "criteria": {
-      "minecraft:drowned": "2026-04-13 19:49:25 -0300"
+      "has_dried_kelp": "2026-04-22 22:07:22 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/pale_oak_boat": {
+  "minecraft:husbandry/balanced_diet": {
     "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:river": "2026-04-13 19:48:29 -0300",
-      "minecraft:plains": "2026-04-13 19:48:14 -0300"
+      "dried_kelp": "2026-04-22 22:07:51 -0300"
     },
     "done": false
-  },
-  "minecraft:recipes/transportation/jungle_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/dark_oak_boat": {
-    "criteria": {
-      "in_water": "2026-04-13 19:48:28 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/mojang_banner_pattern": {
-    "criteria": {
-      "has_enchanted_golden_apple": "2026-04-13 19:48:13 -0300"
-    },
-    "done": true
   },
   "DataVersion": 4671
 }

@@ -35,6 +35,31 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-04-13 11:33:51 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_boots": "2026-04-13 11:33:51 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-21 23:42:47 -0300",
+      "minecraft:plains": "2026-04-13 11:33:51 -0300"
+    },
+    "done": false
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-04-13 11:33:51 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/cherry_boat": {
     "criteria": {
       "in_water": "2026-04-13 11:33:56 -0300"
@@ -71,21 +96,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/dispenser": {
-    "criteria": {
-      "has_bow": "2026-04-13 11:33:51 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/transportation/acacia_boat": {
     "criteria": {
       "in_water": "2026-04-13 11:33:56 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/iron_nugget_from_blasting": {
-    "criteria": {
-      "has_iron_boots": "2026-04-13 11:33:51 -0300"
     },
     "done": true
   },
@@ -94,12 +107,6 @@
       "in_water": "2026-04-13 11:33:56 -0300"
     },
     "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:plains": "2026-04-13 11:33:51 -0300"
-    },
-    "done": false
   },
   "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
@@ -113,11 +120,23 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/mojang_banner_pattern": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "has_enchanted_golden_apple": "2026-04-13 11:33:51 -0300"
+      "consumed_item": "2026-04-21 23:44:39 -0300"
     },
     "done": true
+  },
+  "minecraft:recipes/building_blocks/dried_kelp_block": {
+    "criteria": {
+      "has_dried_kelp": "2026-04-21 23:42:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "dried_kelp": "2026-04-21 23:44:39 -0300"
+    },
+    "done": false
   },
   "DataVersion": 4671
 }

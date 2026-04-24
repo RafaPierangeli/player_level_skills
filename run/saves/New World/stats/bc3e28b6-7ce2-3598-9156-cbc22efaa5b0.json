@@ -1,16 +1,22 @@
 {
   "stats": {
+    "minecraft:used": {
+      "minecraft:potion": 1,
+      "minecraft:milk_bucket": 1
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 363,
-      "minecraft:walk_one_cm": 807,
-      "minecraft:total_world_time": 383,
-      "minecraft:leave_game": 1,
+      "minecraft:sprint_one_cm": 706,
+      "minecraft:time_since_rest": 4303,
+      "minecraft:fall_one_cm": 652,
+      "minecraft:walk_one_cm": 2330,
+      "minecraft:total_world_time": 4370,
+      "minecraft:leave_game": 2,
       "minecraft:walk_under_water_one_cm": 433,
       "minecraft:walk_on_water_one_cm": 333,
       "minecraft:sneak_time": 1,
-      "minecraft:play_time": 363,
-      "minecraft:jump": 2,
-      "minecraft:time_since_death": 363
+      "minecraft:play_time": 4303,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 4303
     }
   },
   "DataVersion": 4671

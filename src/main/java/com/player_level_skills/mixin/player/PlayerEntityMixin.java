@@ -1,26 +1,19 @@
 package com.player_level_skills.mixin.player;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.player_level_skills.access.LevelManagerAccess;
 import com.player_level_skills.access.PlayerDropAccess;
 import com.player_level_skills.init.ConfigInit;
 import com.player_level_skills.entity.LevelExperienceOrbEntity;
 import com.player_level_skills.level.LevelManager;
+import com.player_level_skills.level.SkillBonus;
 import com.player_level_skills.util.BonusHelper;
-import net.minecraft.block.BlockState;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -36,8 +29,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Objects;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin extends LivingEntity implements LevelManagerAccess, PlayerDropAccess {
@@ -72,21 +63,21 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
         return original;
     }
 
-    @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/item/Item;getBonusAttackDamage(Lnet/minecraft/entity/Entity;FLnet/minecraft/entity/damage/DamageSource;)F"), ordinal = 0)
-    private boolean attackKnockbackkMixin(boolean original) {
-        if (!original && BonusHelper.meleeKnockbackAttackChanceBonus(this.playerEntity)) {
+    // work, but in test conflit with unique weapons
+    @ModifyVariable(
+            method = "attack",
+            at = @At("STORE"), // Injeta no momento da gravação da variável
+            ordinal = 2        // O mesmo endereço que o outro mod usa
+    )
+    private boolean player_level_skills$additionalCriticalChance(boolean original) {
+
+        if (original) {
             return true;
         }
-        return original;
+
+        return BonusHelper.meleeCriticalAttackChanceBonus((PlayerEntity) (Object) this);
     }
 
-    @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/item/Item;getBonusAttackDamage(Lnet/minecraft/entity/Entity;FLnet/minecraft/entity/damage/DamageSource;)F"), ordinal = 1)
-    private boolean attackCriticalMixin(boolean original) {
-        if (!original && BonusHelper.meleeCriticalAttackChanceBonus(this.playerEntity)) {
-            return true;
-        }
-        return original;
-    }
 
     @ModifyVariable(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;getWeaponStack()Lnet/minecraft/item/ItemStack;"), ordinal = 0)
     private float attackMixin(float original) {
@@ -99,11 +90,18 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
         return original;
     }
 
-    //@ModifyVariable(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;DDDLnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V", ordinal = 0), ordinal = 0)
-    //private float attackCriticalDamageMixin(float original) {
-    //    original += BonusHelper.meleeCriticalDamageBonus(this.playerEntity);
-    //    return original;
-    //}
+    //work
+    @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/item/Item;getBonusAttackDamage(Lnet/minecraft/entity/Entity;FLnet/minecraft/entity/damage/DamageSource;)F"), ordinal = 2)
+    private float attackCriticalMixin(float original) {
+        boolean isCritical = this.fallDistance > 0.0F && !this.isOnGround() && !this.isClimbing() && !this.isTouchingWater() && !this.hasStatusEffect(net.minecraft.entity.effect.StatusEffects.BLINDNESS) && !this.hasVehicle();
+
+        if (isCritical) {
+            float bonus = BonusHelper.meleeCriticalDamageBonus((PlayerEntity) (Object) this);
+            return original + bonus;
+        }
+        return original;
+    }
+
 
     @ModifyVariable(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;getVelocity()Lnet/minecraft/util/math/Vec3d;"), ordinal = 3)
     private float attackDoubleDamageMixin(float original) {
@@ -116,14 +114,12 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
     @Inject(method = "attack", at = @At("HEAD"))
     private void player_level_skills$captureAttacker(Entity target, CallbackInfo ci) {
         if ((Object)this instanceof ServerPlayerEntity player) {
-            // Armazena o player na thread atual
             LevelManager.CURRENT_ATTACKER.set(player);
         }
     }
 
     @Inject(method = "attack", at = @At("TAIL"))
     private void player_level_skills$releaseAttacker(Entity target, CallbackInfo ci) {
-        // Limpa para evitar vazamento de memória ou bugs em outros processos
         LevelManager.CURRENT_ATTACKER.remove();
     }
 
@@ -136,10 +132,10 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
         }
     }
 
-    //@Inject(method = "eatFood", at = @At(value = "HEAD"))
-    //private void eatFoodMixin(World world, ItemStack stack, FoodComponent foodComponent, CallbackInfoReturnable<ItemStack> info) {
-    //    BonusHelper.foodIncreasionBonus(this.playerEntity, stack);
-    //}
+//    @Inject(method = "eatFood", at = @At(value = "HEAD"))
+//    private void eatFoodMixin(World world, ItemStack stack, FoodComponent foodComponent, CallbackInfoReturnable<ItemStack> info) {
+//        BonusHelper.foodIncreasionBonus(this.playerEntity, stack);
+//    }
 
     @Shadow
     public abstract ItemStack getWeaponStack();
@@ -181,27 +177,5 @@ protected void dropExperience(ServerWorld serverWorld, @Nullable Entity attacker
         }
         super.dropExperience(serverWorld,attacker);
     }
-
-
-
-//    @Inject(method = "useRiptide", at = @At("HEAD"), cancellable = true)
-//    private void player_level_skills$cancelRiptideImpulse(int riptideLevel, float f, ItemStack stack, CallbackInfo ci) {
-//        // 'this' é o PlayerEntity
-//        PlayerEntity player = (PlayerEntity) (Object) this;
-//        System.out.println("[DEBUG useRiptide] Cancelando Impulso Riptide" + player.getName().toString());
-//        LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
-//
-//        // Buscamos a RegistryEntry do Riptide
-//        RegistryEntry<Enchantment> riptideEntry = player.getRegistryManager()
-//                .getOrThrow(RegistryKeys.ENCHANTMENT)
-//                .getEntry(Enchantments.RIPTIDE.getValue()).orElse(null);
-//        int level = EnchantmentHelper.getLevel(riptideEntry,stack);
-//
-//        // Se o player NÃO tem nível para o Riptide que está disparando agora
-//        if (!levelManager.hasRequiredEnchantmentLevel(riptideEntry, level)) {
-//            System.out.println("[DEBUG useRiptide] Cancelando Impulso Riptide" + riptideEntry + level);
-//            ci.cancel();
-//        }
-//    }
 
 }

@@ -2,19 +2,33 @@
   "stats": {
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 1040,
-      "minecraft:time_since_rest": 1169,
-      "minecraft:walk_one_cm": 1061,
-      "minecraft:total_world_time": 1243,
-      "minecraft:leave_game": 2,
-      "minecraft:play_time": 1169,
-      "minecraft:time_since_death": 1169
-    },
-    "minecraft:used": {
-      "minecraft:netherite_pickaxe": 4,
-      "minecraft:coal_ore": 4
+      "minecraft:time_since_rest": 2240,
+      "minecraft:walk_one_cm": 3956,
+      "minecraft:total_world_time": 2681,
+      "minecraft:leave_game": 3,
+      "minecraft:fly_one_cm": 5809,
+      "minecraft:mob_kills": 1,
+      "minecraft:walk_under_water_one_cm": 1236,
+      "minecraft:walk_on_water_one_cm": 2678,
+      "minecraft:sneak_time": 17,
+      "minecraft:play_time": 2240,
+      "minecraft:time_since_death": 2240
     },
     "minecraft:mined": {
       "minecraft:coal_ore": 4
+    },
+    "minecraft:used": {
+      "minecraft:netherite_pickaxe": 4,
+      "minecraft:coal_ore": 4,
+      "minecraft:bow": 3
+    },
+    "minecraft:killed": {
+      "minecraft:warden": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:salmon": 2,
+      "minecraft:ink_sac": 3,
+      "minecraft:sculk_catalyst": 2
     }
   },
   "DataVersion": 4671

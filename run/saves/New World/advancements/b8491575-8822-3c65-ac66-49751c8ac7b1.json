@@ -43,7 +43,8 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:river": "2026-04-10 17:22:00 -0300"
+      "minecraft:river": "2026-04-10 17:22:00 -0300",
+      "minecraft:plains": "2026-04-21 19:10:48 -0300"
     },
     "done": false
   },
@@ -110,6 +111,12 @@
   "minecraft:adventure/ol_betsy": {
     "criteria": {
       "shot_crossbow": "2026-04-12 19:18:59 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2026-04-21 19:09:57 -0300"
     },
     "done": true
   },

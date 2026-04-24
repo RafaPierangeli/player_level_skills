@@ -24,8 +24,8 @@ public class BowItemMixin {
     @Inject(method = "shoot", at = @At("TAIL"))
     private void shootMixin(LivingEntity shooter, ProjectileEntity projectile, int index, float speed, float divergence, float yaw, LivingEntity target, CallbackInfo info) {
         BonusHelper.bowBonus(shooter, projectile);
-
     }
+
     @Inject(method = "onStoppedUsing", at = @At("HEAD"))
     private void player_level_skills$captureShooter(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
         if (user instanceof ServerPlayerEntity player) {
