@@ -257,7 +257,10 @@
   "restriction.levelz.melee.tooltip": "Melee %s",
   "text.levelz.gui.up_level": "Up Level %s",
   "text.levelz.gui.short_level_button": "Open skills screen",
-  "itemgroup.player_level_skills": "Player Level Skills"
+  "itemgroup.player_level_skills": "Player Level Skills",
+  "skill.mastery.flight_enabled": "You have reached total mastery! The power of flight is now yours.",
+  "skill.mastery.flight_disabled": "You have lost total mastery. The power of flight is gone.",
+  "skill.mastery.flight_info": "You have a Flight power!"
 
 
 }

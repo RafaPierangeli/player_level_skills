@@ -15,7 +15,7 @@
 	// Amount of allowed mob kills in a chunk
 	"mobKillCount": 600,
 	// Strange potion resets all stats instead of one
-	"opStrangePotion": true,
+	"opStrangePotion": false,
 	// restrict hand usage when item not unlocked
 	"lockedHandUsage": false,
 	// Bonus id: bowDamage

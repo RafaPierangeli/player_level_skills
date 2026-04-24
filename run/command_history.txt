@@ -1,12 +1,3 @@
-/time set day
-/effect give Player247 minecraft:hunger 500 3
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/function hunger with entity Player319 2
-/effect give Player943 minecraft:hunger 500 10
-/effect give Player943 minecraft:hunger 500 4
 /weather clear
 /effect clear Player943 minecraft:hunger
 /effect give Player943 minecraft:hunger 500 4
@@ -48,3 +39,12 @@
 /gamemode creative
 /gamemode survival
 /level Player249 remove points 10
+/gamemode creative
+/weather clear
+/gamemode survival
+/time set day
+/level @s set mining 19
+/level @s add level 10
+/level @s set mining 10
+/level @s add level 1
+/time set day

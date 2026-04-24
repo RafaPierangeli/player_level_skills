@@ -19,7 +19,7 @@ public class player_level_skillsConfig implements ConfigData {
     public boolean allowHigherSkillLevel = false;
     @ConfigEntry.Category("level_settings")
     @ConfigEntry.Gui.RequiresRestart
-    public int startPoints = 5;
+    public int startPoints = 10;
     @ConfigEntry.Category("level_settings")
     public int pointsPerLevel = 3;
 
@@ -130,7 +130,7 @@ public class player_level_skillsConfig implements ConfigData {
     public float damageReflectionChanceBonus = 0.025F;
 
     @Comment("Bonus id: evadingDamageChance")
-    public float evadingDamageChanceBonus = 0.1F;
+    public float evadingDamageChanceBonus = 0.02F;
 
     // Experience settings
     @ConfigEntry.Category("experience_settings")

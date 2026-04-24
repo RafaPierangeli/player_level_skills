@@ -486,7 +486,7 @@ public class BonusHelper {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             SkillBonus skillBonus = LevelManager.BONUSES.get("evadingDamageChance");
             int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.evadingDamageChanceBonus) {
+            if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= (level * ConfigInit.CONFIG.evadingDamageChanceBonus)) {
                 return true;
             }
         }

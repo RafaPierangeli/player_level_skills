@@ -6,15 +6,15 @@
       "minecraft:potion": 1
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 1933,
+      "minecraft:time_since_rest": 3922,
       "minecraft:walk_one_cm": 194,
-      "minecraft:total_world_time": 1960,
-      "minecraft:leave_game": 1,
+      "minecraft:total_world_time": 4017,
+      "minecraft:leave_game": 2,
       "minecraft:walk_under_water_one_cm": 5009,
       "minecraft:walk_on_water_one_cm": 146,
-      "minecraft:play_time": 1933,
+      "minecraft:play_time": 3922,
       "minecraft:jump": 3,
-      "minecraft:time_since_death": 1933
+      "minecraft:time_since_death": 3922
     },
     "minecraft:mined": {
       "minecraft:dirt": 1

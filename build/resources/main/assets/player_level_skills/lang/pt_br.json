@@ -352,7 +352,12 @@
   "restriction.levelz.block_usage": "Block Usage",
   "restriction.levelz.melee.tooltip": "Melee %s",
   "restriction.levelz.constitution.tooltip": "Constitution %s",
-  "itemgroup.player_level_skills": "Habilidades por Nivel"
+  "itemgroup.player_level_skills": "Habilidades por Nivel",
+
+  "skill.mastery.flight_enabled": "Você atingiu a maestria total! O poder de voar agora é seu.",
+  "skill.mastery.flight_disabled": "Você perdeu a maestria total. O poder de voar se foi.",
+  "skill.mastery.flight_info": "Você tem o poder de Voar!"
+
 
 
 

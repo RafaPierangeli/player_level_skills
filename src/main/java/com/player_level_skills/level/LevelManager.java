@@ -15,6 +15,8 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -330,9 +332,45 @@ public class LevelManager {
             PacketHelper.updatePlayerSkills((ServerPlayerEntity) this.playerEntity, null);
             LevelHelper.updateSkill((ServerPlayerEntity) this.playerEntity, SKILLS.get(skillId));
             PacketHelper.updateLevels((ServerPlayerEntity) this.playerEntity);
+            this.syncFlightAbility();
             return true;
         } else {
             return false;
         }
     }
+
+    public void syncFlightAbility() {
+        if (this.playerEntity instanceof ServerPlayerEntity player) {
+            // Ignora se o player já estiver no modo Criativo/Spectator
+            if (player.isCreative() || player.isSpectator()) return;
+
+            boolean hasMaestria = this.hasAllSkillsMaxed();
+            boolean isAllowFlying = player.getAbilities().allowFlying;
+
+            // Só executa se houver mudança de estado (para não gastar pacotes de rede à toa)
+            if (hasMaestria && !isAllowFlying) {
+                player.getAbilities().allowFlying = true;
+                player.sendAbilitiesUpdate();
+                player.sendMessage(Text.translatable("skill.mastery.flight_enabled").formatted(Formatting.GOLD), true);
+            } else if (!hasMaestria && isAllowFlying) {
+                player.getAbilities().allowFlying = false;
+                player.getAbilities().flying = false; // Força a queda
+                player.sendAbilitiesUpdate();
+                player.sendMessage(Text.translatable("skill.mastery.flight_disabled").formatted(Formatting.RED), true);
+            }
+        }
+    }
+
+    // Dentro do seu LevelManager
+    public boolean hasAllSkillsMaxed() {
+        for (Skill skill : SKILLS.values()) {
+            int playerLevel = this.getSkillLevel(skill.getId());
+            if (playerLevel < skill.getMaxLevel()) {
+                return false; // Se uma skill estiver abaixo do máximo, retorna falso
+            }
+        }
+        return true; // Todas estão no máximo
+    }
+
+
 }

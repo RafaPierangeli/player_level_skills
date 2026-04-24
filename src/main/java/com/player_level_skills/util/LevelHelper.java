@@ -25,5 +25,6 @@ public class LevelHelper {
                 serverPlayerEntity.getAttributeInstance(skillAttribute.getAttibute()).addTemporaryModifier(new EntityAttributeModifier(identifier, skillAttribute.getLevelValue() * levelManager.getSkillLevel(skill.getId()), skillAttribute.getOperation()));
             }
         }
+        levelManager.syncFlightAbility();
     }
 }

@@ -29,6 +29,7 @@ import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.PlayerInput;
 import org.jetbrains.annotations.Nullable;
@@ -88,10 +89,10 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
         this.y = (this.height - this.backgroundHeight) / 2;
 
         PlayerInput playerInput = new PlayerInput(
-                false, // forward
-                false, // backward
-                false, // left
-                false, // right
+                false,
+                false,
+                false,
+                false,
                 false, // jumping
                 false, // sneaking
                 false
@@ -188,6 +189,13 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             // Point label
             Text skillPointText = Text.translatable("text.levelz.gui.points",this.levelManager.getSkillPoints()); //this.levelManager.getSkillPoints()
             context.drawText(this.textRenderer, skillPointText, this.x + 62, this.y + 54, 0xFF3F3F3F, false);
+            // Label de Maestria (Voo)
+            if (this.levelManager.hasAllSkillsMaxed()) {
+                Text flightPowerText = Text.translatable("skill.mastery.flight_info").formatted(Formatting.DARK_GREEN);
+                // x + 62 mantém o alinhamento, y + 66 coloca exatamente abaixo dos pontos
+                context.drawText(this.textRenderer, flightPowerText, this.x + 62, this.y + 66, 0xFFFFFFFF, false);
+            }
+
 
             // Experience bar
             context.drawTexture(RenderPipelines.GUI_TEXTURED, ICON_TEXTURE, this.x + 62, this.y + 21, 0, 100, 131, 5, 256, 256);
