@@ -266,7 +266,8 @@
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:river": "2026-04-10 16:38:45 -0300",
-      "minecraft:meadow": "2026-03-26 17:03:46 -0300"
+      "minecraft:meadow": "2026-03-26 17:03:46 -0300",
+      "minecraft:plains": "2026-04-26 17:20:09 -0300"
     },
     "done": false
   },
@@ -321,6 +322,12 @@
   "minecraft:recipes/misc/mojang_banner_pattern": {
     "criteria": {
       "has_enchanted_golden_apple": "2026-04-21 18:42:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-26 17:20:09 -0300"
     },
     "done": true
   },

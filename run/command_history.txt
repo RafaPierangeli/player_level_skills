@@ -1,25 +1,3 @@
-/gamemode creative
-/gamemode survival
-/effect give Player557 minecraft:hunger 200 4
-/gamemode creative
-/time set day
-/gamemode survival
-/effect give Player266 minecraft:hunger 100 4
-/gamemode creative
-/gamemode survival
-/effect give Player551 minecraft:hunger 100 4
-/time set day
-/gamemode creative
-/weather clear
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
-/weather clear
-/time set day
-/reload
-/time set day
 /level @s add level 5
 /time set day
 /level @s add points 10
@@ -47,4 +25,26 @@
 /level @s set agility 0
 /level @s set agility 25
 /gamemode survival
+/time set day
+/gamemode creative
+/level @s set alchemy 0
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/reload
+/time set day
+/gamemode survival
+/level @s set alchemy 0
+/gamemode creative
+/weather clear
+/time set day
+/level @s set alchemy 3
+/level @s set alchemy 0
+/level @s set alchemy 3
+/gamemode survival
+/level @s set alchemy 0
 /time set day

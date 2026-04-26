@@ -11,12 +11,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/shoot_arrow": {
-    "criteria": {
-      "shot_arrow": "2026-04-10 19:58:06 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
       "unlock_right_away": "2026-04-10 19:57:58 -0300"
@@ -28,13 +22,6 @@
       "has_lots_of_items": "2026-04-10 19:57:58 -0300"
     },
     "done": true
-  },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:zombified_piglin": "2026-04-10 19:58:22 -0300",
-      "minecraft:piglin_brute": "2026-04-10 19:58:54 -0300"
-    },
-    "done": false
   },
   "minecraft:nether/netherite_armor": {
     "criteria": {
@@ -48,15 +35,35 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_something": "2026-04-10 19:58:22 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/iron_nugget_from_blasting": {
     "criteria": {
       "has_iron_boots": "2026-04-10 19:57:58 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-10 19:57:59 -0300",
+      "minecraft:plains": "2026-04-26 17:27:18 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2026-04-10 19:58:06 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:zombified_piglin": "2026-04-10 19:58:22 -0300",
+      "minecraft:piglin_brute": "2026-04-10 19:58:54 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-04-10 19:58:22 -0300"
     },
     "done": true
   },
@@ -66,11 +73,29 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "minecraft:recipes/misc/copper_nugget_from_smelting": {
     "criteria": {
-      "minecraft:river": "2026-04-10 19:57:59 -0300"
+      "has_copper_helmet": "2026-04-26 11:33:22 -0300"
     },
-    "done": false
+    "done": true
+  },
+  "minecraft:recipes/misc/copper_nugget_from_blasting": {
+    "criteria": {
+      "has_copper_helmet": "2026-04-26 11:33:22 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-26 11:33:22 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-04-26 11:34:13 -0300"
+    },
+    "done": true
   },
   "DataVersion": 4671
 }

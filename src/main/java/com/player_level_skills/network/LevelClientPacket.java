@@ -83,6 +83,7 @@ public class LevelClientPacket {
             RestrictionPacket.RestrictionRecord craftingRestrictions = payload.craftingRestrictions();
             RestrictionPacket.RestrictionRecord entityRestrictions = payload.entityRestrictions();
             RestrictionPacket.RestrictionRecord itemRestrictions = payload.itemRestrictions();
+            RestrictionPacket.RestrictionRecord potionRestrictions = payload.potionRestrictions();
             RestrictionPacket.RestrictionRecord miningRestrictions = payload.miningRestrictions();
             RestrictionPacket.RestrictionRecord enchantmentRestrictions = payload.enchantmentRestrictions();
 
@@ -91,6 +92,7 @@ public class LevelClientPacket {
                 LevelManager.CRAFTING_RESTRICTIONS.clear();
                 LevelManager.ENTITY_RESTRICTIONS.clear();
                 LevelManager.ITEM_RESTRICTIONS.clear();
+                LevelManager.POTION_RESTRICTIONS.clear();
                 LevelManager.MINING_RESTRICTIONS.clear();
                 LevelManager.ENCHANTMENT_RESTRICTIONS.clear();
 
@@ -105,6 +107,9 @@ public class LevelClientPacket {
                 }
                 for (int i = 0; i < itemRestrictions.ids().size(); i++) {
                     LevelManager.ITEM_RESTRICTIONS.put(itemRestrictions.ids().get(i), itemRestrictions.restrictions().get(i));
+                }
+                for (int i = 0; i < potionRestrictions.ids().size(); i++) {
+                    LevelManager.POTION_RESTRICTIONS.put(potionRestrictions.ids().get(i), potionRestrictions.restrictions().get(i));
                 }
                 for (int i = 0; i < miningRestrictions.ids().size(); i++) {
                     LevelManager.MINING_RESTRICTIONS.put(miningRestrictions.ids().get(i), miningRestrictions.restrictions().get(i));

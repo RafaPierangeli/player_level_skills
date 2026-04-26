@@ -4,17 +4,18 @@
       "minecraft:trident": 2
     },
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 837,
-      "minecraft:time_since_rest": 2340,
-      "minecraft:walk_one_cm": 1170,
-      "minecraft:total_world_time": 2573,
-      "minecraft:leave_game": 3,
-      "minecraft:fly_one_cm": 371,
+      "minecraft:sprint_one_cm": 1347,
+      "minecraft:time_since_rest": 3576,
+      "minecraft:fall_one_cm": 425,
+      "minecraft:walk_one_cm": 3303,
+      "minecraft:total_world_time": 4182,
+      "minecraft:leave_game": 4,
+      "minecraft:fly_one_cm": 1531,
       "minecraft:walk_under_water_one_cm": 2341,
       "minecraft:walk_on_water_one_cm": 317,
-      "minecraft:play_time": 2340,
-      "minecraft:jump": 5,
-      "minecraft:time_since_death": 2340
+      "minecraft:play_time": 3576,
+      "minecraft:jump": 15,
+      "minecraft:time_since_death": 3576
     }
   },
   "DataVersion": 4671

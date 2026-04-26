@@ -71,13 +71,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:zombified_piglin": "2026-04-11 22:59:30 -0300",
-      "minecraft:spider": "2026-04-11 23:00:43 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/food/cooked_porkchop_from_campfire_cooking": {
     "criteria": {
       "has_porkchop": "2026-04-11 22:58:59 -0300"
@@ -99,12 +92,6 @@
   "minecraft:recipes/decorations/candle": {
     "criteria": {
       "has_string": "2026-04-11 22:58:59 -0300"
-    },
-    "done": true
-  },
-  "minecraft:husbandry/root": {
-    "criteria": {
-      "consumed_item": "2026-04-11 22:59:17 -0300"
     },
     "done": true
   },
@@ -138,12 +125,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_something": "2026-04-11 22:59:30 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/white_wool_from_string": {
     "criteria": {
       "has_string": "2026-04-11 22:58:59 -0300"
@@ -168,9 +149,15 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_a_mob": {
+  "minecraft:recipes/decorations/loom": {
     "criteria": {
-      "minecraft:zombified_piglin": "2026-04-11 22:59:30 -0300"
+      "has_string": "2026-04-11 22:58:59 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/bundle": {
+    "criteria": {
+      "has_string": "2026-04-11 22:58:59 -0300"
     },
     "done": true
   },
@@ -181,15 +168,34 @@
     },
     "done": false
   },
-  "minecraft:recipes/decorations/loom": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "has_string": "2026-04-11 22:58:59 -0300"
+      "consumed_item": "2026-04-11 22:59:17 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/tools/bundle": {
+  "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "has_string": "2026-04-11 22:58:59 -0300"
+      "minecraft:zombified_piglin": "2026-04-11 22:59:30 -0300",
+      "minecraft:spider": "2026-04-11 23:00:43 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-04-11 22:59:30 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:zombified_piglin": "2026-04-11 22:59:30 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-26 16:23:13 -0300"
     },
     "done": true
   },

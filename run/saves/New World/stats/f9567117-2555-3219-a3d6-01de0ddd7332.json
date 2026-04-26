@@ -1,20 +1,21 @@
 {
   "stats": {
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 2969,
-      "minecraft:walk_one_cm": 329,
-      "minecraft:total_world_time": 3093,
-      "minecraft:leave_game": 2,
-      "minecraft:interact_with_anvil": 2,
-      "minecraft:walk_under_water_one_cm": 984,
-      "minecraft:walk_on_water_one_cm": 166,
-      "minecraft:play_time": 2969,
-      "minecraft:jump": 1,
-      "minecraft:time_since_death": 2969
-    },
     "minecraft:used": {
       "minecraft:trident": 1,
       "minecraft:bow": 4
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:time_since_rest": 3513,
+      "minecraft:walk_one_cm": 329,
+      "minecraft:total_world_time": 3662,
+      "minecraft:leave_game": 3,
+      "minecraft:interact_with_anvil": 2,
+      "minecraft:walk_under_water_one_cm": 984,
+      "minecraft:walk_on_water_one_cm": 166,
+      "minecraft:play_time": 3513,
+      "minecraft:jump": 1,
+      "minecraft:time_since_death": 3513
     }
   },
   "DataVersion": 4671

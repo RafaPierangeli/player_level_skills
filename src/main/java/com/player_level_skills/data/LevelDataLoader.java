@@ -39,6 +39,7 @@ public record LevelDataLoader(RegistryWrapper.WrapperLookup wrapperLookup) imple
     private static final List<Integer> craftingList = new ArrayList<>();
     private static final List<Integer> entityList = new ArrayList<>();
     private static final List<Integer> itemList = new ArrayList<>();
+    private static final List<Integer> potionList = new ArrayList<>();
     private static final List<Integer> miningList = new ArrayList<>();
     private static final List<Integer> enchantmentList = new ArrayList<>();
 
@@ -62,6 +63,7 @@ public record LevelDataLoader(RegistryWrapper.WrapperLookup wrapperLookup) imple
         LevelManager.CRAFTING_RESTRICTIONS.clear();
         LevelManager.ENTITY_RESTRICTIONS.clear();
         LevelManager.ITEM_RESTRICTIONS.clear();
+        LevelManager.POTION_RESTRICTIONS.clear();
         LevelManager.MINING_RESTRICTIONS.clear();
         LevelManager.ENCHANTMENT_RESTRICTIONS.clear();
 
@@ -309,6 +311,32 @@ public record LevelDataLoader(RegistryWrapper.WrapperLookup wrapperLookup) imple
                                     LOGGER.info(" - item restriction added: {} -> rawId={}", itemIdentifier, itemRawId);
                                 } else {
                                     LOGGER.warn("Restriction {} contains an unrecognized item id called {}", mapKey, itemIdentifier);
+                                }
+                            }
+                        }
+                        // potions
+                        if (restrictionJsonObject.has("potions")) {
+                            for (JsonElement itemElement : restrictionJsonObject.getAsJsonArray("potions")) {
+                                // Identifier.of agora vai funcionar porque tiramos o ponto extra do JSON
+                                Identifier itemIdentifier = Identifier.of(itemElement.getAsString());
+
+                                if (Registries.POTION.containsId(itemIdentifier)) {
+                                    int itemRawId = Registries.POTION.getRawId(Registries.POTION.get(itemIdentifier));
+
+                                    if (potionList.contains(itemRawId)) {
+                                        continue;
+                                    }
+                                    if (replace) {
+                                        potionList.add(itemRawId);
+                                    }
+
+                                    // IMPORTANTE: Use o mapa POTION_RESTRICTIONS para não misturar com itens
+                                    LevelManager.POTION_RESTRICTIONS.put(itemRawId, new PlayerRestriction(itemRawId, skillLevelRestrictions));
+
+                                    LOGGER.info(" - [SUCCESS] potion restriction added: {} -> rawId={}", itemIdentifier, itemRawId);
+                                } else {
+                                    // Se o log cair aqui, é porque o nome no JSON ainda está errado para o Registries.POTION
+                                    LOGGER.warn("Restriction {} contains an unrecognized potion id called {}", mapKey, itemIdentifier);
                                 }
                             }
                         }

@@ -1,25 +1,25 @@
 {
   "stats": {
-    "minecraft:killed": {
-      "minecraft:zombie": 4
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 2021,
+      "minecraft:time_since_rest": 1951,
+      "minecraft:walk_one_cm": 4903,
+      "minecraft:total_world_time": 2000,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 394,
+      "minecraft:mob_kills": 5,
+      "minecraft:walk_on_water_one_cm": 412,
+      "minecraft:play_time": 1951,
+      "minecraft:damage_dealt": 880,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 1951
     },
     "minecraft:used": {
       "minecraft:zombie_spawn_egg": 6,
       "minecraft:copper_sword": 17
     },
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 2021,
-      "minecraft:time_since_rest": 1608,
-      "minecraft:walk_one_cm": 4903,
-      "minecraft:total_world_time": 1657,
-      "minecraft:leave_game": 1,
-      "minecraft:fly_one_cm": 394,
-      "minecraft:mob_kills": 5,
-      "minecraft:walk_on_water_one_cm": 412,
-      "minecraft:play_time": 1608,
-      "minecraft:damage_dealt": 880,
-      "minecraft:jump": 5,
-      "minecraft:time_since_death": 1608
+    "minecraft:killed": {
+      "minecraft:zombie": 4
     },
     "minecraft:picked_up": {
       "minecraft:copper_chestplate": 1,

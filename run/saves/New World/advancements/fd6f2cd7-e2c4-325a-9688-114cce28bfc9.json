@@ -71,21 +71,9 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:zombie": "2026-04-21 15:24:37 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/food/cooked_porkchop_from_campfire_cooking": {
     "criteria": {
       "has_porkchop": "2026-04-21 15:24:35 -0300"
-    },
-    "done": true
-  },
-  "minecraft:husbandry/root": {
-    "criteria": {
-      "consumed_item": "2026-04-21 15:25:07 -0300"
     },
     "done": true
   },
@@ -107,12 +95,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_something": "2026-04-21 15:24:37 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/food/cooked_porkchop_from_smoking": {
     "criteria": {
       "has_porkchop": "2026-04-21 15:24:35 -0300"
@@ -125,9 +107,9 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_a_mob": {
+  "minecraft:recipes/misc/mojang_banner_pattern": {
     "criteria": {
-      "minecraft:zombie": "2026-04-21 15:24:37 -0300"
+      "has_enchanted_golden_apple": "2026-04-21 15:24:35 -0300"
     },
     "done": true
   },
@@ -138,9 +120,33 @@
     },
     "done": false
   },
-  "minecraft:recipes/misc/mojang_banner_pattern": {
+  "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "has_enchanted_golden_apple": "2026-04-21 15:24:35 -0300"
+      "minecraft:zombie": "2026-04-21 15:24:37 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-04-21 15:24:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:zombie": "2026-04-21 15:24:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-04-21 15:25:07 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-26 17:16:55 -0300"
     },
     "done": true
   },

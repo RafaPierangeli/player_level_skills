@@ -1,13 +1,13 @@
 {
   "stats": {
     "minecraft:custom": {
-      "minecraft:time_since_rest": 949,
+      "minecraft:time_since_rest": 1753,
       "minecraft:walk_one_cm": 4804,
-      "minecraft:total_world_time": 970,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 949,
+      "minecraft:total_world_time": 1792,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 1753,
       "minecraft:jump": 2,
-      "minecraft:time_since_death": 949
+      "minecraft:time_since_death": 1753
     },
     "minecraft:used": {
       "minecraft:stone_shovel": 2,

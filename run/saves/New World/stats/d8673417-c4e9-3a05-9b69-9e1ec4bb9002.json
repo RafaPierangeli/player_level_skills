@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:splash_potion": 2,
+      "minecraft:lingering_potion": 2
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_brewingstand": 1,
+      "minecraft:time_since_rest": 2664,
+      "minecraft:walk_one_cm": 4804,
+      "minecraft:total_world_time": 2695,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 2664,
+      "minecraft:time_since_death": 2664
+    }
+  },
+  "DataVersion": 4671
+}

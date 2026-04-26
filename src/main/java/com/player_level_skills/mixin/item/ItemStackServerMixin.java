@@ -8,12 +8,17 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -78,5 +83,19 @@ public class ItemStackServerMixin {
     private void player_level_skills$clearUser(World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
         LevelManager.CURRENT_ATTACKER.remove();
     }
+
+        @Inject(method = "use", at = @At("HEAD"), cancellable = true)
+        private void player_level_skills$restrictPotionUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+            ItemStack stack = user.getStackInHand(hand);
+            if (user instanceof ServerPlayerEntity player) {
+                LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
+
+
+                if (!levelManager.hasRequiredPotionLevel(stack)) {
+                    player.sendMessage(Text.translatable("text.levelz.restriction", Text.translatable(stack.getItemName().getString())).formatted(Formatting.YELLOW), true);
+                    cir.setReturnValue(ActionResult.FAIL);
+                }
+            }
+        }
 
 }

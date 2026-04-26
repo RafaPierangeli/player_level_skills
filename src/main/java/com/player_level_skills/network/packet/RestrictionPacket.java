@@ -12,8 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public record RestrictionPacket(RestrictionRecord blockRestrictions, RestrictionRecord craftingRestrictions, RestrictionRecord entityRestrictions,
-                                RestrictionRecord itemRestrictions, RestrictionRecord miningRestrictions, RestrictionRecord enchantmentRestrictions) implements CustomPayload {
+public record RestrictionPacket(RestrictionRecord blockRestrictions,
+                                RestrictionRecord craftingRestrictions,
+                                RestrictionRecord entityRestrictions,
+                                RestrictionRecord itemRestrictions,
+                                RestrictionRecord potionRestrictions,
+                                RestrictionRecord miningRestrictions,
+                                RestrictionRecord enchantmentRestrictions) implements CustomPayload {
 
     public static final CustomPayload.Id<RestrictionPacket> PACKET_ID = new CustomPayload.Id<>(Player_level_skills.identifierOf("restriction_packet"));
 
@@ -22,9 +27,10 @@ public record RestrictionPacket(RestrictionRecord blockRestrictions, Restriction
         value.craftingRestrictions.write(buf);
         value.entityRestrictions.write(buf);
         value.itemRestrictions.write(buf);
+        value.potionRestrictions.write(buf);
         value.miningRestrictions.write(buf);
         value.enchantmentRestrictions.write(buf);
-    }, buf -> new RestrictionPacket(RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf)));
+    }, buf -> new RestrictionPacket(RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf), RestrictionRecord.read(buf)));
 
     public record RestrictionRecord(List<Integer> ids, List<PlayerRestriction> restrictions) {
 

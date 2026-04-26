@@ -71,12 +71,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:piglin_brute": "2026-04-21 12:26:23 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/food/cooked_porkchop_from_campfire_cooking": {
     "criteria": {
       "has_porkchop": "2026-04-21 12:06:43 -0300"
@@ -101,12 +95,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/root": {
-    "criteria": {
-      "killed_something": "2026-04-21 12:07:14 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/food/cooked_porkchop_from_smoking": {
     "criteria": {
       "has_porkchop": "2026-04-21 12:06:43 -0300"
@@ -119,9 +107,9 @@
     },
     "done": true
   },
-  "minecraft:adventure/kill_a_mob": {
+  "minecraft:recipes/misc/mojang_banner_pattern": {
     "criteria": {
-      "minecraft:piglin_brute": "2026-04-21 12:26:23 -0300"
+      "has_enchanted_golden_apple": "2026-04-21 12:06:43 -0300"
     },
     "done": true
   },
@@ -132,9 +120,27 @@
     },
     "done": false
   },
-  "minecraft:recipes/misc/mojang_banner_pattern": {
+  "minecraft:adventure/root": {
     "criteria": {
-      "has_enchanted_golden_apple": "2026-04-21 12:06:43 -0300"
+      "killed_something": "2026-04-21 12:07:14 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:piglin_brute": "2026-04-21 12:26:23 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:piglin_brute": "2026-04-21 12:26:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-04-26 18:16:48 -0300"
     },
     "done": true
   },

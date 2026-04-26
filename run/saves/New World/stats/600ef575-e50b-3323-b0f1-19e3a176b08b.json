@@ -7,19 +7,19 @@
       "minecraft:diamond_sword": 2,
       "minecraft:milk_bucket": 13
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 2795,
-      "minecraft:walk_one_cm": 349,
-      "minecraft:total_world_time": 3412,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 1,
-      "minecraft:play_time": 2795,
-      "minecraft:damage_dealt": 500,
-      "minecraft:jump": 4,
-      "minecraft:time_since_death": 2795
-    },
     "minecraft:killed": {
       "minecraft:piglin_brute": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 4144,
+      "minecraft:walk_one_cm": 349,
+      "minecraft:total_world_time": 4796,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 4144,
+      "minecraft:damage_dealt": 500,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 4144
     }
   },
   "DataVersion": 4671

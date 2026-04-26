@@ -658,19 +658,36 @@
       "alchemy": 3
     },
     "blocks": [
-      "minecraft:brewing_stand"
+
     ],
-    "items": [
-      "minecraft:potion",
-      "minecraft:splash_potion",
-      "minecraft:lingering_potion"
+    "items": ["minecraft:nether_wart"
+    ],
+    "potions": [
+      "minecraft:healing"
     ],
     "crafting": [
-      "minecraft:blaze_powder",
-      "minecraft:nether_wart"
+      "minecraft:blaze_powder"
     ],
     "enchantments": {
     }
+  },
+  "alchemy_5": {
+    "replace": false,
+    "skills": {
+      "alchemy": 5
+    },
+    "blocks": [
+
+    ],
+    "items": [
+    ],
+    "potions": [
+      "minecraft:strength",
+      "minecraft:swiftness"
+    ],
+    "crafting": [
+
+    ]
   },
   "mining_1": {
     "replace": false,

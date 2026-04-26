@@ -6,10 +6,13 @@ import com.player_level_skills.registry.EnchantmentRegistry;
 import com.player_level_skills.util.LevelHelper;
 import com.player_level_skills.util.PacketHelper;
 import net.minecraft.block.Block;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -29,6 +32,7 @@ public class LevelManager {
     public static final Map<Integer, PlayerRestriction> CRAFTING_RESTRICTIONS = new HashMap<>();
     public static final Map<Integer, PlayerRestriction> ENTITY_RESTRICTIONS = new HashMap<>();
     public static final Map<Integer, PlayerRestriction> ITEM_RESTRICTIONS = new HashMap<>();
+    public static final Map<Integer, PlayerRestriction> POTION_RESTRICTIONS = new HashMap<>();
     public static final Map<Integer, PlayerRestriction> MINING_RESTRICTIONS = new HashMap<>();
     public static final Map<Integer, PlayerRestriction> ENCHANTMENT_RESTRICTIONS = new HashMap<>();
     public static final Map<String, SkillBonus> BONUSES = new HashMap<>();
@@ -268,6 +272,22 @@ public class LevelManager {
         }
         return true;
     }
+    public boolean hasRequiredPotionLevel(ItemStack stack) {
+        var contents = stack.get(net.minecraft.component.DataComponentTypes.POTION_CONTENTS);
+        if (contents != null && contents.potion().isPresent()) {
+            // Pega o ID 24, 25, etc.
+            int potionRawId = net.minecraft.registry.Registries.POTION.getRawId(contents.potion().get().value());
+
+            if (POTION_RESTRICTIONS.containsKey(potionRawId)) {
+                PlayerRestriction res = POTION_RESTRICTIONS.get(potionRawId);
+                for (var entry : res.getSkillLevelRestrictions().entrySet()) {
+                    if (this.getSkillLevel(entry.getKey()) < entry.getValue()) return false;
+                }
+            }
+        }
+        return true;
+    }
+
 
     public Map<Integer, Integer> getRequiredItemLevel(Item item) {
         int itemId = Registries.ITEM.getRawId(item);

@@ -32,6 +32,8 @@ import org.jetbrains.annotations.Nullable;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import static com.mojang.text2speech.Narrator.LOGGER;
+
 @Environment(EnvType.CLIENT)
 public class LineWidget {
 
@@ -87,6 +89,28 @@ public class LineWidget {
                 this.customStacks.put(id, stack);
             }
         }
+        else if (this.code == 4) {
+            this.customStacks = new HashMap<>();
+            for (Integer id : this.restrictions.keySet()) {
+                // Agora o ID é 24, 34, etc. O Minecraft vai encontrar!
+                net.minecraft.potion.Potion potion = Registries.POTION.get(id);
+
+                if (potion != null) {
+                    var entry = Registries.POTION.getEntry(potion);
+                    // Cria a poção colorida e com nome
+                    ItemStack stack = net.minecraft.component.type.PotionContentsComponent.createStack(
+                            net.minecraft.item.Items.POTION,
+                            entry
+                    );
+                    this.customStacks.put(id, stack);
+                } else {
+                    this.customStacks.put(id, new ItemStack(net.minecraft.item.Items.POTION));
+                }
+            }
+        }
+
+
+
     }
 
     public void render(DrawContext drawContext, int x, int y, int mouseX, int mouseY) {
@@ -114,13 +138,33 @@ public class LineWidget {
                     } else {
                         drawContext.drawTexture(RenderPipelines.GUI_TEXTURED,this.customImages.get(entry.getKey()), x + separator, y, 0, 0, 16, 16,16,16);
                     }
-                } else {// if (this.code == 3) {
+
+                } else if (this.code == 3) {
                     ItemStack stack = this.customStacks.get(entry.getKey());
-                    RegistryEntry<Enchantment> enchantment = EnchantmentHelper.getEnchantments(stack).getEnchantments().stream().findFirst().get();
-                    int level = stack.getOrDefault(DataComponentTypes.STORED_ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT).getLevel(enchantment);
+                    var enchantments = stack.get(DataComponentTypes.STORED_ENCHANTMENTS);
+                    // Pega o primeiro encantamento do livro para o título
+                    RegistryEntry<Enchantment> enchantment = enchantments.getEnchantments().iterator().next();
+                    int level = enchantments.getLevel(enchantment);
                     tooltipTitle = Enchantment.getName(enchantment, level);
                     drawContext.drawItem(stack, x + separator, y);
+                } else if (this.code == 4) {
+                    // LÓGICA PARA POÇÕES
+                    ItemStack stack = this.customStacks.get(entry.getKey());
+
+                    // Pega o nome amigável da poção para a Tooltip (ex: "Poção de Cura")
+                    var contents = stack.get(DataComponentTypes.POTION_CONTENTS);
+                    if (contents != null && contents.potion().isPresent()) {
+                        // Na 1.21.1 usamos o translation key do efeito
+                        tooltipTitle = stack.getName();
+                    } else {
+                        tooltipTitle = stack.getName();
+                    }
+
+                    drawContext.drawItem(stack, x + separator, y);
+                } else {
+                    tooltipTitle = Text.literal("");
                 }
+
                 if (!showTooltip && PlayerLevelSkillsScreen.isPointWithinBounds(x + separator, y, 16, 16, mouseX, mouseY)) {
                     List<Text> tooltip = new ArrayList<>();
                     tooltip.add(tooltipTitle);

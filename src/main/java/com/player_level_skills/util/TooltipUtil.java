@@ -15,12 +15,15 @@ import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.datafixer.fix.ItemPotionFix;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
@@ -93,6 +96,75 @@ public class TooltipUtil {
                     }
                 }
             }
+
+            // Dentro do seu código de Tooltip
+            if (stack.getItem() instanceof net.minecraft.item.PotionItem || stack.getItem() instanceof net.minecraft.item.SplashPotionItem) {
+                // 1. Pega os componentes da poção
+                net.minecraft.component.type.PotionContentsComponent contents = stack.get(net.minecraft.component.DataComponentTypes.POTION_CONTENTS);
+
+                if (contents != null && contents.potion().isPresent()) {
+                    // 2. Extrai o ID numérico EXATO do registro de poções (vai retornar 24 para cura)
+                    int potionRawId = net.minecraft.registry.Registries.POTION.getRawId(contents.potion().get().value());
+
+                    // 3. Consulta o seu NOVO mapa específico de poções
+                    if (LevelManager.POTION_RESTRICTIONS.containsKey(potionRawId)) {
+                        PlayerRestriction playerRestriction = LevelManager.POTION_RESTRICTIONS.get(potionRawId);
+
+                        for (Map.Entry<Integer, Integer> entry : playerRestriction.getSkillLevelRestrictions().entrySet()) {
+                            if (isCreative || levelManager.getSkillLevel(entry.getKey()) < entry.getValue()) {
+                                lines.add(Text.translatable("restriction.levelz.usable.tooltip")
+                                        .formatted(Formatting.GRAY).append(Text.literal(": ").formatted(Formatting.GRAY)
+                                                .append(Text.translatable("restriction.levelz." + LevelManager.SKILLS.get(entry.getKey()).getKey() + ".tooltip", entry.getValue())
+                                                        .formatted(Formatting.RED))));
+                            }
+                        }
+                    }
+                }
+            }
+
+
+//            if (stack.getItem() instanceof net.minecraft.item.PotionItem || stack.getItem() instanceof net.minecraft.item.SplashPotionItem) {
+//                var contents = stack.get(net.minecraft.component.DataComponentTypes.POTION_CONTENTS);
+//                if (contents != null && contents.potion().isPresent()) {
+//                    // Pegamos o ID da poção (ex: "minecraft:healing")
+//                    String potionId = contents.potion().get().getKey().get().getValue().toString();
+//
+//                    if (LevelManager.POTION_RESTRICTIONS.containsKey(potionId)) {
+//                        PlayerRestriction potionRestriction = LevelManager.POTION_RESTRICTIONS.get(potionId);
+//                        for (Map.Entry<Integer, Integer> entry : potionRestriction.getSkillLevelRestrictions().entrySet()) {
+//                            if (isCreative || levelManager.getSkillLevel(entry.getKey()) < entry.getValue()) {
+//                                // Adiciona a linha de restrição específica do efeito da poção
+//                                lines.add(Text.translatable("restriction.levelz.usable.tooltip").formatted(Formatting.GRAY).append(Text.literal(": ").formatted(Formatting.GRAY).append(Text.translatable("restriction.levelz." + LevelManager.SKILLS.get(entry.getKey()).getKey() + ".tooltip", entry.getValue()).formatted(Formatting.RED))));
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+            // Lógica para Poções Individuais
+//            if (stack.getItem() instanceof net.minecraft.item.PotionItem || stack.getItem() instanceof net.minecraft.item.SplashPotionItem) {
+//                net.minecraft.component.type.PotionContentsComponent contents = stack.get(net.minecraft.component.DataComponentTypes.POTION_CONTENTS);
+//
+//                if (contents != null && contents.potion().isPresent()) {
+//                    // Pega o ID da poção (ex: "minecraft:healing")
+//                    String potionName = contents.potion().get().getKey().get().getValue().toString();
+//                    int potionRawId = -potionName.hashCode();
+//
+//                    if (LevelManager.ITEM_RESTRICTIONS.containsKey(potionRawId)) {
+//                        PlayerRestriction playerRestriction = LevelManager.ITEM_RESTRICTIONS.get(potionRawId);
+//
+//                        for (Map.Entry<Integer, Integer> entry : playerRestriction.getSkillLevelRestrictions().entrySet()) {
+//                            if (isCreative || levelManager.getSkillLevel(entry.getKey()) < entry.getValue()) {
+//                                lines.add(Text.translatable("restriction.levelz.usable.tooltip")
+//                                        .formatted(Formatting.GRAY).append(Text.literal(": ").formatted(Formatting.GRAY)
+//                                                .append(Text.translatable("restriction.levelz." + LevelManager.SKILLS.get(entry.getKey()).getKey() + ".tooltip", entry.getValue())
+//                                                        .formatted(Formatting.RED))));
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+
+
             if (isCreative || !levelManager.hasRequiredCraftingLevel(stack.getItem())) {
                 if (LevelManager.CRAFTING_RESTRICTIONS.containsKey(itemId)) {
                     PlayerRestriction playerRestriction = LevelManager.CRAFTING_RESTRICTIONS.get(itemId);

@@ -1,25 +1,26 @@
 {
   "stats": {
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 827,
+      "minecraft:time_since_rest": 1140,
+      "minecraft:fall_one_cm": 225,
+      "minecraft:walk_one_cm": 1984,
+      "minecraft:total_world_time": 1281,
+      "minecraft:leave_game": 3,
+      "minecraft:mob_kills": 1,
+      "minecraft:play_time": 1140,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 1140
+    },
     "minecraft:used": {
       "minecraft:stone_shovel": 5,
+      "minecraft:lingering_potion": 1,
       "minecraft:pig_spawn_egg": 1,
       "minecraft:bow": 1
     },
     "minecraft:picked_up": {
       "minecraft:dirt": 3,
       "minecraft:grass_block": 2
-    },
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 827,
-      "minecraft:time_since_rest": 951,
-      "minecraft:fall_one_cm": 225,
-      "minecraft:walk_one_cm": 1984,
-      "minecraft:total_world_time": 1050,
-      "minecraft:leave_game": 2,
-      "minecraft:mob_kills": 1,
-      "minecraft:play_time": 951,
-      "minecraft:jump": 3,
-      "minecraft:time_since_death": 951
     },
     "minecraft:mined": {
       "minecraft:dirt": 3,

@@ -36,7 +36,7 @@ public class RestrictionHelper {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             if (actionType.equals(SlotActionType.QUICK_MOVE)) {
                 if (screenHandler instanceof BrewingStandScreenHandler) {
-                    return !slot.getStack().isEmpty() && !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem());
+                    return !slot.getStack().isEmpty() && !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem()) || !levelManager.hasRequiredPotionLevel(slot.getStack());
                 }
 
                 //Crafting - Quick
@@ -81,6 +81,15 @@ public class RestrictionHelper {
                 return !slot.getStack().isEmpty() && !levelManager.hasRequiredItemLevel(slot.getStack().getItem());
 
 
+            }
+            // Bloqueio específico para Brewing Stand (Mouse)
+            if (screenHandler instanceof BrewingStandScreenHandler) {
+                // Se estiver tentando COLOCAR algo (cursorStack) ou TIRAR algo (slot.getStack)
+                ItemStack targetStack = cursorStack.isEmpty() ? slot.getStack() : cursorStack;
+                if (!targetStack.isEmpty()) {
+                    return !levelManager.hasRequiredCraftingLevel(targetStack.getItem()) ||
+                            !levelManager.hasRequiredPotionLevel(targetStack);
+                }
             }
             //Crafting mouse
             if (screenHandler instanceof CraftingScreenHandler craftingScreenHandler) {

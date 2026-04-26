@@ -5,16 +5,16 @@
       "minecraft:bow": 3
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 2312,
+      "minecraft:time_since_rest": 2612,
       "minecraft:walk_one_cm": 545,
-      "minecraft:total_world_time": 13817,
-      "minecraft:leave_game": 3,
+      "minecraft:total_world_time": 24239,
+      "minecraft:leave_game": 4,
       "minecraft:walk_under_water_one_cm": 931,
       "minecraft:walk_on_water_one_cm": 670,
       "minecraft:sneak_time": 2,
-      "minecraft:play_time": 2312,
+      "minecraft:play_time": 2612,
       "minecraft:jump": 3,
-      "minecraft:time_since_death": 2312
+      "minecraft:time_since_death": 2612
     }
   },
   "DataVersion": 4671

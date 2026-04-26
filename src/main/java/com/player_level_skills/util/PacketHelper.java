@@ -67,8 +67,11 @@ public class PacketHelper {
 
     public static void updateRestrictions(ServerPlayerEntity serverPlayerEntity) {
         ServerPlayNetworking.send(serverPlayerEntity, new RestrictionPacket(new RestrictionPacket.RestrictionRecord(LevelManager.BLOCK_RESTRICTIONS.keySet().stream().toList(), LevelManager.BLOCK_RESTRICTIONS.values().stream().toList()),
-                new RestrictionPacket.RestrictionRecord(LevelManager.CRAFTING_RESTRICTIONS.keySet().stream().toList(), LevelManager.CRAFTING_RESTRICTIONS.values().stream().toList()), new RestrictionPacket.RestrictionRecord(LevelManager.ENTITY_RESTRICTIONS.keySet().stream().toList(), LevelManager.ENTITY_RESTRICTIONS.values().stream().toList()),
-                new RestrictionPacket.RestrictionRecord(LevelManager.ITEM_RESTRICTIONS.keySet().stream().toList(), LevelManager.ITEM_RESTRICTIONS.values().stream().toList()), new RestrictionPacket.RestrictionRecord(LevelManager.MINING_RESTRICTIONS.keySet().stream().toList(), LevelManager.MINING_RESTRICTIONS.values().stream().toList()),
+                new RestrictionPacket.RestrictionRecord(LevelManager.CRAFTING_RESTRICTIONS.keySet().stream().toList(), LevelManager.CRAFTING_RESTRICTIONS.values().stream().toList()),
+                new RestrictionPacket.RestrictionRecord(LevelManager.ENTITY_RESTRICTIONS.keySet().stream().toList(), LevelManager.ENTITY_RESTRICTIONS.values().stream().toList()),
+                new RestrictionPacket.RestrictionRecord(LevelManager.ITEM_RESTRICTIONS.keySet().stream().toList(), LevelManager.ITEM_RESTRICTIONS.values().stream().toList()),
+                new RestrictionPacket.RestrictionRecord(LevelManager.POTION_RESTRICTIONS.keySet().stream().toList(), LevelManager.POTION_RESTRICTIONS.values().stream().toList()),
+                new RestrictionPacket.RestrictionRecord(LevelManager.MINING_RESTRICTIONS.keySet().stream().toList(), LevelManager.MINING_RESTRICTIONS.values().stream().toList()),
                 new RestrictionPacket.RestrictionRecord(LevelManager.ENCHANTMENT_RESTRICTIONS.keySet().stream().toList(), LevelManager.ENCHANTMENT_RESTRICTIONS.values().stream().toList())));
     }
 
