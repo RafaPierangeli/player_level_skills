@@ -3,7 +3,7 @@
 	"overallMaxLevel": 0,
 	// In combination with overallMaxLevel, only when all skills maxed
 	"allowHigherSkillLevel": false,
-	"startPoints": 50,
+	"startPoints": 10,
 	"pointsPerLevel": 3,
 	/* If true will reset stats on death 
 	   !!!deprecated, not in use!!!
@@ -98,7 +98,7 @@
 	// Highlight locked blocks in red.
 	"highlightLocked": true,
 	"inventorySkillLevel": true,
-	"inventorySkillLevelPosX": 0,
+	"inventorySkillLevelPosX": -3,
 	"inventorySkillLevelPosY": 0,
 	"showLevelList": true,
 	"showLevel": true,

@@ -61,7 +61,8 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:wooden_sword"
+      "minecraft:wooden_sword",
+      "minecraft:wooden_spear"
     ],
     "mining": []
   },
@@ -74,7 +75,8 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:stone_sword"
+      "minecraft:stone_sword",
+      "minecraft:stone_spear"
     ],
     "mining": []
   },
@@ -87,7 +89,8 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:golden_sword"
+      "minecraft:golden_sword",
+      "minecraft:golden_spear"
     ],
     "mining": []
   },
@@ -100,7 +103,10 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:iron_sword"
+      "minecraft:iron_sword",
+      "minecraft:copper_sword",
+      "minecraft:copper_spear",
+      "minecraft:iron_spear"
     ],
     "mining": []
   },
@@ -126,7 +132,8 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:diamond_sword"
+      "minecraft:diamond_sword",
+      "minecraft:diamond_spear"
     ],
     "mining": []
   },
@@ -139,7 +146,8 @@
     "crafting": [],
     "entities": [],
     "items": [
-      "minecraft:netherite_sword"
+      "minecraft:netherite_sword",
+      "minecraft:netherite_spear"
     ],
     "mining": []
   },
@@ -200,11 +208,27 @@
     "crafting": [],
     "entities": [],
     "items": [
+      "minecraft:copper_helmet",
+      "minecraft:copper_chestplate",
+      "minecraft:copper_leggings",
+      "minecraft:copper_boots",
+      "minecraft:shield"
+    ],
+    "mining": []
+  },
+  "defense_10": {
+    "replace": false,
+    "skills": {
+      "defense": 10
+    },
+    "blocks": [],
+    "crafting": [],
+    "entities": [],
+    "items": [
       "minecraft:iron_helmet",
       "minecraft:iron_chestplate",
       "minecraft:iron_leggings",
-      "minecraft:iron_boots",
-      "minecraft:shield"
+      "minecraft:iron_boots"
     ],
     "mining": []
   },
@@ -354,7 +378,6 @@
       "magic": 2
     },
     "blocks": [
-      "minecraft:brewing_stand"
     ]
   },
   "magic_3": {
@@ -366,7 +389,7 @@
       "minecraft:enchanting_table"
     ],
     "items": [],
-    "crafting": ["minecraft:blaze_powder", "minecraft:potion.mundane"],
+    "crafting": [],
     "enchantments": {
       "minecraft:bane_of_arthropods": 1,
       "minecraft:smite": 1
@@ -627,6 +650,26 @@
       "minecraft:wind_burst": 3,
       "minecraft:density": 5,
       "minecraft:lunge": 3
+    }
+  },
+  "alchemy_3": {
+    "replace": false,
+    "skills": {
+      "alchemy": 3
+    },
+    "blocks": [
+      "minecraft:brewing_stand"
+    ],
+    "items": [
+      "minecraft:potion",
+      "minecraft:splash_potion",
+      "minecraft:lingering_potion"
+    ],
+    "crafting": [
+      "minecraft:blaze_powder",
+      "minecraft:nether_wart"
+    ],
+    "enchantments": {
     }
   },
   "mining_1": {

@@ -33,15 +33,24 @@
         "value": 0.2
       },
       {
+        "id": 2,
         "type": "attack_knockback",
         "operation": "ADD_VALUE",
         "value": 0.04
       },
       {
+        "id": 3,
         "type": "sweeping_damage_ratio",
         "base": 0,
         "operation": "ADD_VALUE",
         "value": 0.02
+      },
+      {
+        "id": 4,
+        "type": "entity_interaction_range",
+        "base": 3,
+        "operation": "ADD_VALUE",
+        "value": 0.07
       }
     ],
     "bonus": [
@@ -62,12 +71,13 @@
     "level": 30,
     "attributes": [
       {
-        "id": 2,
+        "id": 5,
         "type": "armor",
         "operation": "ADD_VALUE",
         "value": 0.2
       },
       {
+        "id": 6,
         "type": "knockback_resistance",
         "operation": "ADD_VALUE",
         "value": 0.02
@@ -86,11 +96,7 @@
     "key": "archery",
     "level": 30,
     "attributes": [
-      {
-        "type": "block_interaction_range",
-        "operation": "ADD_VALUE",
-        "value": 0.1
-      },
+
       {
         "type": "follow_range",
         "operation": "ADD_VALUE",
@@ -123,17 +129,25 @@
     "level": 25,
     "attributes": [
       {
-        "id": 3,
+        "id": 7,
         "type": "movement_speed",
         "base": 0.09,
         "operation": "ADD_VALUE",
         "value": 0.001
       },
       {
+        "id": 8,
         "type": "sneaking_speed",
         "base": 0.2,
         "operation": "ADD_VALUE",
         "value": 0.01
+      },
+      {
+        "id": 9,
+        "type": "attack_speed",
+        "base": 3,
+        "operation": "ADD_VALUE",
+        "value": 0.12
       }
     ],
     "bonus": [
@@ -158,17 +172,19 @@
     "level": 25,
     "attributes": [
       {
-        "id": 4,
+        "id": 10,
         "type": "oxygen_bonus",
         "operation": "ADD_VALUE",
         "value": 0.2
       },
       {
+        "id": 11,
         "type": "submerged_mining_speed",
         "operation": "ADD_VALUE",
         "value": 0.04
       },
       {
+        "id": 12,
         "type": "water_movement_efficiency",
         "operation": "ADD_VALUE",
         "value": 0.02
@@ -214,13 +230,20 @@
     "level": 20,
     "attributes": [
       {
+        "id": 13,
+        "type": "block_interaction_range",
+        "operation": "ADD_VALUE",
+        "value": 0.1
+      },
+      {
+        "id": 14,
         "type": "block_break_speed",
         "base": 0.5,
         "operation": "ADD_VALUE",
         "value": 0.05
       },
       {
-        "id": 5,
+        "id": 15,
         "type": "mining_efficiency",
         "base": 0,
         "operation": "ADD_VALUE",
@@ -241,11 +264,13 @@
     "level": 20,
     "attributes": [
       {
+        "id": 16,
         "type": "burning_time",
         "operation": "ADD_VALUE",
         "value": -0.05
       },
       {
+        "id": 17,
         "type": "explosion_knockback_resistance",
         "operation": "ADD_VALUE",
         "value": 0.05
@@ -328,7 +353,7 @@
     "level": 20,
     "attributes": [
       {
-        "id": 6,
+        "id": 18,
         "type": "luck",
         "base": 0,
         "operation": "ADD_VALUE",
