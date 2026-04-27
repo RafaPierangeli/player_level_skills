@@ -48,7 +48,7 @@ public abstract class EnchantmentHelperMixin {
     ) {
         LivingEntity owner = context.owner();
 
-        if (owner instanceof PlayerEntity playerEntity) {
+        if (owner instanceof PlayerEntity playerEntity && (!playerEntity.isCreative())) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
 
             if (!levelManager.hasRequiredEnchantmentLevel(enchantment, level)) {
@@ -95,11 +95,9 @@ public abstract class EnchantmentHelperMixin {
             int level,
             Operation<Void> original
     ) {
-        // Tenta pegar primeiro o minerador, se não houver, tenta o atacante
         ServerPlayerEntity player = LevelManager.CURRENT_ATTACKER.get();
 
-
-        if (player != null) {
+        if (player != null && (!player.isCreative())) {
             LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
             if (!levelManager.hasRequiredEnchantmentLevel(enchantment, level)) {
                 return;
@@ -118,6 +116,7 @@ public abstract class EnchantmentHelperMixin {
         // 1. Pega o player da Thread (Setado no Tick ou no ponto de atualização)
         ServerPlayerEntity player = LevelManager.CURRENT_MINER.get();
         if (player == null) return;
+        if (player.isCreative()) return;
 
         LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
 
@@ -174,7 +173,7 @@ public abstract class EnchantmentHelperMixin {
             CallbackInfoReturnable<Float> cir
     ) {
         // 1. Pegamos o player que causou o dano
-        if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
+        if (damageSource.getAttacker() instanceof ServerPlayerEntity player && (!player.isCreative())) {
             LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
             float extraDamage = cir.getReturnValue() - baseDamage;
 
@@ -225,7 +224,7 @@ public abstract class EnchantmentHelperMixin {
 
     @Inject(method = "modifyKnockback", at = @At("RETURN"), cancellable = true)
     private static void player_level_skills$cancelKnockback(ServerWorld world, ItemStack stack, Entity target, DamageSource damageSource, float baseKnockback, CallbackInfoReturnable<Float> cir) {
-        if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
+        if (damageSource.getAttacker() instanceof ServerPlayerEntity player && (!player.isCreative())) {
             LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
             var knockbackEntry = player.getRegistryManager() .getOrThrow(RegistryKeys.ENCHANTMENT) .getEntry(Enchantments.PUNCH.getValue()) .orElse(null);
             int level = EnchantmentHelper.getLevel(knockbackEntry, stack);

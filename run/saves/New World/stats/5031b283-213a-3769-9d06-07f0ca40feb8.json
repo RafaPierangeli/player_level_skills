@@ -12,13 +12,13 @@
     },
     "minecraft:custom": {
       "minecraft:sprint_one_cm": 352,
-      "minecraft:time_since_rest": 911,
-      "minecraft:walk_one_cm": 6144,
-      "minecraft:total_world_time": 937,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 911,
-      "minecraft:jump": 7,
-      "minecraft:time_since_death": 911
+      "minecraft:time_since_rest": 2559,
+      "minecraft:walk_one_cm": 8906,
+      "minecraft:total_world_time": 5926,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 2559,
+      "minecraft:jump": 12,
+      "minecraft:time_since_death": 2559
     }
   },
   "DataVersion": 4671

@@ -1,0 +1,35 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 5,
+      "minecraft:trident": 3,
+      "minecraft:netherite_sword": 13,
+      "minecraft:crossbow": 1,
+      "minecraft:netherite_spear": 2,
+      "minecraft:bow": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 4024,
+      "minecraft:walk_one_cm": 10962,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 5,
+      "minecraft:walk_under_water_one_cm": 2106,
+      "minecraft:play_time": 4024,
+      "minecraft:damage_dealt": 2500,
+      "minecraft:jump": 9,
+      "minecraft:time_since_death": 4024,
+      "minecraft:sprint_one_cm": 601,
+      "minecraft:total_world_time": 4733,
+      "minecraft:fly_one_cm": 710,
+      "minecraft:walk_on_water_one_cm": 285,
+      "minecraft:sneak_time": 3
+    },
+    "minecraft:picked_up": {
+      "minecraft:golden_axe": 1
+    },
+    "minecraft:killed": {
+      "minecraft:piglin_brute": 5
+    }
+  },
+  "DataVersion": 4671
+}

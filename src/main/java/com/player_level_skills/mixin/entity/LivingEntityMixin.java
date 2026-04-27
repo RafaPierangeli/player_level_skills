@@ -176,30 +176,6 @@ public abstract class LivingEntityMixin extends Entity {
         return strength;
     }
 
-//    @ModifyVariable(
-//            method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z",
-//            at = @At("HEAD"),
-//            argsOnly = true
-//    )
-//    private StatusEffectInstance player_level_skills$upgradePotionEffect(StatusEffectInstance statusEffectInstance) {
-//        // 'this' é a entidade recebendo o efeito
-//        if ((Object)this instanceof ServerPlayerEntity playerEntity) {
-//            System.out.println("[DEBUG potion] Player info: " + playerEntity.getName().getString());
-//
-//            if (playerEntity != null && LevelManager.BONUSES.containsKey("potionEffectChance")) {
-//                LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
-//                SkillBonus skillBonus = LevelManager.BONUSES.get("potionEffectChance");
-//                int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
-//                if (level >= skillBonus.getLevel() && playerEntity.getRandom().nextFloat() <= ConfigInit.CONFIG.potionEffectChanceBonus) {
-//                    return new StatusEffectInstance(statusEffectInstance.getEffectType(), statusEffectInstance.getDuration(),
-//                            statusEffectInstance.getAmplifier() + 4, statusEffectInstance.isAmbient(),
-//                            statusEffectInstance.shouldShowParticles(), statusEffectInstance.shouldShowIcon());
-//                }
-//            }
-//        }
-//        return statusEffectInstance;
-//    }
-
     @ModifyVariable(
             method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z",
             at = @At("HEAD"),

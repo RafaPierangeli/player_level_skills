@@ -126,13 +126,22 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             this.attributes.add(skillAttributes.get(i));
         }
         for (int i = 0; i < 12; i++) {
-            if (this.levelManager.getPlayerSkills().size() <= i) {
-                break;
+            // Calculamos o ID real da skill levando em conta a linha (scroll)
+            final int skillId = i + this.skillRow * 2;
+
+            if (LevelManager.SKILLS.size() <= skillId) {
+                // Se não existir skill para esse botão, criamos ele invisível/desativado
+                this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, null, button -> {}));
+                this.levelButtons[i].visible = false;
+                continue;
             }
 
-            final int skillId = i;
-            this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, null, button -> {
-                ClientPlayNetworking.send(new StatPacket(this.skillRow * 2 + skillId, 1));
+            // Pegamos o nome traduzido da skill (ex: Mineração, Alquimia...)
+            Text skillName = LevelManager.SKILLS.get(skillId).getText();
+
+            // Criamos o botão passando o skillName para a lista de tooltip dele
+            this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, skillName, button -> {
+                ClientPlayNetworking.send(new StatPacket(skillId, 1));
             }));
         }
         updateLevelButtons();
@@ -163,6 +172,7 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
 
                     int k = 27;
                     for (int i = this.attributeRow; i < this.attributeRow + maxAttributes; i++) {
+                        var currentAttribute = this.attributes.get(i).getAttibute();
                         String attributeKey = this.attributes.get(i).getAttibute().getIdAsString();
                          if (attributeKey.contains(":")) {
                             attributeKey = attributeKey.split(":")[1];
@@ -170,6 +180,14 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
                         context.drawTexture(RenderPipelines.GUI_TEXTURED,Player_level_skills.identifierOf("textures/gui/sprites/" + attributeKey + ".png"), this.x + 214, this.y + k, 0, 0, 9, 9, 9, 9);
                         float attributeValue = (float) Math.round(this.client.player.getAttributeInstance(this.attributes.get(i).getAttibute()).getValue() * 100.0D) / 100.0F;
                         context.drawText(this.textRenderer, Text.of(String.valueOf(attributeValue)), this.x + 214 + 15, this.y + k, 0xFFE0E0E0, false);
+
+                        // --- NOVA LÓGICA DE TOOLTIP PARA O ATRIBUTO ---
+                        // Verifica se o mouse está sobre a linha do atributo (largura aproximada de 60px para cobrir ícone e valor)
+                        if (isPointWithinBounds(this.x + 214, this.y + k, 60, 10, mouseX, mouseY)) {
+                            // Pega o nome traduzido do atributo (ex: "Velocidade de Movimento")
+                            Text tooltipName = Text.translatable(currentAttribute.value().getTranslationKey());
+                            context.drawTooltip(this.textRenderer, tooltipName, mouseX, mouseY);
+                        }
 
                         k += 12;
                     }
@@ -427,14 +445,17 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
                 this.levelButtons[i].visible = true;
             }
 
-            if (ConfigInit.CONFIG.overallMaxLevel > 0 && this.levelManager.getOverallLevel() >= ConfigInit.CONFIG.overallMaxLevel) {
-                this.levelButtons[i].active = false;
-            } else if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getSkillLevel(skillId)) {
+            // --- CORREÇÃO AQUI ---
+            // Removi a trava do overallMaxLevel. Agora o botão só desativa se:
+            // A skill já atingiu o nível máximo dela OU o player não tem pontos.
+            if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getSkillLevel(skillId)) {
                 this.levelButtons[i].active = false;
             } else {
+                // Se ainda não atingiu o máximo da skill, o botão fica ativo se houver pontos
                 this.levelButtons[i].active = this.levelManager.getSkillPoints() > 0;
             }
 
+            // Lógica de "Permitir Níveis Extras" (caso todas as skills estejam no máximo)
             if (ConfigInit.CONFIG.allowHigherSkillLevel && this.levelManager.getSkillPoints() > 0) {
                 boolean maxedAllSkills = true;
                 for (Skill skillCheck : LevelManager.SKILLS.values()) {
@@ -450,6 +471,7 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
         }
     }
 
+
     public static boolean isPointWithinBounds(int x, int y, int width, int height, double pointX, double pointY) {
         return pointX >= (double) (x - 1) && pointX < (double) (x + width + 1) && pointY >= (double) (y - 1) && pointY < (double) (y + height + 1);
     }
@@ -460,10 +482,12 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
         private final boolean clickable;
         private final int textureX;
         private final int textureY;
-        private final List<Text> tooltip = new ArrayList<Text>();
+        private final List<net.minecraft.text.@Nullable Text> tooltip = new ArrayList<net.minecraft.text.@Nullable Text>();
         private int clickedKey = -1;
 
-        public WidgetButtonPage(int x, int y, int sizeX, int sizeY, int textureX, int textureY, boolean hoverOutline, boolean clickable, @Nullable Text tooltip, ButtonWidget.PressAction onPress) {
+
+
+        public WidgetButtonPage(int x, int y, int sizeX, int sizeY, int textureX, int textureY, boolean hoverOutline, boolean clickable, @Nullable net.minecraft.text.Text tooltip, ButtonWidget.PressAction onPress) {
             super(x, y, sizeX, sizeY, ScreenTexts.EMPTY, onPress, DEFAULT_NARRATION_SUPPLIER);
             this.hoverOutline = hoverOutline;
             this.clickable = clickable;
@@ -481,14 +505,23 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
         protected void drawIcon(DrawContext context, int mouseX, int mouseY, float deltaTicks) {
             MinecraftClient minecraftClient = MinecraftClient.getInstance();
 
+
             context.getMatrices().pushMatrix();
             int i = hoverOutline ? this.getTextureY() : 0;
             context.drawTexture(RenderPipelines.GUI_TEXTURED, ICON_TEXTURE, this.getX(), this.getY(), this.textureX + i * this.width, this.textureY, this.width, this.height, 256, 256);
             context.getMatrices().popMatrix();
 
-            if (this.isHovered()) {
-                context.drawTooltip(minecraftClient.textRenderer, net.minecraft.text.Text.translatable("text.levelz.gui.up_level", this.tooltip), mouseX, mouseY);
+
+            if (this.isHovered() && !this.tooltip.isEmpty()) {
+                // Pega o primeiro item da lista (o nome da skill)
+                net.minecraft.text.Text skillName = this.tooltip.get(0);
+
+                // Cria o texto final usando o argumento
+                net.minecraft.text.Text finalTooltip = net.minecraft.text.Text.translatable("text.levelz.gui.up_level", skillName);
+
+                context.drawTooltip(minecraftClient.textRenderer, finalTooltip, mouseX, mouseY);
             }
+
         }
 
         //@Override
@@ -512,7 +545,7 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             }
             return super.keyPressed(input);
         }
-        public void addTooltip(Text text) {
+        public void addTooltip(net.minecraft.text.@Nullable Text text) {
             this.tooltip.add(text);
         }
 

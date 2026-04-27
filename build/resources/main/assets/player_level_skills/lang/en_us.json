@@ -16,8 +16,6 @@
   "text.autoconfig.levelSkills.category.experience_settings": "Experience Settings",
   "text.autoconfig.levelSkills.category.progression_settings": "Progression Settings",
 
-  "text.autoconfig.levelSkills.option.devMode": "Dev Mode",
-  "text.autoconfig.levelSkills.option.hardMode": "Hard Mode",
   "text.autoconfig.levelSkills.option.levelRetainPercentage": "Retained level after death",
   "text.autoconfig.levelSkills.option.disableMobFarms": "Disable Mob Farms",
   "text.autoconfig.levelSkills.option.overallMaxLevel": "Overall Max Level",
@@ -112,8 +110,8 @@
   "skill.levelz.bartering": "Bartering",
   "skill.levelz.luck": "Luck",
   "skill.levelz.strike": "strike",
-  "skill.levelz.alchemy": "alchemy",
-  "skill.levelz.swimming": "swimming",
+  "skill.levelz.alchemy": "Alchemy",
+  "skill.levelz.swimming": "Swimming",
 
   "skill.levelz.constitution.0": "Constitution increases max health",
   "skill.levelz.melee.0": "Melee increases attack dmg",
@@ -150,9 +148,6 @@
   "restriction.levelz.mining": "Mining",
   "restriction.levelz.crafting": "Crafting",
 
-  "restriction.levelz.mineable.tooltip": "§7Mineable",
-  "restriction.levelz.usable.tooltip": "§7Usable",
-  "restriction.levelz.craftable.tooltip": "§7Craftable",
   "restriction.levelz.locked.tooltip": "Locked",
   "item.levelz.locked.tooltip": "Locked",
 
@@ -221,6 +216,7 @@
   "bonus.levelz.meleeCriticalAttackChance.0": "Melee crit. attack chance",
   "bonus.levelz.meleeDoubleAttackDamageChance.0": "Melee double dmg chance %s",
   "bonus.levelz.foodIncreasion.0": "Extra food nutrition per lvl and",
+  "bonus.levelz.foodIncreasion.1": "chance to give +1 of saturation.",
   "bonus.levelz.damageReflection.0": "Damage reflection Amount",
   "bonus.levelz.damageReflectionChance.0": "Dmg reflection chance",
   "bonus.levelz.evadingDamageChance.0": "Evading dmg chance %s",
@@ -261,8 +257,12 @@
   "skill.mastery.flight_enabled": "You have reached total mastery! The power of flight is now yours.",
   "skill.mastery.flight_disabled": "You have lost total mastery. The power of flight is gone.",
   "skill.mastery.flight_info": "You have the fly power!",
-  "restriction.levelz.potions": "Potions",
-  "text.levelz.restriction": "Locked"
+  "restriction.levelz.potions": "Potions Usage",
+  "text.levelz.restriction": "Locked",
+
+  "text.levelz.rare_candy.bonus_points": "+%s Skill Points (Max Level Bonus!)",
+  "text.levelz.rare_candy.maxed_skills": "You already have enough points to master all skills!"
+
 
 
 }

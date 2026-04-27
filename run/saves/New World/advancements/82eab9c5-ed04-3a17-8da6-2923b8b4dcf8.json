@@ -79,6 +79,7 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:river": "2026-04-27 13:02:29 -0300",
       "minecraft:plains": "2026-04-26 18:48:24 -0300"
     },
     "done": false

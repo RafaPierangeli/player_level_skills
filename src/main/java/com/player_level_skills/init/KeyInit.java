@@ -16,7 +16,6 @@ import java.io.IOException;
 @Environment(EnvType.CLIENT)
 public class KeyInit {
     public static KeyBinding screenKey = new KeyBinding("key.levelz.openskillscreen", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_K, KeyBinding.Category.MISC);
-    public static KeyBinding devKey = new KeyBinding("key.levelz.dev", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F8, KeyBinding.Category.MISC);
 
     public static void init() {
         // Registering

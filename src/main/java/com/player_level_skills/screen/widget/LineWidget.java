@@ -25,7 +25,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,7 +77,8 @@ public class LineWidget {
                     this.customImages.put(id, Player_level_skills.identifierOf("textures/gui/sprites/entity/default.png"));
                 }
             }
-        } else if (this.code == 3) {
+        }
+        else if (this.code == 3) {
             this.customStacks = new HashMap<>();
 
             for (Integer id : this.restrictions.keySet()) {
@@ -108,7 +111,6 @@ public class LineWidget {
                 }
             }
         }
-
 
 
     }
@@ -147,21 +149,41 @@ public class LineWidget {
                     int level = enchantments.getLevel(enchantment);
                     tooltipTitle = Enchantment.getName(enchantment, level);
                     drawContext.drawItem(stack, x + separator, y);
-                } else if (this.code == 4) {
-                    // LÓGICA PARA POÇÕES
+                }
+                else if (this.code == 4) {
                     ItemStack stack = this.customStacks.get(entry.getKey());
-
-                    // Pega o nome amigável da poção para a Tooltip (ex: "Poção de Cura")
                     var contents = stack.get(DataComponentTypes.POTION_CONTENTS);
+
                     if (contents != null && contents.potion().isPresent()) {
-                        // Na 1.21.1 usamos o translation key do efeito
-                        tooltipTitle = stack.getName();
+                        // Pega o ID da poção (ex: "healing", "strong_strength")
+                        String potionPath = contents.potion().get().getKey().get().getValue().getPath();
+
+                        // O segredo na 1.21.1: O nome da poção é composto pelo item + o efeito
+                        // Ex: item.minecraft.potion.effect.healing
+                        String translationKey = "item.minecraft.potion.effect." + potionPath;
+                        MutableText translatedName = Text.translatable(translationKey);
+
+                        // Se o nome vier vazio ou igual à chave (não traduzido), usa o fallback do item
+                        if (translatedName.getString().equals(translationKey)) {
+                            translatedName = (MutableText) stack.getName();
+                        }
+
+                        // Adiciona a distinção visual que fizemos
+                        if (potionPath.contains("strong")) {
+                            tooltipTitle = translatedName.append(Text.literal(" II").formatted(Formatting.YELLOW));
+                        } else if (potionPath.contains("long")) {
+                            tooltipTitle = translatedName.append(Text.literal(" long").formatted(Formatting.AQUA));
+                        } else {
+                            tooltipTitle = translatedName;
+                        }
                     } else {
                         tooltipTitle = stack.getName();
                     }
 
                     drawContext.drawItem(stack, x + separator, y);
-                } else {
+                }
+
+                else {
                     tooltipTitle = Text.literal("");
                 }
 

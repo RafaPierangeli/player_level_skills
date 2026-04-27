@@ -658,12 +658,14 @@
       "alchemy": 3
     },
     "blocks": [
-
+      "minecraft:brewing_stand"
     ],
     "items": ["minecraft:nether_wart"
     ],
     "potions": [
-      "minecraft:healing"
+      "minecraft:healing",
+      "minecraft:water",
+      "minecraft:mundane"
     ],
     "crafting": [
       "minecraft:blaze_powder"
@@ -676,18 +678,120 @@
     "skills": {
       "alchemy": 5
     },
-    "blocks": [
-
-    ],
-    "items": [
-    ],
+    "blocks": [],
+    "items": [],
     "potions": [
       "minecraft:strength",
-      "minecraft:swiftness"
+      "minecraft:swiftness",
+      "minecraft:slowness",
+      "minecraft:water_breathing"
     ],
-    "crafting": [
-
-    ]
+    "crafting": []
+  },
+  "alchemy_7": {
+    "replace": false,
+    "skills": {
+      "alchemy": 7
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:night_vision",
+      "minecraft:invisibility",
+      "minecraft:leaping",
+      "minecraft:fire_resistance"
+    ],
+    "crafting": []
+  },
+  "alchemy_10": {
+    "replace": false,
+    "skills": {
+      "alchemy": 10
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:harming",
+      "minecraft:poison",
+      "minecraft:regeneration",
+      "minecraft:weakness",
+      "minecraft:luck"
+    ],
+    "crafting": []
+  },
+  "alchemy_12": {
+    "replace": false,
+    "skills": {
+      "alchemy": 12
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:turtle_master",
+      "minecraft:slow_falling",
+      "minecraft:infested",
+      "minecraft:oozing",
+      "minecraft:weaving",
+      "minecraft:wind_charged",
+      "minecraft:thick",
+      "minecraft:awkward"
+    ],
+    "crafting": []
+  },
+  "alchemy_16": {
+    "replace": false,
+    "skills": {
+      "alchemy": 16
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:long_night_vision",
+      "minecraft:long_invisibility",
+      "minecraft:long_leaping",
+      "minecraft:long_fire_resistance",
+      "minecraft:long_swiftness",
+      "minecraft:long_slowness",
+      "minecraft:long_water_breathing",
+      "minecraft:long_poison"
+    ],
+    "crafting": []
+  },
+  "alchemy_18": {
+    "replace": false,
+    "skills": {
+      "alchemy": 18
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:long_regeneration",
+      "minecraft:long_strength",
+      "minecraft:long_weakness",
+      "minecraft:long_turtle_master",
+      "minecraft:long_slow_falling"
+    ],
+    "crafting": []
+  },
+  "alchemy_22": {
+    "replace": false,
+    "skills": {
+      "alchemy": 22
+    },
+    "blocks": [],
+    "items": [],
+    "potions": [
+      "minecraft:strong_leaping",
+      "minecraft:strong_swiftness",
+      "minecraft:strong_slowness",
+      "minecraft:strong_healing",
+      "minecraft:strong_harming",
+      "minecraft:strong_poison",
+      "minecraft:strong_regeneration",
+      "minecraft:strong_strength",
+      "minecraft:strong_turtle_master"
+    ],
+    "crafting": []
   },
   "mining_1": {
     "replace": false,

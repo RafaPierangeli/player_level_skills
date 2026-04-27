@@ -35,6 +35,8 @@ public class RestrictionHelper {
         if (!playerEntity.isCreative()) {
             LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
             if (actionType.equals(SlotActionType.QUICK_MOVE)) {
+
+                //Brewing - Quick
                 if (screenHandler instanceof BrewingStandScreenHandler) {
                     return !slot.getStack().isEmpty() && !levelManager.hasRequiredCraftingLevel(slot.getStack().getItem()) || !levelManager.hasRequiredPotionLevel(slot.getStack());
                 }

@@ -47,9 +47,9 @@ public class LevelServerPacket {
                     Skill skill = LevelManager.SKILLS.get(id);
                     PlayerSkill playerSkill = levelManager.getPlayerSkills().get(id);
 
-                    if (ConfigInit.CONFIG.overallMaxLevel > 0 && ConfigInit.CONFIG.overallMaxLevel <= levelManager.getOverallLevel()) {
-                        return;
-                    }
+//                    if (ConfigInit.CONFIG.overallMaxLevel > 0 && ConfigInit.CONFIG.overallMaxLevel <= levelManager.getOverallLevel()) {
+//                        return;
+//                    }
                     if (!ConfigInit.CONFIG.allowHigherSkillLevel && playerSkill.getLevel() >= skill.getMaxLevel()) {
                         return;
                     }

@@ -1,40 +1,3 @@
-/level @s add level 5
-/time set day
-/level @s add points 10
-/level @s set mining 0
-/level @s set mining 5
-/level @s get points
-/level @s add level 25
-/level Player249 remove points 10
-/gamemode creative
-/gamemode survival
-/level Player249 remove points 10
-/gamemode creative
-/weather clear
-/gamemode survival
-/time set day
-/level @s set mining 19
-/level @s add level 10
-/level @s set mining 10
-/level @s add level 1
-/time set day
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
-/level @s set agility 0
-/level @s set agility 25
-/gamemode survival
-/time set day
-/gamemode creative
-/level @s set alchemy 0
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/time set day
 /reload
 /time set day
 /gamemode survival
@@ -47,4 +10,41 @@
 /level @s set alchemy 3
 /gamemode survival
 /level @s set alchemy 0
+/time set day
+/gamemode creative
+/time set day
+/gamemode survival
+/gamemode creative
+/level @s set magic 0
+/level @s add level 1
+/level @s add experience 100
+/level @s add experience 200
+/level @s add experience 100
+/level @s add experience 20
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/level @s set level 99
+/level @s add experience 800
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/time set day
+/gamemode survival
+/level @s set level 99
+/level @s set experience 0
+/level @s set points 0
+/level @s set experience 0
+/level @s set level 100
+/level @s set alchemy 0
+/level @s set alchemy 30
+/level @s set alchemy 0
+/level @s set alchemy 30
+/time set day
+/level @s set alchemy 0
+/gamemode creative
+/gamemode survival
 /time set day

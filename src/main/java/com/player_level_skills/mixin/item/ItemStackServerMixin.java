@@ -87,12 +87,15 @@ public class ItemStackServerMixin {
         @Inject(method = "use", at = @At("HEAD"), cancellable = true)
         private void player_level_skills$restrictPotionUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
             ItemStack stack = user.getStackInHand(hand);
+            if (user.isCreative()) {
+                return;
+            }
             if (user instanceof ServerPlayerEntity player) {
                 LevelManager levelManager = ((LevelManagerAccess) player).getLevelManager();
 
 
                 if (!levelManager.hasRequiredPotionLevel(stack)) {
-                    player.sendMessage(Text.translatable("text.levelz.restriction", Text.translatable(stack.getItemName().getString())).formatted(Formatting.YELLOW), true);
+                    player.sendMessage(Text.translatable("text.levelz.restriction", Text.translatable(stack.getItemName().getString())).formatted(Formatting.RED), true);
                     cir.setReturnValue(ActionResult.FAIL);
                 }
             }

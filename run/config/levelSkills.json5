@@ -1,14 +1,10 @@
 {
 	// Maximum level: 0 = disabled
-	"overallMaxLevel": 0,
+	"overallMaxLevel": 100,
 	// In combination with overallMaxLevel, only when all skills maxed
 	"allowHigherSkillLevel": false,
 	"startPoints": 10,
 	"pointsPerLevel": 3,
-	/* If true will reset stats on death 
-	   !!!deprecated, not in use!!!
-	*/
-	"hardMode": false,
 	// Retain % of levels and skill points, 0 = hard mode
 	"levelRetainPercentage": 100.0,
 	"disableMobFarms": false,

@@ -262,11 +262,13 @@
   "spritetip.levelz.strength_skill_info_1": "Aumenta o Dano de Armas Corpo-a-Corpo",
   "spritetip.levelz.strength_skill_info_2": "Desbloqueia Espadas",
 
-  "spritetip.levelz.agility_skill": "Agilidadde",
+  "skill.levelz.agility": "Agilidade",
   "spritetip.levelz.agility_skill_info_1": "Aumenta a Velocidade de Movimento",
   "spritetip.levelz.agility_skill_info_2": "Diminui o Dano de Queda",
 
   "spritetip.levelz.defense_skill": "Defesa",
+  "skill.levelz.defense": "Defesa",
+  "text.levelz.gui.up_level": "Subir nível %s",
   "spritetip.levelz.defense_skill_info_1": "Aumenta a Proteção",
   "spritetip.levelz.defense_skill_info_2": "Desbloqueia Armaduras",
 
@@ -356,7 +358,11 @@
 
   "skill.mastery.flight_enabled": "Você atingiu a maestria total! O poder de voar agora é seu.",
   "skill.mastery.flight_disabled": "Você perdeu a maestria total. O poder de voar se foi.",
-  "skill.mastery.flight_info": "Você tem o poder de Voar!"
+  "skill.mastery.flight_info": "Você tem o poder de Voar!",
+
+  "text.levelz.rare_candy.bonus_points": "+%s Pontos de Habilidade (Bônus de Nível Máximo!)",
+  "text.levelz.rare_candy.maxed_skills": "Você já tem pontos suficientes para dominar todas as habilidades!"
+
 
 
 

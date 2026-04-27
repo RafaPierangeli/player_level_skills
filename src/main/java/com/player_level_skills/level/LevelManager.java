@@ -179,7 +179,8 @@ public class LevelManager {
     public boolean hasAvailableLevel() {
         return this.skillPoints > 0;
     }
-    // Recommend to use https://www.geogebra.org/graphing
+
+
     public int getNextLevelExperience() {
         if (isMaxLevel()) {
             return 0;

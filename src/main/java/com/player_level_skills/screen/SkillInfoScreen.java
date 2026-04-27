@@ -23,7 +23,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jetbrains.annotations.UnknownNullability;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,9 +65,6 @@ public class SkillInfoScreen extends Screen implements Tab {
         for (int i = 0; i < 50; i++) {
             String skillExtra = "skill.levelz." + this.skill.getKey() + "." + i;
             Text skillExtraText = Text.translatable(skillExtra);
-            LOGGER.info("Skill key = {}", this.skill.getKey());
-            LOGGER.info("Trying skill text key = {}", skillExtra);
-            LOGGER.info("Resolved skill text = {}", skillExtraText.getString());
 
             if (skillExtraText.getString().equals(skillExtra)) {
                 break;
@@ -106,7 +102,7 @@ public class SkillInfoScreen extends Screen implements Tab {
         addRestrictionLines(LevelManager.BLOCK_RESTRICTIONS, Text.translatable("restriction.levelz.block_usage").formatted(Formatting.BOLD), 1);
         addRestrictionLines(LevelManager.ENTITY_RESTRICTIONS, Text.translatable("restriction.levelz.entity_usage").formatted(Formatting.BOLD), 2);
         addRestrictionLines(LevelManager.ENCHANTMENT_RESTRICTIONS, Text.translatable("restriction.levelz.enchantments").formatted(Formatting.BOLD), 3);
-        addPotionRestrictionLines(LevelManager.POTION_RESTRICTIONS, Text.translatable("restriction.levelz.potions").formatted(Formatting.BOLD), 4);
+        addRestrictionLines(LevelManager.POTION_RESTRICTIONS, Text.translatable("restriction.levelz.potions").formatted(Formatting.BOLD), 4);
     }
 
     private void addRestrictionLines(Map<Integer, PlayerRestriction> levelRestrictions, Text restrictionText, int code) {
@@ -137,7 +133,7 @@ public class SkillInfoScreen extends Screen implements Tab {
         for (Map.Entry<Integer, Map<Integer, PlayerRestriction>> restrictions : map.entrySet()) {
             this.lines.add(new LineWidget(this.client, Text.translatable("text.levelz.gui.short_level", restrictions.getKey()), null, 0));
 
-            if (restrictions.getValue().size() > 10) {
+            if (restrictions.getValue().size() > 9) {
                 Map<Integer, PlayerRestriction> newMap = new TreeMap<>();
 
                 int count = 0;
@@ -156,32 +152,6 @@ public class SkillInfoScreen extends Screen implements Tab {
             } else {
                 this.lines.add(new LineWidget(this.client, null, restrictions.getValue(), code));
             }
-        }
-    }
-
-    private void addPotionRestrictionLines(Map<Integer, PlayerRestriction> levelRestrictions, Text restrictionText, int code) {
-        // Note que mudei para Map<Integer, PlayerRestriction> para bater com o seu mapa do LevelManager
-        Map<Integer, Map<Integer, PlayerRestriction>> map = new TreeMap<>();
-
-        for (Map.Entry<Integer, PlayerRestriction> entry : levelRestrictions.entrySet()) {
-            for (Map.Entry<Integer, Integer> specificRestriction : entry.getValue().getSkillLevelRestrictions().entrySet()) {
-                if (specificRestriction.getKey() == this.skill.getId()) {
-                    map.computeIfAbsent(specificRestriction.getValue(), k -> new TreeMap<>())
-                            .put(entry.getKey(), entry.getValue());
-                    break;
-                }
-            }
-        }
-
-        if (!map.isEmpty()) {
-            this.lines.add(new LineWidget(this.client, restrictionText, null, 0));
-        }
-
-        for (Map.Entry<Integer, Map<Integer, PlayerRestriction>> restrictions : map.entrySet()) {
-            this.lines.add(new LineWidget(this.client, Text.translatable("text.levelz.gui.short_level", restrictions.getKey()), null, 0));
-
-            // AQUI ESTÁ A CORREÇÃO: Passamos o mapa com os IDs reais (24, 34, etc.)
-            this.lines.add(new LineWidget(this.client, null, restrictions.getValue(), code));
         }
     }
 

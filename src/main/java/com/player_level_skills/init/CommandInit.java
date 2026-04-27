@@ -173,6 +173,7 @@ public class CommandInit {
             }
             PacketHelper.updateLevels(serverPlayerEntity);
             PacketHelper.updatePlayerSkills(serverPlayerEntity, null);
+            levelManager.syncFlightAbility();
 
             if (reference != 3) {
                 source.sendFeedback(() -> Text.translatable("commands.level.changed", serverPlayerEntity.getDisplayName()), true);

@@ -5,11 +5,11 @@
       "minecraft:milk_bucket": 2
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 360,
-      "minecraft:total_world_time": 477,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 360,
-      "minecraft:time_since_death": 360
+      "minecraft:time_since_rest": 884,
+      "minecraft:total_world_time": 1409,
+      "minecraft:leave_game": 2,
+      "minecraft:play_time": 884,
+      "minecraft:time_since_death": 884
     }
   },
   "DataVersion": 4671

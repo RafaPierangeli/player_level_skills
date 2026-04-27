@@ -13,7 +13,7 @@ public class player_level_skillsConfig implements ConfigData {
     @ConfigEntry.Category("level_settings")
     @ConfigEntry.Gui.RequiresRestart
     @Comment("Maximum level: 0 = disabled")
-    public int overallMaxLevel = 0;
+    public int overallMaxLevel = 100;
     @ConfigEntry.Category("level_settings")
     @Comment("In combination with overallMaxLevel, only when all skills maxed")
     public boolean allowHigherSkillLevel = false;
@@ -23,10 +23,6 @@ public class player_level_skillsConfig implements ConfigData {
     @ConfigEntry.Category("level_settings")
     public int pointsPerLevel = 3;
 
-    @Deprecated // Unused but if this gets removed, remove it in JobsAddon
-    @ConfigEntry.Category("level_settings")
-    @Comment("If true will reset stats on death \n!!!deprecated, not in use!!!")
-    public boolean hardMode = false;
     @ConfigEntry.Category("level_settings")
     @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
     @Comment("Retain % of levels and skill points, 0 = hard mode")
