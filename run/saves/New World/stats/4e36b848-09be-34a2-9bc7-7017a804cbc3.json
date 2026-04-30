@@ -1,11 +1,46 @@
 {
   "stats": {
+    "minecraft:mined": {
+      "minecraft:short_grass": 1,
+      "minecraft:sculk_catalyst": 3,
+      "minecraft:dirt": 4,
+      "minecraft:grass_block": 8
+    },
+    "minecraft:used": {
+      "minecraft:piglin_brute_spawn_egg": 9,
+      "minecraft:sculk_catalyst": 3,
+      "minecraft:warden_spawn_egg": 3,
+      "minecraft:trident": 9,
+      "minecraft:carrot": 28,
+      "minecraft:splash_potion": 2,
+      "minecraft:netherite_sword": 3,
+      "minecraft:lingering_potion": 1,
+      "minecraft:dirt": 11
+    },
+    "minecraft:picked_up": {
+      "minecraft:dirt": 11,
+      "minecraft:sculk_catalyst": 3
+    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 774,
-      "minecraft:walk_one_cm": 137,
-      "minecraft:total_world_time": 1346,
-      "minecraft:play_time": 774,
-      "minecraft:time_since_death": 774
+      "minecraft:trigger_trapped_chest": 2,
+      "minecraft:time_since_rest": 25432,
+      "minecraft:walk_one_cm": 51621,
+      "minecraft:leave_game": 1,
+      "minecraft:walk_under_water_one_cm": 10128,
+      "minecraft:damage_taken": 1821,
+      "minecraft:damage_dealt": 990,
+      "minecraft:play_time": 25432,
+      "minecraft:damage_absorbed": 1120,
+      "minecraft:jump": 213,
+      "minecraft:time_since_death": 25432,
+      "minecraft:sprint_one_cm": 1524,
+      "minecraft:interact_with_smithing_table": 1,
+      "minecraft:fall_one_cm": 19828,
+      "minecraft:total_world_time": 40789,
+      "minecraft:fly_one_cm": 8511,
+      "minecraft:walk_on_water_one_cm": 853,
+      "minecraft:crouch_one_cm": 267,
+      "minecraft:sneak_time": 150
     }
   },
   "DataVersion": 4671

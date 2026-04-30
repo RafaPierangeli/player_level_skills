@@ -2,19 +2,20 @@
   "stats": {
     "minecraft:used": {
       "minecraft:trident": 1,
+      "minecraft:carrot": 3,
       "minecraft:dried_kelp": 2
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 450,
-      "minecraft:walk_one_cm": 453,
-      "minecraft:total_world_time": 913,
-      "minecraft:leave_game": 2,
+      "minecraft:time_since_rest": 3475,
+      "minecraft:walk_one_cm": 2702,
+      "minecraft:total_world_time": 4406,
+      "minecraft:leave_game": 3,
       "minecraft:walk_under_water_one_cm": 1720,
       "minecraft:walk_on_water_one_cm": 173,
       "minecraft:sneak_time": 6,
-      "minecraft:play_time": 450,
-      "minecraft:jump": 2,
-      "minecraft:time_since_death": 450
+      "minecraft:play_time": 3475,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 3475
     }
   },
   "DataVersion": 4671

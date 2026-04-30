@@ -69,7 +69,7 @@ public class player_level_skillsConfig implements ConfigData {
     public float fallDamageReductionBonus = 0.2F;
 
     @Comment("Bonus id: deathGraceChance")
-    public float deathGraceChanceBonus = 0.2F;
+    public float deathGraceChanceBonus = 0.02F;
 
     @Comment("Bonus id: tntStrength")
     public float tntStrengthBonus = 1F;
@@ -120,7 +120,7 @@ public class player_level_skillsConfig implements ConfigData {
     public float foodSaturationChanceBonus = 0.025F;
 
     @Comment("Bonus id: damageReflection")
-    public float damageReflectionBonus = 0.02F;
+    public float damageReflectionBonus = 0.025F;
 
     @Comment("Bonus id: damageReflectionChance")
     public float damageReflectionChanceBonus = 0.025F;

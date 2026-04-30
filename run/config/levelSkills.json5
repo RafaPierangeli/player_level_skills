@@ -11,7 +11,7 @@
 	// Amount of allowed mob kills in a chunk
 	"mobKillCount": 600,
 	// Strange potion resets all stats instead of one
-	"opStrangePotion": false,
+	"opStrangePotion": true,
 	// restrict hand usage when item not unlocked
 	"lockedHandUsage": false,
 	// Bonus id: bowDamage
@@ -33,7 +33,7 @@
 	// Bonus id: fallDamageReduction
 	"fallDamageReductionBonus": 0.20000000298023224,
 	// Bonus id: deathGraceChance
-	"deathGraceChanceBonus": 1.0,
+	"deathGraceChanceBonus": 0.019999999552965164,
 	// Bonus id: tntStrength
 	"tntStrengthBonus": 2.0,
 	// Bonus id: priceDiscount
@@ -67,11 +67,11 @@
 	// Bonus id: foodIncreasion
 	"foodSaturationChanceBonus": 0.02500000037252903,
 	// Bonus id: damageReflection
-	"damageReflectionBonus": 0.5,
+	"damageReflectionBonus": 0.02500000037252903,
 	// Bonus id: damageReflectionChance
-	"damageReflectionChanceBonus": 0.5,
+	"damageReflectionChanceBonus": 0.02500000037252903,
 	// Bonus id: evadingDamageChance
-	"evadingDamageChanceBonus": 0.10000000149011612,
+	"evadingDamageChanceBonus": 0.02500000037252903,
 	// XP equation: lvl^exponent * multiplicator + base
 	"xpCostMultiplicator": 0.10000000149011612,
 	"xpExponent": 2,

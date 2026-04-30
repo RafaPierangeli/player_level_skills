@@ -255,6 +255,9 @@ public abstract class EnchantmentHelperMixin {
         if (!(damageSource.getAttacker() instanceof PlayerEntity playerEntity)) {
             return;
         }
+        if (playerEntity.isCreative()) {
+            return;
+        }
 
         LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
 
@@ -267,6 +270,9 @@ public abstract class EnchantmentHelperMixin {
     @Inject(method = "getTridentSpinAttackStrength", at = @At("HEAD"), cancellable = true)
     private static void player_level_skills$filterRiptideImpulse(ItemStack stack, LivingEntity user, CallbackInfoReturnable<Float> ci) {
 
+        if (user instanceof net.minecraft.entity.player.PlayerEntity player && player.isCreative()) {
+            return;
+        }
 
             LevelManager levelManager = ((LevelManagerAccess) user).getLevelManager();
 
