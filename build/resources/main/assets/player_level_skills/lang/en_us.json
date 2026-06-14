@@ -28,6 +28,7 @@
   "text.autoconfig.levelSkills.option.xpExponent": "XP Exponent",
   "text.autoconfig.levelSkills.option.xpMaxCost": "XP Max Cost",
   "text.autoconfig.levelSkills.option.lockedHandUsage": "Locked Hand Usage",
+  "text.autoconfig.levelSkills.option.lockedFlightPower": "Locked Flight Power",
   "text.autoconfig.levelSkills.option.opStrangePotion": "Op Strange Potion",
 
   "text.autoconfig.levelSkills.option.bowDamageBonus": "Bow Damage Bonus",

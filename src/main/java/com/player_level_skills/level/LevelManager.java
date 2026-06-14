@@ -365,15 +365,18 @@ public class LevelManager {
             // Ignora se o player já estiver no modo Criativo/Spectator
             if (player.isCreative() || player.isSpectator()) return;
 
+
             boolean hasMaestria = this.hasAllSkillsMaxed();
+            boolean isFlightLocked = ConfigInit.CONFIG.lockedFlightPower;
             boolean isAllowFlying = player.getAbilities().allowFlying;
+            boolean shouldFly = hasMaestria && !isFlightLocked;
 
             // Só executa se houver mudança de estado (para não gastar pacotes de rede à toa)
-            if (hasMaestria && !isAllowFlying) {
+            if (shouldFly && !isAllowFlying) {
                 player.getAbilities().allowFlying = true;
                 player.sendAbilitiesUpdate();
                 player.sendMessage(Text.translatable("skill.mastery.flight_enabled").formatted(Formatting.GOLD), true);
-            } else if (!hasMaestria && isAllowFlying) {
+            } else if (!shouldFly && isAllowFlying) {
                 player.getAbilities().allowFlying = false;
                 player.getAbilities().flying = false; // Força a queda
                 player.sendAbilitiesUpdate();

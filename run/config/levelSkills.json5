@@ -14,6 +14,8 @@
 	"opStrangePotion": true,
 	// restrict hand usage when item not unlocked
 	"lockedHandUsage": false,
+	// restrict Flight usage in max level. Need a Reenter in the world
+	"lockedFlightPower": true,
 	// Bonus id: bowDamage
 	"bowDamageBonus": 0.10000000149011612,
 	// Bonus id: bowDoubleDamageChance

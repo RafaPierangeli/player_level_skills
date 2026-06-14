@@ -1,10 +1,5 @@
 /gamemode survival
 /gamemode creative
-/time set day
-/level @s set level 99
-/level @s add experience 800
-/gamemode survival
-/gamemode creative
 /gamemode survival
 /gamemode creative
 /time set day
@@ -48,3 +43,8 @@
 /gamemode creative
 /gamemode survival
 /time set day
+/level @s set bartering 25
+/level @s set bartering 15
+/level @s set farming 15
+/level @s add points 5
+/level @s set luck 17

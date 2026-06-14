@@ -40,6 +40,10 @@ public class player_level_skillsConfig implements ConfigData {
     @Comment("restrict hand usage when item not unlocked")
     public boolean lockedHandUsage = false;
 
+    @ConfigEntry.Category("level_settings")
+    @Comment("restrict Flight usage in max level. Need a Reenter in the world")
+    public boolean lockedFlightPower = false;
+
     // Skill bonuses
     @Comment("Bonus id: bowDamage")
     public float bowDamageBonus = 0.1F;

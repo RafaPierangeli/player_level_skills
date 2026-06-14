@@ -227,13 +227,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:river": "2026-04-19 18:20:10 -0300",
-      "minecraft:plains": "2026-04-19 18:19:57 -0300"
-    },
-    "done": false
-  },
   "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
       "in_water": "2026-04-19 18:19:56 -0300"
@@ -249,6 +242,25 @@
   "minecraft:recipes/misc/mojang_banner_pattern": {
     "criteria": {
       "has_enchanted_golden_apple": "2026-04-19 18:19:56 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-04-19 18:20:10 -0300",
+      "minecraft:plains": "2026-04-19 18:19:57 -0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/netherite_armor": {
+    "criteria": {
+      "netherite_armor": "2026-06-08 23:21:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
+    "criteria": {
+      "has_carrot": "2026-06-08 23:21:46 -0300"
     },
     "done": true
   },

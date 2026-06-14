@@ -125,24 +125,41 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
         for (int i = 0; i < attributeCount; i++) {
             this.attributes.add(skillAttributes.get(i));
         }
+//        for (int i = 0; i < 12; i++) {
+//            // Calculamos o ID real da skill levando em conta a linha (scroll)
+//            final int skillId = i + this.skillRow * 2;
+//
+//            if (LevelManager.SKILLS.size() <= skillId) {
+//                // Se não existir skill para esse botão, criamos ele invisível/desativado
+//                this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, null, button -> {}));
+//                this.levelButtons[i].visible = false;
+//                continue;
+//            }
+//
+//            // Pegamos o nome traduzido da skill (ex: Mineração, Alquimia...)
+//            Text skillName = LevelManager.SKILLS.get(skillId).getText();
+//
+//            // Criamos o botão passando o skillName para a lista de tooltip dele
+//            this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, skillName, button -> {
+//                ClientPlayNetworking.send(new StatPacket(skillId, 1));
+//            }));
+//        }
+//        updateLevelButtons();
+
         for (int i = 0; i < 12; i++) {
-            // Calculamos o ID real da skill levando em conta a linha (scroll)
-            final int skillId = i + this.skillRow * 2;
+            final int index = i; // Captura a posição fixa do botão na tela (0 a 11)
 
-            if (LevelManager.SKILLS.size() <= skillId) {
-                // Se não existir skill para esse botão, criamos ele invisível/desativado
-                this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, null, button -> {}));
-                this.levelButtons[i].visible = false;
-                continue;
-            }
-
-            // Pegamos o nome traduzido da skill (ex: Mineração, Alquimia...)
-            Text skillName = LevelManager.SKILLS.get(skillId).getText();
-
-            // Criamos o botão passando o skillName para a lista de tooltip dele
-            this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(this.x + (i % 2 == 0 ? 80 : 169), this.y + 91 + i / 2 * 20, 13, 13, 33, 42, true, true, skillName, button -> {
-                ClientPlayNetworking.send(new StatPacket(skillId, 1));
-            }));
+            // Criamos o botão inicialmente sem tooltip (será preenchido no updateLevelButtons)
+            this.levelButtons[i] = this.addDrawableChild(new WidgetButtonPage(
+                    this.x + (i % 2 == 0 ? 80 : 169),
+                    this.y + 91 + i / 2 * 20,
+                    13, 13, 33, 42, true, true, null,
+                    button -> {
+                        // Calcula o ID real da skill NA HORA DO CLIQUE, usando o skillRow atual
+                        int currentSkillId = index + this.skillRow * 2;
+                        ClientPlayNetworking.send(new StatPacket(currentSkillId, 1));
+                    }
+            ));
         }
         updateLevelButtons();
     }
@@ -208,7 +225,7 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             Text skillPointText = Text.translatable("text.levelz.gui.points",this.levelManager.getSkillPoints()); //this.levelManager.getSkillPoints()
             context.drawText(this.textRenderer, skillPointText, this.x + 62, this.y + 54, 0xFF3F3F3F, false);
             // Label de Maestria (Voo)
-            if (this.levelManager.hasAllSkillsMaxed()) {
+            if (this.levelManager.hasAllSkillsMaxed() && !ConfigInit.CONFIG.lockedFlightPower) {
                 Text flightPowerText = Text.translatable("skill.mastery.flight_info").formatted(Formatting.DARK_GREEN);
                 // x + 62 mantém o alinhamento, y + 66 coloca exatamente abaixo dos pontos
                 context.drawText(this.textRenderer, flightPowerText, this.x + 62, this.y + 66, 0xFFFFFFFF, false);
@@ -443,9 +460,10 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
                 continue;
             } else {
                 this.levelButtons[i].visible = true;
+                // ATUALIZA O TOOLTIP DINAMICAMENTE CONFORME O SCROLL
+                this.levelButtons[i].setTooltip(LevelManager.SKILLS.get(skillId).getText());
             }
 
-            // --- CORREÇÃO AQUI ---
             // Removi a trava do overallMaxLevel. Agora o botão só desativa se:
             // A skill já atingiu o nível máximo dela OU o player não tem pontos.
             if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getSkillLevel(skillId)) {
@@ -470,6 +488,43 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
             }
         }
     }
+
+//    public void updateLevelButtons() {
+//        for (int i = 0; i < this.levelButtons.length; i++) {
+//            int skillId = i + this.skillRow * 2;
+//
+//            if (LevelManager.SKILLS.size() <= skillId) {
+//                this.levelButtons[i].visible = false;
+//                continue;
+//            } else {
+//                this.levelButtons[i].visible = true;
+//            }
+//
+//            // --- CORREÇÃO AQUI ---
+//            // Removi a trava do overallMaxLevel. Agora o botão só desativa se:
+//            // A skill já atingiu o nível máximo dela OU o player não tem pontos.
+//            if (LevelManager.SKILLS.get(skillId).getMaxLevel() <= this.levelManager.getSkillLevel(skillId)) {
+//                this.levelButtons[i].active = false;
+//            } else {
+//                // Se ainda não atingiu o máximo da skill, o botão fica ativo se houver pontos
+//                this.levelButtons[i].active = this.levelManager.getSkillPoints() > 0;
+//            }
+//
+//            // Lógica de "Permitir Níveis Extras" (caso todas as skills estejam no máximo)
+//            if (ConfigInit.CONFIG.allowHigherSkillLevel && this.levelManager.getSkillPoints() > 0) {
+//                boolean maxedAllSkills = true;
+//                for (Skill skillCheck : LevelManager.SKILLS.values()) {
+//                    if (skillCheck.getMaxLevel() > this.levelManager.getSkillLevel(skillCheck.getId())) {
+//                        maxedAllSkills = false;
+//                        break;
+//                    }
+//                }
+//                if (maxedAllSkills) {
+//                    this.levelButtons[i].active = true;
+//                }
+//            }
+//        }
+//    }
 
 
     public static boolean isPointWithinBounds(int x, int y, int width, int height, double pointX, double pointY) {
@@ -565,6 +620,13 @@ public class PlayerLevelSkillsScreen extends Screen implements Tab {
                 i = 2;
             }
             return i;
+        }
+
+        public void setTooltip(net.minecraft.text.@Nullable Text text) {
+            this.tooltip.clear();
+            if (text != null) {
+                this.tooltip.add(text);
+            }
         }
     }
 }
